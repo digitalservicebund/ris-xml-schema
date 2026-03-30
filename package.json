@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "scripts": {
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write --ignore-unknown ."
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "^3.4.2",
+    "prettier": "^3.8.1"
+  }
+}
