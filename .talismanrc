@@ -9,8 +9,9 @@ fileignoreconfig:
   - filename: SECURITY.md
     allowed_patterns:
       - "public key"
-  - filename: xsd/akomantoso30.xsd
+  - filename: xsd/akn/akomantoso30.xsd
     allowed_patterns:
+      - keyword
       - passive
 scopeconfig:
   - scope: node
