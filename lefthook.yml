@@ -1,0 +1,11 @@
+commit-msg:
+  commands:
+    lint-commit-msg:
+      run: npx --yes commitlint --edit
+pre-push:
+  parallel: true
+  commands:
+    secrets-audit:
+      tags: security audit
+      use_stdin: true
+      run: talisman --githook pre-push

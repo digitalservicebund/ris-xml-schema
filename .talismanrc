@@ -1,0 +1,14 @@
+fileignoreconfig:
+  - filename: README.md
+    allowed_patterns:
+      - secrets
+      - Secrets
+  - filename: LICENSE
+    allowed_patterns:
+      - "keys"
+  - filename: SECURITY.md
+    allowed_patterns:
+      - "public key"
+allowed_patterns:
+  - uses:\ ([A-z0-9\-]+\/)*[A-z0-9\-]+@[a-fA-F0-9]{40}
+  - "secrets: inherit"
