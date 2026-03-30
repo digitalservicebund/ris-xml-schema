@@ -2,7 +2,9 @@
   "type": "module",
   "scripts": {
     "format:check": "prettier --check .",
-    "format:fix": "prettier --write --ignore-unknown ."
+    "format:fix": "prettier --write --ignore-unknown .",
+    "style:check": "npm run format:check",
+    "style:fix": "npm run format:fix"
   },
   "devDependencies": {
     "@prettier/plugin-xml": "^3.4.2",

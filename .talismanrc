@@ -13,6 +13,9 @@ fileignoreconfig:
     allowed_patterns:
       - keyword
       - passive
+  - filename: .github/workflows/pipeline.yml
+    allowed_patterns:
+      - "key: "
 scopeconfig:
   - scope: node
 allowed_patterns:

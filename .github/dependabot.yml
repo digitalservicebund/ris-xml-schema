@@ -1,0 +1,26 @@
+# Please see the documentation for all configuration options:
+# https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 3
+    groups:
+      all-frontend-non-major-dependencies:
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    cooldown:
+      default-days: 3
+    groups:
+      all-github-actions-non-major-dependencies:
+        update-types:
+          - minor
+          - patch
