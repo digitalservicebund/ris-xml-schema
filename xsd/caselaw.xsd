@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+  xmlns:ris="http://example.com/0.1/"
+  elementFormDefault="qualified"
+  targetNamespace="http://example.com/0.1/"
+>
+  <xs:import
+    namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="./akn/xml.xsd"
+  />
+  <xs:import
+    namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+    schemaLocation="./akn/akomantoso30.xsd"
+  />
+  <xs:element name="fremdsprachigeFassung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="akn:FRBRlanguage" />
+        <xs:element ref="akn:documentRef" />
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

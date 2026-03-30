@@ -61,7 +61,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install libxml2-utils -y
       - name: Check caselaw samples against schema
-        run: xmllint --noout --schema xsd/akn/akomantoso30.xsd samples/caselaw/*.xml
+        run: xmllint --noout --schema xsd/caselaw.xsd samples/caselaw/*.xml
       - name: Send status to Slack
         uses: digitalservicebund/notify-on-failure-gha@671832f192aee0a068fd92b2f6deb975df794a84 # v1.6.1
         if: ${{ failure() && github.ref == 'refs/heads/main' }}
