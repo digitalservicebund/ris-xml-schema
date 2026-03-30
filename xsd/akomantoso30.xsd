@@ -9,17 +9,15 @@
      TC IPR Statement: https://www.oasis-open.org/committees/legaldocml/ipr.php
 -->
 <xsd:schema
-  xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
-  elementFormDefault="qualified"
+    xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    elementFormDefault="qualified"
 >
-
-
     <xsd:import
-    namespace="http://www.w3.org/XML/1998/namespace"
-    schemaLocation="xml.xsd"
-  />
+        namespace="http://www.w3.org/XML/1998/namespace"
+        schemaLocation="xml.xsd"
+    />
 
     <xsd:annotation>
         <xsd:documentation>
@@ -674,10 +672,10 @@
         </xsd:annotation>
 
         <xsd:attribute
-      name="contains"
-      type="versionType"
-      default="originalVersion"
-    />
+            name="contains"
+            type="versionType"
+            default="originalVersion"
+        />
     </xsd:attributeGroup>
 
     <xsd:attributeGroup name="alt">
@@ -1012,8 +1010,6 @@
     </xsd:annotation>
 
     <xsd:attributeGroup name="mappingAtts">
-
-
         <xsd:attribute name="original" type="wIdRef" />
         <xsd:attribute name="current" type="eIdRef" />
         <xsd:attribute name="start" type="eventRefRef" />
@@ -1169,8 +1165,6 @@
     </xsd:attributeGroup>
 
     <xsd:attributeGroup name="upToOpt">
-
-
         <xsd:attribute name="upTo" type="eIdRef" />
     </xsd:attributeGroup>
 
@@ -1191,8 +1185,6 @@
     </xsd:attributeGroup>
 
     <xsd:attributeGroup name="rangeOpt">
-
-
         <xsd:attribute name="from" type="eIdRef" use="required" />
         <xsd:attributeGroup ref="upToOpt" />
     </xsd:attributeGroup>
@@ -1331,8 +1323,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="eventType">
-
-
         <xsd:attribute name="type" type="eventType" />
     </xsd:attributeGroup>
 
@@ -1355,8 +1345,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="opinionType">
-
-
         <xsd:attribute name="type" type="opinionType" />
     </xsd:attributeGroup>
 
@@ -1384,8 +1372,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="resultType">
-
-
         <xsd:attribute name="type" type="resultType" use="required" />
     </xsd:attributeGroup>
 
@@ -1406,8 +1392,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="restrictionType">
-
-
         <xsd:attribute name="type" type="restrictionType" use="required" />
     </xsd:attributeGroup>
 
@@ -1433,8 +1417,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="remarkType">
-
-
         <xsd:attribute name="type" type="remarkType" />
     </xsd:attributeGroup>
 
@@ -1457,8 +1439,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="recordedTimeType">
-
-
         <xsd:attribute name="type" type="timeType" />
     </xsd:attributeGroup>
 
@@ -1486,8 +1466,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="textualModType">
-
-
         <xsd:attribute name="type" type="TextualMods" use="required" />
     </xsd:attributeGroup>
 
@@ -1511,8 +1489,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="meaningModType">
-
-
         <xsd:attribute name="type" type="MeaningMods" use="required" />
     </xsd:attributeGroup>
 
@@ -1535,8 +1511,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="scopeModType">
-
-
         <xsd:attribute name="type" type="ScopeMods" use="required" />
     </xsd:attributeGroup>
 
@@ -1563,8 +1537,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="forceModType">
-
-
         <xsd:attribute name="type" type="ForceMods" use="required" />
     </xsd:attributeGroup>
 
@@ -1592,8 +1564,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="efficacyModType">
-
-
         <xsd:attribute name="type" type="EfficacyMods" use="required" />
     </xsd:attributeGroup>
 
@@ -1626,8 +1596,6 @@
     </xsd:simpleType>
 
     <xsd:attributeGroup name="legalSystemModType">
-
-
         <xsd:attribute name="type" type="LegalSystemMods" use="required" />
     </xsd:attributeGroup>
 
@@ -1649,8 +1617,6 @@
     </xsd:attributeGroup>
 
     <xsd:attributeGroup name="showopt">
-
-
         <xsd:attribute name="showAs" type="xsd:string" />
         <xsd:attribute name="shortForm" type="xsd:string" />
     </xsd:attributeGroup>
@@ -2688,11 +2654,11 @@
 
         <xsd:choice>
             <xsd:any
-        namespace="##other"
-        processContents="lax"
-        minOccurs="0"
-        maxOccurs="unbounded"
-      />
+                namespace="##other"
+                processContents="lax"
+                minOccurs="0"
+                maxOccurs="unbounded"
+            />
         </xsd:choice>
         <xsd:attributeGroup ref="core" />
         <xsd:attributeGroup ref="idopt" />
@@ -2811,7 +2777,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="openStructure">
         <xsd:annotation>
             <xsd:documentation>
@@ -2871,7 +2836,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="statement" type="openStructure">
         <xsd:annotation>
             <xsd:documentation>
@@ -2914,7 +2878,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:complexType name="collectionStructure">
         <xsd:annotation>
@@ -3037,7 +3000,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="portionStructure">
         <xsd:annotation>
             <xsd:documentation>
@@ -3117,7 +3079,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:complexType name="hierarchicalStructure">
         <xsd:annotation>
@@ -3217,7 +3178,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="debateStructure">
         <xsd:annotation>
             <xsd:documentation>
@@ -3312,7 +3272,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="judgmentStructure">
         <xsd:annotation>
             <xsd:documentation>
@@ -3386,7 +3345,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:complexType name="amendmentStructure">
         <xsd:annotation>
@@ -3462,10 +3420,7 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="recitalHierarchy">
-
-
         <xsd:complexContent>
             <xsd:extension base="basehierarchy">
                 <xsd:sequence>
@@ -3493,7 +3448,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="recital" type="itemType">
         <xsd:annotation>
             <xsd:documentation>
@@ -3506,10 +3460,7 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="citationHierarchy">
-
-
         <xsd:complexContent>
             <xsd:extension base="basehierarchy">
                 <xsd:sequence>
@@ -3537,7 +3488,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="citation" type="itemType">
         <xsd:annotation>
             <xsd:documentation>
@@ -3550,7 +3500,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="longTitle" type="blocksreq">
         <xsd:annotation>
             <xsd:documentation>
@@ -3562,7 +3511,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="formula">
         <xsd:annotation>
@@ -3618,7 +3566,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="preambleopt">
         <xsd:annotation>
             <xsd:documentation>
@@ -3651,7 +3598,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="prefaceopt">
         <xsd:annotation>
             <xsd:documentation>
@@ -3683,7 +3629,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="conclusions" type="basicopt">
         <xsd:annotation>
             <xsd:documentation>
@@ -3697,7 +3642,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="header" type="blocksopt">
         <xsd:annotation>
             <xsd:documentation>
@@ -3710,7 +3654,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="attachments">
         <xsd:complexType>
@@ -3732,7 +3675,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="interstitial" type="blocksreq">
         <xsd:annotation>
             <xsd:documentation>
@@ -3745,7 +3687,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="componentRef" type="srcType">
         <xsd:annotation>
@@ -3762,7 +3703,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="documentRef" type="linkType">
         <xsd:annotation>
             <xsd:documentation>
@@ -3776,7 +3716,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:annotation>
         <xsd:documentation>
@@ -3801,7 +3740,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="section" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -3814,7 +3752,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="part" type="hierarchy">
         <xsd:annotation>
@@ -3829,7 +3766,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="paragraph" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -3842,7 +3778,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="chapter" type="hierarchy">
         <xsd:annotation>
@@ -3857,7 +3792,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="title" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -3870,7 +3804,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="book" type="hierarchy">
         <xsd:annotation>
@@ -3885,7 +3818,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="tome" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -3898,7 +3830,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="article" type="hierarchy">
         <xsd:annotation>
@@ -3913,7 +3844,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="division" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -3926,7 +3856,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="list" type="hierarchy">
         <xsd:annotation>
@@ -3941,7 +3870,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="point" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -3954,7 +3882,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="indent" type="hierarchy">
         <xsd:annotation>
@@ -3969,7 +3896,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="alinea" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -3982,7 +3908,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="rule" type="hierarchy">
         <xsd:annotation>
@@ -3997,7 +3922,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="subrule" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4010,7 +3934,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="proviso" type="hierarchy">
         <xsd:annotation>
@@ -4025,7 +3948,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="subsection" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4038,7 +3960,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="subpart" type="hierarchy">
         <xsd:annotation>
@@ -4053,7 +3974,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="subparagraph" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4066,7 +3986,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="subchapter" type="hierarchy">
         <xsd:annotation>
@@ -4081,7 +4000,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="subtitle" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4094,7 +4012,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="subdivision" type="hierarchy">
         <xsd:annotation>
@@ -4109,7 +4026,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="subclause" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4122,7 +4038,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="sublist" type="hierarchy">
         <xsd:annotation>
@@ -4137,7 +4052,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="level" type="hierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4150,7 +4064,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="transitional" type="hierarchy">
         <xsd:annotation>
@@ -4165,7 +4078,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="content" type="blocksreq">
         <xsd:annotation>
             <xsd:documentation>
@@ -4178,7 +4090,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="num" type="inline">
         <xsd:annotation>
@@ -4193,7 +4104,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="heading" type="inlinereq">
         <xsd:annotation>
             <xsd:documentation>
@@ -4206,7 +4116,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="subheading" type="inlinereq">
         <xsd:annotation>
@@ -4221,7 +4130,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="crossHeading" type="inlinereq">
         <xsd:annotation>
             <xsd:documentation>
@@ -4234,7 +4142,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="intro" type="blocksreq">
         <xsd:annotation>
@@ -4249,7 +4156,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="wrapUp" type="blocksreq">
         <xsd:annotation>
             <xsd:documentation>
@@ -4262,7 +4168,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:annotation>
         <xsd:documentation>
@@ -4287,7 +4192,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="rollCall" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4301,7 +4205,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="prayers" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4313,7 +4216,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="oralStatements" type="althierarchy">
         <xsd:annotation>
@@ -4328,7 +4230,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="writtenStatements" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4341,7 +4242,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="personalStatements" type="althierarchy">
         <xsd:annotation>
@@ -4356,7 +4256,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="ministerialStatements" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4370,7 +4269,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="resolutions" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4383,7 +4281,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="nationalInterest" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4395,7 +4292,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="declarationOfVote" type="althierarchy">
         <xsd:annotation>
@@ -4410,7 +4306,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="communication" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4424,7 +4319,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="petitions" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4436,7 +4330,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="papers" type="althierarchy">
         <xsd:annotation>
@@ -4451,7 +4344,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="noticesOfMotion" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4465,7 +4357,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="questions" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4478,7 +4369,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="address" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4490,7 +4380,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="proceduralMotions" type="althierarchy">
         <xsd:annotation>
@@ -4505,7 +4394,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="pointOfOrder" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4518,7 +4406,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="adjournment" type="althierarchy">
         <xsd:annotation>
             <xsd:documentation>
@@ -4530,7 +4417,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="debateSection">
         <xsd:annotation>
@@ -4589,7 +4475,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="question" type="speechType">
         <xsd:annotation>
             <xsd:documentation>
@@ -4603,7 +4488,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="answer" type="speechType">
         <xsd:annotation>
             <xsd:documentation>
@@ -4615,7 +4499,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="other" type="blocksreq">
         <xsd:annotation>
@@ -4630,7 +4513,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="scene" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -4643,7 +4525,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="narrative" type="inline">
         <xsd:annotation>
@@ -4658,7 +4539,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="summary" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -4672,7 +4552,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="from" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -4685,7 +4564,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="vote">
         <xsd:annotation>
@@ -4720,7 +4598,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="introduction" type="maincontent">
         <xsd:annotation>
             <xsd:documentation>
@@ -4734,7 +4611,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="background" type="maincontent">
         <xsd:annotation>
             <xsd:documentation>
@@ -4746,7 +4622,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="arguments" type="maincontent">
         <xsd:annotation>
@@ -4760,7 +4635,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="remedies" type="maincontent">
         <xsd:annotation>
             <xsd:documentation>
@@ -4772,7 +4646,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="motivation" type="maincontent">
         <xsd:annotation>
@@ -4786,7 +4659,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="decision" type="maincontent">
         <xsd:annotation>
             <xsd:documentation>
@@ -4798,7 +4670,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="affectedDocument">
         <xsd:annotation>
@@ -4855,7 +4726,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="amendmentHeading" type="blocksopt">
         <xsd:annotation>
             <xsd:documentation>
@@ -4867,7 +4737,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="amendmentContent" type="blocksopt">
         <xsd:annotation>
@@ -4882,7 +4751,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="amendmentReference" type="blocksopt">
         <xsd:annotation>
             <xsd:documentation>
@@ -4895,7 +4763,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="amendmentJustification" type="blocksopt">
         <xsd:annotation>
             <xsd:documentation>
@@ -4907,7 +4774,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:annotation>
         <xsd:documentation>
@@ -4951,7 +4817,6 @@
 
     <xsd:element name="blockContainer" type="blockContainerType" />
 
-
     <xsd:element name="blockList">
         <xsd:annotation>
             <xsd:documentation>
@@ -4961,10 +4826,10 @@
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element
-          ref="listIntroduction"
-          minOccurs="0"
-          maxOccurs="1"
-        />
+                    ref="listIntroduction"
+                    minOccurs="0"
+                    maxOccurs="1"
+                />
                 <xsd:element ref="item" minOccurs="1" maxOccurs="unbounded" />
                 <xsd:element ref="listWrapUp" minOccurs="0" maxOccurs="1" />
             </xsd:sequence>
@@ -4972,9 +4837,7 @@
         </xsd:complexType>
     </xsd:element>
 
-
     <xsd:element name="item" type="itemType" />
-
 
     <xsd:element name="listIntroduction" type="inline">
         <xsd:annotation>
@@ -4988,7 +4851,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="listWrapUp" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5000,7 +4862,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="tblock" type="itemType">
         <xsd:annotation>
@@ -5014,7 +4875,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="toc">
         <xsd:complexType>
@@ -5047,7 +4907,6 @@
         </xsd:complexType>
     </xsd:element>
 
-
     <xsd:element name="docType" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5060,7 +4919,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="docTitle" type="inline">
         <xsd:annotation>
@@ -5075,7 +4933,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="docNumber" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5088,7 +4945,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="docProponent">
         <xsd:annotation>
@@ -5189,7 +5045,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="docAuthority" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5203,7 +5058,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="docPurpose" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5216,7 +5070,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="docCommittee">
         <xsd:annotation>
@@ -5252,7 +5105,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="docStage" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5265,7 +5117,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="docStatus" type="inline">
         <xsd:annotation>
@@ -5280,7 +5131,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="docJurisdiction" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5293,7 +5143,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="docketNumber" type="inline">
         <xsd:annotation>
@@ -5308,7 +5157,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="courtType" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5322,7 +5170,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="neutralCitation" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5335,7 +5182,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="party">
         <xsd:annotation>
@@ -5435,7 +5281,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="signature" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5448,7 +5293,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="date">
         <xsd:annotation>
@@ -5548,7 +5392,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="concept" type="inlinereqreq">
         <xsd:annotation>
             <xsd:documentation>
@@ -5561,7 +5404,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="object" type="inlinereqreq">
         <xsd:annotation>
@@ -5576,7 +5418,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="event" type="inlinereqreq">
         <xsd:annotation>
             <xsd:documentation>
@@ -5589,7 +5430,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="location" type="inlinereqreq">
         <xsd:annotation>
@@ -5604,7 +5444,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="process" type="inlinereqreq">
         <xsd:annotation>
             <xsd:documentation>
@@ -5617,7 +5456,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="role" type="inlinereqreq">
         <xsd:annotation>
@@ -5632,7 +5470,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="term" type="inlinereqreq">
         <xsd:annotation>
             <xsd:documentation>
@@ -5645,7 +5482,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="quantity">
         <xsd:annotation>
@@ -5683,7 +5519,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="ref">
         <xsd:annotation>
             <xsd:documentation>
@@ -5717,7 +5552,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="rref">
         <xsd:annotation>
@@ -5775,7 +5609,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="mmod" type="modType">
         <xsd:annotation>
             <xsd:documentation>
@@ -5788,7 +5621,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="rmod">
         <xsd:annotation>
@@ -5891,7 +5723,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="del" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -5903,7 +5734,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="omissis" type="inline">
         <xsd:annotation>
@@ -5917,7 +5747,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="placeholder">
         <xsd:annotation>
@@ -5976,7 +5805,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:annotation>
         <xsd:documentation>
@@ -6050,7 +5878,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="eop" type="eolType">
         <xsd:annotation>
             <xsd:documentation>
@@ -6066,7 +5893,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:annotation>
         <xsd:documentation>
@@ -6249,7 +6075,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:annotation>
         <xsd:documentation>
             =====================================================================
@@ -6330,7 +6155,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="block">
         <xsd:annotation>
             <xsd:documentation>
@@ -6394,7 +6218,6 @@
         </xsd:complexType>
     </xsd:element>
 
-
     <xsd:element name="div" type="blocksreq">
         <xsd:annotation>
             <xsd:documentation>
@@ -6407,7 +6230,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="p" type="inline">
         <xsd:annotation>
@@ -6422,7 +6244,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="span" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -6435,7 +6256,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="br" type="markeropt">
         <xsd:annotation>
             <xsd:documentation>
@@ -6447,7 +6267,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="b" type="inline">
         <xsd:annotation>
@@ -6462,7 +6281,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="i" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -6475,7 +6293,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="u" type="inline">
         <xsd:annotation>
@@ -6490,7 +6307,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="sup" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -6503,7 +6319,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="sub" type="inline">
         <xsd:annotation>
@@ -6518,7 +6333,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="abbr" type="inline">
         <xsd:annotation>
             <xsd:documentation>
@@ -6532,7 +6346,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="a">
         <xsd:annotation>
@@ -6609,7 +6422,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="ol" type="listItems">
         <xsd:annotation>
             <xsd:documentation>
@@ -6622,7 +6434,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="li">
         <xsd:annotation>
@@ -6676,7 +6487,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="tr">
         <xsd:complexType>
             <xsd:choice minOccurs="1" maxOccurs="unbounded">
@@ -6728,53 +6538,52 @@
         </xsd:complexType>
     </xsd:element>
 
-
     <xsd:element name="meta">
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element ref="identification" />
                 <xsd:element ref="publication" minOccurs="0" maxOccurs="1" />
                 <xsd:element
-          ref="classification"
-          minOccurs="0"
-          maxOccurs="unbounded"
-        />
+                    ref="classification"
+                    minOccurs="0"
+                    maxOccurs="unbounded"
+                />
                 <xsd:element
-          ref="lifecycle"
-          minOccurs="0"
-          maxOccurs="unbounded"
-        />
+                    ref="lifecycle"
+                    minOccurs="0"
+                    maxOccurs="unbounded"
+                />
                 <xsd:element
-          ref="workflow"
-          minOccurs="0"
-          maxOccurs="unbounded"
-        />
+                    ref="workflow"
+                    minOccurs="0"
+                    maxOccurs="unbounded"
+                />
                 <xsd:element
-          ref="analysis"
-          minOccurs="0"
-          maxOccurs="unbounded"
-        />
+                    ref="analysis"
+                    minOccurs="0"
+                    maxOccurs="unbounded"
+                />
                 <xsd:element
-          ref="temporalData"
-          minOccurs="0"
-          maxOccurs="unbounded"
-        />
+                    ref="temporalData"
+                    minOccurs="0"
+                    maxOccurs="unbounded"
+                />
                 <xsd:element
-          ref="references"
-          minOccurs="0"
-          maxOccurs="unbounded"
-        />
+                    ref="references"
+                    minOccurs="0"
+                    maxOccurs="unbounded"
+                />
                 <xsd:element ref="notes" minOccurs="0" maxOccurs="unbounded" />
                 <xsd:element
-          ref="proprietary"
-          minOccurs="0"
-          maxOccurs="unbounded"
-        />
+                    ref="proprietary"
+                    minOccurs="0"
+                    maxOccurs="unbounded"
+                />
                 <xsd:element
-          ref="presentation"
-          minOccurs="0"
-          maxOccurs="unbounded"
-        />
+                    ref="presentation"
+                    minOccurs="0"
+                    maxOccurs="unbounded"
+                />
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
@@ -6850,20 +6659,20 @@
             <xsd:element ref="FRBRversionNumber" minOccurs="0" maxOccurs="1" />
             <xsd:element ref="FRBRauthoritative" minOccurs="0" maxOccurs="1" />
             <xsd:element
-        ref="FRBRmasterExpression"
-        minOccurs="0"
-        maxOccurs="1"
-      />
+                ref="FRBRmasterExpression"
+                minOccurs="0"
+                maxOccurs="1"
+            />
             <xsd:element
-        ref="FRBRlanguage"
-        minOccurs="1"
-        maxOccurs="unbounded"
-      />
+                ref="FRBRlanguage"
+                minOccurs="1"
+                maxOccurs="unbounded"
+            />
             <xsd:element
-        ref="FRBRtranslation"
-        minOccurs="0"
-        maxOccurs="unbounded"
-      />
+                ref="FRBRtranslation"
+                minOccurs="0"
+                maxOccurs="unbounded"
+            />
         </xsd:sequence>
     </xsd:group>
 
@@ -6967,7 +6776,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="valueType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7019,7 +6827,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="FRBRuri" type="valueType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7032,7 +6839,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="FRBRalias">
         <xsd:annotation>
@@ -7159,7 +6965,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="FRBRcountry" type="valueType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7172,7 +6977,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="FRBRnumber" type="valueType">
         <xsd:annotation>
@@ -7187,7 +6991,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="FRBRname" type="valueType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7200,7 +7003,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="FRBRportion">
         <xsd:annotation>
@@ -7239,7 +7041,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="FRBRprescriptive" type="booleanValueType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7255,7 +7056,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="FRBRversionNumber" type="valueType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7268,7 +7068,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="FRBRauthoritative" type="booleanValueType">
         <xsd:annotation>
@@ -7284,7 +7083,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="FRBRmasterExpression" type="linkType">
         <xsd:annotation>
@@ -7305,7 +7103,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="componentInfo">
         <xsd:complexType>
@@ -7341,7 +7138,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="publication">
         <xsd:annotation>
             <xsd:documentation>
@@ -7371,10 +7167,10 @@
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element
-          ref="keyword"
-          minOccurs="1"
-          maxOccurs="unbounded"
-        />
+                    ref="keyword"
+                    minOccurs="1"
+                    maxOccurs="unbounded"
+                />
             </xsd:sequence>
             <xsd:attributeGroup ref="source" />
         </xsd:complexType>
@@ -7410,10 +7206,10 @@
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element
-          ref="eventRef"
-          minOccurs="1"
-          maxOccurs="unbounded"
-        />
+                    ref="eventRef"
+                    minOccurs="1"
+                    maxOccurs="unbounded"
+                />
             </xsd:sequence>
             <xsd:attributeGroup ref="source" />
         </xsd:complexType>
@@ -7484,29 +7280,29 @@
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element
-          ref="activeModifications"
-          minOccurs="0"
-          maxOccurs="1"
-        />
+                    ref="activeModifications"
+                    minOccurs="0"
+                    maxOccurs="1"
+                />
                 <xsd:element
-          ref="passiveModifications"
-          minOccurs="0"
-          maxOccurs="1"
-        />
+                    ref="passiveModifications"
+                    minOccurs="0"
+                    maxOccurs="1"
+                />
                 <xsd:element ref="restrictions" minOccurs="0" maxOccurs="1" />
                 <xsd:element ref="judicial" minOccurs="0" maxOccurs="1" />
                 <xsd:element ref="parliamentary" minOccurs="0" maxOccurs="1" />
                 <xsd:element ref="mappings" minOccurs="0" maxOccurs="1" />
                 <xsd:element
-          ref="otherReferences"
-          minOccurs="0"
-          maxOccurs="unbounded"
-        />
+                    ref="otherReferences"
+                    minOccurs="0"
+                    maxOccurs="unbounded"
+                />
                 <xsd:element
-          ref="otherAnalysis"
-          minOccurs="0"
-          maxOccurs="unbounded"
-        />
+                    ref="otherAnalysis"
+                    minOccurs="0"
+                    maxOccurs="unbounded"
+                />
             </xsd:sequence>
             <xsd:attributeGroup ref="source" />
         </xsd:complexType>
@@ -7548,10 +7344,10 @@
         <xsd:sequence>
             <xsd:element ref="source" minOccurs="1" maxOccurs="unbounded" />
             <xsd:element
-        ref="destination"
-        minOccurs="1"
-        maxOccurs="unbounded"
-      />
+                ref="destination"
+                minOccurs="1"
+                maxOccurs="unbounded"
+            />
             <xsd:element ref="force" minOccurs="0" maxOccurs="1" />
             <xsd:element ref="efficacy" minOccurs="0" maxOccurs="1" />
             <xsd:element ref="application" minOccurs="0" maxOccurs="1" />
@@ -7578,7 +7374,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="passiveModifications" type="Amendments">
         <xsd:annotation>
             <xsd:documentation>
@@ -7591,7 +7386,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="textualMod">
         <xsd:annotation>
@@ -7610,20 +7404,20 @@
                 <xsd:extension base="modificationType">
                     <xsd:sequence>
                         <xsd:element
-              ref="previous"
-              minOccurs="0"
-              maxOccurs="1"
-            />
+                            ref="previous"
+                            minOccurs="0"
+                            maxOccurs="1"
+                        />
                         <xsd:element
-              ref="old"
-              minOccurs="0"
-              maxOccurs="unbounded"
-            />
+                            ref="old"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                        />
                         <xsd:element
-              ref="new"
-              minOccurs="0"
-              maxOccurs="unbounded"
-            />
+                            ref="new"
+                            minOccurs="0"
+                            maxOccurs="unbounded"
+                        />
                     </xsd:sequence>
                     <xsd:attributeGroup ref="textualModType" />
                 </xsd:extension>
@@ -7786,10 +7580,10 @@
         <xsd:sequence>
             <xsd:element ref="source" minOccurs="1" maxOccurs="unbounded" />
             <xsd:element
-        ref="destination"
-        minOccurs="1"
-        maxOccurs="unbounded"
-      />
+                ref="destination"
+                minOccurs="1"
+                maxOccurs="unbounded"
+            />
             <xsd:element ref="condition" minOccurs="0" maxOccurs="1" />
         </xsd:sequence>
         <xsd:attributeGroup ref="core" />
@@ -7811,7 +7605,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="result">
         <xsd:annotation>
@@ -7846,7 +7639,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="isAnalogTo" type="judicialArgumentType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7859,7 +7651,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="applies" type="judicialArgumentType">
         <xsd:annotation>
@@ -7874,7 +7665,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="extends" type="judicialArgumentType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7887,7 +7677,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="restricts" type="judicialArgumentType">
         <xsd:annotation>
@@ -7902,7 +7691,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="derogates" type="judicialArgumentType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7915,7 +7703,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="contrasts" type="judicialArgumentType">
         <xsd:annotation>
@@ -7930,7 +7717,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="overrules" type="judicialArgumentType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7943,7 +7729,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="dissentsFrom" type="judicialArgumentType">
         <xsd:annotation>
@@ -7958,7 +7743,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="putsInQuestion" type="judicialArgumentType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7972,7 +7756,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="distinguishes" type="judicialArgumentType">
         <xsd:annotation>
             <xsd:documentation>
@@ -7985,7 +7768,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="restrictions">
         <xsd:complexType>
@@ -8050,7 +7832,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="parliamentaryAnalysisType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8087,7 +7868,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="voting" type="parliamentaryAnalysisType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8100,7 +7880,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="recount" type="parliamentaryAnalysisType">
         <xsd:annotation>
@@ -8115,7 +7894,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:complexType name="countType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8129,11 +7907,11 @@
 
         <xsd:choice>
             <xsd:any
-        namespace="##other"
-        processContents="lax"
-        minOccurs="0"
-        maxOccurs="unbounded"
-      />
+                namespace="##other"
+                processContents="lax"
+                minOccurs="0"
+                maxOccurs="unbounded"
+            />
         </xsd:choice>
         <xsd:attributeGroup ref="core" />
         <xsd:attributeGroup ref="idreq" />
@@ -8155,7 +7933,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="count" type="countType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8168,7 +7945,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="mappings">
         <xsd:annotation>
@@ -8188,10 +7964,7 @@
         </xsd:complexType>
     </xsd:element>
 
-
     <xsd:element name="mapping">
-
-
         <xsd:complexType>
             <xsd:complexContent>
                 <xsd:extension base="metareq">
@@ -8215,7 +7988,6 @@
             <xsd:attributeGroup ref="source" />
         </xsd:complexType>
     </xsd:element>
-
 
     <xsd:element name="otherRef">
         <xsd:complexType>
@@ -8303,7 +8075,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="destination" type="argumentType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8317,7 +8088,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="force" type="periodType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8329,7 +8099,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="efficacy" type="periodType">
         <xsd:annotation>
@@ -8343,7 +8112,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="application" type="periodType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8356,7 +8124,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="duration" type="periodType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8368,7 +8135,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="condition">
         <xsd:annotation>
@@ -8407,7 +8173,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="old" type="anyOtherType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8420,7 +8185,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="new" type="anyOtherType">
         <xsd:annotation>
@@ -8435,7 +8199,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="domain" type="anyOtherType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8449,7 +8212,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="temporalData">
         <xsd:annotation>
             <xsd:documentation>
@@ -8461,15 +8223,14 @@
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element
-          ref="temporalGroup"
-          minOccurs="1"
-          maxOccurs="unbounded"
-        />
+                    ref="temporalGroup"
+                    minOccurs="1"
+                    maxOccurs="unbounded"
+                />
             </xsd:sequence>
             <xsd:attributeGroup ref="source" />
         </xsd:complexType>
     </xsd:element>
-
 
     <xsd:element name="temporalGroup">
         <xsd:annotation>
@@ -8484,20 +8245,17 @@
         <xsd:complexType>
             <xsd:sequence>
                 <xsd:element
-          ref="timeInterval"
-          minOccurs="1"
-          maxOccurs="unbounded"
-        />
+                    ref="timeInterval"
+                    minOccurs="1"
+                    maxOccurs="unbounded"
+                />
             </xsd:sequence>
             <xsd:attributeGroup ref="core" />
             <xsd:attributeGroup ref="idreq" />
         </xsd:complexType>
     </xsd:element>
 
-
     <xsd:element name="timeInterval">
-
-
         <xsd:complexType>
             <xsd:complexContent>
                 <xsd:extension base="metaopt">
@@ -8588,7 +8346,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="original" type="referenceType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8601,7 +8358,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="passiveRef" type="referenceType">
         <xsd:annotation>
@@ -8616,7 +8372,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="activeRef" type="referenceType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8630,7 +8385,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="jurisprudence" type="referenceType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8643,7 +8397,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="hasAttachment">
         <xsd:annotation>
@@ -8700,7 +8453,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="TLCOrganization" type="referenceType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8713,7 +8465,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="TLCConcept" type="referenceType">
         <xsd:annotation>
@@ -8728,7 +8479,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="TLCObject" type="referenceType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8741,7 +8491,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="TLCEvent" type="referenceType">
         <xsd:annotation>
@@ -8756,7 +8505,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="TLCLocation" type="referenceType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8769,7 +8517,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="TLCProcess" type="referenceType">
         <xsd:annotation>
@@ -8784,7 +8531,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="TLCRole" type="referenceType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8798,7 +8544,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="TLCTerm" type="referenceType">
         <xsd:annotation>
             <xsd:documentation>
@@ -8811,7 +8556,6 @@
             </xsd:documentation>
         </xsd:annotation>
     </xsd:element>
-
 
     <xsd:element name="TLCReference">
         <xsd:annotation>
@@ -8856,7 +8600,6 @@
         </xsd:annotation>
     </xsd:element>
 
-
     <xsd:element name="proprietary">
         <xsd:annotation>
             <xsd:documentation>
@@ -8898,6 +8641,4 @@
             </xsd:complexContent>
         </xsd:complexType>
     </xsd:element>
-
-
 </xsd:schema>
