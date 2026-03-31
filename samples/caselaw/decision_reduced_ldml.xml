@@ -220,10 +220,10 @@
       </akn:references>
       <akn:proprietary source="#ris">
         <ris:meta>
-          <ris:dokumenttyp akn:eId="dokumenttyp" domainTerm="Dokumenttyp">
+          <ris:dokumenttyp eId="dokumenttyp" domainTerm="Dokumenttyp">
             documentType test
           </ris:dokumenttyp>
-          <ris:gericht domainTerm="Gericht" akn:refersTo="#gericht">
+          <ris:gericht domainTerm="Gericht" refersTo="#gericht">
             <ris:gerichtstyp domainTerm="Gerichtstyp">
               courtType
             </ris:gerichtstyp>
@@ -232,7 +232,7 @@
             </ris:gerichtsort>
             <ris:spruchkoerper
               domainTerm="Spruchkörper"
-              akn:refersTo="#spruchkoerper"
+              refersTo="#spruchkoerper"
             >
               appraisalBody test
             </ris:spruchkoerper>
