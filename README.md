@@ -6,6 +6,12 @@ This repo contains the XML-Schema files for the XML-files produced by the Rechts
 
 ## Usage
 
+### Checking the schema against the examples
+
+```bash
+xmllint --noout --schema xsd/caselaw.xsd samples/caselaw/*.xml
+```
+
 ### Git Hooks
 
 For the provided Git hooks you will need to install [lefthook](https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md) (git hook manager), [Node.js](https://nodejs.org/en/download) (for installing the commit linter), and [talisman](https://thoughtworks.github.io/talisman/docs) (secrets scanner):
