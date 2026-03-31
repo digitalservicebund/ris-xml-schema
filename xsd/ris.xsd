@@ -32,7 +32,7 @@
   <xs:complexType name="dokumenttyp">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute name="domainTerm" type="xs:string" />
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
         <xs:attributeGroup ref="akn:idreq" />
       </xs:extension>
     </xs:simpleContent>
@@ -50,7 +50,11 @@
           </xs:annotation>
           <xs:simpleContent>
             <xs:extension base="xs:string">
-              <xs:attribute name="domainTerm" type="xs:string" use="required" />
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
             </xs:extension>
           </xs:simpleContent>
         </xs:complexType>
@@ -63,7 +67,11 @@
           </xs:annotation>
           <xs:simpleContent>
             <xs:extension base="xs:string">
-              <xs:attribute name="domainTerm" type="xs:string" use="required" />
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
             </xs:extension>
           </xs:simpleContent>
         </xs:complexType>
@@ -76,7 +84,11 @@
           </xs:annotation>
           <xs:simpleContent>
             <xs:extension base="xs:string">
-              <xs:attribute name="domainTerm" type="xs:string" use="required" />
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
             </xs:extension>
           </xs:simpleContent>
         </xs:complexType>
@@ -89,7 +101,11 @@
           </xs:annotation>
           <xs:simpleContent>
             <xs:extension base="xs:string">
-              <xs:attribute name="domainTerm" type="xs:string" use="required" />
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
               <xs:attribute name="refersTo" use="required">
                 <xs:simpleType>
                   <xs:restriction base="akn:conceptRef">
@@ -109,15 +125,19 @@
           </xs:annotation>
           <xs:simpleContent>
             <xs:extension base="xs:string">
-              <xs:attribute name="domainTerm" type="xs:string" use="required" />
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
             </xs:extension>
           </xs:simpleContent>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
 
-    <xs:attribute name="domainTerm" type="xs:string" use="required" />
-    <xs:attribute name="refersTo" use="required">
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    <xs:attribute name="refersTo">
       <xs:simpleType>
         <xs:restriction base="akn:conceptRef">
           <xs:enumeration value="#gericht" />
@@ -132,6 +152,16 @@
       <xs:element ref="akn:FRBRlanguage" />
       <xs:element ref="akn:documentRef" />
     </xs:sequence>
-    <xs:attribute name="domainTerm" type="xs:string" use="required" />
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
+
+  <!-- the global domainTerm attribute used for adding the domainTerm to non-ris elements -->
+  <xs:attribute name="domainTerm" type="ris:domainTerm" />
+
+  <xs:simpleType name="domainTerm">
+    <xs:annotation>
+      <xs:documentation>Beschreibung des XML Elements</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
 </xs:schema>
