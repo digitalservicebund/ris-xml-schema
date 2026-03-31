@@ -18,13 +18,18 @@
   <xs:redefine schemaLocation="ris.xsd">
     <xs:complexType name="meta">
       <xs:complexContent>
-        <xs:extension base="meta">
+        <xs:restriction base="ris:meta">
           <xs:sequence>
-            <xs:element name="gericht" type="ris:gericht" />
-            <!-- to not get validation errors until we have defined everything -->
-            <xs:any maxOccurs="unbounded" processContents="lax" />
+            <xs:element ref="ris:dokumenttyp" />
+            <xs:element ref="ris:gericht" />
+            <xs:any
+              minOccurs="0"
+              maxOccurs="unbounded"
+              processContents="lax"
+              namespace="##targetNamespace"
+            />
           </xs:sequence>
-        </xs:extension>
+        </xs:restriction>
       </xs:complexContent>
     </xs:complexType>
   </xs:redefine>

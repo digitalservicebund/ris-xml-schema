@@ -25,10 +25,17 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
+      <xs:element ref="ris:dokumenttyp" />
+      <xs:any
+        maxOccurs="unbounded"
+        minOccurs="0"
+        processContents="lax"
+        namespace="##targetNamespace"
+      />
     </xs:sequence>
   </xs:complexType>
 
+  <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
   <xs:complexType name="dokumenttyp">
     <xs:simpleContent>
       <xs:extension base="xs:string">
@@ -38,6 +45,7 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:element name="gericht" type="ris:gericht" />
   <xs:complexType name="gericht">
     <xs:annotation>
       <xs:documentation>Gericht</xs:documentation>
@@ -60,7 +68,7 @@
         </xs:complexType>
       </xs:element>
 
-      <xs:element name="gerichtsort">
+      <xs:element name="gerichtsort" minOccurs="0">
         <xs:complexType>
           <xs:annotation>
             <xs:documentation>Gerichtsort</xs:documentation>
