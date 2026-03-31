@@ -14,13 +14,18 @@
     namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
     schemaLocation="./akn/akomantoso30.xsd"
   />
-  <xs:element name="fremdsprachigeFassung">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="akn:FRBRlanguage" />
-        <xs:element ref="akn:documentRef" />
-      </xs:sequence>
-      <xs:attribute name="domainTerm" type="xs:string" use="required" />
+
+  <xs:redefine schemaLocation="ris.xsd">
+    <xs:complexType name="meta">
+      <xs:complexContent>
+        <xs:extension base="meta">
+          <xs:sequence>
+            <xs:element name="gericht" type="ris:gericht" />
+            <!-- to not get validation errors until we have defined everything -->
+            <xs:any maxOccurs="unbounded" processContents="lax" />
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
     </xs:complexType>
-  </xs:element>
+  </xs:redefine>
 </xs:schema>
