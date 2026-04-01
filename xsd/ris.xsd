@@ -502,6 +502,26 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <xs:element name="rechtskraft" type="ris:rechtskraft" />
+  <xs:complexType name="rechtskraft">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Hat das Gerichtsurteil Rechtskraft erlangt?</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ris:rechtskraftValue">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="rechtskraftValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ja" />
+      <xs:enumeration value="Nein" />
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
     <xs:annotation>
