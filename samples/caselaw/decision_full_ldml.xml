@@ -371,7 +371,7 @@
           </ris:regionen>
           <ris:dokumentationsstelle
             domainTerm="Dokumentationsstelle"
-            akn:refersTo="#documentationoffice-dokumentationsstelle"
+            refersTo="#documentationoffice-dokumentationsstelle"
           >
             documentationOffice
           </ris:dokumentationsstelle>

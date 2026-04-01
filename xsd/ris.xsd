@@ -248,6 +248,29 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <xs:element name="dokumentationsstelle" type="ris:dokumentationsstelle" />
+  <xs:complexType name="dokumentationsstelle">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Dokumentationsstelle die dieses Dokument eingepflegt hat
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        <xs:attribute name="refersTo" use="required">
+          <xs:simpleType>
+            <xs:restriction base="akn:conceptRef">
+              <xs:enumeration
+                value="#documentationoffice-dokumentationsstelle"
+              />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
     <xs:annotation>
