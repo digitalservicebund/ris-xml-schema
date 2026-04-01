@@ -297,7 +297,7 @@
               />
               <xs:attribute name="refersTo">
                 <xs:annotation>
-                  <xs:documentation>
+                  <xs:documentation xml:lang="de">
                     Das primäre Aktenzeichen ist hierdurch gekennzeichnet.
                   </xs:documentation>
                 </xs:annotation>
