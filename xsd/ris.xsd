@@ -348,6 +348,38 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <xs:element name="abweichendeDaten" type="ris:abweichendeDaten" />
+  <xs:complexType name="abweichendeDaten">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Abweichende Daten
+        <!-- TODO: (Malte Laukötter, 2026-04-01) what does this date represent? -->
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="abweichendesDatum" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Abweichendes Datum
+            <!-- TODO: (Malte Laukötter, 2026-04-01) what does this date represent? -->
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:date">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
     <xs:annotation>
