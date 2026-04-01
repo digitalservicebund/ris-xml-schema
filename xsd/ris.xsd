@@ -176,6 +176,36 @@
     </xs:attribute>
   </xs:complexType>
 
+  <xs:element name="fehlerhafteGerichte" type="ris:fehlerhafteGerichte" />
+  <xs:complexType name="fehlerhafteGerichte">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Fehlerhafte Angaben zu Gerichten
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="fehlerhaftesGericht">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Fehlerhafte Angabe eines Gerichtes
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
     <xs:annotation>
