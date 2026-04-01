@@ -522,6 +522,59 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:element name="definitionen" type="ris:definitionen" />
+  <xs:complexType name="definitionen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Definitionen von Begriffen
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="definition" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Definition eines Begriffs
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="definierterBegriff">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                  Begriff der definiert wird
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute
+                      name="domainTerm"
+                      type="ris:domainTerm"
+                      use="required"
+                    />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+            <xs:element ref="akn:ref" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                  Stelle im Text (Randnummer) der Definition
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute
+            name="domainTerm"
+            type="ris:domainTerm"
+            use="required"
+          />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
     <xs:annotation>

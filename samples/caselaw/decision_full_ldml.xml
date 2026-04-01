@@ -435,8 +435,8 @@
             <ris:eingangsart domainTerm="Eingangsart">E-Mail</ris:eingangsart>
             <ris:eingangsart domainTerm="Eingangsart">Papier</ris:eingangsart>
           </ris:eingangsarten>
-          <ris:definitionen ris:domainTerm="Definitionen">
-            <ris:definition ris:domainTerm="Definition">
+          <ris:definitionen domainTerm="Definitionen">
+            <ris:definition domainTerm="Definition">
               <ris:definierterBegriff domainTerm="Definierter Begriff">
                 indirekte Steuern
               </ris:definierterBegriff>
@@ -447,7 +447,7 @@
                 2
               </akn:ref>
             </ris:definition>
-            <ris:definition ris:domainTerm="Definition">
+            <ris:definition domainTerm="Definition">
               <ris:definierterBegriff domainTerm="Definierter Begriff">
                 Sachgesamtheit
               </ris:definierterBegriff>
