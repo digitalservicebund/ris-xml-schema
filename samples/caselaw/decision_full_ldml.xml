@@ -501,9 +501,9 @@
                   />
                 </ris:externeVerlinkung>
               </ris:externeVerlinkungen>
-              <ris:herkunftDerUebersetzungTyp domainTerm="Übersetzungsart">
-                amtlich
-              </ris:herkunftDerUebersetzungTyp>
+              <ris:herkunftDerUebersetzungTyp
+                domainTerm="Übersetzungsart"
+              >amtlich</ris:herkunftDerUebersetzungTyp>
             </ris:herkunftDerUebersetzung>
           </ris:herkunftDerUebersetzungen>
           <ris:evsf
