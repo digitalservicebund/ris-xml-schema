@@ -206,6 +206,48 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <xs:element name="regionen" type="ris:regionen" />
+  <xs:complexType name="regionen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Regionen in denen diese Dokument Bedeutung hat
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="region">
+        <xs:annotation>
+          <!-- in the harmonization document this field doesn't contain the abbreviation but the full name, but in caselaw we often only have an abbreviation -->
+          <xs:documentation xml:lang="de">
+            Abkürzung der Region.
+
+            Für Bundesländer:
+              Grundsätzlich: Die 2 Buchstaben Abkürzung nach ISO 3166-2
+              Niedersachsen abweichend ND
+              Hamburg HA
+              Bremen BR
+            Für Länder: ISO 3166-1 alpha-3
+
+            Es werden weitere Codes für andere und ehemalige Gebiete verwendet.
+            Zum Beispiel NL für Neue Länder, AL für Alte Länder oder PR für
+            Preußen
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
     <xs:annotation>
