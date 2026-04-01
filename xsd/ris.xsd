@@ -271,6 +271,50 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:element name="aktenzeichenListe" type="ris:aktenzeichenListe" />
+  <xs:complexType name="aktenzeichenListe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Aktenzeichen des Dokuments
+
+        Der erste Eintrag ist das primäre Aktenzeichen.
+        Weitere Einträge sind abweichende Aktenzeichen, die auch für dieses
+        Dokument verwendet werden.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="aktenzeichen" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">Aktenzeichen</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+              <xs:attribute name="refersTo">
+                <xs:annotation>
+                  <xs:documentation>
+                    Das primäre Aktenzeichen ist hierdurch gekennzeichnet.
+                  </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="akn:conceptRef">
+                    <xs:enumeration value="#aktenzeichen" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
     <xs:annotation>

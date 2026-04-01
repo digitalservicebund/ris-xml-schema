@@ -72,7 +72,7 @@
           <ris:aktenzeichenListe domainTerm="Liste der Aktenzeichen">
             <ris:aktenzeichen
               domainTerm="Aktenzeichen"
-              akn:refersTo="#aktenzeichen"
+              refersTo="#aktenzeichen"
             >
               testFileNumber
             </ris:aktenzeichen>
