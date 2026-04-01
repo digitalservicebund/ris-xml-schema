@@ -411,9 +411,9 @@
             </ris:abweichendeDokumentnummer>
           </ris:abweichendeDokumentnummern>
           <ris:abweichendeEclis domainTerm="Abweichende ECLIs">
-            <ris:abweichenderEcli domainTerm="Abweichender ECLI">
-              deviating ecli test
-            </ris:abweichenderEcli>
+            <ris:abweichenderEcli
+              domainTerm="Abweichender ECLI"
+            >ECLI:DE:BVerwG:2015:120315B2B5.14.1</ris:abweichenderEcli>
           </ris:abweichendeEclis>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet

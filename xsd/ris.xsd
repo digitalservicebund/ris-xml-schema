@@ -415,6 +415,38 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <xs:element name="abweichendeEclis" type="ris:abweichendeEclis" />
+  <xs:complexType name="abweichendeEclis">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Abweichende ECLIs
+
+        Weitere ECLIs die für dieses Dokument verwendet werden
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="abweichenderEcli" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Abweichender ECLI
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="ris:ecli">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
     <xs:annotation>
@@ -450,5 +482,20 @@
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string" />
+  </xs:simpleType>
+
+  <xs:simpleType name="ecli">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        European Case Law Identifier
+
+        https://e-justice.europa.eu/topics/legislation-and-case-law/european-case-law-identifier-ecli_de
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern
+        value="ECLI:[A-Z]{2}:[A-Za-z0-9]{1,7}:[0-9]{4}:[A-Za-z0-9.]{1,25}"
+      />
+    </xs:restriction>
   </xs:simpleType>
 </xs:schema>
