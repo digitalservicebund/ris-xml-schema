@@ -759,6 +759,20 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:element name="evsf" type="ris:evsf" />
+  <xs:complexType name="evsf">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Kennung in der Elektronische Vorschriftensammlung Bundesfinanzverwaltung (E-VSF)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <!-- the global domainTerm attribute used for adding the domainTerm to non-ris elements -->
   <xs:attribute name="domainTerm" type="ris:domainTerm" />
 
