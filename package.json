@@ -4,10 +4,13 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write --ignore-unknown .",
     "style:check": "npm run format:check",
-    "style:fix": "npm run format:fix"
+    "style:fix": "npm run format:fix",
+    "test": "xmllint --noout --schema xsd/caselaw.xsd samples/caselaw/*.xml",
+    "test:watch": "watch \"npm run test\" --wait=2"
   },
   "devDependencies": {
     "@prettier/plugin-xml": "^3.4.2",
-    "prettier": "^3.8.1"
+    "prettier": "^3.8.1",
+    "watch": "^1.0.2"
   }
 }
