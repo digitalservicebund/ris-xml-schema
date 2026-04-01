@@ -2,7 +2,7 @@ import { type Config } from "prettier";
 
 const config: Config = {
   plugins: ["@prettier/plugin-xml"],
-  xmlWhitespaceSensitivity: "ignore",
+  xmlWhitespaceSensitivity: "preserve",
 };
 
 export default config;
