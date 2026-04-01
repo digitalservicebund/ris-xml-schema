@@ -184,7 +184,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="fehlerhaftesGericht">
+      <xs:element name="fehlerhaftesGericht" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation xml:lang="de">
             Fehlerhafte Angabe eines Gerichtes
@@ -214,7 +214,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="region">
+      <xs:element name="region" maxOccurs="unbounded">
         <xs:annotation>
           <!-- in the harmonization document this field doesn't contain the abbreviation but the full name, but in caselaw we often only have an abbreviation -->
           <xs:documentation xml:lang="de">
