@@ -315,6 +315,39 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <xs:element
+    name="datenDerMuendlichenVerhandlung"
+    type="ris:datenDerMuendlichenVerhandlung"
+  />
+  <xs:complexType name="datenDerMuendlichenVerhandlung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste der Daten der mündlichen Verhandlung bei einem Gericht
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="datumDerMuendlichenVerhandlung" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Datum einer mündlichen Verhandlung bei einem Gericht
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:date">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
     <xs:annotation>
