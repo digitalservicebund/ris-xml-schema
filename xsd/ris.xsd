@@ -6,6 +6,17 @@
   elementFormDefault="qualified"
   targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
 >
+  <xs:annotation>
+    <xs:documentation xml:lang="de">
+      Allgemeine Elemente für die Schemas für die verschiedenen Dokumente des
+      Rechtsinformationssystems. Dies beinhaltet nicht die Elemente für das
+      Normen-Schema. Diese werden in LegalDocMl.de definiert. Die
+      dokumentart-spezifischen Ergänzungen zu diesem Schema sind in weiteren
+      Schema-Dateien definiert:
+      * Rechtsprechung: ./caselaw.xsd
+    </xs:documentation>
+  </xs:annotation>
+
   <xs:import
     namespace="http://www.w3.org/XML/1998/namespace"
     schemaLocation="./akn/xml.xsd"
@@ -19,8 +30,8 @@
 
   <xs:complexType name="meta">
     <xs:annotation>
-      <xs:documentation>
-        Metadata über das Dokument. Je nach Dokart sind hier andere Metadaten
+      <xs:documentation xml:lang="de">
+        Metadaten über das Dokument. Je nach Dokart sind hier andere Metadaten
         angegeben.
       </xs:documentation>
     </xs:annotation>
@@ -37,6 +48,11 @@
 
   <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
   <xs:complexType name="dokumenttyp">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Der Typ des Dokuments (z.B. Urteil, Vergleich, Beschluss, ...)
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -48,14 +64,16 @@
   <xs:element name="gericht" type="ris:gericht" />
   <xs:complexType name="gericht">
     <xs:annotation>
-      <xs:documentation>Gericht</xs:documentation>
+      <xs:documentation xml:lang="de">Gericht</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="gerichtstyp">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Gerichtstyp (AG, VG, VerwG, ...)
+          </xs:documentation>
+        </xs:annotation>
         <xs:complexType>
-          <xs:annotation>
-            <xs:documentation>Gerichtstyp</xs:documentation>
-          </xs:annotation>
           <xs:simpleContent>
             <xs:extension base="xs:string">
               <xs:attribute
@@ -69,10 +87,12 @@
       </xs:element>
 
       <xs:element name="gerichtsort" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Ort des Sitzes des Gerichts
+          </xs:documentation>
+        </xs:annotation>
         <xs:complexType>
-          <xs:annotation>
-            <xs:documentation>Gerichtsort</xs:documentation>
-          </xs:annotation>
           <xs:simpleContent>
             <xs:extension base="xs:string">
               <xs:attribute
@@ -86,10 +106,10 @@
       </xs:element>
 
       <xs:element name="gerichtsbarkeit" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">Gerichtsbarkeit</xs:documentation>
+        </xs:annotation>
         <xs:complexType>
-          <xs:annotation>
-            <xs:documentation>Gerichtsbarkeit</xs:documentation>
-          </xs:annotation>
           <xs:simpleContent>
             <xs:extension base="xs:string">
               <xs:attribute
@@ -103,10 +123,10 @@
       </xs:element>
 
       <xs:element name="spruchkoerper" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">Spruchkörper</xs:documentation>
+        </xs:annotation>
         <xs:complexType>
-          <xs:annotation>
-            <xs:documentation>Spruchkörper</xs:documentation>
-          </xs:annotation>
           <xs:simpleContent>
             <xs:extension base="xs:string">
               <xs:attribute
@@ -127,10 +147,12 @@
       </xs:element>
 
       <xs:element name="sitzDerAussenstelle" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Sitz der Außenstelle
+          </xs:documentation>
+        </xs:annotation>
         <xs:complexType>
-          <xs:annotation>
-            <xs:documentation>Sitz der Außenstelle</xs:documentation>
-          </xs:annotation>
           <xs:simpleContent>
             <xs:extension base="xs:string">
               <xs:attribute
@@ -156,9 +178,25 @@
 
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Fremdsprachige Fassung</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element ref="akn:FRBRlanguage" />
-      <xs:element ref="akn:documentRef" />
+      <xs:element ref="akn:FRBRlanguage">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Sprache der fremdsprachigen Fassung
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="akn:documentRef">
+        <!-- todo: documentRef seems like the wrong type here -->
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Link zur fremdsprachigen Fassung
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
@@ -168,7 +206,9 @@
 
   <xs:simpleType name="domainTerm">
     <xs:annotation>
-      <xs:documentation>Beschreibung des XML Elements</xs:documentation>
+      <xs:documentation xml:lang="de">
+        Inhaltliche Beschreibung des XML Elements
+      </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string" />
   </xs:simpleType>
