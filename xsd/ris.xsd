@@ -380,6 +380,41 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <xs:element
+    name="abweichendeDokumentnummern"
+    type="ris:abweichendeDokumentnummern"
+  />
+  <xs:complexType name="abweichendeDokumentnummern">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Abweichende Dokumentnummern
+
+        Weitere Dokumentnummern die für dieses Dokument verwendet werden
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="abweichendeDokumentnummer" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Abweichende Dokumentnummer
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:element name="fremdsprachigeFassung" type="ris:fremdsprachigeFassung" />
   <xs:complexType name="fremdsprachigeFassung">
     <xs:annotation>
