@@ -55,18 +55,18 @@
                 <ris:bezeichnung domainTerm="Bezeichnung">
                   singleNorm test
                 </ris:bezeichnung>
-                <ris:fassungsdatum domainTerm="Fassungsdatum">
-                  2021-02-05
-                </ris:fassungsdatum>
+                <ris:fassungsdatum
+                  domainTerm="Fassungsdatum"
+                >2021-02-05</ris:fassungsdatum>
                 <ris:jahr domainTerm="Jahr">2020</ris:jahr>
               </ris:einzelnorm>
               <ris:einzelnorm domainTerm="Einzelnorm">
                 <ris:bezeichnung domainTerm="Bezeichnung">
                   singleNorm 2 test
                 </ris:bezeichnung>
-                <ris:fassungsdatum domainTerm="Fassungsdatum">
-                  2022-03-06
-                </ris:fassungsdatum>
+                <ris:fassungsdatum
+                  domainTerm="Fassungsdatum"
+                >2022-03-06</ris:fassungsdatum>
                 <ris:jahr domainTerm="Jahr">2022</ris:jahr>
               </ris:einzelnorm>
             </ris:norm>
