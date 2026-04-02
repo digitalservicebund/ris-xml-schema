@@ -283,7 +283,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="aktenzeichen" maxOccurs="unbounded">
+      <xs:element name="aktenzeichen" minOccurs="1" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation xml:lang="de">Aktenzeichen</xs:documentation>
         </xs:annotation>
@@ -605,6 +605,126 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <xs:element name="quellen" type="ris:quellen" />
+  <xs:complexType name="quellen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Quellen
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="quelle" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Quelle
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:element name="streitjahre" type="ris:streitjahre" />
+  <xs:complexType name="streitjahre">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Streitjahre
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="streitjahr" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Streitjahr
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:gYear">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:element name="berufsbilder" type="ris:berufsbilder" />
+  <xs:complexType name="berufsbilder">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Berufsbilder
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="berufsbild" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Berufsbild
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:element name="kuendigungsgruende" type="ris:kuendigungsgruende" />
+  <xs:complexType name="kuendigungsgruende">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Kündigungsgründe
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="kuendigungsgrund" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Kündigungsgrund
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:element name="gesetzgebungsauftrag" type="ris:gesetzgebungsauftrag" />
   <xs:complexType name="gesetzgebungsauftrag">
     <xs:annotation>
@@ -647,6 +767,23 @@
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
+
+  <xs:element name="vorabdokument" type="ris:vorabdokument" />
+  <xs:complexType name="vorabdokument">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Vorab-Dokument</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ris:vorabdokumentValue">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="vorabdokumentValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ja" />
+    </xs:restriction>
+  </xs:simpleType>
 
   <!-- the global domainTerm attribute used for adding the domainTerm to non-ris elements -->
   <xs:attribute name="domainTerm" type="ris:domainTerm" />

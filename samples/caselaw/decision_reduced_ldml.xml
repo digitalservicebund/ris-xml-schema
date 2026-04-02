@@ -254,6 +254,7 @@
               fileNumber test
             </ris:aktenzeichen>
           </ris:aktenzeichenListe>
+          <ris:rechtskraft domainTerm="Rechtskraft">Ja</ris:rechtskraft>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>

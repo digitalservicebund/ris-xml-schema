@@ -22,12 +22,28 @@
           <xs:sequence>
             <xs:element ref="ris:dokumenttyp" />
             <xs:element ref="ris:gericht" />
-            <xs:any
+            <xs:element ref="ris:fehlerhafteGerichte" minOccurs="0" />
+            <xs:element ref="ris:regionen" />
+            <xs:element ref="ris:dokumentationsstelle" minOccurs="0" />
+            <xs:element ref="ris:aktenzeichenListe" />
+            <xs:element
+              ref="ris:datenDerMuendlichenVerhandlung"
               minOccurs="0"
-              maxOccurs="unbounded"
-              processContents="lax"
-              namespace="##targetNamespace"
             />
+            <xs:element ref="ris:abweichendeDaten" minOccurs="0" />
+            <xs:element ref="ris:abweichendeDokumentnummern" minOccurs="0" />
+            <xs:element ref="ris:abweichendeEclis" minOccurs="0" />
+            <xs:element ref="ris:sachgebiete" minOccurs="0" />
+            <xs:element ref="ris:rechtskraft" />
+            <xs:element ref="ris:definitionen" minOccurs="0" />
+            <xs:element ref="ris:tarifvertraege" minOccurs="0" />
+            <xs:element ref="ris:quellen" minOccurs="0" />
+            <xs:element ref="ris:streitjahre" minOccurs="0" />
+            <xs:element ref="ris:berufsbilder" minOccurs="0" />
+            <xs:element ref="ris:kuendigungsgruende" minOccurs="0" />
+            <xs:element ref="ris:gesetzgebungsauftrag" minOccurs="0" />
+            <xs:element ref="ris:herkunftslaender" minOccurs="0" />
+            <xs:element ref="ris:vorabdokument" minOccurs="0" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>

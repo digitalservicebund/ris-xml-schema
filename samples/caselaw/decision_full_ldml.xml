@@ -396,11 +396,6 @@
               domainTerm="Kündigungsgrund"
             >dismissalGround test</ris:kuendigungsgrund>
           </ris:kuendigungsgruende>
-          <ris:kuendigungsarten domainTerm="Kündigungsarten">
-            <ris:kuendigungsart
-              domainTerm="Kündigungsart"
-            >dismissalType test</ris:kuendigungsart>
-          </ris:kuendigungsarten>
           <ris:gesetzgebungsauftrag
             domainTerm="Gesetzgebungsauftrag"
           >Ja</ris:gesetzgebungsauftrag>
