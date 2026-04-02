@@ -575,6 +575,79 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <xs:element name="tarifvertraege" type="ris:tarifvertraege" />
+  <xs:complexType name="tarifvertraege">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Tarifverträge
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="tarifvertrag" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Tarifvertrag
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:element name="gesetzgebungsauftrag" type="ris:gesetzgebungsauftrag" />
+  <xs:complexType name="gesetzgebungsauftrag">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Gesetzgebungsauftrag</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <!-- ist aktuell ein freitext feld, wie sinnvoll ist das? -->
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:element name="herkunftslaender" type="ris:herkunftslaender" />
+  <xs:complexType name="herkunftslaender">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Herkunftsländer
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="herkunftsland" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Herkunftsland
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <!-- the global domainTerm attribute used for adding the domainTerm to non-ris elements -->
   <xs:attribute name="domainTerm" type="ris:domainTerm" />
 
