@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <akn:akomaNtoso
   xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
-  xmlns:ris="http://example.com/0.1/"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1/"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0 https://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/schemas/akomantoso30.xsd"
 >
@@ -286,10 +286,9 @@
       <akn:proprietary source="#ris">
         <ris:meta>
           <ris:dokumenttyp
-            akn:eId="dokumenttyp"
             domainTerm="Dokumenttyp"
           >documentType test</ris:dokumenttyp>
-          <ris:gericht domainTerm="Gericht" akn:refersTo="#gericht">
+          <ris:gericht domainTerm="Gericht" refersTo="#gericht">
             <ris:gerichtstyp
               domainTerm="Gerichtstyp"
             >courtType</ris:gerichtstyp>
@@ -301,7 +300,7 @@
             >jurisdictionType</ris:gerichtsbarkeit>
             <ris:spruchkoerper
               domainTerm="Spruchkörper"
-              akn:refersTo="#spruchkoerper"
+              refersTo="#spruchkoerper"
             >appraisalBody test</ris:spruchkoerper>
           </ris:gericht>
           <ris:fehlerhafteGerichte domainTerm="Fehlerhafte Gerichte">
@@ -317,12 +316,12 @@
           </ris:regionen>
           <ris:dokumentationsstelle
             domainTerm="Dokumentationsstelle"
-            akn:refersTo="#documentationoffice-dokumentationsstelle"
+            refersTo="#documentationoffice-dokumentationsstelle"
           >documentationOffice</ris:dokumentationsstelle>
           <ris:aktenzeichenListe domainTerm="Liste der Aktenzeichen">
             <ris:aktenzeichen
               domainTerm="Aktenzeichen"
-              akn:refersTo="#aktenzeichen"
+              refersTo="#aktenzeichen"
             >fileNumber test</ris:aktenzeichen>
             <ris:aktenzeichen
               domainTerm="Abweichendes Aktenzeichen"
@@ -353,7 +352,7 @@
           <ris:abweichendeEclis domainTerm="Abweichende ECLIs">
             <ris:abweichenderEcli
               domainTerm="Abweichender ECLI"
-            >deviating ecli test</ris:abweichenderEcli>
+            >ECLI:DE:BVerfG:2015:qk20151104.2bvq005612</ris:abweichenderEcli>
           </ris:abweichendeEclis>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
@@ -363,13 +362,13 @@
             >fieldOfLaw test</ris:sachgebiet>
           </ris:sachgebiete>
           <ris:rechtskraft domainTerm="Rechtskraft">Ja</ris:rechtskraft>
-          <ris:definitionen ris:domainTerm="Definitionen">
-            <ris:definition ris:domainTerm="Definition">
+          <ris:definitionen domainTerm="Definitionen">
+            <ris:definition domainTerm="Definition">
               <ris:definierterBegriff
                 domainTerm="Definierter Begriff"
               >indirekte Steuern</ris:definierterBegriff>
             </ris:definition>
-            <ris:definition ris:domainTerm="Definition">
+            <ris:definition domainTerm="Definition">
               <ris:definierterBegriff
                 domainTerm="Definierter Begriff"
               >Sachgesamtheit</ris:definierterBegriff>
