@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+  xmlns="http://Inhaltsdaten.LegalDocML.de/1.9/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://Inhaltsdaten.LegalDocML.de/1.9/"
+  elementFormDefault="qualified"
+  version="LegalDocML.de 1.9 (03.11.2025)"
+>
+  <xs:redefine schemaLocation="ldml/legalDocML.de-baukasten.xsd">
+    <xs:group name="ANinline">
+      <xs:choice>
+        <xs:element name="mod" type="aenderungsbefehl" />
+        <xs:element name="ref" type="referenz" />
+        <xs:element name="rref" type="bereichsreferenz" />
+        <xs:element name="mref" type="mehrfachreferenz" maxOccurs="unbounded" />
+        <xs:element name="authorialNote" type="amtlicheFussnote" />
+        <xs:element name="noteRef" type="verweisAufNichtamtlicheFussnote" />
+        <xs:element name="mmod" type="kombinierterAenderungsbefehl" />
+        <xs:element name="opinion">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="by" type="xs:string" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <!-- todo define -->
+      </xs:choice>
+    </xs:group>
+  </xs:redefine>
+</xs:schema>

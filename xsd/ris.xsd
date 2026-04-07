@@ -25,6 +25,10 @@
     namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
     schemaLocation="./akn/akomantoso30.xsd"
   />
+  <xs:import
+    namespace="http://Inhaltsdaten.LegalDocML.de/1.9/"
+    schemaLocation="./ldml/ldml-1.9-baukasten.xsd"
+  />
 
   <xs:element name="meta" type="ris:meta" />
 
