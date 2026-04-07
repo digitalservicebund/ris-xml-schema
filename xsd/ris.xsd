@@ -971,10 +971,7 @@
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="caselaw" />
       <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
       <xs:element name="artDerZitierung" type="ris:referenzArtDerZitierung" />
-      <xs:element
-        name="dokumentnummer"
-        type="ris:dokumentnummerRechtsprechung"
-      />
+      <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="gericht" type="ris:gericht" />
       <xs:element name="entscheidungsdatum" type="ris:entscheidungsdatum" />
       <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
@@ -998,12 +995,57 @@
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="adm" />
       <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
       <xs:element name="artDerZitierung" type="ris:referenzArtDerZitierung" />
-      <xs:element
-        name="dokumentnummer"
-        type="ris:dokumentnummerVerwaltungsvorschrift"
-      />
+      <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="jurisAbkuerzung" type="ris:jurisAbkuerzung" />
       <xs:element name="fundstelle" type="ris:fundstelle" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:element
+    name="referenzUnselbstaendigeLiteratur"
+    type="ris:referenzUnselbstaendigeLiteratur"
+  />
+  <xs:complexType name="referenzUnselbstaendigeLiteratur">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Referenz auf ein unselbstständiges Literaturdokument</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="richtung" type="ris:referenzRichtung" />
+      <xs:element name="referenzArt" type="ris:referenzArt" fixed="uli" />
+      <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
+      <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
+      <xs:element name="autor" type="ris:autor" />
+      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
+      <!-- dokumenttypLiteratur? -->
+      <xs:element name="fundstelle" type="ris:fundstelle" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:element
+    name="referenzSelbstaendigeLiteratur"
+    type="ris:referenzSelbstaendigeLiteratur"
+  />
+  <xs:complexType name="referenzSelbstaendigeLiteratur">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Referenz auf ein selbstständiges Literaturdokument</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="richtung" type="ris:referenzRichtung" />
+      <xs:element name="referenzArt" type="ris:referenzArt" fixed="sli" />
+      <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
+      <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
+      <xs:element name="autor" type="ris:autor" />
+      <xs:element name="titel" type="ris:titel" />
+      <xs:element
+        name="veroeffentlichungsjahr"
+        type="ris:veroeffentlichungsjahr"
+      />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
@@ -1074,23 +1116,10 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="dokumentnummerRechtsprechung">
+  <xs:complexType name="dokumentnummer">
     <xs:annotation>
       <xs:documentation>
-        Dokumentnummer eines Rechtsprechungsdokuments
-      </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
-  <xs:complexType name="dokumentnummerVerwaltungsvorschrift">
-    <xs:annotation>
-      <xs:documentation>
-        Dokumentnummer einer Verwaltungsvorschrift
+        Dokumentnummer
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
@@ -1121,6 +1150,45 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="autor">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Autor(en)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="titel">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Titel
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="veroeffentlichungsjahr">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Veröffentlichungsjahr
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:gYear">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>

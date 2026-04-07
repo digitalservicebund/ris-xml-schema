@@ -305,6 +305,72 @@
               </ris:fundstelle>
             </ris:referenzVerwaltungsvorschrift>
           </akn:implicitReference>
+          <akn:implicitReference
+            ris:domainTerm="Referenz Unselbständige Literatur"
+          >
+            <ris:referenzUnselbstaendigeLiteratur
+              domainTerm="Referenz Unselbständige Literatur"
+            >
+              <ris:richtung
+                domainTerm="Richtung der Referenzierung"
+              >aktiv</ris:richtung>
+              <ris:referenzArt
+                domainTerm="Art der Referenz"
+              >uli</ris:referenzArt>
+              <ris:relativerPfad
+                domainTerm="Pfad zur Referenz"
+              >/uli/BJLU055598037.xml</ris:relativerPfad>
+              <ris:dokumentnummer
+                domainTerm="Dokumentnummer"
+              >BJLU055598037</ris:dokumentnummer>
+              <ris:autor
+                domainTerm="Autor(en)"
+              >Noelle-Neumann/Schramm</ris:autor>
+              <ris:dokumenttyp
+                domainTerm="Dokumenttyp"
+              >Zeitschrift</ris:dokumenttyp>
+              <ris:fundstelle domainTerm="Fundstelle">
+                <ris:periodikum domainTerm="Periodikum">
+                  <ris:abkuerzung
+                    domainTerm="Abkürzung"
+                  >ErgoMed</ris:abkuerzung>
+                  <ris:titel
+                    domainTerm="Titel"
+                  >Ergonomics and Medicine</ris:titel>
+                </ris:periodikum>
+                <ris:zitatstelle
+                  domainTerm="Zitatstelle"
+                >2003, 166-177</ris:zitatstelle>
+              </ris:fundstelle>
+            </ris:referenzUnselbstaendigeLiteratur>
+          </akn:implicitReference>
+          <akn:implicitReference
+            ris:domainTerm="Referenz Selbständige Literatur"
+          >
+            <ris:referenzSelbstaendigeLiteratur
+              domainTerm="Referenz Selbständige Literatur"
+            >
+              <ris:richtung
+                domainTerm="Richtung der Referenzierung"
+              >passiv</ris:richtung>
+              <ris:referenzArt
+                domainTerm="Art der Referenz"
+              >sli</ris:referenzArt>
+              <ris:relativerPfad
+                domainTerm="Pfad zur Referenz"
+              >/sli/KSLS2025000067.xml</ris:relativerPfad>
+              <ris:dokumentnummer
+                domainTerm="Dokumentnummer"
+              >KSLS2025000067</ris:dokumentnummer>
+              <ris:autor domainTerm="Autor(en)">Garms-Babke, Christa</ris:autor>
+              <ris:titel
+                domainTerm="Titel"
+              >Die Unvereinbarkeit nicht-rückholbarer Endlagerung radioaktiver Abfälle mit dem Grundgesetz</ris:titel>
+              <ris:veroeffentlichungsjahr
+                domainTerm="Veröffentlichungsjahr"
+              >2002</ris:veroeffentlichungsjahr>
+            </ris:referenzSelbstaendigeLiteratur>
+          </akn:implicitReference>
         </akn:otherReferences>
         <akn:otherAnalysis source="#ris">
           <ris:dokumentarischeKurztexte domainTerm="Dokumentarische Kurztexte">
