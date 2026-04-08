@@ -1257,6 +1257,110 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <!-- otherAnalysis -->
+  <xs:element
+    name="dokumentarischeKurztexte"
+    type="ris:dokumentarischeKurztexte"
+  />
+  <xs:complexType name="dokumentarischeKurztexte">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Dokumentarische Kurztexte
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="entscheidungsnamen" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Namen einer Gerichtsentscheidung
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="entscheidungsname" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                  Name einer Gerichtsentscheidung
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute
+                      name="domainTerm"
+                      type="ris:domainTerm"
+                      use="required"
+                    />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute
+            name="domainTerm"
+            type="ris:domainTerm"
+            use="required"
+          />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="titelzeile">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Titelzeile
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="akn:blocksreq">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="orientierungssatz" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Orientierungssatz
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="akn:blocksreq">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sonstigerOrientierungssatz" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Sonstiger Orientierungssatz
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="akn:blocksreq">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <!-- the global domainTerm attribute used for adding the domainTerm to non-ris elements -->
   <xs:attribute name="domainTerm" type="ris:domainTerm" />
 

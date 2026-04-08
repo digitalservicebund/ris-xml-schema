@@ -183,7 +183,7 @@
         </akn:otherReferences>
         <akn:otherAnalysis source="#ris">
           <ris:dokumentarischeKurztexte domainTerm="Dokumentarische Kurztexte">
-            <ris:titelzeile akn:eId="titelzeile" ris:domainTerm="Titelzeile">
+            <ris:titelzeile eId="titelzeile" domainTerm="Titelzeile">
               <akn:p>headline test</akn:p>
             </ris:titelzeile>
           </ris:dokumentarischeKurztexte>

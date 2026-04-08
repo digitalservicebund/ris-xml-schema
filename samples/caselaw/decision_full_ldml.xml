@@ -382,14 +382,14 @@
                 domainTerm="Entscheidungsname"
               >decisionName2 test</ris:entscheidungsname>
             </ris:entscheidungsnamen>
-            <ris:titelzeile akn:eId="titelzeile" ris:domainTerm="Titelzeile">
+            <ris:titelzeile eId="titelzeile" domainTerm="Titelzeile">
               <akn:p>headline test</akn:p>
             </ris:titelzeile>
-            <ris:orientierungssatz ris:domainTerm="Orientierungssatz">
+            <ris:orientierungssatz domainTerm="Orientierungssatz">
               <akn:p>headNote test</akn:p>
             </ris:orientierungssatz>
             <ris:sonstigerOrientierungssatz
-              ris:domainTerm="Sonstiger Orientierungssatz"
+              domainTerm="Sonstiger Orientierungssatz"
             >
               <akn:p>otherHeadNote test</akn:p>
             </ris:sonstigerOrientierungssatz>
