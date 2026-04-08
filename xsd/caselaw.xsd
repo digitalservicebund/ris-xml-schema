@@ -4,46 +4,93 @@
   xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
   xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1/"
   elementFormDefault="qualified"
-  targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+  targetNamespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 >
   <xs:import
     namespace="http://www.w3.org/XML/1998/namespace"
     schemaLocation="./akn/xml.xsd"
   />
   <xs:import
-    namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
-    schemaLocation="./akn/akomantoso30.xsd"
+    namespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+    schemaLocation="./metadata-caselaw.xsd"
   />
 
-  <xs:redefine schemaLocation="ris.xsd">
-    <xs:complexType name="meta">
+  <xs:redefine schemaLocation="./akn/akomantoso30.xsd">
+    <xs:complexType name="akomaNtosoType">
       <xs:complexContent>
-        <xs:restriction base="ris:meta">
+        <xs:restriction base="akn:akomaNtosoType">
           <xs:sequence>
-            <xs:element ref="ris:dokumenttyp" />
-            <xs:element ref="ris:gericht" />
-            <xs:element ref="ris:fehlerhafteGerichte" minOccurs="0" />
-            <xs:element ref="ris:regionen" />
-            <xs:element ref="ris:dokumentationsstelle" minOccurs="0" />
-            <xs:element ref="ris:aktenzeichenListe" />
-            <xs:element
-              ref="ris:datenDerMuendlichenVerhandlung"
-              minOccurs="0"
-            />
-            <xs:element ref="ris:abweichendeDaten" minOccurs="0" />
-            <xs:element ref="ris:abweichendeDokumentnummern" minOccurs="0" />
-            <xs:element ref="ris:abweichendeEclis" minOccurs="0" />
-            <xs:element ref="ris:sachgebiete" minOccurs="0" />
-            <xs:element ref="ris:rechtskraft" />
-            <xs:element ref="ris:definitionen" minOccurs="0" />
-            <xs:element ref="ris:tarifvertraege" minOccurs="0" />
-            <xs:element ref="ris:quellen" minOccurs="0" />
-            <xs:element ref="ris:streitjahre" minOccurs="0" />
-            <xs:element ref="ris:berufsbilder" minOccurs="0" />
-            <xs:element ref="ris:kuendigungsgruende" minOccurs="0" />
-            <xs:element ref="ris:gesetzgebungsauftrag" minOccurs="0" />
-            <xs:element ref="ris:herkunftslaender" minOccurs="0" />
-            <xs:element ref="ris:vorabdokument" minOccurs="0" />
+            <xs:element ref="akn:judgment" />
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="judgmentStructure">
+      <xs:complexContent>
+        <xs:restriction base="akn:judgmentStructure">
+          <xs:sequence>
+            <xs:element ref="akn:meta" />
+            <xs:element ref="akn:header" />
+            <xs:element ref="akn:judgmentBody" />
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="judgmentBodyType">
+      <xs:complexContent>
+        <xs:restriction base="akn:judgmentBodyType">
+          <xs:sequence>
+            <xs:element name="introduction" minOccurs="0" maxOccurs="2">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                    Leitsatz oder Gliederung
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element ref="akn:decision" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                    Tenor
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element ref="akn:background" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                    Tatbestand
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element ref="akn:motivation" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                    Gründe
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element ref="akn:motivation" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                    Entscheidungsgründe
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element ref="akn:motivation" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                    Sonstiger Langtext
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element ref="akn:motivation" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                    Abweichende Meinung
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
