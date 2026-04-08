@@ -785,6 +785,21 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:element name="erledigung" type="ris:erledigung" />
+  <xs:complexType name="erledigung">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Ist das Rechtsanhändige Verfahren erledigt?</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <!-- ist aktuell ein freitext feld, wie sinnvoll ist das? -->
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <!-- TODO: (Malte Laukötter, 2026-04-07) i don't think we should globally define the norm object like this, i rather
           just keep the type here and define the element in the caselaw-specific schema -->
   <xs:element name="norm" type="ris:normReference" />
