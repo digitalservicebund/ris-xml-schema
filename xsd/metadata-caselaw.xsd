@@ -20,30 +20,87 @@
       <xs:complexContent>
         <xs:restriction base="ris:meta">
           <xs:sequence>
-            <xs:element ref="ris:dokumenttyp" />
-            <xs:element ref="ris:gericht" />
-            <xs:element ref="ris:fehlerhafteGerichte" minOccurs="0" />
-            <xs:element ref="ris:regionen" />
-            <xs:element ref="ris:dokumentationsstelle" minOccurs="0" />
-            <xs:element ref="ris:aktenzeichenListe" />
+            <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
+            <xs:element name="gericht" type="ris:gericht" />
             <xs:element
-              ref="ris:datenDerMuendlichenVerhandlung"
+              name="fehlerhafteGerichte"
+              type="ris:fehlerhafteGerichte"
               minOccurs="0"
             />
-            <xs:element ref="ris:abweichendeDaten" minOccurs="0" />
-            <xs:element ref="ris:abweichendeDokumentnummern" minOccurs="0" />
-            <xs:element ref="ris:abweichendeEclis" minOccurs="0" />
-            <xs:element ref="ris:sachgebiete" minOccurs="0" />
-            <xs:element ref="ris:rechtskraft" />
-            <xs:element ref="ris:definitionen" minOccurs="0" />
-            <xs:element ref="ris:tarifvertraege" minOccurs="0" />
-            <xs:element ref="ris:quellen" minOccurs="0" />
-            <xs:element ref="ris:streitjahre" minOccurs="0" />
-            <xs:element ref="ris:berufsbilder" minOccurs="0" />
-            <xs:element ref="ris:kuendigungsgruende" minOccurs="0" />
-            <xs:element ref="ris:gesetzgebungsauftrag" minOccurs="0" />
-            <xs:element ref="ris:herkunftslaender" minOccurs="0" />
-            <xs:element ref="ris:vorabdokument" minOccurs="0" />
+            <xs:element name="regionen" type="ris:regionen" />
+            <xs:element
+              name="dokumentationsstelle"
+              type="ris:dokumentationsstelle"
+              minOccurs="0"
+            />
+            <xs:element name="aktenzeichenListe" type="ris:aktenzeichenListe" />
+            <xs:element
+              name="datenDerMuendlichenVerhandlung"
+              type="ris:datenDerMuendlichenVerhandlung"
+              minOccurs="0"
+            />
+            <xs:element
+              name="abweichendeDaten"
+              type="ris:abweichendeDaten"
+              minOccurs="0"
+            />
+            <xs:element
+              name="abweichendeDokumentnummern"
+              type="ris:abweichendeDokumentnummern"
+              minOccurs="0"
+            />
+            <xs:element
+              name="abweichendeEclis"
+              type="ris:abweichendeEclis"
+              minOccurs="0"
+            />
+            <xs:element
+              name="sachgebiete"
+              type="ris:sachgebiete"
+              minOccurs="0"
+            />
+            <xs:element name="rechtskraft" type="ris:rechtskraft" />
+            <xs:element
+              name="definitionen"
+              type="ris:definitionen"
+              minOccurs="0"
+            />
+            <xs:element
+              name="tarifvertraege"
+              type="ris:tarifvertraege"
+              minOccurs="0"
+            />
+            <xs:element name="quellen" type="ris:quellen" minOccurs="0" />
+            <xs:element
+              name="streitjahre"
+              type="ris:streitjahre"
+              minOccurs="0"
+            />
+            <xs:element
+              name="berufsbilder"
+              type="ris:berufsbilder"
+              minOccurs="0"
+            />
+            <xs:element
+              name="kuendigungsgruende"
+              type="ris:kuendigungsgruende"
+              minOccurs="0"
+            />
+            <xs:element
+              name="gesetzgebungsauftrag"
+              type="ris:gesetzgebungsauftrag"
+              minOccurs="0"
+            />
+            <xs:element
+              name="herkunftslaender"
+              type="ris:herkunftslaender"
+              minOccurs="0"
+            />
+            <xs:element
+              name="vorabdokument"
+              type="ris:vorabdokument"
+              minOccurs="0"
+            />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>

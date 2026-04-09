@@ -36,7 +36,6 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element ref="ris:dokumenttyp" />
       <xs:any
         maxOccurs="unbounded"
         minOccurs="0"
@@ -46,7 +45,6 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
   <xs:complexType name="dokumenttyp">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -61,7 +59,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="gericht" type="ris:gericht" />
   <xs:complexType name="gericht">
     <xs:annotation>
       <xs:documentation xml:lang="de">Gericht</xs:documentation>
@@ -150,7 +147,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="fehlerhafteGerichte" type="ris:fehlerhafteGerichte" />
   <xs:complexType name="fehlerhafteGerichte">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -180,7 +176,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="regionen" type="ris:regionen" />
   <xs:complexType name="regionen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -218,7 +213,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="dokumentationsstelle" type="ris:dokumentationsstelle" />
   <xs:complexType name="dokumentationsstelle">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -238,7 +232,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="aktenzeichenListe" type="ris:aktenzeichenListe" />
   <xs:complexType name="aktenzeichenListe">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -281,10 +274,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element
-    name="datenDerMuendlichenVerhandlung"
-    type="ris:datenDerMuendlichenVerhandlung"
-  />
   <xs:complexType name="datenDerMuendlichenVerhandlung">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -314,7 +303,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="abweichendeDaten" type="ris:abweichendeDaten" />
   <xs:complexType name="abweichendeDaten">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -344,10 +332,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element
-    name="abweichendeDokumentnummern"
-    type="ris:abweichendeDokumentnummern"
-  />
   <xs:complexType name="abweichendeDokumentnummern">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -379,7 +363,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="abweichendeEclis" type="ris:abweichendeEclis" />
   <xs:complexType name="abweichendeEclis">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -411,7 +394,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="sachgebiete" type="ris:sachgebiete" />
   <xs:complexType name="sachgebiete">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -472,7 +454,6 @@
     <xs:union memberTypes="ris:sachgebietIdNeu ris:sachgebietIdAlt" />
   </xs:simpleType>
 
-  <xs:element name="rechtskraft" type="ris:rechtskraft" />
   <xs:complexType name="rechtskraft">
     <xs:annotation>
       <xs:documentation
@@ -492,7 +473,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:element name="definitionen" type="ris:definitionen" />
   <xs:complexType name="definitionen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -541,7 +521,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="tarifvertraege" type="ris:tarifvertraege" />
   <xs:complexType name="tarifvertraege">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -571,7 +550,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="quellen" type="ris:quellen" />
   <xs:complexType name="quellen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -597,7 +575,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="streitjahre" type="ris:streitjahre" />
   <xs:complexType name="streitjahre">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -627,7 +604,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="berufsbilder" type="ris:berufsbilder" />
   <xs:complexType name="berufsbilder">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -657,7 +633,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="kuendigungsgruende" type="ris:kuendigungsgruende" />
   <xs:complexType name="kuendigungsgruende">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -687,7 +662,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="gesetzgebungsauftrag" type="ris:gesetzgebungsauftrag" />
   <xs:complexType name="gesetzgebungsauftrag">
     <xs:annotation>
       <xs:documentation xml:lang="de">Gesetzgebungsauftrag</xs:documentation>
@@ -700,7 +674,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="herkunftslaender" type="ris:herkunftslaender" />
   <xs:complexType name="herkunftslaender">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -730,7 +703,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="vorabdokument" type="ris:vorabdokument" />
   <xs:complexType name="vorabdokument">
     <xs:annotation>
       <xs:documentation xml:lang="de">Vorab-Dokument</xs:documentation>
@@ -747,7 +719,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:element name="erledigung" type="ris:erledigung" />
   <xs:complexType name="erledigung">
     <xs:annotation>
       <xs:documentation
@@ -913,7 +884,7 @@
       <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="gericht" type="ris:gericht" />
       <xs:element name="entscheidungsdatum" type="ris:entscheidungsdatum" />
-      <xs:element ref="ris:dokumenttyp" />
+      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
       <xs:element name="aktenzeichen" type="ris:aktenzeichen" />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -957,7 +928,7 @@
       <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
       <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="autor" type="ris:autor" />
-      <xs:element ref="ris:dokumenttyp" />
+      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
       <!-- dokumenttypLiteratur? -->
       <xs:element name="fundstelle" type="ris:fundstelle" />
     </xs:sequence>
@@ -997,7 +968,7 @@
       >Eine nachgehende Entscheidung oder anhängiges Verfahren im Rechtszug des Verfahrens</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element ref="ris:dokumenttyp" />
+      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
       <xs:element
         name="entscheidungsdatum"
         type="ris:entscheidungsdatum"
@@ -1044,7 +1015,7 @@
       >Eine vorhergehende Entscheidung im Rechtszug des Verfahrens</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element ref="ris:dokumenttyp" />
+      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
       <xs:element name="entscheidungsdatum" type="ris:entscheidungsdatum" />
       <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="aktenzeichen" type="ris:aktenzeichen" />
@@ -1065,6 +1036,7 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
   <xs:simpleType name="referenzRichtungValue">
     <xs:restriction base="xs:string">
       <xs:enumeration value="passiv">
