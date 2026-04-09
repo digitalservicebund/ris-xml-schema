@@ -28,3 +28,7 @@ The following hooks are specified in the `lefthook.yml`:
 Before pushing, the following checks are additionally ran:
 
 - `secrets-audit` - avoid accidental pushes of [secrets and sensitive information](https://thoughtworks.github.io/talisman/)
+
+## Code-Style
+
+In general, we try to structure our xsd according to the ["Venetian Blind"-Design pattern](https://www.oracle.com/technical-resources/articles/java/design-patterns.html).
