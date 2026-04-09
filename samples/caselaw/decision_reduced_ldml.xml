@@ -86,9 +86,9 @@
               <ris:dokumenttyp domainTerm="Dokumenttyp">
                 previous decision document type
               </ris:dokumenttyp>
-              <ris:entscheidungsdatum domainTerm="Entscheidungsdatum">
-                2020-01-01
-              </ris:entscheidungsdatum>
+              <ris:entscheidungsdatum
+                domainTerm="Entscheidungsdatum"
+              >2020-01-01</ris:entscheidungsdatum>
               <ris:dokumentnummer domainTerm="Dokumentnummer">
                 previous decision document number 1
               </ris:dokumentnummer>
@@ -110,9 +110,9 @@
               <ris:dokumenttyp domainTerm="Dokumenttyp">
                 previous decision document type
               </ris:dokumenttyp>
-              <ris:entscheidungsdatum domainTerm="Entscheidungsdatum">
-                2020-01-01
-              </ris:entscheidungsdatum>
+              <ris:entscheidungsdatum
+                domainTerm="Entscheidungsdatum"
+              >2020-01-01</ris:entscheidungsdatum>
               <ris:dokumentnummer domainTerm="Dokumentnummer">
                 previous decision document number 2
               </ris:dokumentnummer>
@@ -137,9 +137,9 @@
               <ris:dokumenttyp domainTerm="Dokumenttyp">
                 ensuing decision document type
               </ris:dokumenttyp>
-              <ris:entscheidungsdatum domainTerm="Entscheidungsdatum">
-                2022-10-01
-              </ris:entscheidungsdatum>
+              <ris:entscheidungsdatum
+                domainTerm="Entscheidungsdatum"
+              >2022-10-01</ris:entscheidungsdatum>
               <ris:dokumentnummer domainTerm="Dokumentnummer">
                 ensuing decision document number 1
               </ris:dokumentnummer>
@@ -161,9 +161,9 @@
               <ris:dokumenttyp domainTerm="Dokumenttyp">
                 ensuing decision document type
               </ris:dokumenttyp>
-              <ris:entscheidungsdatum domainTerm="Entscheidungsdatum">
-                2022-10-01
-              </ris:entscheidungsdatum>
+              <ris:entscheidungsdatum
+                domainTerm="Entscheidungsdatum"
+              >2022-10-01</ris:entscheidungsdatum>
               <ris:dokumentnummer domainTerm="Dokumentnummer">
                 ensuing decision document number 2
               </ris:dokumentnummer>

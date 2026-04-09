@@ -989,7 +989,7 @@
       <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="gericht" type="ris:gericht" />
       <xs:element name="entscheidungsdatum" type="ris:entscheidungsdatum" />
-      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
+      <xs:element ref="ris:dokumenttyp" />
       <xs:element name="aktenzeichen" type="ris:aktenzeichen" />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1033,7 +1033,7 @@
       <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
       <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="autor" type="ris:autor" />
-      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
+      <xs:element ref="ris:dokumenttyp" />
       <!-- dokumenttypLiteratur? -->
       <xs:element name="fundstelle" type="ris:fundstelle" />
     </xs:sequence>
@@ -1061,6 +1061,70 @@
         name="veroeffentlichungsjahr"
         type="ris:veroeffentlichungsjahr"
       />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:element name="nachgehend" type="ris:nachgehend" />
+  <xs:complexType name="nachgehend">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Eine nachgehende Entscheidung oder anhängiges Verfahren im Rechtszug des Verfahrens</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="ris:dokumenttyp" />
+      <xs:element
+        name="entscheidungsdatum"
+        type="ris:entscheidungsdatum"
+        minOccurs="0"
+      />
+      <xs:element
+        name="mitteilungsdatum"
+        type="ris:mitteilungsdatum"
+        minOccurs="0"
+      />
+      <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
+      <xs:element name="aktenzeichen" type="ris:aktenzeichen" />
+      <xs:element name="gericht" type="ris:gericht" />
+      <xs:element name="vermerk" type="ris:vermerk" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    <xs:attribute name="art" type="ris:nachgehendArt" use="required" />
+  </xs:complexType>
+
+  <xs:simpleType name="nachgehendArt">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nachgehend">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Die nachgehende Entscheidung ist abgeschlossen.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="anhängig">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Die nachgehende Entscheidung ist ein anhängiges Verfahren.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="vorgehend" type="ris:vorgehend" />
+  <xs:complexType name="vorgehend">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Eine vorhergehende Entscheidung im Rechtszug des Verfahrens</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="ris:dokumenttyp" />
+      <xs:element name="entscheidungsdatum" type="ris:entscheidungsdatum" />
+      <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
+      <xs:element name="aktenzeichen" type="ris:aktenzeichen" />
+      <xs:element name="gericht" type="ris:gericht" />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
@@ -1157,6 +1221,19 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:complexType name="mitteilungsdatum">
+    <xs:annotation>
+      <xs:documentation>
+        Mitteilungsdatum
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:date">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:complexType name="jurisAbkuerzung">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1204,6 +1281,19 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:gYear">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="vermerk">
+    <xs:annotation>
+      <xs:documentation>
+        Vermerk zu einem anhängigen nachfolgenden Verfahren
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
