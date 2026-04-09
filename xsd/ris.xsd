@@ -1299,6 +1299,7 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:element name="fundstelle" type="ris:fundstelle" />
   <xs:complexType name="fundstelle">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1326,10 +1327,40 @@
                 </xs:simpleContent>
               </xs:complexType>
             </xs:element>
+            <xs:element name="periodikumTyp" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                  Art des Periodikums
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="ris:periodikumTypValue">
+                    <xs:attribute
+                      name="domainTerm"
+                      type="ris:domainTerm"
+                      use="required"
+                    />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
             <xs:element name="titel">
               <xs:annotation>
                 <xs:documentation xml:lang="de">
                   Titel des Periodikums
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="ris:stringWithDomainTerm" />
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="untertitel" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">
+                  Untertitel des Periodikums
                 </xs:documentation>
               </xs:annotation>
               <xs:complexType>
@@ -1358,9 +1389,39 @@
           </xs:simpleContent>
         </xs:complexType>
       </xs:element>
+      <xs:element name="fundstellenTyp" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="de">
+            Art der Fundstelle
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="ris:fundstellenTypValue">
+              <xs:attribute
+                name="domainTerm"
+                type="ris:domainTerm"
+                use="required"
+              />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
+  <xs:simpleType name="periodikumTypValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nichtamtlich" />
+      <xs:enumeration value="amtlich" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="fundstellenTypValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nichtamtlich" />
+      <xs:enumeration value="amtlich" />
+    </xs:restriction>
+  </xs:simpleType>
 
   <!-- otherAnalysis -->
   <xs:element
