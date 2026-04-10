@@ -5,7 +5,9 @@
     "format:fix": "prettier --write --ignore-unknown .",
     "style:check": "npm run format:check",
     "style:fix": "npm run format:fix",
-    "test": "xmllint --noout --schema xsd/caselaw.xsd samples/caselaw/*.xml",
+    "test": "npm run test:caselaw:decision && npm run test:caselaw:anhaengiges-verfahren",
+    "test:caselaw:decision": "xmllint --noout --schema xsd/caselaw.xsd samples/caselaw/decision_*.xml",
+    "test:caselaw:anhaengiges-verfahren": "xmllint --noout --schema xsd/caselaw-anhaengiges-verfahren.xsd samples/caselaw/pending_proceeding_*.xml",
     "test:watch": "watch \"npm run test\" --wait=2"
   },
   "devDependencies": {
