@@ -60,8 +60,25 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install libxml2-utils -y
+      - name: Setup Node
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
+        with:
+          node-version: "24.11.1"
+          cache: npm
+          cache-dependency-path: ./package-lock.json
+      - name: Cache node_modules
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7
+        id: node-modules-cache
+        with:
+          path: |
+            ./node_modules
+          key: modules-${{ hashFiles('./package-lock.json') }}
+      - name: Install dependencies
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: |
+          npm ci --ignore-scripts
       - name: Check caselaw samples against schema
-        run: xmllint --noout --schema xsd/caselaw.xsd samples/caselaw/*.xml
+        run: npm run test
       - name: Send status to Slack
         uses: digitalservicebund/notify-on-failure-gha@671832f192aee0a068fd92b2f6deb975df794a84 # v1.6.1
         if: ${{ failure() && github.ref == 'refs/heads/main' }}
