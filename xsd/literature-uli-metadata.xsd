@@ -27,7 +27,7 @@
             <xs:element ref="ris:regionen" minOccurs="0" />
             <xs:element ref="ris:verweisnotationen" minOccurs="0" />
             <xs:element ref="ris:problemkreise" minOccurs="0" />
-            <xs:element ref="ris:dubletteToleriert" minOccurs="0"/>
+            <xs:element ref="ris:dubletteToleriert" minOccurs="0" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>

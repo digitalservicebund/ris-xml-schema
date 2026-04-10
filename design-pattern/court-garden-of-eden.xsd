@@ -22,11 +22,7 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute
-          name="domainTerm"
-          type="ris:domainTerm"
-          use="required"
-        />
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -39,11 +35,7 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute
-          name="domainTerm"
-          type="ris:domainTerm"
-          use="required"
-        />
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -54,11 +46,7 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute
-          name="domainTerm"
-          type="ris:domainTerm"
-          use="required"
-        />
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -69,11 +57,7 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute
-          name="domainTerm"
-          type="ris:domainTerm"
-          use="required"
-        />
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
         <xs:attribute name="refersTo" use="required">
           <xs:simpleType>
             <xs:restriction base="akn:conceptRef">
@@ -93,11 +77,7 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute
-          name="domainTerm"
-          type="ris:domainTerm"
-          use="required"
-        />
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -110,9 +90,21 @@
       <xs:sequence>
         <xs:element name="gerichtstyp" type="ris:gerichtstyp" />
         <xs:element name="gerichtsort" type="ris:gerichtsort" minOccurs="0" />
-        <xs:element name="gerichtsbarkeit" type="ris:gerichtsbarkeit" minOccurs="0" />
-        <xs:element name="spruchkoerper" type="ris:spruchkoerper" minOccurs="0" />
-        <xs:element name="sitzDerAussenstelle" type="ris:sitzDerAussenstelle" minOccurs="0" />
+        <xs:element
+          name="gerichtsbarkeit"
+          type="ris:gerichtsbarkeit"
+          minOccurs="0"
+        />
+        <xs:element
+          name="spruchkoerper"
+          type="ris:spruchkoerper"
+          minOccurs="0"
+        />
+        <xs:element
+          name="sitzDerAussenstelle"
+          type="ris:sitzDerAussenstelle"
+          minOccurs="0"
+        />
       </xs:sequence>
 
       <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />

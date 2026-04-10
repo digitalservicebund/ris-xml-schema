@@ -35,7 +35,7 @@
             <xs:element ref="ris:problemkreise" minOccurs="0" />
             <xs:element ref="ris:sonstigerSachtitelListe" minOccurs="0" />
             <xs:element ref="ris:vorauflagen" minOccurs="0" />
-            <xs:element ref="ris:dubletteToleriert" minOccurs="0"/>
+            <xs:element ref="ris:dubletteToleriert" minOccurs="0" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
