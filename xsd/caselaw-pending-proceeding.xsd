@@ -12,7 +12,7 @@
   />
   <xs:import
     namespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
-    schemaLocation="./metadata-caselaw-anhaengiges-verfahren.xsd"
+    schemaLocation="caselaw-pending-proceeding-metadata.xsd"
   />
 
   <xs:redefine schemaLocation="./akn/akomantoso30.xsd">
