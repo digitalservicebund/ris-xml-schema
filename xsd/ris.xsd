@@ -44,6 +44,20 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:element name="dokumenttypen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Dokumenttypen
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="dokumenttyp" type="ris:dokumenttyp" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
   <xs:complexType name="dokumenttyp">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1457,4 +1471,284 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
+  <!-- literature elements -->
+  <xs:element name="veroeffentlichungsJahre">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Jahr der Veröffentlichung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="veroeffentlichungsJahr" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:gYear">
+                <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="gliederung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Gliederung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="gliederungEntry" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="gesamttitelAngaben">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Angabe zum Gesamttitel
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="gesamttitel" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+            <xs:attribute name="titel" type="xs:string" use="required"/>
+            <xs:attribute name="bandbezeichnung" type="xs:string"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="titelkurzformen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Kurzformen des Titels
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titelkurzform" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ausgabe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Ausgabe
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="kollation">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Kollation
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="besitznachweise">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Besitznachweise
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="besitznachweis" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="institution" type="xs:string" use="required" />
+            <xs:attribute name="signatur" type="xs:string" />
+            <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="teilbaende">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Teilbände
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="teilband" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bibliothekarischeVerweisungen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        bibliothekarische Verweisungen
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bibliothekarischeVerweisung" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="verweisnotationen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Verweisnotationen
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="verweisnotation" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="problemkreise">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Problemkreise
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="problemkreis" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="vorauflagen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Vorauflagen
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="vorauflage" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sonstigerSachtitelListe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        sonstige Sachtitel
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="sonstigerSachtitel" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="dubletteToleriert">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        ignorierte Dublettenprüfung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

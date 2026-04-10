@@ -1,0 +1,132 @@
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+  elementFormDefault="qualified"
+  targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+>
+  <xs:simpleType name="domainTerm">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Inhaltliche Beschreibung des XML Elements
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+
+  <xs:element name="gericht">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="de">Gericht</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element name="gerichtstyp">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+              Gerichtstyp (AG, VG, VerwG, ...)
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute
+                  name="domainTerm"
+                  type="ris:domainTerm"
+                  use="required"
+                />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="gerichtsort" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+              Ort des Sitzes des Gerichts
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute
+                  name="domainTerm"
+                  type="ris:domainTerm"
+                  use="required"
+                />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="gerichtsbarkeit" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">Gerichtsbarkeit</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute
+                  name="domainTerm"
+                  type="ris:domainTerm"
+                  use="required"
+                />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="spruchkoerper" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">Spruchkörper</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute
+                  name="domainTerm"
+                  type="ris:domainTerm"
+                  use="required"
+                />
+                <xs:attribute name="refersTo" use="required">
+                  <xs:simpleType>
+                    <xs:restriction base="akn:conceptRef">
+                      <xs:enumeration value="#spruchkoerper" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:attribute>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="sitzDerAussenstelle" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+              Sitz der Außenstelle
+            </xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute
+                  name="domainTerm"
+                  type="ris:domainTerm"
+                  use="required"
+                />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+
+      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      <xs:attribute name="refersTo">
+        <xs:simpleType>
+          <xs:restriction base="akn:conceptRef">
+            <xs:enumeration value="#gericht" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
