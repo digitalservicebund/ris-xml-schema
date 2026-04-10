@@ -49,5 +49,25 @@
         </xs:restriction>
       </xs:complexContent>
     </xs:complexType>
+
+    <xs:complexType name="dokumentarischeKurztexte">
+      <xs:annotation>
+        <xs:documentation xml:lang="de">
+          Dokumentarische Kurztexte
+        </xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+        <xs:restriction base="ris:dokumentarischeKurztexte">
+          <xs:sequence>
+            <xs:element name="titelzeile" type="ris:titelzeile" />
+          </xs:sequence>
+          <xs:attribute
+            name="domainTerm"
+            type="ris:domainTerm"
+            use="required"
+          />
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
   </xs:redefine>
 </xs:schema>

@@ -39,7 +39,6 @@
       <xs:any
         maxOccurs="unbounded"
         minOccurs="0"
-        processContents="lax"
         namespace="##targetNamespace"
       />
     </xs:sequence>
@@ -1324,21 +1323,11 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element
-        name="entscheidungsnamen"
-        type="ris:entscheidungsnamen"
-        minOccurs="0"
-      />
       <xs:element name="titelzeile" type="ris:titelzeile" />
-      <xs:element
-        name="orientierungssatz"
-        type="ris:orientierungssatz"
+      <xs:any
+        maxOccurs="unbounded"
         minOccurs="0"
-      />
-      <xs:element
-        name="sonstigerOrientierungssatz"
-        type="ris:sonstigerOrientierungssatz"
-        minOccurs="0"
+        namespace="##targetNamespace"
       />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
