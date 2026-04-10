@@ -34,6 +34,12 @@
             <xs:element ref="akn:header" />
             <xs:element ref="akn:judgmentBody" />
           </xs:sequence>
+          <xs:attribute
+            name="name"
+            type="xs:string"
+            fixed="/akn/ontology/de/concept/documenttype/bund/rechtsprechung/entscheidung"
+            use="required"
+          />
         </xs:restriction>
       </xs:complexContent>
     </xs:complexType>
