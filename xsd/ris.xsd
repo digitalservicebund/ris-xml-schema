@@ -1843,4 +1843,106 @@
     </xs:annotation>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
+
+  <xs:complexType name="tenor">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Tenor
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="leitsatz">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Leitsatz
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="gliederungRechtsprechung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Gliederung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="tatbestand">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Tatbestand
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="gruende">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Gründe
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="entscheidungsgruende">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Entscheidungsgründe
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sonstigerLangtext">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Sonstiger Langtext
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="abweichendeMeinung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Abweichende Meinung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 </xs:schema>

@@ -75,31 +75,10 @@
                   </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0">
+            <xs:element ref="akn:motivation" minOccurs="0" maxOccurs="4">
               <xs:annotation>
                 <xs:documentation xml:lang="de">
-                    Gründe
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Entscheidungsgründe
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Sonstiger Langtext
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Abweichende Meinung
+                    Gründe, Entscheidungsgründe, Sonstiger Langtext oder Abweichende Meinung
                   </xs:documentation>
               </xs:annotation>
             </xs:element>
