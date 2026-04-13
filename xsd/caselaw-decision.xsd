@@ -55,34 +55,10 @@
                   </xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element ref="akn:introduction" minOccurs="0">
-              <!-- only in Anhängiges Verfahren -->
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Rechtsmittelführer
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:introduction" minOccurs="0">
-              <!-- only in Anhängiges Verfahren -->
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Rechtsmittelzulassung
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
             <xs:element ref="akn:decision" minOccurs="0">
               <xs:annotation>
                 <xs:documentation xml:lang="de">
                     Tenor
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:decision" minOccurs="0">
-              <!-- only in Anhängiges Verfahren -->
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Erledigungsvermerk
                   </xs:documentation>
               </xs:annotation>
             </xs:element>
@@ -118,14 +94,6 @@
               <xs:annotation>
                 <xs:documentation xml:lang="de">
                     Abweichende Meinung
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0">
-              <!-- only in Anhängiges Verfahren -->
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Rechtsfrage
                   </xs:documentation>
               </xs:annotation>
             </xs:element>
