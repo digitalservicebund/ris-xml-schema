@@ -26,7 +26,11 @@
       <xs:complexContent>
         <xs:restriction base="ris:meta">
           <xs:sequence>
-            <xs:element name="dokumenttypen" type="ris:dokumenttypen" />
+            <xs:element
+              name="dokumenttypen"
+              type="ris:dokumenttypen"
+              minOccurs="0"
+            />
             <xs:element
               name="sachgebiete"
               type="ris:sachgebiete"

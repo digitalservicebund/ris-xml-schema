@@ -373,30 +373,63 @@
       </akn:references>
       <akn:proprietary source="attributsemantik-noch-undefiniert">
         <ris:meta>
-          <ris:sachgebiete>
-            <ris:sachgebiet notation="NEW">RE-01-02-09</ris:sachgebiet>
-            <ris:sachgebiet notation="NEW">SO-05-02-02</ris:sachgebiet>
+          <ris:sachgebiete domainTerm="Sachgebiete">
+            <ris:sachgebiet
+              notation="neu"
+              sachgebiet-id="RE-01-02-09"
+              domainTerm="Sachgebiet"
+            >RE-01-02-09</ris:sachgebiet>
+            <ris:sachgebiet
+              notation="neu"
+              sachgebiet-id="SO-05-02-02"
+              domainTerm="Sachgebiet"
+            >SO-05-02-02</ris:sachgebiet>
           </ris:sachgebiete>
-          <ris:veroeffentlichungsJahre>
-            <ris:veroeffentlichungsJahr>2023</ris:veroeffentlichungsJahr>
+          <ris:veroeffentlichungsJahre domainTerm="Veröffentlichungsjahre">
+            <ris:veroeffentlichungsJahr
+              domainTerm="Veröffentlichungsjahr"
+            >2023</ris:veroeffentlichungsJahr>
           </ris:veroeffentlichungsJahre>
-          <ris:gliederung>
-            <ris:gliederungEntry>Zusammenfassung</ris:gliederungEntry>
-            <ris:gliederungEntry>Einleitung</ris:gliederungEntry>
-            <ris:gliederungEntry>Methodik</ris:gliederungEntry>
-            <ris:gliederungEntry>Studiendesign</ris:gliederungEntry>
-            <ris:gliederungEntry>Datenquelle</ris:gliederungEntry>
-            <ris:gliederungEntry>Datenerfassung</ris:gliederungEntry>
-            <ris:gliederungEntry>Statistische Analyse</ris:gliederungEntry>
-            <ris:gliederungEntry>Ergebnisse</ris:gliederungEntry>
-            <ris:gliederungEntry>Strichprobe</ris:gliederungEntry>
+          <ris:gliederung domainTerm="Gliederung">
             <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
+            >Zusammenfassung</ris:gliederungEntry>
+            <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
+            >Einleitung</ris:gliederungEntry>
+            <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
+            >Methodik</ris:gliederungEntry>
+            <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
+            >Studiendesign</ris:gliederungEntry>
+            <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
+            >Datenquelle</ris:gliederungEntry>
+            <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
+            >Datenerfassung</ris:gliederungEntry>
+            <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
+            >Statistische Analyse</ris:gliederungEntry>
+            <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
+            >Ergebnisse</ris:gliederungEntry>
+            <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
+            >Strichprobe</ris:gliederungEntry>
+            <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
             >Zustandekommen einer Behandlung</ris:gliederungEntry>
             <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
             >Gründe für Nicht-Zustandekommen von Therapie</ris:gliederungEntry>
             <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
             >Reform und Zustandekommen einer Behandlung</ris:gliederungEntry>
-            <ris:gliederungEntry>Diskussion</ris:gliederungEntry>
+            <ris:gliederungEntry
+              domainTerm="Gliederungseintrag"
+            >Diskussion</ris:gliederungEntry>
           </ris:gliederung>
         </ris:meta>
       </akn:proprietary>
