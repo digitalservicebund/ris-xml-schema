@@ -1844,6 +1844,8 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <!-- langtexte, the types need to be specified using xsi:type to be validated. -->
+
   <xs:complexType name="tenor">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1937,6 +1939,58 @@
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Abweichende Meinung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="rechtsmittelführer">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Rechtsmittelführer
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="rechtsmittelzulassung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Rechtsmittelzulassung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="erledigungsvermerk">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Erledigungsvermerk
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="rechtsfrage">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Rechtsfrage
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>

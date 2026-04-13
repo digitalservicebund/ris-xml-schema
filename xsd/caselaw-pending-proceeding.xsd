@@ -54,17 +54,10 @@
       <xs:complexContent>
         <xs:restriction base="akn:judgmentBodyType">
           <xs:sequence>
-            <xs:element ref="akn:introduction">
+            <xs:element ref="akn:introduction" maxOccurs="2">
               <xs:annotation>
                 <xs:documentation xml:lang="de">
-                    Rechtsmittelführer
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:introduction">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Rechtsmittelzulassung
+                    Rechtsmittelführer oder Rechtsmittelzulassung
                   </xs:documentation>
               </xs:annotation>
             </xs:element>

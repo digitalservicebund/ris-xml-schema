@@ -288,16 +288,25 @@
             </akn:p>
     </akn:header>
     <akn:judgmentBody>
-      <akn:introduction ris:domainTerm="Rechtsmittelführer">
+      <akn:introduction
+        ris:domainTerm="Rechtsmittelführer"
+        xsi:type="ris:rechtsmittelführer"
+      >
         <akn:p alternativeTo="textWrapper">Rechtsmittelführer</akn:p>
       </akn:introduction>
-      <akn:introduction ris:domainTerm="Rechtsmittelzulassung">
+      <akn:introduction
+        ris:domainTerm="Rechtsmittelzulassung"
+        xsi:type="ris:rechtsmittelzulassung"
+      >
         <akn:p alternativeTo="textWrapper">Rechtsmittelzulassung</akn:p>
       </akn:introduction>
-      <akn:decision ris:domainTerm="Erledigungsvermerk">
+      <akn:decision
+        ris:domainTerm="Erledigungsvermerk"
+        xsi:type="ris:erledigungsvermerk"
+      >
         <akn:p>Erledigungsvermerk</akn:p>
       </akn:decision>
-      <akn:motivation ris:domainTerm="Rechtsfrage">
+      <akn:motivation ris:domainTerm="Rechtsfrage" xsi:type="ris:rechtsfrage">
         <akn:p alternativeTo="textWrapper">Rechtsfrage</akn:p>
       </akn:motivation>
     </akn:judgmentBody>
