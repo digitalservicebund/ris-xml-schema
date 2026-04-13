@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+  elementFormDefault="qualified"
+  targetNamespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+>
+  <xs:annotation>
+    <xs:documentation xml:lang="de">
+      XSD-Schema für unselbstständige Literatur
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:import
+    namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="./akn/xml.xsd"
+  />
+  <xs:import
+    namespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+    schemaLocation="literature-uli-metadata.xsd"
+  />
+
+  <xs:redefine schemaLocation="./akn/akomantoso30.xsd">
+    <xs:complexType name="akomaNtosoType">
+      <xs:complexContent>
+        <xs:restriction base="akn:akomaNtosoType">
+          <xs:sequence>
+            <xs:element ref="akn:doc" />
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="openStructure">
+      <xs:complexContent>
+        <xs:restriction base="akn:openStructure">
+          <xs:sequence>
+            <xs:element ref="akn:meta" />
+            <xs:element ref="akn:preface" />
+            <xs:element ref="akn:mainBody" />
+          </xs:sequence>
+          <xs:attribute
+            name="name"
+            type="xs:string"
+            fixed="/akn/ontology/de/concept/documenttype/bund/literatur/unselbststaendig"
+            use="required"
+          />
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:redefine>
+</xs:schema>
