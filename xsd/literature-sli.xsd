@@ -40,6 +40,12 @@
             <xs:element ref="akn:preface" />
             <xs:element ref="akn:mainBody" />
           </xs:sequence>
+          <xs:attribute
+            name="name"
+            type="xs:string"
+            fixed="/akn/ontology/de/concept/documenttype/bund/literatur/selbststaendig"
+            use="required"
+          />
         </xs:restriction>
       </xs:complexContent>
     </xs:complexType>
