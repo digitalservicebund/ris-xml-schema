@@ -165,23 +165,38 @@
       </akn:references>
       <akn:proprietary source="attributsemantik-noch-undefiniert">
         <ris:meta>
-          <ris:sachgebiete>
-            <ris:sachgebiet notation="NEW">RE-01-02-07</ris:sachgebiet>
-            <ris:sachgebiet notation="NEW">RE-01-03-09</ris:sachgebiet>
+          <ris:sachgebiete domainTerm="Sachgebiete">
+            <ris:sachgebiet
+              notation="neu"
+              sachgebiet-id="RE-01-02-07"
+              domainTerm="Sachgebiet"
+            >RE-01-02-07</ris:sachgebiet>
+            <ris:sachgebiet
+              notation="neu"
+              sachgebiet-id="RE-01-03-09"
+              domainTerm="Sachgebiet"
+            >RE-01-03-09</ris:sachgebiet>
           </ris:sachgebiete>
-          <ris:veroeffentlichungsJahre>
-            <ris:veroeffentlichungsJahr>2015</ris:veroeffentlichungsJahr>
+          <ris:veroeffentlichungsJahre domainTerm="Veröffentlichungsjahre">
+            <ris:veroeffentlichungsJahr
+              domainTerm="Veröffentlichungsjahr"
+            >2015</ris:veroeffentlichungsJahr>
           </ris:veroeffentlichungsJahre>
-          <ris:gesamttitelAngaben>
+          <ris:gesamttitelAngaben domainTerm="Gesamttitel Liste">
             <ris:gesamttitel
               bandbezeichnung="Nr 19297"
               titel="Reclams Universal-Bibliothek"
+              domainTerm="Gesamttitel"
             />
           </ris:gesamttitelAngaben>
-          <ris:besitznachweise>
-            <ris:besitznachweis institution="BSG" signatur="VwiK 1032" />
+          <ris:besitznachweise domainTerm="Besitznachweise">
+            <ris:besitznachweis
+              institution="BSG"
+              signatur="VwiK 1032"
+              domainTerm="Besitznachweis"
+            />
           </ris:besitznachweise>
-          <ris:kollation umfangsangabe="359 S" />
+          <ris:kollation umfangsangabe="359 S" domainTerm="Kollation" />
         </ris:meta>
       </akn:proprietary>
     </akn:meta>

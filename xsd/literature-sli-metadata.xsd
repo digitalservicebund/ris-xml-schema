@@ -26,7 +26,11 @@
       <xs:complexContent>
         <xs:restriction base="ris:meta">
           <xs:sequence>
-            <xs:element name="dokumenttypen" type="ris:dokumenttypen" />
+            <xs:element
+              name="dokumenttypen"
+              type="ris:dokumenttypen"
+              minOccurs="0"
+            />
             <xs:element
               name="sachgebiete"
               type="ris:sachgebiete"
@@ -49,12 +53,12 @@
               minOccurs="0"
             />
             <xs:element name="ausgabe" type="ris:ausgabe" minOccurs="0" />
-            <xs:element name="kollation" type="ris:kollation" minOccurs="0" />
             <xs:element
               name="besitznachweise"
               type="ris:besitznachweise"
               minOccurs="0"
             />
+            <xs:element name="kollation" type="ris:kollation" minOccurs="0" />
             <xs:element name="teilbaende" type="ris:teilbaende" minOccurs="0" />
             <xs:element
               name="bibliothekarischeVerweisungen"

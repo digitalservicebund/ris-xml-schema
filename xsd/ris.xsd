@@ -1621,6 +1621,13 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
+        <xs:attribute name="umfangsangabe" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+              Umfangsangabe
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
