@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<akn:akomaNtoso
+  xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+>
+  <akn:doc name="offene-struktur">
+    <akn:meta>
+      <akn:identification source="attributsemantik-noch-undefiniert">
+        <akn:FRBRWork>
+          <akn:FRBRthis value="TODO" />
+          <akn:FRBRuri value="TODO" />
+          <akn:FRBRalias name="Dokumentnummer" value="KSLU183250131" />
+          <akn:FRBRalias
+            name="haupttitel"
+            value="Zustandekommen von ambulanter Psychotherapie vor und nach der Psychotherapiestrukturreform von 2017 - Daten aus Praxen mit und ohne psychoonkologischem Schwerpunkt"
+          />
+          <akn:FRBRdate
+            date="2024-01-15"
+            name="Erfassungsdatum"
+            ris:domainTerm="Erfassungsdatum"
+          />
+          <akn:FRBRauthor
+            as="#verfasser"
+            href="#engesser-deborah-verfasser-1"
+          />
+          <akn:FRBRauthor as="#verfasser" href="#maier-lena-verfasser-2" />
+          <akn:FRBRauthor as="#verfasser" href="#mittag-martina-verfasser-3" />
+          <akn:FRBRauthor as="#verfasser" href="#lang-klaus-verfasser-4" />
+          <akn:FRBRauthor
+            as="#verfasser"
+            href="#nagel-brotzler-almut-verfasser-5"
+          />
+          <akn:FRBRauthor as="#verfasser" href="#wirp-bernhild-verfasser-6" />
+          <akn:FRBRauthor as="#verfasser" href="#kobes-joerg-verfasser-7" />
+          <akn:FRBRcountry value="de" />
+          <akn:FRBRsubtype value="LU" />
+          <akn:FRBRnumber value="TODO" />
+          <akn:FRBRname value="TODO" />
+        </akn:FRBRWork>
+        <akn:FRBRExpression>
+          <akn:FRBRthis value="TODO" />
+          <akn:FRBRuri value="TODO" />
+          <akn:FRBRdate
+            date="2025-09-17"
+            name="Migration"
+            ris:domainTerm="Migration"
+          />
+          <akn:FRBRauthor href="TODO" />
+          <akn:FRBRlanguage language="deu" />
+        </akn:FRBRExpression>
+        <akn:FRBRManifestation>
+          <akn:FRBRthis value="TODO" />
+          <akn:FRBRuri value="TODO" />
+          <akn:FRBRdate
+            date="2025-09-17"
+            name="Migration"
+            ris:domainTerm="Migration"
+          />
+          <akn:FRBRauthor href="TODO" />
+          <akn:FRBRformat value="xml" />
+        </akn:FRBRManifestation>
+      </akn:identification>
+      <akn:classification source="doktyp">
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Auf"
+          value="Auf"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Sta"
+          value="Sta"
+        />
+      </akn:classification>
+      <akn:classification source="schlagwort">
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="2017"
+          value="2017"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Akutbehandlung"
+          value="Akutbehandlung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="ambulante Psychotherapie"
+          value="ambulante Psychotherapie"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Auswertung"
+          value="Auswertung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Auswirkung"
+          value="Auswirkung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Bedarfsplanung"
+          value="Bedarfsplanung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Behandlung"
+          value="Behandlung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Daten"
+          value="Daten"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Datenerfassung"
+          value="Datenerfassung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Datenquelle"
+          value="Datenquelle"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Datensatz"
+          value="Datensatz"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Durchführung"
+          value="Durchführung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="durchgeführte Studie"
+          value="durchgeführte Studie"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Einleitung"
+          value="Einleitung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Ergebnisse"
+          value="Ergebnisse"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Erstgespräch"
+          value="Erstgespräch"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="gesetzliche Krankenversicherung"
+          value="gesetzliche Krankenversicherung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="GKV"
+          value="GKV"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Grund"
+          value="Grund"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Krankenversicherung"
+          value="Krankenversicherung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="KV"
+          value="KV"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="lange Wartezeit"
+          value="lange Wartezeit"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Methodik"
+          value="Methodik"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Praxis"
+          value="Praxis"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Psychoonkologie"
+          value="Psychoonkologie"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="psychoonkologische Versorgung"
+          value="psychoonkologische Versorgung"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="psychoonkologischer Schwerpunkt"
+          value="psychoonkologischer Schwerpunkt"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="psychotherapeutische Praxis"
+          value="psychotherapeutische Praxis"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="psychotherapeutischer Verband"
+          value="psychotherapeutischer Verband"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Psychotherapie"
+          value="Psychotherapie"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Psychotherapieaufnahme"
+          value="Psychotherapieaufnahme"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Psychotherapiestrukturreform"
+          value="Psychotherapiestrukturreform"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Reform"
+          value="Reform"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Richtlinientherapie"
+          value="Richtlinientherapie"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Schwierigkeit"
+          value="Schwierigkeit"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Statistik"
+          value="Statistik"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="statistische Analyse"
+          value="statistische Analyse"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Strichprobe"
+          value="Strichprobe"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Studiendesign"
+          value="Studiendesign"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Therapie"
+          value="Therapie"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="unterbleibende Therapie"
+          value="unterbleibende Therapie"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Wahrscheinlichkeit"
+          value="Wahrscheinlichkeit"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Zeit"
+          value="Zeit"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="zustande gekommene ambulante Psychotherapie"
+          value="zustande gekommene ambulante Psychotherapie"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="zustande gekommene Psychotherapie"
+          value="zustande gekommene Psychotherapie"
+        />
+        <akn:keyword
+          dictionary="attributsemantik-noch-undefiniert"
+          showAs="Zustandekommen"
+          value="Zustandekommen"
+        />
+      </akn:classification>
+      <akn:analysis source="attributsemantik-noch-undefiniert">
+        <akn:otherReferences source="attributsemantik-noch-undefiniert">
+          <akn:implicitReference showAs="SGB 5, § 28 Abs 3">
+            <ris:normReference abbreviation="SGB 5" singleNorm="§ 28 Abs 3" />
+          </akn:implicitReference>
+          <akn:implicitReference showAs="GesundhWes, 2023, 911-917">
+            <ris:fundstelleUnselbstaendig
+              periodikum="GesundhWes"
+              zitatstelle="2023, 911-917"
+            />
+          </akn:implicitReference>
+        </akn:otherReferences>
+      </akn:analysis>
+      <akn:references source="attributsemantik-noch-undefiniert">
+        <akn:TLCPerson
+          eId="engesser-deborah-verfasser-1"
+          href="akn/ontology/persons/de/engesser-deborah"
+          ris:name="Engesser, Deborah"
+          ris:titel="Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz"
+          showAs="Engesser, Deborah, Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz"
+        />
+        <akn:TLCPerson
+          eId="maier-lena-verfasser-2"
+          href="akn/ontology/persons/de/maier-lena"
+          ris:name="Maier, Lena"
+          ris:titel="Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz"
+          showAs="Maier, Lena, Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz"
+        />
+        <akn:TLCPerson
+          eId="mittag-martina-verfasser-3"
+          href="akn/ontology/persons/de/mittag-martina"
+          ris:name="Mittag, Martina"
+          ris:titel="Psychotherapeutische Praxis"
+          showAs="Mittag, Martina, Psychotherapeutische Praxis"
+        />
+        <akn:TLCPerson
+          eId="lang-klaus-verfasser-4"
+          href="akn/ontology/persons/de/lang-klaus"
+          ris:name="Lang, Klaus"
+          showAs="Lang, Klaus"
+        />
+        <akn:TLCPerson
+          eId="nagel-brotzler-almut-verfasser-5"
+          href="akn/ontology/persons/de/nagel-brotzler-almut"
+          ris:name="Nagel-Brotzler, Almut"
+          showAs="Nagel-Brotzler, Almut"
+        />
+        <akn:TLCPerson
+          eId="wirp-bernhild-verfasser-6"
+          href="akn/ontology/persons/de/wirp-bernhild"
+          ris:name="Wirp, Bernhild"
+          showAs="Wirp, Bernhild"
+        />
+        <akn:TLCPerson
+          eId="kobes-joerg-verfasser-7"
+          href="akn/ontology/persons/de/kobes-joerg"
+          ris:name="Kobes, Jörg"
+          showAs="Kobes, Jörg"
+        />
+        <akn:TLCRole
+          eId="verfasser"
+          href="akn/ontology/roles/de/verfasser"
+          showAs="Verfasser"
+        />
+      </akn:references>
+      <akn:proprietary source="attributsemantik-noch-undefiniert">
+        <ris:meta>
+          <ris:sachgebiete>
+            <ris:sachgebiet notation="NEW">RE-01-02-09</ris:sachgebiet>
+            <ris:sachgebiet notation="NEW">SO-05-02-02</ris:sachgebiet>
+          </ris:sachgebiete>
+          <ris:veroeffentlichungsJahre>
+            <ris:veroeffentlichungsJahr>2023</ris:veroeffentlichungsJahr>
+          </ris:veroeffentlichungsJahre>
+          <ris:gliederung>
+            <ris:gliederungEntry>Zusammenfassung</ris:gliederungEntry>
+            <ris:gliederungEntry>Einleitung</ris:gliederungEntry>
+            <ris:gliederungEntry>Methodik</ris:gliederungEntry>
+            <ris:gliederungEntry>Studiendesign</ris:gliederungEntry>
+            <ris:gliederungEntry>Datenquelle</ris:gliederungEntry>
+            <ris:gliederungEntry>Datenerfassung</ris:gliederungEntry>
+            <ris:gliederungEntry>Statistische Analyse</ris:gliederungEntry>
+            <ris:gliederungEntry>Ergebnisse</ris:gliederungEntry>
+            <ris:gliederungEntry>Strichprobe</ris:gliederungEntry>
+            <ris:gliederungEntry
+            >Zustandekommen einer Behandlung</ris:gliederungEntry>
+            <ris:gliederungEntry
+            >Gründe für Nicht-Zustandekommen von Therapie</ris:gliederungEntry>
+            <ris:gliederungEntry
+            >Reform und Zustandekommen einer Behandlung</ris:gliederungEntry>
+            <ris:gliederungEntry>Diskussion</ris:gliederungEntry>
+          </ris:gliederung>
+        </ris:meta>
+      </akn:proprietary>
+    </akn:meta>
+    <akn:preface>
+      <akn:longTitle>
+        <akn:block
+          name="longTitle"
+        >Zustandekommen von ambulanter Psychotherapie vor und nach der
+          Psychotherapiestrukturreform von 2017
+          - Daten aus Praxen mit und ohne psychoonkologischem Schwerpunkt
+        </akn:block>
+      </akn:longTitle>
+    </akn:preface>
+    <akn:mainBody>
+      <akn:div>
+        <akn:p
+        >(F) Die Verfasser berichten über eine von ihnen durchgeführte Studie zu den Auswirkungen der
+          Psychotherapiestrukturreform aus dem Jahr 2017. Konkret sei überprüft worden wie wahrscheinlich
+          die Durchführung einer Psychotherapie nach einem vorherigen Erstgespräch gewesen sei. Es seien
+          1548 Datensätze aus neun psychotherapeutischen Praxen ausgewertet worden, von denen jeweils ca
+          die Hälfte die Zeit vor und nach der Reform beträfen. Vor der Reform sei in 40 % der Fälle nach
+          einem Erstgespräch eine Richtlinientherapie erfolgt. Nach der Reform sei in 46 % der Fälle nach
+          einem Erstgespräch eine Richtlinientherapie oder eine Akutbehandlung erfolgt. Zusammenfassend
+          habe sich dementsprechend gezeigt, dass die Wahrscheinlichkeit einer Psychotherapieaufnahme
+          durch die Reform gestiegen sei. Psychotherapeutische Verbände würden jedoch unverändert
+          bemängeln, dass andere grundsätzliche Schwierigkeiten im Bereich der psychotherapeutischen
+          Praxis durch die Reform nicht gelöst worden seien, so zB die langen Wartezeiten.
+        </akn:p>
+        <akn:p />
+        <akn:p>Drei Tabellen ergänzen die Ausführungen.</akn:p>
+      </akn:div>
+    </akn:mainBody>
+  </akn:doc>
+</akn:akomaNtoso>
