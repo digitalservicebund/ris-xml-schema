@@ -1477,7 +1477,7 @@
   <xs:complexType name="veroeffentlichungsJahre">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Jahr der Veröffentlichung
+        Jahre der Veröffentlichung
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1491,6 +1491,11 @@
   </xs:complexType>
 
   <xs:complexType name="veroeffentlichungsJahr">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Jahr der Veröffentlichung
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:gYear">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1515,6 +1520,11 @@
   </xs:complexType>
 
   <xs:complexType name="gliederungEntry">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Eintrag der Gliederung
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1525,7 +1535,7 @@
   <xs:complexType name="gesamttitelAngaben">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Angabe zum Gesamttitel
+        Angaben zum Gesamttitel
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1539,9 +1549,26 @@
   </xs:complexType>
 
   <xs:complexType name="gesamttitel">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Angabe zum Gesamttitel
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="titel" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation xml:lang="de">
+          Titel
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="bandbezeichnung" type="xs:string">
+      <xs:annotation>
+        <xs:documentation xml:lang="de">
+          Bezeichnung des Bandes
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-    <xs:attribute name="titel" type="xs:string" use="required" />
-    <xs:attribute name="bandbezeichnung" type="xs:string" />
   </xs:complexType>
 
   <xs:complexType name="titelkurzformen">
@@ -1561,6 +1588,11 @@
   </xs:complexType>
 
   <xs:complexType name="titelkurzform">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Kurzform des Titels
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1611,8 +1643,25 @@
   </xs:complexType>
 
   <xs:complexType name="besitznachweis">
-    <xs:attribute name="institution" type="xs:string" use="required" />
-    <xs:attribute name="signatur" type="xs:string" />
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Besitznachweis
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="institution" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation xml:lang="de">
+          Institution
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="signatur" type="xs:string">
+      <xs:annotation>
+        <xs:documentation xml:lang="de">
+          Signatur
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
@@ -1629,6 +1678,11 @@
   </xs:complexType>
 
   <xs:complexType name="teilband">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Teilband
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1653,6 +1707,11 @@
   </xs:complexType>
 
   <xs:complexType name="bibliothekarischeVerweisung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        bibliothekarische Verweisung
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1677,6 +1736,11 @@
   </xs:complexType>
 
   <xs:complexType name="verweisnotation">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Verweisnotation
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1701,6 +1765,11 @@
   </xs:complexType>
 
   <xs:complexType name="problemkreis">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Problemkreis
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1725,6 +1794,11 @@
   </xs:complexType>
 
   <xs:complexType name="vorauflage">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Vorauflage
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1735,7 +1809,7 @@
   <xs:complexType name="sonstigerSachtitelListe">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        sonstige Sachtitel
+        Liste an sonstigen Sachtiteln
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1749,6 +1823,11 @@
   </xs:complexType>
 
   <xs:complexType name="sonstigerSachtitel">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        sonstigen Sachtitel
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
