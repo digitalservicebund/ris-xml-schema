@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<akn:akomaNtoso
+  xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+>
+  <akn:doc name="offene-struktur">
+    <akn:meta>
+      <akn:identification source="attributsemantik-noch-undefiniert">
+        <akn:FRBRWork>
+          <akn:FRBRthis
+            value="/eli/bund/verwaltungsvorschriften/vr/gemeinsamer-bundesausschuss/2024/25756"
+          />
+          <akn:FRBRuri
+            value="/eli/bund/verwaltungsvorschriften/vr/gemeinsamer-bundesausschuss/2024/25756"
+          />
+          <akn:FRBRalias name="Dokumentnummer" value="KSNR054920707" />
+          <akn:FRBRdate
+            date="2024-09-23"
+            name="Erfassungsdatum"
+            ris:domainTerm="Erfassungsdatum"
+          />
+          <akn:FRBRauthor
+            href="recht.bund.de/institution/bundessozialgericht"
+          />
+          <akn:FRBRcountry value="de" />
+          <akn:FRBRsubtype value="VR" />
+          <akn:FRBRnumber value="25756" />
+          <akn:FRBRname value="Gemeinsamer Bundesausschuss" />
+        </akn:FRBRWork>
+        <akn:FRBRExpression>
+          <akn:FRBRthis
+            value="/eli/bund/verwaltungsvorschriften/vr/gemeinsamer-bundesausschuss/2024/25756/2024-07-18/deu"
+          />
+          <akn:FRBRuri
+            value="/eli/bund/verwaltungsvorschriften/vr/gemeinsamer-bundesausschuss/2024/25756/2024-07-18/deu"
+          />
+          <akn:FRBRdate
+            date="2024-07-18"
+            name="Zitierdatum"
+            ris:domainTerm="Zitierdatum"
+          />
+          <akn:FRBRauthor
+            href="recht.bund.de/institution/bundessozialgericht"
+          />
+          <akn:FRBRlanguage language="deu" />
+        </akn:FRBRExpression>
+        <akn:FRBRManifestation>
+          <akn:FRBRthis
+            value="/eli/bund/verwaltungsvorschriften/vr/gemeinsamer-bundesausschuss/2024/25756/2024-07-18/deu.akn.xml"
+          />
+          <akn:FRBRuri
+            value="/eli/bund/verwaltungsvorschriften/vr/gemeinsamer-bundesausschuss/2024/25756/2024-07-18/deu.akn.xml"
+          />
+          <akn:FRBRdate
+            date="0001-01-01"
+            name="Generierung"
+            ris:domainTerm="Generierung"
+          />
+          <akn:FRBRauthor
+            href="recht.bund.de/institution/bundessozialgericht"
+          />
+          <akn:FRBRformat value="xml" />
+        </akn:FRBRManifestation>
+      </akn:identification>
+      <akn:classification source="attributsemantik-noch-undefiniert">
+        <akn:keyword
+          showAs="Datenerhebung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Datenerhebung"
+        />
+        <akn:keyword
+          showAs="datengestützte einrichtungsübergreifende Qualitätssicherung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="datengestützte einrichtungsübergreifende Qualitätssicherung"
+        />
+        <akn:keyword
+          showAs="datengestützte Qualitätssicherung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="datengestützte Qualitätssicherung"
+        />
+        <akn:keyword
+          showAs="Datennutzung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Datennutzung"
+        />
+        <akn:keyword
+          showAs="Datenverarbeitung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Datenverarbeitung"
+        />
+        <akn:keyword
+          showAs="einrichtungsübergreifende Qualitätssicherung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="einrichtungsübergreifende Qualitätssicherung"
+        />
+        <akn:keyword
+          showAs="Erfassungsjahr 2025"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Erfassungsjahr 2025"
+        />
+        <akn:keyword
+          showAs="G-BA"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="G-BA"
+        />
+        <akn:keyword
+          showAs="GBA"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="GBA"
+        />
+        <akn:keyword
+          showAs="Gemeinsamer Bundesausschuss"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Gemeinsamer Bundesausschuss"
+        />
+        <akn:keyword
+          showAs="gesetzliche Krankenversicherung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="gesetzliche Krankenversicherung"
+        />
+        <akn:keyword
+          showAs="GKV"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="GKV"
+        />
+        <akn:keyword
+          showAs="Krankenhaus"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Krankenhaus"
+        />
+        <akn:keyword
+          showAs="Krankenkasse"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Krankenkasse"
+        />
+        <akn:keyword
+          showAs="Krankenversicherung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Krankenversicherung"
+        />
+        <akn:keyword
+          showAs="KV"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="KV"
+        />
+        <akn:keyword
+          showAs="Leistungserbringer"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Leistungserbringer"
+        />
+        <akn:keyword
+          showAs="Messung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Messung"
+        />
+        <akn:keyword
+          showAs="Patientenbefragung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Patientenbefragung"
+        />
+        <akn:keyword
+          showAs="Qualitätssicherung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Qualitätssicherung"
+        />
+        <akn:keyword
+          showAs="Rahmenbedingung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Rahmenbedingung"
+        />
+        <akn:keyword
+          showAs="Rahmenbestimmung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Rahmenbestimmung"
+        />
+        <akn:keyword
+          showAs="Richtlinie"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Richtlinie"
+        />
+        <akn:keyword
+          showAs="themenspezifische Bestimmung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="themenspezifische Bestimmung"
+        />
+        <akn:keyword
+          showAs="Verfahren"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Verfahren"
+        />
+        <akn:keyword
+          showAs="Versorgungsqualität"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Versorgungsqualität"
+        />
+        <akn:keyword
+          showAs="Vertragsarzt"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Vertragsarzt"
+        />
+        <akn:keyword
+          showAs="vertragsärztliche Versorgung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="vertragsärztliche Versorgung"
+        />
+        <akn:keyword
+          showAs="Änderung"
+          dictionary="attributsemantik-noch-undefiniert"
+          value="Änderung"
+        />
+      </akn:classification>
+      <akn:analysis source="attributsemantik-noch-undefiniert">
+        <akn:otherReferences source="attributsemantik-noch-undefiniert">
+          <akn:implicitReference
+            shortForm="BAnz"
+            showAs="BAnz AT 27.08.2024 B4"
+          />
+          <akn:implicitReference
+            shortForm="SGB 5"
+            showAs="SGB 5 § 92 Abs 1 S 2 Nr 13"
+          >
+            <ris:normReference singleNorm="§ 92 Abs 1 S 2 Nr 13" />
+          </akn:implicitReference>
+          <akn:implicitReference
+            shortForm="SGB 5"
+            showAs="SGB 5 § 136 Abs 1 S 1 Nr 1"
+          >
+            <ris:normReference singleNorm="§ 136 Abs 1 S 1 Nr 1" />
+          </akn:implicitReference>
+          <akn:implicitReference shortForm="DeQSRL" showAs="DeQSRL Teil 1">
+            <ris:normReference singleNorm="Teil 1" dateOfVersion="2024-07-18" />
+          </akn:implicitReference>
+        </akn:otherReferences>
+      </akn:analysis>
+      <akn:proprietary source="attributsemantik-noch-undefiniert">
+        <ris:meta>
+          <ris:normgeber staat="Gemeinsamer Bundesausschuss" />
+          <ris:fieldsOfLaw>
+            <ris:fieldOfLaw notation="OLD">09-05-40-81</ris:fieldOfLaw>
+            <ris:fieldOfLaw notation="NEW">SO-05-05-10</ris:fieldOfLaw>
+            <ris:fieldOfLaw notation="NEW">SO-05-06-05</ris:fieldOfLaw>
+          </ris:fieldsOfLaw>
+          <ris:entryIntoEffectDate>2025-01-01</ris:entryIntoEffectDate>
+          <ris:documentType
+            category="VR"
+            longTitle="Bekanntmachung"
+          >VR Bekanntmachung</ris:documentType>
+          <ris:berufsbilder>
+            <ris:berufsbild>Brillenschleifer</ris:berufsbild>
+          </ris:berufsbilder>
+          <ris:titelAspekte>
+            <ris:titelAspekt>Gemeinsamer Bundesausschuss</ris:titelAspekt>
+            <ris:titelAspekt>GBA</ris:titelAspekt>
+            <ris:titelAspekt>G-BA</ris:titelAspekt>
+            <ris:titelAspekt
+            >datengestützte einrichtungsübergreifende Qualitätssicherung</ris:titelAspekt>
+            <ris:titelAspekt>Erfassungsjahr 2025</ris:titelAspekt>
+            <ris:titelAspekt>DeQSRL Teil 1</ris:titelAspekt>
+          </ris:titelAspekte>
+          <ris:dateToQuoteList>
+            <ris:dateToQuoteEntry>2024-07-18</ris:dateToQuoteEntry>
+          </ris:dateToQuoteList>
+          <ris:regionen domainTerm="Regionen">
+            <ris:region domainTerm="Region">DEU</ris:region>
+          </ris:regionen>
+          <ris:historicAbbreviation
+          >VR Gemeinsamer Bundesausschuss 2024-07-18 25756</ris:historicAbbreviation>
+          <ris:activeReferences>
+            <ris:activeReference
+              typeNumber="31"
+              reference="VR Gemeinsamer Bundesausschuss 2018-07-19 19966"
+              dateOfVersion="2024-01-18"
+            />
+          </ris:activeReferences>
+        </ris:meta>
+      </akn:proprietary>
+    </akn:meta>
+    <akn:preface>
+      <akn:longTitle>
+        <akn:block
+          name="longTitle"
+        >Bekanntmachung eines Beschlusses des Gemeinsamen Bundesausschusses über eine
+Änderung der Richtlinie zur datengestützten einrichtungsübergreifenden
+Qualitätssicherung - Teil 1 - Änderungen zum Erfassungsjahr 2025</akn:block>
+      </akn:longTitle>
+    </akn:preface>
+    <akn:mainBody>
+      <akn:div>
+        <akn:p
+        >Der Gemeinsame Bundesausschuss (G-BA) hat in seiner Sitzung am 18.7.2024
+            beschlossen, den Teil 1 &quot;Rahmenbestimmungen&quot; der Richtlinie zur
+            datengestützten einrichtungsübergreifenden Qualitätssicherung (DeQS-RL)
+            (juris: <akn:inline
+          refersTo="neuris"
+          name="noindex"
+        >DeQSRL </akn:inline> ) zu ändern.</akn:p>
+      </akn:div>
+    </akn:mainBody>
+  </akn:doc>
+</akn:akomaNtoso>
