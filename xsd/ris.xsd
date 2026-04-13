@@ -44,23 +44,21 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:element name="dokumenttypen">
+  <xs:complexType name="dokumenttypen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Dokumenttypen
       </xs:documentation>
     </xs:annotation>
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element
-          name="dokumenttyp"
-          type="ris:dokumenttyp"
-          maxOccurs="unbounded"
-        />
-      </xs:sequence>
-      <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-    </xs:complexType>
-  </xs:element>
+    <xs:sequence>
+      <xs:element
+        name="dokumenttyp"
+        type="ris:dokumenttyp"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
 
   <xs:complexType name="dokumenttyp">
     <xs:annotation>
@@ -1477,10 +1475,6 @@
   </xs:complexType>
 
   <!-- literature elements -->
-  <xs:element
-    name="veroeffentlichungsJahre"
-    type="ris:veroeffentlichungsJahre"
-  />
   <xs:complexType name="veroeffentlichungsJahre">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1505,7 +1499,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="gliederung" type="ris:gliederung" />
   <xs:complexType name="gliederung">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1530,7 +1523,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="gesamttitelAngaben" type="ris:gesamttitelAngaben" />
   <xs:complexType name="gesamttitelAngaben">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1553,7 +1545,6 @@
     <xs:attribute name="bandbezeichnung" type="xs:string" />
   </xs:complexType>
 
-  <xs:element name="titelkurzformen" type="ris:titelkurzformen" />
   <xs:complexType name="titelkurzformen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1578,7 +1569,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="ausgabe" type="ris:ausgabe" />
   <xs:complexType name="ausgabe">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1592,7 +1582,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="kollation" type="ris:kollation" />
   <xs:complexType name="kollation">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1606,7 +1595,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="besitznachweise" type="ris:besitznachweise" />
   <xs:complexType name="besitznachweise">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1629,7 +1617,6 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
-  <xs:element name="teilbaende" type="ris:teilbaende" />
   <xs:complexType name="teilbaende">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1650,10 +1637,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element
-    name="bibliothekarischeVerweisungen"
-    type="ris:bibliothekarischeVerweisungen"
-  />
   <xs:complexType name="bibliothekarischeVerweisungen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1678,7 +1661,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="verweisnotationen" type="ris:verweisnotationen" />
   <xs:complexType name="verweisnotationen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1703,7 +1685,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="problemkreise" type="ris:problemkreise" />
   <xs:complexType name="problemkreise">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1728,7 +1709,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="vorauflagen" type="ris:vorauflagen" />
   <xs:complexType name="vorauflagen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1753,10 +1733,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element
-    name="sonstigerSachtitelListe"
-    type="ris:sonstigerSachtitelListe"
-  />
   <xs:complexType name="sonstigerSachtitelListe">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -1781,7 +1757,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:element name="dubletteToleriert" type="ris:dubletteToleriert" />
   <xs:complexType name="dubletteToleriert">
     <xs:annotation>
       <xs:documentation xml:lang="de">

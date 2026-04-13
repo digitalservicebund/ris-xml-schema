@@ -20,22 +20,61 @@
       <xs:complexContent>
         <xs:restriction base="ris:meta">
           <xs:sequence>
-            <xs:element ref="ris:dokumenttypen" />
-            <xs:element ref="ris:sachgebiete" minOccurs="0" />
-            <xs:element ref="ris:veroeffentlichungsJahre" />
-            <xs:element ref="ris:gliederung" minOccurs="0" />
-            <xs:element ref="ris:gesamttitelAngaben" minOccurs="0" />
-            <xs:element ref="ris:regionen" minOccurs="0" />
-            <xs:element ref="ris:titelkurzformen" minOccurs="0" />
-            <xs:element ref="ris:ausgabe" minOccurs="0" />
-            <xs:element ref="ris:kollation" minOccurs="0" />
-            <xs:element ref="ris:besitznachweise" minOccurs="0" />
-            <xs:element ref="ris:teilbaende" minOccurs="0" />
-            <xs:element ref="ris:bibliothekarischeVerweisungen" minOccurs="0" />
-            <xs:element ref="ris:problemkreise" minOccurs="0" />
-            <xs:element ref="ris:sonstigerSachtitelListe" minOccurs="0" />
-            <xs:element ref="ris:vorauflagen" minOccurs="0" />
-            <xs:element ref="ris:dubletteToleriert" minOccurs="0" />
+            <xs:element name="dokumenttypen" type="ris:dokumenttypen" />
+            <xs:element
+              name="sachgebiete"
+              type="ris:sachgebiete"
+              minOccurs="0"
+            />
+            <xs:element
+              name="veroeffentlichungsJahre"
+              type="ris:veroeffentlichungsJahre"
+            />
+            <xs:element name="gliederung" type="ris:gliederung" minOccurs="0" />
+            <xs:element
+              name="gesamttitelAngaben"
+              type="ris:gesamttitelAngaben"
+              minOccurs="0"
+            />
+            <xs:element name="regionen" type="ris:regionen" minOccurs="0" />
+            <xs:element
+              name="titelkurzformen"
+              type="ris:titelkurzformen"
+              minOccurs="0"
+            />
+            <xs:element name="ausgabe" type="ris:ausgabe" minOccurs="0" />
+            <xs:element name="kollation" type="ris:kollation" minOccurs="0" />
+            <xs:element
+              name="besitznachweise"
+              type="ris:besitznachweise"
+              minOccurs="0"
+            />
+            <xs:element name="teilbaende" type="ris:teilbaende" minOccurs="0" />
+            <xs:element
+              name="bibliothekarischeVerweisungen"
+              type="ris:bibliothekarischeVerweisungen"
+              minOccurs="0"
+            />
+            <xs:element
+              name="problemkreise"
+              type="ris:problemkreise"
+              minOccurs="0"
+            />
+            <xs:element
+              name="sonstigerSachtitelListe"
+              type="ris:sonstigerSachtitelListe"
+              minOccurs="0"
+            />
+            <xs:element
+              name="vorauflagen"
+              type="ris:vorauflagen"
+              minOccurs="0"
+            />
+            <xs:element
+              name="dubletteToleriert"
+              type="ris:dubletteToleriert"
+              minOccurs="0"
+            />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
