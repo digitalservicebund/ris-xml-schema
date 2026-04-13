@@ -6,6 +6,12 @@
   elementFormDefault="qualified"
   targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
 >
+  <xs:annotation>
+    <xs:documentation xml:lang="de">
+      XSD-Schema für Definitionen im ris-namespace die nur für unselbstständige Literatur gelten.
+    </xs:documentation>
+  </xs:annotation>
+
   <xs:import
     namespace="http://www.w3.org/XML/1998/namespace"
     schemaLocation="./akn/xml.xsd"

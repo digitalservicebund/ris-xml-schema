@@ -6,6 +6,12 @@
   elementFormDefault="qualified"
   targetNamespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
 >
+  <xs:annotation>
+    <xs:documentation xml:lang="de">
+      XSD-Schema für Entscheidungen in der Rechtsprechung
+    </xs:documentation>
+  </xs:annotation>
+
   <xs:import
     namespace="http://www.w3.org/XML/1998/namespace"
     schemaLocation="./akn/xml.xsd"
@@ -48,10 +54,10 @@
       <xs:complexContent>
         <xs:restriction base="akn:judgmentBodyType">
           <xs:sequence>
-            <xs:element name="introduction" minOccurs="0" maxOccurs="2">
+            <xs:element ref="akn:introduction" minOccurs="0" maxOccurs="2">
               <xs:annotation>
                 <xs:documentation xml:lang="de">
-                    Leitsatz oder Gliederung
+                    Leitsatz oder Gliederung (wenn beide vorhanden sind in dieser Reihenfolge)
                   </xs:documentation>
               </xs:annotation>
             </xs:element>

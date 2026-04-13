@@ -8,12 +8,11 @@
 >
   <xs:annotation>
     <xs:documentation xml:lang="de">
-      Allgemeine Elemente für die Schemas für die verschiedenen Dokumente des
-      Rechtsinformationssystems. Dies beinhaltet nicht die Elemente für das
-      Normen-Schema. Diese werden in LegalDocMl.de definiert. Die
-      dokumentart-spezifischen Ergänzungen zu diesem Schema sind in weiteren
-      Schema-Dateien definiert:
-      * Rechtsprechung: ./caselaw.xsd
+      Allgemeine Elemente für die Schemas für die verschiedenen Dokumente des Rechtsinformationssystems.
+
+      Dies beinhaltet nicht die Elemente für das Normen-Schema. Diese werden in LegalDocMl.de definiert.
+
+      Die dokumentart-spezifischen Ergänzungen zu diesem Schema sind in weiteren Schema-Dateien definiert.
     </xs:documentation>
   </xs:annotation>
 
