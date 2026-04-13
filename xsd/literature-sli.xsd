@@ -26,109 +26,19 @@
       <xs:complexContent>
         <xs:restriction base="akn:akomaNtosoType">
           <xs:sequence>
-            <xs:element ref="akn:judgment" />
+            <xs:element ref="akn:doc" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="judgmentStructure">
+    <xs:complexType name="openStructure">
       <xs:complexContent>
-        <xs:restriction base="akn:judgmentStructure">
+        <xs:restriction base="akn:openStructure">
           <xs:sequence>
             <xs:element ref="akn:meta" />
-            <xs:element ref="akn:header" />
-            <xs:element ref="akn:judgmentBody" />
-          </xs:sequence>
-        </xs:restriction>
-      </xs:complexContent>
-    </xs:complexType>
-
-    <xs:complexType name="judgmentBodyType">
-      <xs:complexContent>
-        <xs:restriction base="akn:judgmentBodyType">
-          <xs:sequence>
-            <xs:element name="introduction" minOccurs="0" maxOccurs="2">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Leitsatz oder Gliederung
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:introduction" minOccurs="0">
-              <!-- only in Anhängiges Verfahren -->
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Rechtsmittelführer
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:introduction" minOccurs="0">
-              <!-- only in Anhängiges Verfahren -->
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Rechtsmittelzulassung
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:decision" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Tenor
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:decision" minOccurs="0">
-              <!-- only in Anhängiges Verfahren -->
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Erledigungsvermerk
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:background" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Tatbestand
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Gründe
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Entscheidungsgründe
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Sonstiger Langtext
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Abweichende Meinung
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0">
-              <!-- only in Anhängiges Verfahren -->
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Rechtsfrage
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
+            <xs:element ref="akn:preface" />
+            <xs:element ref="akn:mainBody" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>

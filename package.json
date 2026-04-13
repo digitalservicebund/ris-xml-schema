@@ -8,6 +8,7 @@
     "test": "npm run test:caselaw:decision && npm run test:caselaw:pending-proceeding",
     "test:caselaw:decision": "xmllint --noout --schema xsd/caselaw-decision.xsd samples/caselaw/decision/*.xml",
     "test:caselaw:pending-proceeding": "xmllint --noout --schema xsd/caselaw-pending-proceeding.xsd samples/caselaw/pending-proceeding/*.xml",
+    "test:literature:sli": "xmllint --noout --schema xsd/literature-sli.xsd samples/literature/sli/*.xml",
     "test:watch": "watch \"npm run test\" --wait=2"
   },
   "devDependencies": {
