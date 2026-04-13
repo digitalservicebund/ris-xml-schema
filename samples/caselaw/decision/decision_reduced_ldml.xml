@@ -289,28 +289,40 @@
       </akn:p>
     </akn:header>
     <akn:judgmentBody>
-      <akn:introduction ris:domainTerm="Leitsatz">
+      <akn:introduction ris:domainTerm="Leitsatz" xsi:type="ris:leitsatz">
         <akn:p>guidingPrinciple test</akn:p>
       </akn:introduction>
-      <akn:introduction ris:domainTerm="Gliederung">
+      <akn:introduction
+        ris:domainTerm="Gliederung"
+        xsi:type="ris:gliederungRechtsprechung"
+      >
         <akn:p>outline test</akn:p>
       </akn:introduction>
-      <akn:decision ris:domainTerm="Tenor">
+      <akn:decision ris:domainTerm="Tenor" xsi:type="ris:tenor">
         <akn:p>tenor test</akn:p>
       </akn:decision>
-      <akn:background ris:domainTerm="Tatbestand">
+      <akn:background ris:domainTerm="Tatbestand" xsi:type="ris:tatbestand">
         <akn:p>caseFacts test</akn:p>
       </akn:background>
-      <akn:motivation ris:domainTerm="Gründe">
+      <akn:motivation ris:domainTerm="Gründe" xsi:type="ris:gruende">
         <akn:p>grounds test</akn:p>
       </akn:motivation>
-      <akn:motivation ris:domainTerm="Entscheidungsgründe">
+      <akn:motivation
+        ris:domainTerm="Entscheidungsgründe"
+        xsi:type="ris:entscheidungsgruende"
+      >
         <akn:p>decisionGrounds test</akn:p>
       </akn:motivation>
-      <akn:motivation ris:domainTerm="Sonstiger Langtext">
+      <akn:motivation
+        ris:domainTerm="Sonstiger Langtext"
+        xsi:type="ris:sonstigerLangtext"
+      >
         <akn:p>otherLongText test</akn:p>
       </akn:motivation>
-      <akn:motivation ris:domainTerm="Abweichende Meinung">
+      <akn:motivation
+        ris:domainTerm="Abweichende Meinung"
+        xsi:type="ris:abweichendeMeinung"
+      >
         <akn:p>dissenting test</akn:p>
         <akn:block name="Mitwirkende Richter">
           <akn:opinion

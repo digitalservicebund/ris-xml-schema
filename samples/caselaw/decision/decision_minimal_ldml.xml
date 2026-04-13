@@ -118,7 +118,7 @@
       </akn:p>
     </akn:header>
     <akn:judgmentBody>
-      <akn:background ris:domainTerm="Tatbestand">
+      <akn:background ris:domainTerm="Tatbestand" xsi:type="ris:tatbestand">
         <akn:p>Example content 1</akn:p>
       </akn:background>
     </akn:judgmentBody>
