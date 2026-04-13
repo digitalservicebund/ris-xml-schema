@@ -14,10 +14,6 @@
     namespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
     schemaLocation="literature-sli-metadata.xsd"
   />
-  <xs:import
-    namespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
-    schemaLocation="./references-literature-sli.xsd"
-  />
 
   <xs:redefine schemaLocation="./akn/akomantoso30.xsd">
     <xs:complexType name="akomaNtosoType">
