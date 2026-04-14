@@ -7,7 +7,7 @@
     name="/akn/ontology/de/concept/documenttype/bund/literatur/selbststaendig"
   >
     <akn:meta>
-      <akn:identification source="attributsemantik-noch-undefiniert">
+      <akn:identification source="#ris">
         <akn:FRBRWork>
           <akn:FRBRthis value="TODO" />
           <akn:FRBRuri value="TODO" />
@@ -95,7 +95,12 @@
           value="Soziologie"
         />
       </akn:classification>
-      <akn:references source="attributsemantik-noch-undefiniert">
+      <akn:references source="#ris">
+        <akn:TLCOrganization
+          eId="ris"
+          href=""
+          showAs="Rechtsinformationssystem des Bundes"
+        />
         <akn:TLCPerson
           eId="xx-verfasser-1"
           href="akn/ontology/persons/de/xx"
@@ -163,7 +168,7 @@
           showAs="Verlag"
         />
       </akn:references>
-      <akn:proprietary source="attributsemantik-noch-undefiniert">
+      <akn:proprietary source="#ris">
         <ris:meta>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet

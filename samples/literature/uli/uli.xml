@@ -7,7 +7,7 @@
     name="/akn/ontology/de/concept/documenttype/bund/literatur/unselbststaendig"
   >
     <akn:meta>
-      <akn:identification source="attributsemantik-noch-undefiniert">
+      <akn:identification source="#ris">
         <akn:FRBRWork>
           <akn:FRBRthis value="TODO" />
           <akn:FRBRuri value="TODO" />
@@ -306,8 +306,8 @@
           value="Zustandekommen"
         />
       </akn:classification>
-      <akn:analysis source="attributsemantik-noch-undefiniert">
-        <akn:otherReferences source="attributsemantik-noch-undefiniert">
+      <akn:analysis source="#ris">
+        <akn:otherReferences source="#ris">
           <akn:implicitReference showAs="SGB 5, § 28 Abs 3">
             <ris:norm domainTerm="Norm">
               <ris:abkuerzung domainTerm="Abkürzung">SGB 5</ris:abkuerzung>
@@ -332,7 +332,12 @@
           </akn:implicitReference>
         </akn:otherReferences>
       </akn:analysis>
-      <akn:references source="attributsemantik-noch-undefiniert">
+      <akn:references source="#ris">
+        <akn:TLCOrganization
+          eId="ris"
+          href=""
+          showAs="Rechtsinformationssystem des Bundes"
+        />
         <akn:TLCPerson
           eId="engesser-deborah-verfasser-1"
           href="akn/ontology/persons/de/engesser-deborah"
@@ -384,7 +389,7 @@
           showAs="Verfasser"
         />
       </akn:references>
-      <akn:proprietary source="attributsemantik-noch-undefiniert">
+      <akn:proprietary source="#ris">
         <ris:meta>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet

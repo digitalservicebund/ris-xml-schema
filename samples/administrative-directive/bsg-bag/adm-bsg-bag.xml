@@ -7,7 +7,7 @@
     name="/akn/ontology/de/concept/documenttype/bund/verwaltungsvorschrift"
   >
     <akn:meta>
-      <akn:identification source="attributsemantik-noch-undefiniert">
+      <akn:identification source="#ris">
         <akn:FRBRWork>
           <akn:FRBRthis
             value="/eli/bund/verwaltungsvorschriften/vr/gemeinsamer-bundesausschuss/2024/25756"
@@ -64,7 +64,7 @@
           <akn:FRBRformat value="xml" />
         </akn:FRBRManifestation>
       </akn:identification>
-      <akn:classification source="attributsemantik-noch-undefiniert">
+      <akn:classification source="#ris">
         <akn:keyword
           showAs="Datenerhebung"
           dictionary="attributsemantik-noch-undefiniert"
@@ -211,8 +211,8 @@
           value="Änderung"
         />
       </akn:classification>
-      <akn:analysis source="attributsemantik-noch-undefiniert">
-        <akn:otherReferences source="attributsemantik-noch-undefiniert">
+      <akn:analysis source="#ris">
+        <akn:otherReferences source="#ris">
           <akn:implicitReference
             shortForm="BAnz"
             showAs="BAnz AT 27.08.2024 B4"
@@ -258,7 +258,14 @@
           </akn:implicitReference>
         </akn:otherReferences>
       </akn:analysis>
-      <akn:proprietary source="attributsemantik-noch-undefiniert">
+      <akn:references source="#ris">
+        <akn:TLCOrganization
+          eId="ris"
+          href=""
+          showAs="Rechtsinformationssystem des Bundes"
+        />
+      </akn:references>
+      <akn:proprietary source="#ris">
         <ris:meta>
           <ris:normgeberListe domainTerm="Normgeber">
             <ris:normgeber
