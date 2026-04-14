@@ -102,6 +102,7 @@
               type="ris:vorabdokument"
               minOccurs="0"
             />
+            <xs:element name="personen" type="ris:personen" minOccurs="0" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>

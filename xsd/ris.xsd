@@ -1877,6 +1877,59 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
+  <xs:complexType name="personen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste an Personen
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="person" type="ris:person" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="person">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Person
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="ris:personName" />
+      <xs:element name="titel" type="ris:personTitel" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    <xs:attributeGroup ref="akn:showopt" />
+    <xs:attributeGroup ref="akn:idreq" />
+  </xs:complexType>
+
+  <xs:complexType name="personName">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Name einer Person
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="personTitel">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Titel einer Person
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <!-- langtexte, the types need to be specified using xsi:type to be validated. -->
 
   <xs:complexType name="tenor">

@@ -21,19 +21,13 @@
             name="Erfassungsdatum"
             ris:domainTerm="Erfassungsdatum"
           />
-          <akn:FRBRauthor
-            as="#verfasser"
-            href="#engesser-deborah-verfasser-1"
-          />
-          <akn:FRBRauthor as="#verfasser" href="#maier-lena-verfasser-2" />
-          <akn:FRBRauthor as="#verfasser" href="#mittag-martina-verfasser-3" />
-          <akn:FRBRauthor as="#verfasser" href="#lang-klaus-verfasser-4" />
-          <akn:FRBRauthor
-            as="#verfasser"
-            href="#nagel-brotzler-almut-verfasser-5"
-          />
-          <akn:FRBRauthor as="#verfasser" href="#wirp-bernhild-verfasser-6" />
-          <akn:FRBRauthor as="#verfasser" href="#kobes-joerg-verfasser-7" />
+          <akn:FRBRauthor as="#verfasser" href="#person-engesser-deborah" />
+          <akn:FRBRauthor as="#verfasser" href="#person-maier-lena" />
+          <akn:FRBRauthor as="#verfasser" href="#person-mittag-martina" />
+          <akn:FRBRauthor as="#verfasser" href="#person-lang-klaus" />
+          <akn:FRBRauthor as="#verfasser" href="#person-nagel-brotzler-almut" />
+          <akn:FRBRauthor as="#verfasser" href="#person-wirp-bernhild" />
+          <akn:FRBRauthor as="#verfasser" href="#person-kobes-joerg" />
           <akn:FRBRcountry value="de" />
           <akn:FRBRsubtype value="LU" />
           <akn:FRBRnumber value="TODO" />
@@ -338,51 +332,6 @@
           href=""
           showAs="Rechtsinformationssystem des Bundes"
         />
-        <akn:TLCPerson
-          eId="engesser-deborah-verfasser-1"
-          href="akn/ontology/persons/de/engesser-deborah"
-          ris:name="Engesser, Deborah"
-          ris:titel="Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz"
-          showAs="Engesser, Deborah, Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz"
-        />
-        <akn:TLCPerson
-          eId="maier-lena-verfasser-2"
-          href="akn/ontology/persons/de/maier-lena"
-          ris:name="Maier, Lena"
-          ris:titel="Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz"
-          showAs="Maier, Lena, Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz"
-        />
-        <akn:TLCPerson
-          eId="mittag-martina-verfasser-3"
-          href="akn/ontology/persons/de/mittag-martina"
-          ris:name="Mittag, Martina"
-          ris:titel="Psychotherapeutische Praxis"
-          showAs="Mittag, Martina, Psychotherapeutische Praxis"
-        />
-        <akn:TLCPerson
-          eId="lang-klaus-verfasser-4"
-          href="akn/ontology/persons/de/lang-klaus"
-          ris:name="Lang, Klaus"
-          showAs="Lang, Klaus"
-        />
-        <akn:TLCPerson
-          eId="nagel-brotzler-almut-verfasser-5"
-          href="akn/ontology/persons/de/nagel-brotzler-almut"
-          ris:name="Nagel-Brotzler, Almut"
-          showAs="Nagel-Brotzler, Almut"
-        />
-        <akn:TLCPerson
-          eId="wirp-bernhild-verfasser-6"
-          href="akn/ontology/persons/de/wirp-bernhild"
-          ris:name="Wirp, Bernhild"
-          showAs="Wirp, Bernhild"
-        />
-        <akn:TLCPerson
-          eId="kobes-joerg-verfasser-7"
-          href="akn/ontology/persons/de/kobes-joerg"
-          ris:name="Kobes, Jörg"
-          showAs="Kobes, Jörg"
-        />
         <akn:TLCRole
           eId="verfasser"
           href="akn/ontology/roles/de/verfasser"
@@ -449,6 +398,66 @@
               domainTerm="Gliederungseintrag"
             >Diskussion</ris:gliederungEntry>
           </ris:gliederung>
+          <ris:personen domainTerm="Personen">
+            <ris:person
+              domainTerm="Person"
+              eId="person-engesser-deborah"
+              showAs="Engesser, Deborah, Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz"
+            >
+              <ris:name domainTerm="Name">Engesser, Deborah"</ris:name>
+              <ris:titel
+                domainTerm="Titel"
+              >Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz</ris:titel>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-maier-lena"
+              showAs="Maier, Lena, Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz"
+            >
+              <ris:name domainTerm="Name">Maier, Lena</ris:name>
+              <ris:titel
+                domainTerm="Titel"
+              >Institut für Medizinische Biometrie, Epidemiologie und Informatik, Abteilung Epidemiologie und Versorgungsforschung, Universitätsmedizin der Johannes Gutenberg-Universität Mainz</ris:titel>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-mittag-martina"
+              showAs="Mittag, Martina, Psychotherapeutische Praxis"
+            >
+              <ris:name domainTerm="Name">Mittag, Martina</ris:name>
+              <ris:titel
+                domainTerm="Titel"
+              >Psychotherapeutische Praxis</ris:titel>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-lang-klaus"
+              showAs="Lang, Klaus"
+            >
+              <ris:name domainTerm="Name">Lang, Klaus</ris:name>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-nagel-brotzler-almut"
+              showAs="Nagel-Brotzler, Almut"
+            >
+              <ris:name domainTerm="Name">Nagel-Brotzler, Almut</ris:name>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-wirp-bernhild"
+              showAs="Wirp, Bernhild"
+            >
+              <ris:name domainTerm="Name">Wirp, Bernhild</ris:name>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-kobes-joerg"
+              showAs="Kobes, Jörg"
+            >
+              <ris:name domainTerm="Name">Kobes, Jörg</ris:name>
+            </ris:person>
+          </ris:personen>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
