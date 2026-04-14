@@ -1543,21 +1543,37 @@
         Angabe zum Gesamttitel
       </xs:documentation>
     </xs:annotation>
-    <xs:attribute name="titel" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation xml:lang="de">
-          Titel
-        </xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="bandbezeichnung" type="xs:string">
-      <xs:annotation>
-        <xs:documentation xml:lang="de">
-          Bezeichnung des Bandes
-        </xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:sequence>
+      <xs:element name="titel" type="ris:gesamttitelTitel" />
+      <xs:element name="bandbezeichnung" type="ris:bandbezeichnung" />
+    </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="gesamttitelTitel">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Titel des Gesamttitels
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="bandbezeichnung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Bezeichnung des Bandes
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
   <xs:complexType name="titelkurzformen">

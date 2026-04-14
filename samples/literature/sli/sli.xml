@@ -183,11 +183,14 @@
             >2015</ris:veroeffentlichungsJahr>
           </ris:veroeffentlichungsJahre>
           <ris:gesamttitelAngaben domainTerm="Gesamttitel Liste">
-            <ris:gesamttitel
-              bandbezeichnung="Nr 19297"
-              titel="Reclams Universal-Bibliothek"
-              domainTerm="Gesamttitel"
-            />
+            <ris:gesamttitel domainTerm="Gesamttitel">
+              <ris:titel
+                domainTerm="Titel"
+              >Reclams Universal-Bibliothek</ris:titel>
+              <ris:bandbezeichnung
+                domainTerm="Bandbezeichnung"
+              >Nr 19297</ris:bandbezeichnung>
+            </ris:gesamttitel>
           </ris:gesamttitelAngaben>
           <ris:besitznachweise domainTerm="Besitznachweise">
             <ris:besitznachweis domainTerm="Besitznachweis">
