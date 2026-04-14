@@ -1644,21 +1644,37 @@
         Besitznachweis
       </xs:documentation>
     </xs:annotation>
-    <xs:attribute name="institution" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation xml:lang="de">
-          Institution
-        </xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="signatur" type="xs:string">
-      <xs:annotation>
-        <xs:documentation xml:lang="de">
-          Signatur
-        </xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:sequence>
+      <xs:element name="institution" type="ris:institution" />
+      <xs:element name="signatur" type="ris:signatur" minOccurs="0" />
+    </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="institution">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Institution
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="signatur">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Signatur
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
   <xs:complexType name="teilbaende">

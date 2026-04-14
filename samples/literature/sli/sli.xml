@@ -190,11 +190,10 @@
             />
           </ris:gesamttitelAngaben>
           <ris:besitznachweise domainTerm="Besitznachweise">
-            <ris:besitznachweis
-              institution="BSG"
-              signatur="VwiK 1032"
-              domainTerm="Besitznachweis"
-            />
+            <ris:besitznachweis domainTerm="Besitznachweis">
+              <ris:institution domainTerm="Institution">BSG</ris:institution>
+              <ris:signatur domainTerm="Signatur">VwiK 1032</ris:signatur>
+            </ris:besitznachweis>
           </ris:besitznachweise>
           <ris:kollation umfangsangabe="359 S" domainTerm="Kollation" />
         </ris:meta>
