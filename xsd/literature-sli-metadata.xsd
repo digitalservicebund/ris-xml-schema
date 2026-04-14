@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1"
   elementFormDefault="qualified"
-  targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+  targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1"
 >
   <xs:annotation>
     <xs:documentation xml:lang="de">
