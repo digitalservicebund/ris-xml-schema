@@ -1608,15 +1608,20 @@
         Kollation
       </xs:documentation>
     </xs:annotation>
+    <xs:sequence>
+      <xs:element name="umfangsangabe" type="ris:umfangsangabe" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="umfangsangabe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Umfangsangabe
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute name="umfangsangabe" type="xs:string" use="required">
-          <xs:annotation>
-            <xs:documentation xml:lang="de">
-              Umfangsangabe
-            </xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
