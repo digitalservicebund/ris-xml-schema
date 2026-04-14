@@ -219,16 +219,40 @@
             shortForm="SGB 5"
             showAs="SGB 5 § 92 Abs 1 S 2 Nr 13"
           >
-            <ris:normReference singleNorm="§ 92 Abs 1 S 2 Nr 13" />
+            <ris:norm domainTerm="Norm">
+              <ris:abkuerzung domainTerm="Abkürzung">SGB 5</ris:abkuerzung>
+              <ris:einzelnorm domainTerm="Einzelnorm">
+                <ris:bezeichnung
+                  domainTerm="Bezeichnung"
+                >§ 92 Abs 1 S 2 Nr 13</ris:bezeichnung>
+              </ris:einzelnorm>
+            </ris:norm>
           </akn:implicitReference>
           <akn:implicitReference
             shortForm="SGB 5"
             showAs="SGB 5 § 136 Abs 1 S 1 Nr 1"
           >
-            <ris:normReference singleNorm="§ 136 Abs 1 S 1 Nr 1" />
+            <ris:norm domainTerm="Norm">
+              <ris:abkuerzung domainTerm="Abkürzung">SGB 5</ris:abkuerzung>
+              <ris:einzelnorm domainTerm="Einzelnorm">
+                <ris:bezeichnung
+                  domainTerm="Bezeichnung"
+                >§ 136 Abs 1 S 1 Nr 1</ris:bezeichnung>
+              </ris:einzelnorm>
+            </ris:norm>
           </akn:implicitReference>
           <akn:implicitReference shortForm="DeQSRL" showAs="DeQSRL Teil 1">
-            <ris:normReference singleNorm="Teil 1" dateOfVersion="2024-07-18" />
+            <ris:norm domainTerm="Norm">
+              <ris:abkuerzung domainTerm="Abkürzung">DeQSRL</ris:abkuerzung>
+              <ris:einzelnorm domainTerm="Einzelnorm">
+                <ris:bezeichnung
+                  domainTerm="Bezeichnung"
+                >Teil 1</ris:bezeichnung>
+                <ris:fassungsdatum
+                  domainTerm="Fassungsdatum"
+                >2024-07-18</ris:fassungsdatum>
+              </ris:einzelnorm>
+            </ris:norm>
           </akn:implicitReference>
         </akn:otherReferences>
       </akn:analysis>

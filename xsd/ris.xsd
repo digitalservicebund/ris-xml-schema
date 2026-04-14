@@ -1232,7 +1232,7 @@
     <xs:sequence>
       <xs:element name="abkuerzung" type="ris:periodikumAbkuerzung" />
       <xs:element name="periodikumTyp" type="ris:periodikumTyp" minOccurs="0" />
-      <xs:element name="titel" type="ris:titel" />
+      <xs:element name="titel" type="ris:titel" minOccurs="0" />
       <xs:element
         name="untertitel"
         type="ris:periodikumUntertitel"

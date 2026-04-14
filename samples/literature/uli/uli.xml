@@ -309,13 +309,26 @@
       <akn:analysis source="attributsemantik-noch-undefiniert">
         <akn:otherReferences source="attributsemantik-noch-undefiniert">
           <akn:implicitReference showAs="SGB 5, § 28 Abs 3">
-            <ris:normReference abbreviation="SGB 5" singleNorm="§ 28 Abs 3" />
+            <ris:norm domainTerm="Norm">
+              <ris:abkuerzung domainTerm="Abkürzung">SGB 5</ris:abkuerzung>
+              <ris:einzelnorm domainTerm="Einzelnorm">
+                <ris:bezeichnung
+                  domainTerm="Bezeichnung"
+                >§ 28 Abs 3</ris:bezeichnung>
+              </ris:einzelnorm>
+            </ris:norm>
           </akn:implicitReference>
           <akn:implicitReference showAs="GesundhWes, 2023, 911-917">
-            <ris:fundstelleUnselbstaendig
-              periodikum="GesundhWes"
-              zitatstelle="2023, 911-917"
-            />
+            <ris:fundstelle domainTerm="Fundstelle">
+              <ris:periodikum domainTerm="Periodikum">
+                <ris:abkuerzung
+                  domainTerm="Abkürzung"
+                >GesundhWes</ris:abkuerzung>
+              </ris:periodikum>
+              <ris:zitatstelle
+                domainTerm="Zitatstelle"
+              >2023, 911-917</ris:zitatstelle>
+            </ris:fundstelle>
           </akn:implicitReference>
         </akn:otherReferences>
       </akn:analysis>
