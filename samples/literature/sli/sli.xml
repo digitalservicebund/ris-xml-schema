@@ -92,32 +92,32 @@
       <akn:references source="#ris">
         <akn:TLCOrganization
           eId="ris"
-          href="akn/ontology/organizations/de/ris/rechtsinformationssystem-des-bundes"
+          href="/akn/ontology/organizations/de/ris/rechtsinformationssystem-des-bundes"
           showAs="Rechtsinformationssystem des Bundes"
         />
         <akn:TLCRole
           eId="verfasser"
-          href="akn/ontology/roles/de/ris/literatur/sli/verfasser"
+          href="/akn/ontology/roles/de/ris/literatur/sli/verfasser"
           showAs="Verfasser"
         />
         <akn:TLCRole
           eId="herausgeber-person"
-          href="akn/ontology/roles/de/ris/literatur/sli/herausgeber-person"
+          href="/akn/ontology/roles/de/ris/literatur/sli/herausgeber-person"
           showAs="Herausgeber Person"
         />
         <akn:TLCRole
           eId="bearbeiter"
-          href="akn/ontology/roles/de/ris/literatur/sli/bearbeiter"
+          href="/akn/ontology/roles/de/ris/literatur/sli/bearbeiter"
           showAs="Bearbeiter"
         />
         <akn:TLCRole
           eId="hochschule"
-          href="akn/ontology/roles/de/ris/literatur/sli/hochschule"
+          href="/akn/ontology/roles/de/ris/literatur/sli/hochschule"
           showAs="Hochschule"
         />
         <akn:TLCRole
           eId="verlag"
-          href="akn/ontology/roles/de/ris/literatur/sli/verlag"
+          href="/akn/ontology/roles/de/ris/literatur/sli/verlag"
           showAs="Verlag"
         />
       </akn:references>
