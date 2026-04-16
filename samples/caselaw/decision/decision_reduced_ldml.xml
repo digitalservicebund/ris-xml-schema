@@ -203,11 +203,6 @@
           showAs="documentationOffice"
         />
         <akn:TLCOrganization eId="gericht" href="" showAs="courtLabel test" />
-        <akn:TLCOrganization
-          eId="spruchkoerper"
-          href=""
-          showAs="appraisalBody test"
-        />
         <akn:TLCPerson
           eId="dr-phil-max-mustermann"
           href=""
@@ -232,10 +227,7 @@
             <ris:gerichtsort domainTerm="Gerichtsort">
               courtLocation
             </ris:gerichtsort>
-            <ris:spruchkoerper
-              domainTerm="Spruchkörper"
-              refersTo="#spruchkoerper"
-            >
+            <ris:spruchkoerper domainTerm="Spruchkörper">
               appraisalBody test
             </ris:spruchkoerper>
           </ris:gericht>
