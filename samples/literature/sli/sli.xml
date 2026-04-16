@@ -97,27 +97,27 @@
         />
         <akn:TLCRole
           eId="verfasser"
-          href="/akn/ontology/roles/de/ris/literatur/sli/verfasser"
+          href="/akn/ontology/roles/de/ris/literatur/verfasser"
           showAs="Verfasser"
         />
         <akn:TLCRole
           eId="herausgeber-person"
-          href="/akn/ontology/roles/de/ris/literatur/sli/herausgeber-person"
+          href="/akn/ontology/roles/de/ris/literatur/herausgeber-person"
           showAs="Herausgeber Person"
         />
         <akn:TLCRole
           eId="bearbeiter"
-          href="/akn/ontology/roles/de/ris/literatur/sli/bearbeiter"
+          href="/akn/ontology/roles/de/ris/literatur/bearbeiter"
           showAs="Bearbeiter"
         />
         <akn:TLCRole
           eId="hochschule"
-          href="/akn/ontology/roles/de/ris/literatur/sli/hochschule"
+          href="/akn/ontology/roles/de/ris/literatur/hochschule"
           showAs="Hochschule"
         />
         <akn:TLCRole
           eId="verlag"
-          href="/akn/ontology/roles/de/ris/literatur/sli/verlag"
+          href="/akn/ontology/roles/de/ris/literatur/verlag"
           showAs="Verlag"
         />
       </akn:references>

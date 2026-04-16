@@ -334,7 +334,7 @@
         />
         <akn:TLCRole
           eId="verfasser"
-          href="/akn/ontology/roles/de/ris/literatur/uli/verfasser"
+          href="/akn/ontology/roles/de/ris/literatur/verfasser"
           showAs="Verfasser"
         />
       </akn:references>

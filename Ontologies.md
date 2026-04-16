@@ -47,6 +47,40 @@ Bundesgerichte
 
 Für `source`-Angaben wollen wir auf das Rechtsinformationssystem des Bundes selbst verweisen.
 
+## Literatur Rollen
+
+Rollen die Personen oder Organisationen im Kontext eines Literatur-Dokuments einnehmen können
+
+### Verfasser
+
+```
+/akn/ontology/roles/de/ris/literatur/verfasser
+```
+
+### Herausgeber (Person)
+
+```
+/akn/ontology/roles/de/ris/literatur/herausgeber-person
+```
+
+### Bearbeiter
+
+```
+/akn/ontology/roles/de/ris/literatur/bearbeiter
+```
+
+### Hochschule
+
+```
+/akn/ontology/roles/de/ris/literatur/hochschule
+```
+
+### Verlag
+
+```
+/akn/ontology/roles/de/ris/literatur/verlag
+```
+
 ## Personen
 
 Unsere Daten erlauben es uns nicht Personen sicher eindeutig zu identifizieren. Daher nutzen wir hierfür keine
