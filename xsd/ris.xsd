@@ -270,7 +270,7 @@
         >
           <xs:annotation>
             <xs:documentation xml:lang="de">
-                Das primäre Aktenzeichen ist hierdurch gekennzeichnet.
+                Das primäre Aktenzeichen ist hierdurch gekennzeichnet. Es wird außerdem in akn:FRBRalias[eId="aktenzeichen"] angegeben.
               </xs:documentation>
           </xs:annotation>
         </xs:attribute>
