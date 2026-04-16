@@ -9,6 +9,12 @@
   <xs:annotation>
     <xs:documentation xml:lang="de">
       XSD-Schema für selbstständige Literatur
+
+      FRBRauthor wird verwendet um verschiedenen Organisationen und Personen, die an der Erstellung des Dokuments
+      beteiligt waren, aufzulisten und die Art der Beteiligung anzugeben. Hierzu wird im `as`-Attribut auf die Art der
+      Beteiligung verwiesen, welche als akn:TLCRole näher definiert ist. Auf die Person oder Organisation wird über das
+      `href`-Attribut verwiesen. Diese ist als ris:person oder ris:organisation im ris:meta-Bereich der
+      proprietary-Metadaten näher definiert.
     </xs:documentation>
   </xs:annotation>
 
