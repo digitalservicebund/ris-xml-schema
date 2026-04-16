@@ -84,7 +84,7 @@
             </ris:norm>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
-            <ris:vorgehend domainTerm="Vorgehende Entscheidung">
+            <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
               <ris:dokumenttyp domainTerm="Dokumenttyp">
                 previous decision document type
               </ris:dokumenttyp>
@@ -105,10 +105,10 @@
                   previous decision court location
                 </ris:gerichtsort>
               </ris:gericht>
-            </ris:vorgehend>
+            </ris:vorgehendeEntscheidung>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
-            <ris:vorgehend domainTerm="Vorgehende Entscheidung">
+            <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
               <ris:dokumenttyp domainTerm="Dokumenttyp">
                 previous decision document type
               </ris:dokumenttyp>
@@ -129,10 +129,10 @@
                   previous decision court location
                 </ris:gerichtsort>
               </ris:gericht>
-            </ris:vorgehend>
+            </ris:vorgehendeEntscheidung>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
-            <ris:nachgehend
+            <ris:nachgehendeEntscheidung
               art="anhängig"
               domainTerm="Nachgehende Entscheidung"
             >
@@ -153,10 +153,10 @@
                   ensuing decision court type
                 </ris:gerichtstyp>
               </ris:gericht>
-            </ris:nachgehend>
+            </ris:nachgehendeEntscheidung>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
-            <ris:nachgehend
+            <ris:nachgehendeEntscheidung
               art="anhängig"
               domainTerm="Nachgehende Entscheidung"
             >
@@ -180,7 +180,7 @@
               <ris:vermerk domainTerm="Vermerk">
                 ensuing decision note
               </ris:vermerk>
-            </ris:nachgehend>
+            </ris:nachgehendeEntscheidung>
           </akn:implicitReference>
         </akn:otherReferences>
         <akn:otherAnalysis source="#ris">

@@ -964,8 +964,11 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
-  <xs:element name="nachgehend" type="ris:nachgehend" />
-  <xs:complexType name="nachgehend">
+  <xs:element
+    name="nachgehendeEntscheidung"
+    type="ris:nachgehendeEntscheidung"
+  />
+  <xs:complexType name="nachgehendeEntscheidung">
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
@@ -989,10 +992,14 @@
       <xs:element name="vermerk" type="ris:vermerk" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-    <xs:attribute name="art" type="ris:nachgehendArt" use="required" />
+    <xs:attribute
+      name="art"
+      type="ris:nachgehendeEntscheidungArt"
+      use="required"
+    />
   </xs:complexType>
 
-  <xs:simpleType name="nachgehendArt">
+  <xs:simpleType name="nachgehendeEntscheidungArt">
     <xs:restriction base="xs:string">
       <xs:enumeration value="nachgehend">
         <xs:annotation>
@@ -1011,8 +1018,8 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:element name="vorgehend" type="ris:vorgehend" />
-  <xs:complexType name="vorgehend">
+  <xs:element name="vorgehendeEntscheidung" type="ris:vorgehendeEntscheidung" />
+  <xs:complexType name="vorgehendeEntscheidung">
     <xs:annotation>
       <xs:documentation
         xml:lang="de"

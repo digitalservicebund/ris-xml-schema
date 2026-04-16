@@ -107,7 +107,7 @@
             </ris:norm>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
-            <ris:vorgehend domainTerm="Vorgehende Entscheidung">
+            <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
               <ris:dokumenttyp
                 domainTerm="Dokumenttyp"
               >previous decision document type</ris:dokumenttyp>
@@ -131,10 +131,10 @@
                   domainTerm="Gerichtsbarkeit"
                 >previous decision jurisdiction type</ris:gerichtsbarkeit>
               </ris:gericht>
-            </ris:vorgehend>
+            </ris:vorgehendeEntscheidung>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
-            <ris:vorgehend domainTerm="Vorgehende Entscheidung">
+            <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
               <ris:dokumenttyp
                 domainTerm="Dokumenttyp"
               >previous decision document type</ris:dokumenttyp>
@@ -158,10 +158,10 @@
                   domainTerm="Gerichtsbarkeit"
                 >previous decision jurisdiction type</ris:gerichtsbarkeit>
               </ris:gericht>
-            </ris:vorgehend>
+            </ris:vorgehendeEntscheidung>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
-            <ris:nachgehend
+            <ris:nachgehendeEntscheidung
               domainTerm="Nachgehende Entscheidung"
               art="nachgehend"
             >
@@ -182,10 +182,10 @@
                   domainTerm="Gerichtstyp"
                 >ensuing decision court type</ris:gerichtstyp>
               </ris:gericht>
-            </ris:nachgehend>
+            </ris:nachgehendeEntscheidung>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
-            <ris:nachgehend
+            <ris:nachgehendeEntscheidung
               domainTerm="Nachgehende Entscheidung"
               art="anhängig"
             >
@@ -207,7 +207,7 @@
                 >decision court type</ris:gerichtstyp>
               </ris:gericht>
               <ris:vermerk domainTerm="Vermerk">decision note</ris:vermerk>
-            </ris:nachgehend>
+            </ris:nachgehendeEntscheidung>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Fundstelle">
             <ris:fundstelle domainTerm="Fundstelle">
