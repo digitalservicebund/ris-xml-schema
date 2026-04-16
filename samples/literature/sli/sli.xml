@@ -25,22 +25,16 @@
             name="Erfassungsdatum"
             ris:domainTerm="Erfassungsdatum"
           />
-          <akn:FRBRauthor as="#verfasser" href="#xx-verfasser-1" />
+          <akn:FRBRauthor as="#verfasser" href="#person-xx" />
+          <akn:FRBRauthor as="#herausgeber-person" href="#person-farzin-sina" />
           <akn:FRBRauthor
             as="#herausgeber-person"
-            href="#farzin-sina-herausgeber-person-1"
+            href="#person-jordan-stefan"
           />
-          <akn:FRBRauthor
-            as="#herausgeber-person"
-            href="#jordan-stefan-herausgeber-person-2"
-          />
-          <akn:FRBRauthor
-            as="#bearbeiter"
-            href="#satzky-manfred-bearbeiter-1"
-          />
+          <akn:FRBRauthor as="#bearbeiter" href="#person-satzky-manfred" />
           <akn:FRBRauthor
             as="#hochschule"
-            href="#universitaet-erlangen-jurfak-hochschule-1"
+            href="#organisation-universitaet-erlangen-jurfak"
           />
           <akn:FRBRauthor as="#verlag" href="#reclam-verlag-1" />
           <akn:FRBRcountry value="de" />
@@ -98,73 +92,32 @@
       <akn:references source="#ris">
         <akn:TLCOrganization
           eId="ris"
-          href=""
+          href="akn/ontology/organizations/de/ris/rechtsinformationssystem-des-bundes"
           showAs="Rechtsinformationssystem des Bundes"
-        />
-        <akn:TLCPerson
-          eId="xx-verfasser-1"
-          href="akn/ontology/persons/de/xx"
-          ris:name="XX"
-          showAs="XX"
-        />
-        <akn:TLCPerson
-          eId="farzin-sina-herausgeber-person-1"
-          href="akn/ontology/persons/de/farzin-sina"
-          ris:name="Farzin, Sina"
-          ris:titel="M A, PhD-Fellow an der Bremen International Graduate School of Social Sciences der Universität Bremen"
-          showAs="Farzin, Sina, M A, PhD-Fellow an der Bremen International Graduate School of Social Sciences der Universität Bremen"
-        />
-        <akn:TLCPerson
-          eId="jordan-stefan-herausgeber-person-2"
-          href="akn/ontology/persons/de/jordan-stefan"
-          ris:name="Jordan, Stefan"
-          ris:titel="Dr phil, wiss Angestellter der Historischen Kommission bei der Bayerischen Akademie der Wissenschaften"
-          showAs="Jordan, Stefan, Dr phil, wiss Angestellter der Historischen Kommission bei der Bayerischen Akademie der Wissenschaften"
-        />
-        <akn:TLCPerson
-          eId="satzky-manfred-bearbeiter-1"
-          href="akn/ontology/persons/de/satzky-manfred"
-          ris:name="Satzky, Manfred"
-          ris:titel="Amtsrat"
-          showAs="Satzky, Manfred, Amtsrat"
-        />
-        <akn:TLCOrganization
-          eId="universitaet-erlangen-jurfak-hochschule-1"
-          href="akn/ontology/organizations/de/universitaet-erlangen-jurfak"
-          ris:jahr="1984"
-          ris:name="Universität Erlangen, JurFak"
-          showAs="Universität Erlangen, JurFak, 1984"
-        />
-        <akn:TLCOrganization
-          eId="reclam-verlag-1"
-          href="akn/ontology/organizations/de/reclam"
-          ris:name="Reclam"
-          ris:ort="Stuttgart"
-          showAs="Reclam, Stuttgart"
         />
         <akn:TLCRole
           eId="verfasser"
-          href="akn/ontology/roles/de/verfasser"
+          href="akn/ontology/roles/de/ris/literatur/sli/verfasser"
           showAs="Verfasser"
         />
         <akn:TLCRole
           eId="herausgeber-person"
-          href="akn/ontology/roles/de/herausgeber-person"
+          href="akn/ontology/roles/de/ris/literatur/sli/herausgeber-person"
           showAs="Herausgeber Person"
         />
         <akn:TLCRole
           eId="bearbeiter"
-          href="akn/ontology/roles/de/bearbeiter"
+          href="akn/ontology/roles/de/ris/literatur/sli/bearbeiter"
           showAs="Bearbeiter"
         />
         <akn:TLCRole
           eId="hochschule"
-          href="akn/ontology/roles/de/hochschule"
+          href="akn/ontology/roles/de/ris/literatur/sli/hochschule"
           showAs="Hochschule"
         />
         <akn:TLCRole
           eId="verlag"
-          href="akn/ontology/roles/de/verlag"
+          href="akn/ontology/roles/de/ris/literatur/sli/verlag"
           showAs="Verlag"
         />
       </akn:references>
@@ -208,6 +161,59 @@
               domainTerm="Umfangsangabe"
             >359 S</ris:umfangsangabe>
           </ris:kollation>
+          <ris:personen domainTerm="Personen">
+            <ris:person domainTerm="Person" eId="person-xx" showAs="XX">
+              <ris:name domainTerm="Name">XX</ris:name>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-farzin-sina"
+              showAs="Farzin, Sina, M A, PhD-Fellow an der Bremen International Graduate School of Social Sciences der Universität Bremen"
+            >
+              <ris:name domainTerm="Name">Farzin, Sina</ris:name>
+              <ris:titel
+                domainTerm="Titel"
+              >M A, PhD-Fellow an der Bremen International Graduate School of Social Sciences der Universität Bremen</ris:titel>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-jordan-stefan"
+              showAs="Jordan, Stefan, Dr phil, wiss Angestellter der Historischen Kommission bei der Bayerischen Akademie der Wissenschaften"
+            >
+              <ris:name domainTerm="Name">Jordan, Stefan</ris:name>
+              <ris:titel
+                domainTerm="Titel"
+              >Dr phil, wiss Angestellter der Historischen Kommission bei der Bayerischen Akademie der Wissenschaften</ris:titel>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-satzky-manfred"
+              showAs="Satzky, Manfred, Amtsrat"
+            >
+              <ris:name domainTerm="Name">Satzky, Manfred</ris:name>
+              <ris:titel domainTerm="Titel">Amtsrat</ris:titel>
+            </ris:person>
+          </ris:personen>
+          <ris:organisationen domainTerm="Organisationen">
+            <ris:organisation
+              domainTerm="Organisation"
+              eId="organisation-universitaet-erlangen-jurfak"
+              showAs="Universität Erlangen, JurFak, 1984"
+            >
+              <ris:name
+                domainTerm="Name"
+              >Universität Erlangen, JurFak</ris:name>
+              <ris:jahr domainTerm="Jahr">1984</ris:jahr>
+            </ris:organisation>
+            <ris:organisation
+              domainTerm="Organisation"
+              eId="organisation-reclam"
+              showAs="Reclam, Stuttgart"
+            >
+              <ris:name domainTerm="Name">Reclam</ris:name>
+              <ris:ort domainTerm="Ort">Stuttgart</ris:ort>
+            </ris:organisation>
+          </ris:organisationen>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>

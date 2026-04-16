@@ -329,12 +329,12 @@
       <akn:references source="#ris">
         <akn:TLCOrganization
           eId="ris"
-          href=""
+          href="akn/ontology/organizations/de/ris/rechtsinformationssystem-des-bundes"
           showAs="Rechtsinformationssystem des Bundes"
         />
         <akn:TLCRole
           eId="verfasser"
-          href="akn/ontology/roles/de/verfasser"
+          href="akn/ontology/roles/de/ris/literatur/uli/verfasser"
           showAs="Verfasser"
         />
       </akn:references>

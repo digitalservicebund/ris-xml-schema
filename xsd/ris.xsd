@@ -1880,7 +1880,7 @@
   <xs:complexType name="personen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Liste an Personen
+        Liste an Personen. Auf diese wird z.B. aus akn:FRBRauthor oder akn:opinion verweisen.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1925,6 +1925,78 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="organisationen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste an Organisationen. Auf diese wird z.B. aus akn:FRBRauthor verweisen.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="organisation"
+        type="ris:organisation"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="organisation">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Organisation
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="ris:organisationName" />
+      <xs:element name="ort" type="ris:organisationOrt" minOccurs="0" />
+      <xs:element name="jahr" type="ris:organisationJahr" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    <xs:attributeGroup ref="akn:showopt" />
+    <xs:attributeGroup ref="akn:idreq" />
+  </xs:complexType>
+
+  <xs:complexType name="organisationName">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Name einer Organistation
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="organisationOrt">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Ort einer Organisation
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="organisationJahr">
+    <!-- Was bedeutet das??? -->
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Jahr einer Organisation
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:gYear">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>

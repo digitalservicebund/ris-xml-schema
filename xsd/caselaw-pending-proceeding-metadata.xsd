@@ -52,6 +52,11 @@
             />
             <xs:element name="erledigung" type="ris:erledigung" minOccurs="0" />
             <xs:element name="personen" type="ris:personen" minOccurs="0" />
+            <xs:element
+              name="organisationen"
+              type="ris:organisationen"
+              minOccurs="0"
+            />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
