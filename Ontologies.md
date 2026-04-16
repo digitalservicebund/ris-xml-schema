@@ -9,6 +9,34 @@ Grundsätzlich:
 - Leerzeichen werden durch `-` ersetzt
 - Sonderzeichen (außer `-`) werden entfernt
 
+## Dokumenttyp
+
+Wird in `akn:doc` bzw. `akn:judgment` genutzt um den genauen Dokumenttyp anzugeben.
+
+### Rechtsprechung (Entscheidung)
+
+```
+/akn/ontology/de/concept/documenttype/bund/rechtsprechung/entscheidung
+```
+
+### Rechtsprechung (Anhängiges Verfahren)
+
+```
+/akn/ontology/de/concept/documenttype/bund/rechtsprechung/anhaengiges-verfahren
+```
+
+### unselbstständige Literatur
+
+```
+/akn/ontology/de/concept/documenttype/bund/literatur/unselbststaendig
+```
+
+### selbstständige Literatur
+
+```
+/akn/ontology/de/concept/documenttype/bund/literatur/selbststaendig
+```
+
 ## Gericht
 
 Grundsätzlich
@@ -95,5 +123,7 @@ Elementen ab.
 
 ## TODOs
 
-- [ ] is `/akn/ontology/organizations/de/ris` really a good prefix?
+- [ ] is `/akn/ontology/.../de/ris` really a good prefix?
 - [ ] Wie gehen wir mit den 3 Vergabekammern um, für die die Gerichts Ontologie nicht eindeutig ist?
+- [ ] Check if literatur roles list is complete
+- [ ] Extend for ADM
