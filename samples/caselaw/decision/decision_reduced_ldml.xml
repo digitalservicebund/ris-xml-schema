@@ -29,14 +29,14 @@
             date="2020-01-01"
             name="Entscheidungsdatum"
           />
-          <akn:FRBRauthor href="#gericht" />
+          <akn:FRBRauthor href="#organization-gericht-vg-aachen" />
           <akn:FRBRcountry value="deu" />
         </akn:FRBRWork>
         <akn:FRBRExpression>
           <akn:FRBRthis value="YYTestDoc0013" />
           <akn:FRBRuri value="YYTestDoc0013" />
           <akn:FRBRdate date="2020-01-01" name="Entscheidungsdatum" />
-          <akn:FRBRauthor href="#gericht" />
+          <akn:FRBRauthor href="#organization-gericht-vg-aachen" />
           <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
         <akn:FRBRManifestation>
@@ -198,11 +198,15 @@
           showAs="Rechtsinformationssystem des Bundes"
         />
         <akn:TLCOrganization
-          eId="documentationoffice-dokumentationsstelle"
-          href=""
-          showAs="documentationOffice"
+          eId="organization-dokumentationsstelle-bverwg"
+          href="/akn/ontology/organizations/de/ris/dokumentationsstelle/bverwg"
+          showAs="BVerwG"
         />
-        <akn:TLCOrganization eId="gericht" href="" showAs="courtLabel test" />
+        <akn:TLCOrganization
+          eId="organization-gericht-vg-aachen"
+          href="/akn/ontology/organizations/de/ris/gericht/vg-aachen"
+          showAs="VG Aachen"
+        />
         <akn:TLCPerson
           eId="dr-phil-max-mustermann"
           href=""
@@ -213,19 +217,21 @@
           href=""
           showAs="Richterin Maxima Mustermann"
         />
-        <akn:TLCLocation eId="gerichtsort" href="" showAs="courtLocation" />
       </akn:references>
       <akn:proprietary source="#ris">
         <ris:meta>
           <ris:dokumenttyp eId="dokumenttyp" domainTerm="Dokumenttyp">
             documentType test
           </ris:dokumenttyp>
-          <ris:gericht domainTerm="Gericht" refersTo="#gericht">
+          <ris:gericht
+            domainTerm="Gericht"
+            refersTo="#organization-gericht-vg-aachen"
+          >
             <ris:gerichtstyp domainTerm="Gerichtstyp">
-              courtType
+              VG
             </ris:gerichtstyp>
             <ris:gerichtsort domainTerm="Gerichtsort">
-              courtLocation
+              Aachen
             </ris:gerichtsort>
             <ris:spruchkoerper domainTerm="Spruchkörper">
               appraisalBody test
@@ -236,9 +242,9 @@
           </ris:regionen>
           <ris:dokumentationsstelle
             domainTerm="Dokumentationsstelle"
-            refersTo="#documentationoffice-dokumentationsstelle"
+            refersTo="#organization-dokumentationsstelle-bverwg"
           >
-            documentationOffice
+            BVerwG
           </ris:dokumentationsstelle>
           <ris:aktenzeichenListe domainTerm="Liste der Aktenzeichen">
             <ris:aktenzeichen
@@ -265,7 +271,9 @@
       </akn:p>
       <akn:p>
         Gericht:
-        <akn:courtType refersTo="#gericht">courtLabel test</akn:courtType>
+        <akn:courtType
+        refersTo="#organization-gericht-vg-aachen"
+      >courtLabel test</akn:courtType>
       </akn:p>
       <akn:p>
         Dokumenttyp:

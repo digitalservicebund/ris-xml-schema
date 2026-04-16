@@ -94,7 +94,7 @@
       />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-    <xs:attribute name="refersTo" type="akn:conceptRef" fixed="#gericht" />
+    <xs:attribute name="refersTo" type="akn:conceptRef" />
   </xs:complexType>
 
   <xs:complexType name="gerichtstyp">

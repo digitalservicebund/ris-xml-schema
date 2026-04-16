@@ -28,14 +28,14 @@
             date="2020-01-01"
             name="Mitteilungsdatum"
           />
-          <akn:FRBRauthor href="#gericht" />
+          <akn:FRBRauthor href="#organization-gericht-ag-aachen" />
           <akn:FRBRcountry value="deu" />
         </akn:FRBRWork>
         <akn:FRBRExpression>
           <akn:FRBRthis value="YYTestDoc0013" />
           <akn:FRBRuri value="YYTestDoc0013" />
           <akn:FRBRdate date="2020-01-01" name="Mitteilungsdatum" />
-          <akn:FRBRauthor href="#gericht" />
+          <akn:FRBRauthor href="#organization-gericht-ag-aachen" />
           <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
         <akn:FRBRManifestation>
@@ -185,29 +185,27 @@
           showAs="Rechtsinformationssystem des Bundes"
         />
         <akn:TLCOrganization
-          eId="bfh-dokumentationsstelle"
-          href=""
+          eId="organization-dokumentationsstelle-bfh"
+          href="/akn/ontology/organizations/de/ris/dokumentationsstelle/bfh"
           showAs="BFH"
         />
         <akn:TLCOrganization
-          eId="gericht"
-          href=""
-          showAs="courtType courtLocation"
+          eId="organization-gericht-ag-aachen"
+          href="/akn/ontology/organizations/de/ris/gericht/ag-aachen"
+          showAs="AG Aachen"
         />
-        <akn:TLCLocation eId="gerichtsort" href="" showAs="courtLocation" />
       </akn:references>
       <akn:proprietary source="#ris">
         <ris:meta>
           <ris:dokumenttyp
             domainTerm="Dokumenttyp"
           >Anhängiges Verfahren</ris:dokumenttyp>
-          <ris:gericht domainTerm="Gericht" refersTo="#gericht">
-            <ris:gerichtstyp
-              domainTerm="Gerichtstyp"
-            >courtType</ris:gerichtstyp>
-            <ris:gerichtsort
-              domainTerm="Gerichtsort"
-            >courtLocation</ris:gerichtsort>
+          <ris:gericht
+            domainTerm="Gericht"
+            refersTo="#organization-gericht-ag-aachen"
+          >
+            <ris:gerichtstyp domainTerm="Gerichtstyp">AG</ris:gerichtstyp>
+            <ris:gerichtsort domainTerm="Gerichtsort">Aachen</ris:gerichtsort>
             <ris:gerichtsbarkeit
               domainTerm="Gerichtsbarkeit"
             >jurisdictionType</ris:gerichtsbarkeit>
@@ -223,7 +221,7 @@
           </ris:regionen>
           <ris:dokumentationsstelle
             domainTerm="Dokumentationsstelle"
-            refersTo="#bfh-dokumentationsstelle"
+            refersTo="#organization-dokumentationsstelle-bfh"
           >BFH</ris:dokumentationsstelle>
           <ris:aktenzeichenListe domainTerm="Liste der Aktenzeichen">
             <ris:aktenzeichen
@@ -271,7 +269,7 @@
             </akn:p>
       <akn:p>Gericht:
                 <akn:courtType
-        refersTo="#gericht"
+        refersTo="#organization-gericht-ag-aachen"
       >courtType courtLocation</akn:courtType>
             </akn:p>
       <akn:p>Dokumenttyp:

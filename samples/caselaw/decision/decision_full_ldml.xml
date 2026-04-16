@@ -29,14 +29,14 @@
             date="2020-01-01"
             name="Entscheidungsdatum"
           />
-          <akn:FRBRauthor href="#gericht" />
+          <akn:FRBRauthor href="#organization-gericht-ag-aachen" />
           <akn:FRBRcountry value="deu" />
         </akn:FRBRWork>
         <akn:FRBRExpression>
           <akn:FRBRthis value="YYTestDoc0013" />
           <akn:FRBRuri value="YYTestDoc0013" />
           <akn:FRBRdate date="2020-01-01" name="Entscheidungsdatum" />
-          <akn:FRBRauthor href="#gericht" />
+          <akn:FRBRauthor href="#organization-gericht-ag-aachen" />
           <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
         <akn:FRBRManifestation>
@@ -405,19 +405,25 @@
           showAs="Rechtsinformationssystem des Bundes"
         />
         <akn:TLCOrganization
-          eId="documentationoffice-dokumentationsstelle"
-          href=""
-          showAs="documentationOffice"
+          eId="organization-dokumentationsstelle-bverwg"
+          href="/akn/ontology/organizations/de/ris/dokumentationsstelle/bverwg"
+          showAs="BVerwG"
         />
-        <akn:TLCOrganization eId="gericht" href="" showAs="courtLabel test" />
-        <akn:TLCLocation eId="gerichtsort" href="" showAs="courtLocation" />
+        <akn:TLCOrganization
+          eId="organization-gericht-ag-aachen"
+          href="/akn/ontology/organizations/de/ris/gericht/ag-aachen"
+          showAs="AG Aachen"
+        />
       </akn:references>
       <akn:proprietary source="#ris">
         <ris:meta>
           <ris:dokumenttyp
             domainTerm="Dokumenttyp"
           >documentType test</ris:dokumenttyp>
-          <ris:gericht domainTerm="Gericht" refersTo="#gericht">
+          <ris:gericht
+            domainTerm="Gericht"
+            refersTo="#organization-gericht-ag-aachen"
+          >
             <ris:gerichtstyp
               domainTerm="Gerichtstyp"
             >courtType</ris:gerichtstyp>
@@ -444,8 +450,8 @@
           </ris:regionen>
           <ris:dokumentationsstelle
             domainTerm="Dokumentationsstelle"
-            refersTo="#documentationoffice-dokumentationsstelle"
-          >documentationOffice</ris:dokumentationsstelle>
+            refersTo="#organization-dokumentationsstelle-bverwg"
+          >BVerwG</ris:dokumentationsstelle>
           <ris:aktenzeichenListe domainTerm="Liste der Aktenzeichen">
             <ris:aktenzeichen
               domainTerm="Aktenzeichen"
@@ -572,7 +578,7 @@
       <akn:p>
                 Gericht:
                 <akn:courtType
-        refersTo="#gericht"
+        refersTo="#organization-gericht-ag-aachen"
       >courtLabel test</akn:courtType>
             </akn:p>
       <akn:p>

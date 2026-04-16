@@ -27,14 +27,18 @@
             date="2020-01-01"
             name="Entscheidungsdatum"
           />
-          <akn:FRBRauthor href="#gericht" />
+          <akn:FRBRauthor
+            href="#organization-gericht-tribunal-administratif-nantes"
+          />
           <akn:FRBRcountry value="fra" />
         </akn:FRBRWork>
         <akn:FRBRExpression>
           <akn:FRBRthis value="testDocumentNumber" />
           <akn:FRBRuri value="testDocumentNumber" />
           <akn:FRBRdate date="2020-01-01" name="Entscheidungsdatum" />
-          <akn:FRBRauthor href="#gericht" />
+          <akn:FRBRauthor
+            href="#organization-gericht-tribunal-administratif-nantes"
+          />
           <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
         <akn:FRBRManifestation>
@@ -51,18 +55,20 @@
           showAs="Rechtsinformationssystem des Bundes"
         />
         <akn:TLCOrganization
-          eId="gericht"
-          href=""
+          eId="organization-gericht-tribunal-administratif-nantes"
+          href="/akn/ontology/organizations/de/ris/gericht/tribunal-administratif-nantes"
           showAs="Tribunal Administratif Nantes"
         />
-        <akn:TLCLocation eId="gerichtsort" href="" showAs="Nantes" />
       </akn:references>
       <akn:proprietary source="#ris">
         <ris:meta>
           <ris:dokumenttyp eId="dokumenttyp" domainTerm="Dokumenttyp">
             testDocumentTypeAbbreviation
           </ris:dokumenttyp>
-          <ris:gericht domainTerm="Gericht" refersTo="#gericht">
+          <ris:gericht
+            domainTerm="Gericht"
+            refersTo="#organization-gericht-tribunal-administratif-nantes"
+          >
             <ris:gerichtstyp domainTerm="Gerichtstyp">
               Tribunal Administratif
             </ris:gerichtstyp>
@@ -96,7 +102,9 @@
       </akn:p>
       <akn:p>
         Gericht:
-        <akn:courtType refersTo="#gericht">
+        <akn:courtType
+        refersTo="#organization-gericht-tribunal-administratif-nantes"
+      >
           Tribunal Administratif Nantes
         </akn:courtType>
       </akn:p>
