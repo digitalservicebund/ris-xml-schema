@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1"
+  elementFormDefault="qualified"
+  targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1"
+>
+  <xs:annotation>
+    <xs:documentation xml:lang="de">
+      Typen, die nur im Bereich Entscheidungen der Rechtsprechung vorhanden sind.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:import
+    namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+    schemaLocation="../akn/akomantoso30.xsd"
+  />
+
+  <xs:include schemaLocation="domain-term.xsd" />
+
+  <!-- Metadaten -->
+
+  <xs:complexType name="datenDerMuendlichenVerhandlung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste der Daten der mündlichen Verhandlung bei einem Gericht
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="datumDerMuendlichenVerhandlung"
+        type="ris:datumDerMuendlichenVerhandlung"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="datumDerMuendlichenVerhandlung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Datum einer mündlichen Verhandlung bei einem Gericht
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:date">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="abweichendeEclis">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Abweichende ECLIs
+
+        Weitere ECLIs die für dieses Dokument verwendet werden
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="abweichenderEcli"
+        type="ris:abweichenderEcli"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="abweichenderEcli">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Abweichender ECLI
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ris:ecli">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="ecli">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        European Case Law Identifier
+
+        https://e-justice.europa.eu/topics/legislation-and-case-law/european-case-law-identifier-ecli_de
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern
+        value="ECLI:[A-Z]{2}:[A-Za-z0-9]{1,7}:[0-9]{4}:[A-Za-z0-9.]{1,25}"
+      />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="rechtskraft">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Hat das Gerichtsurteil Rechtskraft erlangt?</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ris:rechtskraftValue">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="rechtskraftValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ja" />
+      <xs:enumeration value="Nein" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="tarifvertraege">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Tarifverträge
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="tarifvertrag"
+        type="ris:tarifvertrag"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="tarifvertrag">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Tarifvertrag
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="quellen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Quellen
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="quelle" type="ris:quelle" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="quelle">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Quelle
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="streitjahre">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Streitjahre
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="streitjahr"
+        type="ris:streitjahr"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="streitjahr">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Streitjahr
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:gYear">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="kuendigungsgruende">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Kündigungsgründe
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="kuendigungsgrund"
+        type="ris:kuendigungsgrund"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="kuendigungsgrund">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Kündigungsgrund
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="gesetzgebungsauftrag">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Gesetzgebungsauftrag</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <!-- ist aktuell ein freitext feld, wie sinnvoll ist das? -->
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="herkunftslaender">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Herkunftsländer
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="herkunftsland"
+        type="ris:herkunftsland"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="herkunftsland">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Herkunftsland
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="vorabdokument">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Vorab-Dokument</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ris:vorabdokumentValue">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="vorabdokumentValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ja" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Kurztexte -->
+
+  <xs:complexType name="entscheidungsnamen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Namen einer Gerichtsentscheidung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="entscheidungsname"
+        type="ris:entscheidungsname"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="entscheidungsname">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Name einer Gerichtsentscheidung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="orientierungssatz">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Orientierungssatz
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:blocksreq">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sonstigerOrientierungssatz">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Sonstiger Orientierungssatz
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:blocksreq">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Langtexte. Die typen müssen mit xsi:type angegeben werden -->
+
+  <xs:complexType name="tenor">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Tenor
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="leitsatz">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Leitsatz
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="gliederungRechtsprechung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Gliederung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="tatbestand">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Tatbestand
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="gruende">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Gründe
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="entscheidungsgruende">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Entscheidungsgründe
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="sonstigerLangtext">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Sonstiger Langtext
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="abweichendeMeinung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Abweichende Meinung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

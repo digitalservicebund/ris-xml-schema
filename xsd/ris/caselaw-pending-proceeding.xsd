@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1"
+  elementFormDefault="qualified"
+  targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1"
+>
+  <xs:annotation>
+    <xs:documentation xml:lang="de">
+      Typen, die nur im Bereich anhängige Verfahren der Rechtsprechung vorhanden sind.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:import
+    namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+    schemaLocation="../akn/akomantoso30.xsd"
+  />
+
+  <xs:include schemaLocation="domain-term.xsd" />
+
+  <xs:complexType name="erledigung">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Ist das Rechtsanhändige Verfahren erledigt?</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <!-- ist aktuell ein freitext feld, wie sinnvoll ist das? -->
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- Langtexte. Die typen müssen mit xsi:type angegeben werden -->
+
+  <xs:complexType name="rechtsmittelführer">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Rechtsmittelführer
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="rechtsmittelzulassung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Rechtsmittelzulassung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="erledigungsvermerk">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Erledigungsvermerk
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="rechtsfrage">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Rechtsfrage
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="akn:maincontent">
+        <xs:attribute ref="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

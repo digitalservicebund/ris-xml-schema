@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1"
+  elementFormDefault="qualified"
+  targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1"
+>
+  <xs:annotation>
+    <xs:documentation xml:lang="de">
+      Typen, die nur im Bereich unselbstständige Literatur vorhanden sind.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:include schemaLocation="domain-term.xsd" />
+
+  <xs:complexType name="verweisnotationen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Verweisnotationen
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="verweisnotation"
+        type="ris:verweisnotation"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="verweisnotation">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Verweisnotation
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
