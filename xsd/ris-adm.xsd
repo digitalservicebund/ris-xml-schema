@@ -99,7 +99,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element
-        name="dateToQuoteEntry"
+        name="zitierdatum"
         type="ris:zitierdatum"
         maxOccurs="unbounded"
       />

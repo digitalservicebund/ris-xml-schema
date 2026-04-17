@@ -3,7 +3,9 @@
   xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
   xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1"
 >
-  <akn:doc name="offene-struktur">
+  <akn:doc
+    name="/akn/ontology/de/concept/documenttype/bund/verwaltungsvorschrift"
+  >
     <akn:meta>
       <akn:identification source="attributsemantik-noch-undefiniert">
         <akn:FRBRWork>
@@ -258,32 +260,63 @@
       </akn:analysis>
       <akn:proprietary source="attributsemantik-noch-undefiniert">
         <ris:meta>
-          <ris:normgeber staat="Gemeinsamer Bundesausschuss" />
-          <ris:fieldsOfLaw>
-            <ris:fieldOfLaw notation="OLD">09-05-40-81</ris:fieldOfLaw>
-            <ris:fieldOfLaw notation="NEW">SO-05-05-10</ris:fieldOfLaw>
-            <ris:fieldOfLaw notation="NEW">SO-05-06-05</ris:fieldOfLaw>
-          </ris:fieldsOfLaw>
-          <ris:entryIntoEffectDate>2025-01-01</ris:entryIntoEffectDate>
-          <ris:documentType
-            category="VR"
-            longTitle="Bekanntmachung"
-          >VR Bekanntmachung</ris:documentType>
-          <ris:berufsbilder>
-            <ris:berufsbild>Brillenschleifer</ris:berufsbild>
+          <ris:normgeberListe domainTerm="Normgeber">
+            <ris:normgeber
+              domainTerm="Normgeber"
+              staat="Gemeinsamer Bundesausschuss"
+            />
+          </ris:normgeberListe>
+          <ris:sachgebiete domainTerm="Sachgebiete">
+            <ris:sachgebiet
+              notation="alt"
+              domainTerm="Sachgebiet"
+              sachgebiet-id="09-05-40-81"
+            >09-05-40-81</ris:sachgebiet>
+            <ris:sachgebiet
+              notation="neu"
+              domainTerm="Sachgebiet"
+              sachgebiet-id="SO-05-05-10"
+            >SO-05-05-10</ris:sachgebiet>
+            <ris:sachgebiet
+              notation="neu"
+              domainTerm="Sachgebiet"
+              sachgebiet-id="SO-05-06-05"
+            >SO-05-06-05</ris:sachgebiet>
+          </ris:sachgebiete>
+          <ris:inkrafttreten
+            domainTerm="Datum des Inkrafttreten"
+          >2025-01-01</ris:inkrafttreten>
+          <ris:dokumenttypen domainTerm="Dokumenttypen">
+            <ris:dokumenttyp
+              domainTerm="Dokumenttyp"
+            >VR Bekanntmachung</ris:dokumenttyp>
+          </ris:dokumenttypen>
+          <ris:berufsbilder domainTerm="Berufsbilder">
+            <ris:berufsbild
+              domainTerm="Berufsbild"
+            >Brillenschleifer</ris:berufsbild>
           </ris:berufsbilder>
-          <ris:titelAspekte>
-            <ris:titelAspekt>Gemeinsamer Bundesausschuss</ris:titelAspekt>
-            <ris:titelAspekt>GBA</ris:titelAspekt>
-            <ris:titelAspekt>G-BA</ris:titelAspekt>
+          <ris:titelAspekte domainTerm="Titel Aspekte">
             <ris:titelAspekt
+              domainTerm="Titel Aspekt"
+            >Gemeinsamer Bundesausschuss</ris:titelAspekt>
+            <ris:titelAspekt domainTerm="Titel Aspekt">GBA</ris:titelAspekt>
+            <ris:titelAspekt domainTerm="Titel Aspekt">G-BA</ris:titelAspekt>
+            <ris:titelAspekt
+              domainTerm="Titel Aspekt"
             >datengestützte einrichtungsübergreifende Qualitätssicherung</ris:titelAspekt>
-            <ris:titelAspekt>Erfassungsjahr 2025</ris:titelAspekt>
-            <ris:titelAspekt>DeQSRL Teil 1</ris:titelAspekt>
+            <ris:titelAspekt
+              domainTerm="Titel Aspekt"
+            >Erfassungsjahr 2025</ris:titelAspekt>
+            <ris:titelAspekt
+              domainTerm="Titel Aspekt"
+            >DeQSRL Teil 1</ris:titelAspekt>
           </ris:titelAspekte>
-          <ris:dateToQuoteList>
-            <ris:dateToQuoteEntry>2024-07-18</ris:dateToQuoteEntry>
-          </ris:dateToQuoteList>
+          <ris:zitierdatumListe domainTerm="Zitierdaten">
+            <ris:zitierdatum
+              domainTerm="Zitierdatum"
+            >2024-07-18</ris:zitierdatum>
+          </ris:zitierdatumListe>
           <ris:regionen domainTerm="Regionen">
             <ris:region domainTerm="Region">DEU</ris:region>
           </ris:regionen>
