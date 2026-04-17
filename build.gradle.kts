@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "de.bund.digitalservice"
-version = "0.0.1"
+version = System.getenv("RELEASE_VERSION") ?: "0.0.1-SNAPSHOT"
 
 dependencies {}
 
