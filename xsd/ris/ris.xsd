@@ -18,11 +18,11 @@
 
   <xs:import
     namespace="http://www.w3.org/XML/1998/namespace"
-    schemaLocation="./akn/xml.xsd"
+    schemaLocation="../akn/xml.xsd"
   />
   <xs:import
     namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
-    schemaLocation="./akn/akomantoso30.xsd"
+    schemaLocation="../akn/akomantoso30.xsd"
   />
   <xs:include schemaLocation="ris-adm.xsd" />
 

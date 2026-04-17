@@ -16,7 +16,7 @@
     schemaLocation="./akn/xml.xsd"
   />
 
-  <xs:redefine schemaLocation="ris.xsd">
+  <xs:redefine schemaLocation="./ris/ris.xsd">
     <xs:complexType name="meta">
       <xs:complexContent>
         <xs:restriction base="ris:meta">
