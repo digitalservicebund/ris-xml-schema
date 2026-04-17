@@ -5,8 +5,8 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-  # Allow to run this workflow manually
   workflow_dispatch:
+  workflow_call:
 
 env:
   SLACK_CHANNEL_ID: C0471B2N86L
