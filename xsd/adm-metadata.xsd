@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+  elementFormDefault="qualified"
+  targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+>
+  <xs:annotation>
+    <xs:documentation xml:lang="de">
+      XSD-Schema für Definitionen im ris-namespace die nur für Verwaltungvorschriften gelten.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:import
+    namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="./akn/xml.xsd"
+  />
+  <xs:import
+    namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+    schemaLocation="./akn/akomantoso30.xsd"
+  />
+
+  <xs:redefine schemaLocation="ris.xsd">
+    <xs:complexType name="meta">
+      <xs:complexContent>
+        <xs:restriction base="ris:meta">
+          <xs:sequence>
+            <xs:element
+              name="normgeberListe"
+              type="ris:normgeberListe"
+              minOccurs="0"
+            />
+            <xs:element
+              name="sachgebiete"
+              type="ris:sachgebiete"
+              minOccurs="0"
+            />
+            <xs:element
+              name="inkrafttreten"
+              type="ris:inkrafttreten"
+              minOccurs="0"
+            />
+            <xs:element
+              name="ablaufdatum"
+              type="ris:ablaufdatum"
+              minOccurs="0"
+            />
+            <xs:element name="gliederung" type="ris:gliederung" minOccurs="0" />
+            <xs:element name="dokumenttypen" type="ris:dokumenttypen" />
+            <xs:element name="berufsbilder" type="ris:berufsbilder" />
+            <xs:element
+              name="titelAspekte"
+              type="ris:titelAspekte"
+              minOccurs="0"
+            />
+            <xs:element
+              name="definitionen"
+              type="ris:definitionen"
+              minOccurs="0"
+            />
+            <xs:element
+              name="zitierdatumListe"
+              type="ris:zitierdatumListe"
+              minOccurs="0"
+            />
+            <xs:element
+              name="aktenzeichenListe"
+              type="ris:aktenzeichenListe"
+              minOccurs="0"
+            />
+            <xs:element name="regionen" type="ris:regionen" minOccurs="0" />
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:redefine>
+</xs:schema>

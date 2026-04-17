@@ -24,6 +24,7 @@
     namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
     schemaLocation="./akn/akomantoso30.xsd"
   />
+  <xs:include schemaLocation="ris-adm.xsd" />
 
   <xs:element name="meta" type="ris:meta" />
 

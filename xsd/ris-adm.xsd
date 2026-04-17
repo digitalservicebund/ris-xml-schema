@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+  elementFormDefault="qualified"
+  targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1/"
+>
+  <xs:annotation>
+    <xs:documentation xml:lang="de">
+      Typen, die nur im Bereich Verwaltungsvorschriften vorhanden sind.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:import
+    namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="./akn/xml.xsd"
+  />
+  <xs:import
+    namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+    schemaLocation="./akn/akomantoso30.xsd"
+  />
+  <xs:include schemaLocation="domain-term.xsd" />
+
+  <xs:complexType name="normgeberListe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste der Normgeber
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="normgeber" type="ris:normgeber" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="normgeber">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+      Normgeber
+    </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="staat" use="required" />
+    <xs:attribute name="organ" />
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="inkrafttreten">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+      Datum des Inkrafttreten
+    </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:date">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="ablaufdatum">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+      Datum des Inkrafttreten
+    </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:date">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="titelAspekte">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+      Titelaspekte
+    </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="titelAspekt"
+        type="ris:titelAspekt"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="titelAspekt">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+      Titelaspekt
+    </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="zitierdatumListe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+      Liste von Zitierdatums
+    </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="dateToQuoteEntry"
+        type="ris:zitierdatum"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="zitierdatum">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+      Zitierdatum
+    </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:date">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
