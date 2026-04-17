@@ -120,3 +120,6 @@ lefthook-local.yml
 xsd/ldml-ris-literature-selbstaendig-meta.xsd
 xsd/ldml-ris-literature-unselbstaendig-meta.xsd
 xsd/ldml-ris-literature.xsd
+
+.gradle
+build

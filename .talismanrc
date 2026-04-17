@@ -16,6 +16,12 @@ fileignoreconfig:
   - filename: .github/workflows/pipeline.yml
     allowed_patterns:
       - "key: "
+  - filename: gradlew
+    checksum: df5f105ae542d08dedb564dae33c4f97a47ef1549229a69eff6de10c4de11a00
+  - filename: build.gradle.kts
+    allowed_patterns:
+      - password
+      - GITHUB_TOKEN
 scopeconfig:
   - scope: node
 allowed_patterns:
