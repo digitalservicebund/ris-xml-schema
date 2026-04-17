@@ -1417,18 +1417,6 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <!-- the global domainTerm attribute used for adding the domainTerm to non-ris elements -->
-  <xs:attribute name="domainTerm" type="ris:domainTerm" />
-
-  <xs:simpleType name="domainTerm">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Inhaltliche Beschreibung des XML Elements
-      </xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string" />
-  </xs:simpleType>
-
   <xs:simpleType name="ecli">
     <xs:annotation>
       <xs:documentation xml:lang="de">
