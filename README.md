@@ -6,7 +6,7 @@ This repo contains the XML-Schema files for the XML-files produced by the Rechts
 
 | schema file                                                                                  | namespace                                           | description                                                                        |
 | -------------------------------------------------------------------------------------------- | --------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| [xsd/ris.xsd](./xsd/ris.xsd)                                                                 | `http://rechtsinformationen.bund.de/schema/ris/0.1` | Schema for all elements and types in the ris namespace                             |
+| [xsd/ris.xsd](./xsd/ris/ris.xsd)                                                                 | `http://rechtsinformationen.bund.de/schema/ris/0.1` | Schema for all elements and types in the ris namespace                             |
 | [xsd/caselaw-decision.xsd](./xsd/caselaw-decision.xsd)                                       | `http://docs.oasis-open.org/legaldocml/ns/akn/3.0`  | Schema for caselaw decisions. (You should validate against this one)               |
 | [xsd/caselaw-decision-metadata.xsd](./xsd/caselaw-decision-metadata.xsd)                     | `http://rechtsinformationen.bund.de/schema/ris/0.1` | Restrictions for the ris namespace that only apply for caselaw decisions           |
 | [xsd/caselaw-pending-proceeding.xsd](./xsd/caselaw-pending-proceeding.xsd)                   | `http://docs.oasis-open.org/legaldocml/ns/akn/3.0`  | Schema for caselaw pending-proceeding. (You should validate against this one)      |
