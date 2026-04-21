@@ -15,4 +15,12 @@
     </xs:annotation>
     <xs:restriction base="xs:string" />
   </xs:simpleType>
+
+  <xs:complexType name="stringWithDomainTerm">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 </xs:schema>
