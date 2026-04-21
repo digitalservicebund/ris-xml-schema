@@ -731,18 +731,16 @@
 
   <!-- Verweise -->
 
-  <!-- TODO: (Malte Laukötter, 2026-04-07) i don't think we should globally define the norm object like this, i rather
-          just keep the type here and define the element in the caselaw-specific schema -->
-  <xs:element name="norm" type="ris:normReference" />
-  <xs:complexType name="normReference">
+  <xs:element name="referenzNormen" type="ris:referenzNormen" />
+  <xs:complexType name="referenzNormen">
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
       >Ein Verweis auf eine Norm</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="abkuerzung" type="ris:normReferenceAbkuerzung" />
-      <xs:element name="titel" type="ris:normReferenceTitel" minOccurs="0" />
+      <xs:element name="abkuerzung" type="ris:referenzNormenAbkuerzung" />
+      <xs:element name="titel" type="ris:referenzNormenTitel" minOccurs="0" />
       <xs:element
         name="einzelnorm"
         type="ris:einzelnorm"
@@ -753,7 +751,7 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
-  <xs:complexType name="normReferenceAbkuerzung">
+  <xs:complexType name="referenzNormenAbkuerzung">
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
@@ -766,7 +764,7 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="normReferenceTitel">
+  <xs:complexType name="referenzNormenTitel">
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
@@ -948,13 +946,24 @@
       <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
       <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="autor" type="ris:autor" />
-      <xs:element name="titel" type="ris:normReferenceTitel" />
+      <xs:element name="titel" type="ris:referenzSelbstaendigeLiteraturTitel" />
       <xs:element
         name="veroeffentlichungsjahr"
         type="ris:veroeffentlichungsjahr"
       />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="referenzSelbstaendigeLiteraturTitel">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Titel</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 
   <xs:element

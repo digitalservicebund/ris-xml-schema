@@ -303,14 +303,14 @@
       <akn:analysis source="#ris">
         <akn:otherReferences source="#ris">
           <akn:implicitReference showAs="SGB 5, § 28 Abs 3">
-            <ris:norm domainTerm="Norm">
+            <ris:referenzNormen domainTerm="Norm">
               <ris:abkuerzung domainTerm="Abkürzung">SGB 5</ris:abkuerzung>
               <ris:einzelnorm domainTerm="Einzelnorm">
                 <ris:bezeichnung
                   domainTerm="Bezeichnung"
                 >§ 28 Abs 3</ris:bezeichnung>
               </ris:einzelnorm>
-            </ris:norm>
+            </ris:referenzNormen>
           </akn:implicitReference>
           <akn:implicitReference showAs="GesundhWes, 2023, 911-917">
             <ris:fundstelle domainTerm="Fundstelle">

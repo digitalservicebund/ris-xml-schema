@@ -57,7 +57,7 @@
       <akn:analysis source="#ris">
         <akn:otherReferences source="#ris">
           <akn:implicitReference ris:domainTerm="Norm">
-            <ris:norm domainTerm="Norm">
+            <ris:referenzNormen domainTerm="Norm">
               <ris:abkuerzung
                 domainTerm="Abkürzung"
               >normReference test</ris:abkuerzung>
@@ -78,10 +78,10 @@
                 >2021-02-05</ris:fassungsdatum>
                 <ris:jahr domainTerm="Jahr">2020</ris:jahr>
               </ris:einzelnorm>
-            </ris:norm>
+            </ris:referenzNormen>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Norm">
-            <ris:norm domainTerm="Norm">
+            <ris:referenzNormen domainTerm="Norm">
               <ris:abkuerzung
                 domainTerm="Abkürzung"
               >normReference test</ris:abkuerzung>
@@ -94,17 +94,17 @@
                 >2022-03-06</ris:fassungsdatum>
                 <ris:jahr domainTerm="Jahr">2022</ris:jahr>
               </ris:einzelnorm>
-            </ris:norm>
+            </ris:referenzNormen>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Norm">
-            <ris:norm domainTerm="Norm">
+            <ris:referenzNormen domainTerm="Norm">
               <ris:abkuerzung
                 domainTerm="Abkürzung"
               >normReference without SingleNorms</ris:abkuerzung>
               <ris:titel
                 domainTerm="Amtliche Langüberschrift"
               >officialLongTitle</ris:titel>
-            </ris:norm>
+            </ris:referenzNormen>
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
             <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
