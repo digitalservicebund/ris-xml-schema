@@ -9,6 +9,8 @@
   <xs:annotation>
     <xs:documentation xml:lang="de">
       Typen, die nur im Bereich Entscheidungen der Rechtsprechung vorhanden sind.
+
+      Diese sind nur in einer extra Datei um die Schema-Datein übersichtlicher zu haben.
     </xs:documentation>
   </xs:annotation>
 
