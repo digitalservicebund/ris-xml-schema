@@ -16,6 +16,10 @@ fileignoreconfig:
   - filename: .github/workflows/pipeline.yml
     allowed_patterns:
       - "key: "
+  - filename: xsd/ldml/legalDocML.de.sch
+    checksum: 797caf4ce0f19a869d2c1c2502e42e5ca0ca8acdaafb856b3d11be15cd2e2cec
+  - filename: xsd/ldml/legalDocML.de-baukasten.xsd
+    checksum: dc06d5dc76554eeff95b693eb77eb7a11a8de8b68ac13c5da7c9adbd6b1e2bbd
 scopeconfig:
   - scope: node
 allowed_patterns:
