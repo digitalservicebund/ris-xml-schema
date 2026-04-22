@@ -43,6 +43,11 @@ Before pushing, the following checks are additionally ran:
 
 - `secrets-audit` - avoid accidental pushes of [secrets and sensitive information](https://thoughtworks.github.io/talisman/)
 
+### Releasing a new Version
+
+To release a new version you just need to add and push a new git tag like `v${major}.${minor}.${patch}` (e.g. `v0.1.0`).
+This automatically starts the pipeline to publish a new maven package to GitHub packages.
+
 ## Code-Style
 
 In general, we try to structure our xsd according to the ["Venetian Blind"-Design pattern](https://www.oracle.com/technical-resources/articles/java/design-patterns.html).
