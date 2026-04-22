@@ -9,6 +9,11 @@ plugins {
 group = "de.bund.digitalservice"
 version = System.getenv("RELEASE_VERSION") ?: "0.0.1-SNAPSHOT"
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
 dependencies {}
 
 val packageSchemas = tasks.register<Jar>("packageSchemas") {
