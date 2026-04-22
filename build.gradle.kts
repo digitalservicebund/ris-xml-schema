@@ -16,7 +16,7 @@ java {
 
 dependencies {}
 
-val packageSchemas = tasks.register<Jar>("packageSchemas") {
+tasks.named<Jar>("jar") {
     description = "Copies the schema files into the jar."
     group = "build"
 
@@ -24,10 +24,6 @@ val packageSchemas = tasks.register<Jar>("packageSchemas") {
         include("**/*.xsd")
         into("schema")
     }
-}
-
-tasks.assemble {
-    dependsOn(packageSchemas)
 }
 
 repositories {
