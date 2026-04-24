@@ -1343,7 +1343,6 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="titelzeile" type="ris:titelzeile" />
       <xs:any
         maxOccurs="unbounded"
         minOccurs="0"
