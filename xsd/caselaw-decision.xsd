@@ -50,41 +50,37 @@
       </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="judgmentBodyType">
-      <xs:complexContent>
-        <xs:restriction base="akn:judgmentBodyType">
-          <xs:sequence>
-            <xs:element ref="akn:introduction" minOccurs="0" maxOccurs="2">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Leitsatz oder Gliederung (wenn beide vorhanden sind in dieser Reihenfolge)
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:decision" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Tenor
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:background" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Tatbestand
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation" minOccurs="0" maxOccurs="4">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Gründe, Entscheidungsgründe, Sonstiger Langtext oder Abweichende Meinung
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-          </xs:sequence>
-        </xs:restriction>
-      </xs:complexContent>
-    </xs:complexType>
+    <xs:group name="judgmentBlock">
+      <xs:choice>
+        <xs:element ref="akn:introduction">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+                Leitsatz oder Gliederung (wenn beide vorhanden sind in dieser Reihenfolge)
+              </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="akn:background">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+                Tatbestand
+              </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="akn:motivation">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+                Gründe, Entscheidungsgründe, Sonstiger Langtext oder Abweichende Meinung
+              </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="akn:decision">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+                Tenor
+              </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+    </xs:group>
   </xs:redefine>
 </xs:schema>

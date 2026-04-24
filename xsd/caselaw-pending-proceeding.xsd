@@ -50,34 +50,30 @@
       </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="judgmentBodyType">
-      <xs:complexContent>
-        <xs:restriction base="akn:judgmentBodyType">
-          <xs:sequence>
-            <xs:element ref="akn:introduction" maxOccurs="2">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Rechtsmittelführer oder Rechtsmittelzulassung
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:decision">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Erledigungsvermerk
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="akn:motivation">
-              <xs:annotation>
-                <xs:documentation xml:lang="de">
-                    Rechtsfrage
-                  </xs:documentation>
-              </xs:annotation>
-            </xs:element>
-          </xs:sequence>
-        </xs:restriction>
-      </xs:complexContent>
-    </xs:complexType>
+    <xs:group name="judgmentBlock">
+      <xs:choice>
+        <xs:element ref="akn:introduction">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+              Rechtsmittelführer oder Rechtsmittelzulassung
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="akn:motivation">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+              Rechtsfrage
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="akn:decision">
+          <xs:annotation>
+            <xs:documentation xml:lang="de">
+              Erledigungsvermerk
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:choice>
+    </xs:group>
   </xs:redefine>
 </xs:schema>
