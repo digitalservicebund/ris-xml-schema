@@ -86,9 +86,14 @@
   <xs:simpleType name="ecli">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        European Case Law Identifier
+        ECLI (European Case Law Identifier) zur eindeutigen Identifikation von Entscheidungen.
 
         https://e-justice.europa.eu/topics/legislation-and-case-law/european-case-law-identifier-ecli_de
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        ECLI (European Case Law Identifier) for unique identification of decisions.
+
+        https://e-justice.europa.eu/topics/legislation-and-case-law/european-case-law-identifier-ecli_en
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -348,7 +353,10 @@
   <xs:complexType name="tenor">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Tenor
+        Rechtlich bindender Ausspruch des Gerichts
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Legally binding ruling of the court
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -359,7 +367,10 @@
   <xs:complexType name="leitsatz">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Leitsatz
+        Vom Spruchkörper verfasste oder mit seiner Zustimmung gebildete Leitsätze.
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Headnotes authored or approved by the court panel.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -385,7 +396,10 @@
   <xs:complexType name="tatbestand">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Tatbestand
+        Teil einer Entscheidung, der die Tatsachen und Feststellungen beschreibt, von denen das Gericht ausdrücklich ausgeht. Der Tatbestand wird nur gesondert erfasst, wenn er in der Entscheidung als solcher erkennbar ist.
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        The section of a decision describing the facts and findings the court expressly bases its ruling on. Only recorded separately if explicitly marked as such.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -398,7 +412,10 @@
   <xs:complexType name="gruende">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Gründe
+        Die Gründe beinhalten sowohl die Teile, in denen die feststehenden Tatsachen und die getroffenen Feststellungen dargestellt werden, als auch die Teile, in denen die rechtliche Würdigung dieser Tatsachen und Feststellungen vorgenommen wird.
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Includes both the factual findings and their legal evaluation.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -411,7 +428,12 @@
   <xs:complexType name="entscheidungsgruende">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Entscheidungsgründe
+        Teil einer Entscheidung, der sich ausschließlich mit der rechtlichen Würdigung der im Tatbestand getroffenen Feststellungen befasst.
+        Die Entscheidungsgründe werden nur dann gesondert erfasst, wenn sie als solche erkennbar sind.
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Section of the decision devoted solely to legal assessment of the findings established in the facts section.
+        Only recorded separately if clearly identifiable.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -424,7 +446,10 @@
   <xs:complexType name="sonstigerLangtext">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Sonstiger Langtext
+        In Sonstiger Langtext werden entsprechende Hinweise aufgenommen, wenn eine Entscheidung ohne Tatbestand und Entscheidungsgründe (nach ZPO § 313a) ergeht. In dieser Rubrik können auch (Hinweise auf) Berichtigungsbeschlüsse u. Ä. aufgenommen werden.
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Contains notes on decisions without facts/reasons sections (per § 313a ZPO), and other notes such as correction orders.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -437,7 +462,10 @@
   <xs:complexType name="abweichendeMeinung">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Abweichende Meinung
+        Als Abweichende Meinung wird der Teil einer Entscheidung erfasst, der abweichende Meinungen oder Sondervoten eines oder mehrerer an der Entscheidung mitwirkenden Richterinnen oder Richter enthält.
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Contains dissenting opinions or separate votes of individual participating judges.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>

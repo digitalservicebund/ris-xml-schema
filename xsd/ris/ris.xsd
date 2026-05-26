@@ -74,7 +74,47 @@
   <xs:complexType name="dokumenttyp">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Der Typ des Dokuments (z.B. Urteil, Vergleich, Beschluss, ...)
+        Innerhalb der Dokumentart „Rechtsprechung“ werden folgende Dokumenttypen unterschieden:
+
+        * Äuß: Äußerung
+        * Ant: EuGH-Vorlage
+        * AnU: Anerkenntnisurteil
+        * Bes: Beschluss
+        * Buß: Bußgeldbescheid
+        * DrB: Dreierausschussbeschluss
+        * EiA: Einstweilige Anordnung
+        * Ent: Entscheidung
+        * EVg: Einstellungsverfügung der Staatsanwaltschaft
+        * GeB: Gerichtsbescheid
+        * Gut: Gutachten
+        * GWF: Gegenstandswertfestsetzung im verfassungsgerichtlichen Verfahren
+        * KaB: Kammerbeschluss
+        * KbN: Nichtannahmebeschluss
+        * KbS: Stattgebender Kammerbeschluss
+        * KoB: Kammerbeschluss ohne Begründung
+        * PkH: Prozesskostenhilfebeschluss
+        * ReM: Rechtsentscheid in Mietsachen
+        * Sch: Schiedsgerichtsentscheidung
+        * Ste: Stellungnahme
+        * Str: Streitwertbeschluss
+        * TeB: Teilbeschluss
+        * TeU: Teilurteil
+        * Urt: Urteil
+        * Vgl: Vergleich
+        * Vor: Vorlagebeschluss
+        * VsU: Versäumnisurteil
+        * VzU: Verzichtsurteil
+        * ZwB: Zwischenbeschluss
+        * ZwU: Zwischenurteil
+        * TVU: Teilversäumnisurteil
+        * Vfg: Verfügung
+        * Vorab: Ersuchen um Vorabentscheidung
+        * Anh: Anhängiges Verfahren
+        * End: Endurteil
+        * KfB: Kostenfestsetzungsbeschluss
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        In the context of "Case Law" documents, different document types are distinguished, e.g. Statement, ECJ Referral, Acknowledgment Judgment, Order, Fine Notice, Three-Member Committee Order, Injunction, Decision, Dismissal Order, etc.
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
@@ -112,7 +152,10 @@
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
-      >Gerichtstyp (AG, VG, VerwG, ...)</xs:documentation>
+      >Inhalt ist die Angabe des Typs des Gerichtes, das das Dokument verfasst hat.</xs:documentation>
+      <xs:documentation
+        xml:lang="en"
+      >Indicates the type of court that issued the document.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
@@ -123,9 +166,8 @@
 
   <xs:complexType name="gerichtsort">
     <xs:annotation>
-      <xs:documentation
-        xml:lang="de"
-      >Ort des Sitzes des Gerichts</xs:documentation>
+      <xs:documentation xml:lang="de">Ort des Gerichtssitzes.</xs:documentation>
+      <xs:documentation xml:lang="en">Location of the court</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
@@ -147,7 +189,12 @@
 
   <xs:complexType name="spruchkoerper">
     <xs:annotation>
-      <xs:documentation xml:lang="de">Spruchkörper</xs:documentation>
+      <xs:documentation
+        xml:lang="de"
+      >Inhalt ist die Angabe des Spruchkörpers, von dem das Dokument stammt (z.B. 1. Zivilsenat, 3. Strafkammer, Großer Senat).</xs:documentation>
+      <xs:documentation
+        xml:lang="en"
+      >Indicates the chamber or panel of the court from which the document originates (e.g. 1st Civil Senate, 3rd Criminal Division, Grand Chamber).</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
@@ -269,7 +316,12 @@
   </xs:complexType>
   <xs:complexType name="aktenzeichen">
     <xs:annotation>
-      <xs:documentation xml:lang="de">Aktenzeichen</xs:documentation>
+      <xs:documentation
+        xml:lang="de"
+      >Aktenzeichen der Entscheidung, hier kann es zu Dopplungen mit anderen Entscheidungen kommen, auch in Kombination mit Entscheidungsdatum und Gericht.</xs:documentation>
+      <xs:documentation
+        xml:lang="de"
+      >File number of the decision; may appear multiple times in combination with decision date and court.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
@@ -972,9 +1024,12 @@
   />
   <xs:complexType name="nachgehendeEntscheidung">
     <xs:annotation>
-      <xs:documentation
-        xml:lang="de"
-      >Eine nachgehende Entscheidung oder anhängiges Verfahren im Rechtszug des Verfahrens</xs:documentation>
+      <xs:documentation xml:lang="de">
+        Nachgewiesen werden die gerichtlichen Entscheidungen, die ihrerseits in der Rubrik „vorgehende Entscheidung“ die vorliegende Entscheidung nennen.
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Judicial decisions that refer to the present decision.
+      </xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
@@ -1023,9 +1078,12 @@
   <xs:element name="vorgehendeEntscheidung" type="ris:vorgehendeEntscheidung" />
   <xs:complexType name="vorgehendeEntscheidung">
     <xs:annotation>
-      <xs:documentation
-        xml:lang="de"
-      >Eine vorhergehende Entscheidung im Rechtszug des Verfahrens</xs:documentation>
+      <xs:documentation xml:lang="de">
+        Nachgewiesen werden gerichtliche Entscheidungen, die im Rahmen eines Verfahrens (einschl. Nebenverfahren) der zu dokumentierenden Entscheidung vorausgehen.
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Prior decisions in the same (or related) proceedings.
+      </xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
@@ -1119,9 +1177,12 @@
 
   <xs:complexType name="entscheidungsdatum">
     <xs:annotation>
-      <xs:documentation>
-        Entscheidungsdatum
-      </xs:documentation>
+      <xs:documentation
+        xml:lang="de"
+      >Datum der Entscheidung, hier kann es zu Dopplungen mit anderen Entscheidungen kommen, auch in Kombination mit Aktenzeichen und Gericht.</xs:documentation>
+      <xs:documentation
+        xml:lang="en"
+      >Date of the decision; may occur multiple times in combination with file number and court.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:date">
@@ -1355,7 +1416,10 @@
   <xs:complexType name="titelzeile">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Titelzeile
+        Vom Dokumentar gebildete Kurzzusammenfassung, bezogen auf die gesamten Kurztexte.
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Summary generated by the documenter, referring to the entire collection of short texts.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
