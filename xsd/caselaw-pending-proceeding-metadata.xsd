@@ -71,7 +71,11 @@
       <xs:complexContent>
         <xs:restriction base="ris:dokumentarischeKurztexte">
           <xs:sequence>
-            <xs:element name="titelzeile" type="ris:titelzeile" />
+            <xs:element
+              name="titelzeile"
+              type="ris:titelzeile"
+              minOccurs="0 "
+            />
           </xs:sequence>
           <xs:attribute
             name="domainTerm"

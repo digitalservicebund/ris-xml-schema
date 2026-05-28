@@ -28,7 +28,7 @@
               type="ris:fehlerhafteGerichte"
               minOccurs="0"
             />
-            <xs:element name="regionen" type="ris:regionen" />
+            <xs:element name="regionen" type="ris:regionen" minOccurs="0" />
             <xs:element
               name="dokumentationsstelle"
               type="ris:dokumentationsstelle"
@@ -60,7 +60,11 @@
               type="ris:sachgebiete"
               minOccurs="0"
             />
-            <xs:element name="rechtskraft" type="ris:rechtskraft" />
+            <xs:element
+              name="rechtskraft"
+              type="ris:rechtskraft"
+              minOccurs="0"
+            />
             <xs:element
               name="definitionen"
               type="ris:definitionen"
@@ -127,7 +131,7 @@
               type="ris:entscheidungsnamen"
               minOccurs="0"
             />
-            <xs:element name="titelzeile" type="ris:titelzeile" />
+            <xs:element name="titelzeile" type="ris:titelzeile" minOccurs="0" />
             <xs:element
               name="orientierungssatz"
               type="ris:orientierungssatz"
