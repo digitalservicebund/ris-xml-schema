@@ -214,7 +214,7 @@
     <akn:judgmentBody>
       <akn:introduction
         ris:domainTerm="Rechtsmittelführer"
-        xsi:type="ris:rechtsmittelführer"
+        xsi:type="ris:rechtsmittelfuehrer"
       >
         <akn:p alternativeTo="textWrapper">Rechtsmittelführer</akn:p>
       </akn:introduction>

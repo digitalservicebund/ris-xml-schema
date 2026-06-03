@@ -37,7 +37,7 @@
 
   <!-- Langtexte. Die typen müssen mit xsi:type angegeben werden -->
 
-  <xs:complexType name="rechtsmittelführer">
+  <xs:complexType name="rechtsmittelfuehrer">
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Rechtsmittelführer
