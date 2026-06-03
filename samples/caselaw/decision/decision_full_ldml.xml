@@ -43,7 +43,7 @@
           <akn:FRBRthis value="YYTestDoc0013.xml" />
           <akn:FRBRuri value="YYTestDoc0013.xml" />
           <akn:FRBRdate date="2026-03-18" name="XML Transformation" />
-          <akn:FRBRauthor href="#documentationoffice-dokumentationsstelle" />
+          <akn:FRBRauthor href="#organization-dokumentationsstelle-bverwg" />
         </akn:FRBRManifestation>
       </akn:identification>
       <akn:classification source="#ris">
@@ -424,12 +424,8 @@
             domainTerm="Gericht"
             refersTo="#organization-gericht-ag-aachen"
           >
-            <ris:gerichtstyp
-              domainTerm="Gerichtstyp"
-            >courtType</ris:gerichtstyp>
-            <ris:gerichtsort
-              domainTerm="Gerichtsort"
-            >courtLocation</ris:gerichtsort>
+            <ris:gerichtstyp domainTerm="Gerichtstyp">AG</ris:gerichtstyp>
+            <ris:gerichtsort domainTerm="Gerichtsort">Aachen</ris:gerichtsort>
             <ris:gerichtsbarkeit
               domainTerm="Gerichtsbarkeit"
             >jurisdictionType</ris:gerichtsbarkeit>
@@ -486,7 +482,7 @@
           <ris:abweichendeEclis domainTerm="Abweichende ECLIs">
             <ris:abweichenderEcli
               domainTerm="Abweichender ECLI"
-            >ECLI:DE:BVerfG:2015:qk20151104.2bvq005612</ris:abweichenderEcli>
+            >ECLI:DE:BGH:2026:190526BIZR216.25.0</ris:abweichenderEcli>
           </ris:abweichendeEclis>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
@@ -579,13 +575,11 @@
                 Gericht:
                 <akn:courtType
         refersTo="#organization-gericht-ag-aachen"
-      >courtLabel test</akn:courtType>
+      >AG Aachen</akn:courtType>
             </akn:p>
       <akn:p>
                 Dokumenttyp:
-                <akn:docType
-        refersTo="#dokumenttyp"
-      >documentType test</akn:docType>
+                <akn:docType>documentType test</akn:docType>
             </akn:p>
       <akn:p>Kurztitel:
                 <akn:shortTitle refersTo="#titelzeile">
