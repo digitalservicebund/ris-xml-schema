@@ -1,0 +1,28 @@
+name: publish-reports.yml
+on:
+  workflow_call:
+    secrets:
+      REPORTS_BUCKET_ACCESS_KEY_ID:
+        required: true
+      REPORTS_BUCKET_SECRET_ACCESS_KEY:
+        required: true
+
+jobs:
+  adrs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout ris-xml-schema repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          path: ris-xml-schema
+      - name: Add to report
+        uses: digitalservicebund/add-ris-report@5980f8dc97ec0aea58656e79e391eea59a9dfea8
+        with:
+          filePath: ris-xml-schema/adr
+          destinationDir: adr/ris-xml-schema
+          reportIsDirectory: true
+          keepAllVersions: false
+          BUCKET_ACCESS_KEY_ID: ${{ secrets.REPORTS_BUCKET_ACCESS_KEY_ID }}
+          BUCKET_SECRET_ACCESS_KEY: ${{ secrets.REPORTS_BUCKET_SECRET_ACCESS_KEY }}

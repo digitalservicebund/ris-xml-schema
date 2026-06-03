@@ -30,3 +30,9 @@ allowed_patterns:
   - passiv
   - passive
   - Passivzitierung
+  - secrets.REPORTS_BUCKET_ACCESS_KEY_ID
+  - REPORTS_BUCKET_ACCESS_KEY_ID
+  - secrets.REPORTS_BUCKET_SECRET_ACCESS_KEY
+  - REPORTS_BUCKET_SECRET_ACCESS_KEY
+  - BUCKET_ACCESS_KEY_ID
+  - BUCKET_SECRET_ACCESS_KEY
