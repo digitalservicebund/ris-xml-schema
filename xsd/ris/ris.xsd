@@ -1090,8 +1090,12 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
-      <xs:element name="entscheidungsdatum" type="ris:entscheidungsdatum" />
+      <xs:element name="dokumenttyp" type="ris:dokumenttyp" minOccurs="0" />
+      <xs:element
+        name="entscheidungsdatum"
+        type="ris:entscheidungsdatum"
+        minOccurs="0"
+      />
       <xs:element
         name="dokumentnummer"
         type="ris:dokumentnummer"
