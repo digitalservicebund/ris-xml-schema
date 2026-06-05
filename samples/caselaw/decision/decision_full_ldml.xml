@@ -29,21 +29,21 @@
             date="2020-01-01"
             name="Entscheidungsdatum"
           />
-          <akn:FRBRauthor href="#organization-gericht-ag-aachen" />
+          <akn:FRBRauthor href="#organisation-gericht-ag-aachen" />
           <akn:FRBRcountry value="deu" />
         </akn:FRBRWork>
         <akn:FRBRExpression>
           <akn:FRBRthis value="YYTestDoc0013" />
           <akn:FRBRuri value="YYTestDoc0013" />
           <akn:FRBRdate date="2020-01-01" name="Entscheidungsdatum" />
-          <akn:FRBRauthor href="#organization-gericht-ag-aachen" />
+          <akn:FRBRauthor href="#organisation-gericht-ag-aachen" />
           <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
         <akn:FRBRManifestation>
           <akn:FRBRthis value="YYTestDoc0013.xml" />
           <akn:FRBRuri value="YYTestDoc0013.xml" />
           <akn:FRBRdate date="2026-03-18" name="XML Transformation" />
-          <akn:FRBRauthor href="#organization-dokumentationsstelle-bverwg" />
+          <akn:FRBRauthor href="#organisation-dokumentationsstelle-bverwg" />
         </akn:FRBRManifestation>
       </akn:identification>
       <akn:classification source="#ris">
@@ -405,12 +405,12 @@
           showAs="Rechtsinformationssystem des Bundes"
         />
         <akn:TLCOrganization
-          eId="organization-dokumentationsstelle-bverwg"
+          eId="organisation-dokumentationsstelle-bverwg"
           href="/akn/ontology/organizations/de/ris/dokumentationsstelle/bverwg"
           showAs="BVerwG"
         />
         <akn:TLCOrganization
-          eId="organization-gericht-ag-aachen"
+          eId="organisation-gericht-ag-aachen"
           href="/akn/ontology/organizations/de/ris/gericht/ag-aachen"
           showAs="AG Aachen"
         />
@@ -422,7 +422,7 @@
           >documentType test</ris:dokumenttyp>
           <ris:gericht
             domainTerm="Gericht"
-            refersTo="#organization-gericht-ag-aachen"
+            refersTo="#organisation-gericht-ag-aachen"
           >
             <ris:gerichtstyp domainTerm="Gerichtstyp">AG</ris:gerichtstyp>
             <ris:gerichtsort domainTerm="Gerichtsort">Aachen</ris:gerichtsort>
@@ -446,7 +446,7 @@
           </ris:regionen>
           <ris:dokumentationsstelle
             domainTerm="Dokumentationsstelle"
-            refersTo="#organization-dokumentationsstelle-bverwg"
+            refersTo="#organisation-dokumentationsstelle-bverwg"
           >BVerwG</ris:dokumentationsstelle>
           <ris:aktenzeichenListe domainTerm="Liste der Aktenzeichen">
             <ris:aktenzeichen
@@ -574,7 +574,7 @@
       <akn:p>
                 Gericht:
                 <akn:courtType
-        refersTo="#organization-gericht-ag-aachen"
+        refersTo="#organisation-gericht-ag-aachen"
       >AG Aachen</akn:courtType>
             </akn:p>
       <akn:p>

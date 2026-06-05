@@ -29,14 +29,14 @@
             date="2020-01-01"
             name="Entscheidungsdatum"
           />
-          <akn:FRBRauthor href="#organization-gericht-vg-aachen" />
+          <akn:FRBRauthor href="#organisation-gericht-vg-aachen" />
           <akn:FRBRcountry value="deu" />
         </akn:FRBRWork>
         <akn:FRBRExpression>
           <akn:FRBRthis value="YYTestDoc0013" />
           <akn:FRBRuri value="YYTestDoc0013" />
           <akn:FRBRdate date="2020-01-01" name="Entscheidungsdatum" />
-          <akn:FRBRauthor href="#organization-gericht-vg-aachen" />
+          <akn:FRBRauthor href="#organisation-gericht-vg-aachen" />
           <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
         <akn:FRBRManifestation>
@@ -198,12 +198,12 @@
           showAs="Rechtsinformationssystem des Bundes"
         />
         <akn:TLCOrganization
-          eId="organization-dokumentationsstelle-bverwg"
+          eId="organisation-dokumentationsstelle-bverwg"
           href="/akn/ontology/organizations/de/ris/dokumentationsstelle/bverwg"
           showAs="BVerwG"
         />
         <akn:TLCOrganization
-          eId="organization-gericht-vg-aachen"
+          eId="organisation-gericht-vg-aachen"
           href="/akn/ontology/organizations/de/ris/gericht/vg-aachen"
           showAs="VG Aachen"
         />
@@ -225,7 +225,7 @@
           </ris:dokumenttyp>
           <ris:gericht
             domainTerm="Gericht"
-            refersTo="#organization-gericht-vg-aachen"
+            refersTo="#organisation-gericht-vg-aachen"
           >
             <ris:gerichtstyp domainTerm="Gerichtstyp">
               VG
@@ -242,7 +242,7 @@
           </ris:regionen>
           <ris:dokumentationsstelle
             domainTerm="Dokumentationsstelle"
-            refersTo="#organization-dokumentationsstelle-bverwg"
+            refersTo="#organisation-dokumentationsstelle-bverwg"
           >
             BVerwG
           </ris:dokumentationsstelle>
@@ -272,7 +272,7 @@
       <akn:p>
         Gericht:
         <akn:courtType
-        refersTo="#organization-gericht-vg-aachen"
+        refersTo="#organisation-gericht-vg-aachen"
       >courtLabel test</akn:courtType>
       </akn:p>
       <akn:p>

@@ -28,14 +28,14 @@
             date="2020-01-01"
             name="Mitteilungsdatum"
           />
-          <akn:FRBRauthor href="#organization-gericht-ag-aachen" />
+          <akn:FRBRauthor href="#organisation-gericht-ag-aachen" />
           <akn:FRBRcountry value="deu" />
         </akn:FRBRWork>
         <akn:FRBRExpression>
           <akn:FRBRthis value="YYTestDoc0013" />
           <akn:FRBRuri value="YYTestDoc0013" />
           <akn:FRBRdate date="2020-01-01" name="Mitteilungsdatum" />
-          <akn:FRBRauthor href="#organization-gericht-ag-aachen" />
+          <akn:FRBRauthor href="#organisation-gericht-ag-aachen" />
           <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
         <akn:FRBRManifestation>
@@ -147,12 +147,12 @@
           showAs="Rechtsinformationssystem des Bundes"
         />
         <akn:TLCOrganization
-          eId="organization-dokumentationsstelle-bfh"
+          eId="organisation-dokumentationsstelle-bfh"
           href="/akn/ontology/organizations/de/ris/dokumentationsstelle/bfh"
           showAs="BFH"
         />
         <akn:TLCOrganization
-          eId="organization-gericht-ag-aachen"
+          eId="organisation-gericht-ag-aachen"
           href="/akn/ontology/organizations/de/ris/gericht/ag-aachen"
           showAs="AG Aachen"
         />
@@ -164,7 +164,7 @@
           >Anhängiges Verfahren</ris:dokumenttyp>
           <ris:gericht
             domainTerm="Gericht"
-            refersTo="#organization-gericht-ag-aachen"
+            refersTo="#organisation-gericht-ag-aachen"
           >
             <ris:gerichtstyp domainTerm="Gerichtstyp">AG</ris:gerichtstyp>
             <ris:gerichtsort domainTerm="Gerichtsort">Aachen</ris:gerichtsort>
@@ -197,7 +197,7 @@
       >01.01.2020</akn:docDate>
             </akn:p>
       <akn:p>Gericht: <akn:courtType
-        refersTo="#organization-gericht-ag-aachen"
+        refersTo="#organisation-gericht-ag-aachen"
       >AG Aachen</akn:courtType>
             </akn:p>
       <akn:p>Dokumenttyp: <akn:docType

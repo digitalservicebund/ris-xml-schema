@@ -28,7 +28,7 @@
             name="Entscheidungsdatum"
           />
           <akn:FRBRauthor
-            href="#organization-gericht-tribunal-administratif-nantes"
+            href="#organisation-gericht-tribunal-administratif-nantes"
           />
           <akn:FRBRcountry value="fra" />
         </akn:FRBRWork>
@@ -37,7 +37,7 @@
           <akn:FRBRuri value="testDocumentNumber" />
           <akn:FRBRdate date="2020-01-01" name="Entscheidungsdatum" />
           <akn:FRBRauthor
-            href="#organization-gericht-tribunal-administratif-nantes"
+            href="#organisation-gericht-tribunal-administratif-nantes"
           />
           <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
@@ -55,7 +55,7 @@
           showAs="Rechtsinformationssystem des Bundes"
         />
         <akn:TLCOrganization
-          eId="organization-gericht-tribunal-administratif-nantes"
+          eId="organisation-gericht-tribunal-administratif-nantes"
           href="/akn/ontology/organizations/de/ris/gericht/tribunal-administratif-nantes"
           showAs="Tribunal Administratif Nantes"
         />
@@ -67,7 +67,7 @@
           </ris:dokumenttyp>
           <ris:gericht
             domainTerm="Gericht"
-            refersTo="#organization-gericht-tribunal-administratif-nantes"
+            refersTo="#organisation-gericht-tribunal-administratif-nantes"
           >
             <ris:gerichtstyp domainTerm="Gerichtstyp">
               Tribunal Administratif
@@ -103,7 +103,7 @@
       <akn:p>
         Gericht:
         <akn:courtType
-        refersTo="#organization-gericht-tribunal-administratif-nantes"
+        refersTo="#organisation-gericht-tribunal-administratif-nantes"
       >
           Tribunal Administratif Nantes
         </akn:courtType>
