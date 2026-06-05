@@ -119,6 +119,7 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="Ja" />
       <xs:enumeration value="Nein" />
+      <xs:enumeration value="Keine Angabe" />
     </xs:restriction>
   </xs:simpleType>
 
