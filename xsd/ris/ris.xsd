@@ -468,7 +468,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:pattern value="[A-Z]{2}(-[0-9]{2})*" />
+      <xs:pattern value="[A-ZÄÖÜ]{2}(-[0-9]{2})*|RE-07-[A-Z]{3}" />
     </xs:restriction>
   </xs:simpleType>
 
