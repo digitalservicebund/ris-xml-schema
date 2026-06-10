@@ -23,7 +23,7 @@ This repo contains the XML-Schema files for the XML-files produced by the Rechts
 ### Checking the schema against the examples
 
 ```bash
-xmllint --noout --schema xsd/caselaw.xsd samples/caselaw/*.xml
+xmllint --noout --schema xsd/caselaw-decision.xsd samples/caselaw/decision/*.xml
 ```
 
 ### Git Hooks
