@@ -865,7 +865,11 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="gesetzeskraftTyp" type="ris:gesetzeskraftTyp" />
-      <xs:element name="geltungsbereich" type="ris:geltungsbereich" />
+      <xs:element
+        name="geltungsbereich"
+        type="ris:geltungsbereich"
+        minOccurs="0"
+      />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
