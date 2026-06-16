@@ -75,7 +75,6 @@
               type="ris:tarifvertraege"
               minOccurs="0"
             />
-            <xs:element name="quellen" type="ris:quellen" minOccurs="0" />
             <xs:element
               name="streitjahre"
               type="ris:streitjahre"

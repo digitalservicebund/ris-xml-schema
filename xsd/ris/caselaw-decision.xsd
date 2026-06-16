@@ -152,31 +152,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="quellen">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Quellen
-      </xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="quelle" type="ris:quelle" maxOccurs="unbounded" />
-    </xs:sequence>
-    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="quelle">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Quelle
-      </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
   <xs:complexType name="streitjahre">
     <xs:annotation>
       <xs:documentation xml:lang="de">
