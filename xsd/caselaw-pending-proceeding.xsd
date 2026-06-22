@@ -55,14 +55,7 @@
         <xs:element ref="akn:introduction">
           <xs:annotation>
             <xs:documentation xml:lang="de">
-              Rechtsmittelführer oder Rechtsmittelzulassung
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element ref="akn:motivation">
-          <xs:annotation>
-            <xs:documentation xml:lang="de">
-              Rechtsfrage
+              Information, dass keine Langtexte existieren
             </xs:documentation>
           </xs:annotation>
         </xs:element>
