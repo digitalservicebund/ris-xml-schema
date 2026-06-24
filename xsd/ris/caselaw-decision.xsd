@@ -267,6 +267,46 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:complexType name="mitwirkendeRichterInnen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        An der Entscheidung mitwirkende Richterinnen und Richter
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Participating judges of the decision
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+              name="mitwirkendeRichterIn"
+              type="ris:mitwirkendeRichterIn"
+              maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="mitwirkendeRichterIn">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Mitwirkende Richterin oder Richter
+      </xs:documentation>
+      <xs:documentation xml:lang="en">
+        Participating judge
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        <xs:attribute
+                name="refersTo"
+                type="akn:conceptRef"
+        >
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <!-- Kurztexte -->
 
   <xs:complexType name="entscheidungsnamen">

@@ -550,6 +550,14 @@
               <ris:name domainTerm="Name">Maxima Mustermann</ris:name>
             </ris:person>
           </ris:personen>
+          <ris:mitwirkendeRichterInnen domainTerm="Mitwirkende Richterinnen und Richter">
+            <ris:mitwirkendeRichterIn domainTerm="Mitwirkende Richterin oder Richter" refersTo="#person-dr-phil-max-mustermann">
+              Dr. Phil. Max Mustermann
+            </ris:mitwirkendeRichterIn>
+            <ris:mitwirkendeRichterIn domainTerm="Mitwirkende Richterin oder Richter" refersTo="#person-maxima-mustermann">
+              Maxima Mustermann
+            </ris:mitwirkendeRichterIn>
+          </ris:mitwirkendeRichterInnen>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
@@ -629,16 +637,6 @@
         xsi:type="ris:abweichendeMeinung"
       >
         <akn:p>dissenting test</akn:p>
-        <akn:block name="Mitwirkende Richter">
-          <akn:opinion
-            by="#person-dr-phil-max-mustermann"
-            ris:domainTerm="Art der Mitwirkung"
-          >referenced opinions test 1</akn:opinion>
-          <akn:opinion
-            by="#person-maxima-mustermann"
-            ris:domainTerm="Art der Mitwirkung"
-          >referenced opinions test 2</akn:opinion>
-        </akn:block>
       </akn:motivation>
     </akn:judgmentBody>
   </akn:judgment>
