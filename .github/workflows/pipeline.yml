@@ -11,9 +11,6 @@ on:
   workflow_dispatch:
   workflow_call:
 
-env:
-  SLACK_CHANNEL_ID: C0471B2N86L
-
 jobs:
   style-check:
     runs-on: ubuntu-latest
@@ -53,7 +50,7 @@ jobs:
         if: ${{ failure() && github.ref == 'refs/heads/main' }}
         with:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          SLACK_CHANNEL_ID: ${{ env.SLACK_CHANNEL_ID }}
+          SLACK_CHANNEL_ID: ${{ vars.SLACK_CHANNEL_ID }}
 
   validate-xsd-schema-samples:
     runs-on: ubuntu-latest
@@ -87,7 +84,7 @@ jobs:
         if: ${{ failure() && github.ref == 'refs/heads/main' }}
         with:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          SLACK_CHANNEL_ID: ${{ env.SLACK_CHANNEL_ID }}
+          SLACK_CHANNEL_ID: ${{ vars.SLACK_CHANNEL_ID }}
 
   build:
     runs-on: ubuntu-latest
@@ -110,4 +107,4 @@ jobs:
         if: ${{ failure() && github.ref == 'refs/heads/main' }}
         with:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          SLACK_CHANNEL_ID: ${{ env.SLACK_CHANNEL_ID }}
+          SLACK_CHANNEL_ID: ${{ vars.SLACK_CHANNEL_ID }}
