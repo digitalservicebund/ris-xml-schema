@@ -278,9 +278,9 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element
-              name="mitwirkendeRichterIn"
-              type="ris:mitwirkendeRichterIn"
-              maxOccurs="unbounded"
+        name="mitwirkendeRichterIn"
+        type="ris:mitwirkendeRichterIn"
+        maxOccurs="unbounded"
       />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -298,11 +298,7 @@
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-        <xs:attribute
-                name="refersTo"
-                type="akn:conceptRef"
-        >
-        </xs:attribute>
+        <xs:attribute name="refersTo" type="akn:conceptRef" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
