@@ -341,7 +341,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="akn:blocksreq">
+      <xs:extension base="akn:maincontent">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:complexContent>
@@ -354,7 +354,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="akn:blocksreq">
+      <xs:extension base="akn:maincontent">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:complexContent>
