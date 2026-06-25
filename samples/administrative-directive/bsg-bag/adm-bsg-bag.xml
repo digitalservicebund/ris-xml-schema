@@ -267,8 +267,8 @@
       </akn:references>
       <akn:proprietary source="#ris">
         <ris:meta>
-          <ris:referenzNormengeberListe domainTerm="Normgeber">
-            <ris:referenzNormengeber
+          <ris:normgeberListe domainTerm="Normgeber">
+            <ris:normgeber
               domainTerm="Normgeber"
               staat="Gemeinsamer Bundesausschuss"
             />
@@ -327,15 +327,6 @@
           <ris:regionen domainTerm="Regionen">
             <ris:region domainTerm="Region">DEU</ris:region>
           </ris:regionen>
-          <ris:historicAbbreviation
-          >VR Gemeinsamer Bundesausschuss 2024-07-18 25756</ris:historicAbbreviation>
-          <ris:activeReferences>
-            <ris:activeReference
-              typeNumber="31"
-              reference="VR Gemeinsamer Bundesausschuss 2018-07-19 19966"
-              dateOfVersion="2024-01-18"
-            />
-          </ris:activeReferences>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
