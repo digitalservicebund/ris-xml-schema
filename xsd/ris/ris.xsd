@@ -1053,7 +1053,7 @@
         minOccurs="0"
       />
       <xs:element name="aktenzeichen" type="ris:aktenzeichen" />
-      <xs:element name="gericht" type="ris:gericht" />
+      <xs:element name="gericht" type="ris:gericht" minOccurs="0" />
       <xs:element name="vermerk" type="ris:vermerk" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1106,7 +1106,7 @@
         minOccurs="0"
       />
       <xs:element name="aktenzeichen" type="ris:aktenzeichen" />
-      <xs:element name="gericht" type="ris:gericht" />
+      <xs:element name="gericht" type="ris:gericht" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
@@ -1294,7 +1294,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="periodikum" type="ris:periodikum" />
-      <xs:element name="zitatstelle" type="ris:zitatstelle" />
+      <xs:element name="zitatstelle" type="ris:zitatstelle" minOccurs="0" />
       <xs:element
         name="fundstellenTyp"
         type="ris:fundstellenTyp"
