@@ -272,7 +272,7 @@
               domainTerm="Normgeber"
               staat="Gemeinsamer Bundesausschuss"
             />
-          </ris:referenzNormengeberListe>
+          </ris:normgeberListe>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
               domainTerm="Sachgebiet"
