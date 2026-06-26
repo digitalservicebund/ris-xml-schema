@@ -105,6 +105,7 @@
               type="ris:vorabdokument"
               minOccurs="0"
             />
+            <xs:element name="revision" type="ris:revision" minOccurs="0" />
             <xs:element name="personen" type="ris:personen" minOccurs="0" />
             <xs:element
               name="organisationen"
