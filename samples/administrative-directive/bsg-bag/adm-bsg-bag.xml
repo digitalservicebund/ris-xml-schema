@@ -275,17 +275,10 @@
           </ris:normgeberListe>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
-              notation="alt"
-              domainTerm="Sachgebiet"
-              sachgebiet-id="09-05-40-81"
-            >09-05-40-81</ris:sachgebiet>
-            <ris:sachgebiet
-              notation="neu"
               domainTerm="Sachgebiet"
               sachgebiet-id="SO-05-05-10"
             >SO-05-05-10</ris:sachgebiet>
             <ris:sachgebiet
-              notation="neu"
               domainTerm="Sachgebiet"
               sachgebiet-id="SO-05-06-05"
             >SO-05-06-05</ris:sachgebiet>

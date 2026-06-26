@@ -432,11 +432,6 @@
         </xs:annotation>
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
         <xs:attribute
-          name="notation"
-          type="ris:sachgebietNotation"
-          use="required"
-        />
-        <xs:attribute
           name="sachgebiet-id"
           type="ris:sachgebietId"
           use="required"

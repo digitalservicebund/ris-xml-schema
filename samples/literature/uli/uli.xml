@@ -342,12 +342,10 @@
         <ris:meta>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
-              notation="neu"
               sachgebiet-id="RE-01-02-09"
               domainTerm="Sachgebiet"
             >RE-01-02-09</ris:sachgebiet>
             <ris:sachgebiet
-              notation="neu"
               sachgebiet-id="SO-05-02-02"
               domainTerm="Sachgebiet"
             >SO-05-02-02</ris:sachgebiet>

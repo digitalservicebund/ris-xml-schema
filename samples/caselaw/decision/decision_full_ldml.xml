@@ -487,7 +487,6 @@
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
               domainTerm="Sachgebiet"
-              notation="neu"
               sachgebiet-id="AR-01-01-01"
             >fieldOfLaw test</ris:sachgebiet>
           </ris:sachgebiete>
