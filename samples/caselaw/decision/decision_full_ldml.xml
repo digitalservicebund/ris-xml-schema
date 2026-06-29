@@ -533,6 +533,7 @@
             >Deutschland</ris:herkunftsland>
           </ris:herkunftslaender>
           <ris:vorabdokument domainTerm="Vorab-Dokument">Ja</ris:vorabdokument>
+          <ris:revision domainTerm="Revision">Ja</ris:revision>
           <ris:personen domainTerm="Personen">
             <ris:person
               domainTerm="Person"

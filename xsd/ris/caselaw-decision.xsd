@@ -267,6 +267,22 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:complexType name="revision">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Revision</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ris:revisionValue">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="revisionValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ja" />
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:complexType name="mitwirkendeRichterInnen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
