@@ -74,34 +74,17 @@
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Abweichender ECLI
+
+        ECLI = European Case Law Identifier, genutzt zur eindeutigen Identifikation von Entscheidungen.
+        https://e-justice.europa.eu/topics/legislation-and-case-law/european-case-law-identifier-ecli_de
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="ris:ecli">
+      <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-
-  <xs:simpleType name="ecli">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        ECLI (European Case Law Identifier) zur eindeutigen Identifikation von Entscheidungen.
-
-        https://e-justice.europa.eu/topics/legislation-and-case-law/european-case-law-identifier-ecli_de
-      </xs:documentation>
-      <xs:documentation xml:lang="en">
-        ECLI (European Case Law Identifier) for unique identification of decisions.
-
-        https://e-justice.europa.eu/topics/legislation-and-case-law/european-case-law-identifier-ecli_en
-      </xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:pattern
-        value="ECLI:[A-Z]{2}:[A-Za-z0-9]{1,7}:[0-9]{4}:[A-Za-z0-9.]{1,25}"
-      />
-    </xs:restriction>
-  </xs:simpleType>
 
   <xs:complexType name="rechtskraft">
     <xs:annotation>
