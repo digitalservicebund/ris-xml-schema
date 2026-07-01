@@ -268,7 +268,11 @@
 
   <xs:complexType name="langtextdatum">
     <xs:annotation>
-      <xs:documentation xml:lang="de">Langtextdatum</xs:documentation>
+      <xs:documentation xml:lang="de">
+        Langtextdatum
+
+        Datum der Langtextzuführung, z. B. 2016-06-15
+      </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:date">
