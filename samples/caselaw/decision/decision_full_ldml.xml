@@ -597,12 +597,14 @@
                 <akn:docType>documentType test</akn:docType>
             </akn:p>
       <akn:p>Kurztitel:
-                <akn:shortTitle refersTo="#titelzeile">
+        <akn:shortTitle>
         <akn:embeddedStructure>
-          <akn:p>headline test</akn:p>
+          <akn:p
+            alternativeTo="textWrapper"
+          >AG Aachen, documentType test vom 1. Januar 2020 - fileNumber test</akn:p>
         </akn:embeddedStructure>
       </akn:shortTitle>
-            </akn:p>
+      </akn:p>
       <akn:p>Entscheidungsnamen:
                 <akn:docTitle
         refersTo="#entscheidungsname"
