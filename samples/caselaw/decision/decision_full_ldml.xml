@@ -534,6 +534,9 @@
           </ris:herkunftslaender>
           <ris:vorabdokument domainTerm="Vorab-Dokument">Ja</ris:vorabdokument>
           <ris:revision domainTerm="Revision">Ja</ris:revision>
+          <ris:langtextdatum
+            domainTerm="Langtextdatum"
+          >2016-06-15</ris:langtextdatum>
           <ris:personen domainTerm="Personen">
             <ris:person
               domainTerm="Person"
