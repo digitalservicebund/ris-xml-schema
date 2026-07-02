@@ -91,6 +91,11 @@
               minOccurs="0"
             />
             <xs:element
+              name="kuendigungsarten"
+              type="ris:kuendigungsarten"
+              minOccurs="0"
+            />
+            <xs:element
               name="gesetzgebungsauftrag"
               type="ris:gesetzgebungsauftrag"
               minOccurs="0"

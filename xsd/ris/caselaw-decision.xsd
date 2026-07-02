@@ -193,6 +193,35 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:complexType name="kuendigungsarten">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Kündigungsarten
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="kuendigungsart"
+        type="ris:kuendigungsart"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="kuendigungsart">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Kündigungsart
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:complexType name="gesetzgebungsauftrag">
     <xs:annotation>
       <xs:documentation xml:lang="de">Gesetzgebungsauftrag</xs:documentation>
