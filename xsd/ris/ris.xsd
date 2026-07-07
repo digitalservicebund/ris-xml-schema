@@ -898,7 +898,7 @@
     <xs:sequence>
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="caselaw" />
-      <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
+      <xs:element name="referenzURI" type="ris:referenzURI" />
       <xs:element name="artDerZitierung" type="ris:referenzArtDerZitierung" />
       <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="gericht" type="ris:gericht" />
@@ -922,7 +922,7 @@
     <xs:sequence>
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="adm" />
-      <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
+      <xs:element name="referenzURI" type="ris:referenzURI" />
       <xs:element name="artDerZitierung" type="ris:referenzArtDerZitierung" />
       <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="jurisAbkuerzung" type="ris:jurisAbkuerzung" />
@@ -944,7 +944,7 @@
     <xs:sequence>
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="uli" />
-      <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
+      <xs:element name="referenzURI" type="ris:referenzURI" />
       <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="autor" type="ris:autor" />
       <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
@@ -967,7 +967,7 @@
     <xs:sequence>
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="sli" />
-      <xs:element name="relativerPfad" type="ris:referenzRelativerPfad" />
+      <xs:element name="referenzURI" type="ris:referenzURI" />
       <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
       <xs:element name="autor" type="ris:autor" />
       <xs:element name="titel" type="ris:referenzSelbstaendigeLiteraturTitel" />
@@ -1122,18 +1122,31 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="referenzRelativerPfad">
+  <xs:complexType name="referenzURI">
     <xs:annotation>
-      <xs:documentation>
-        Der Pfad um die referenzierte Dokeinheit aufzurufen.
+      <xs:documentation xml:lang="de">
+        Die URI die auf die referenzierte Dokeinheit verweist.
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="xs:anyURI">
+      <xs:extension base="ris:risURI">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
+  <xs:simpleType name="risURI">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        URI für einen Verweis auf ein Dokument im Rechtsinformationssystem.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:anyURI">
+      <xs:pattern
+        value="ris:/(rechtsprechung|verwaltungsvorschrift|literatur|norm)/[a-zA-Z0-9/-]+"
+      />
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:complexType name="referenzArtDerZitierung">
     <xs:annotation>
