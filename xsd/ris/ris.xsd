@@ -751,16 +751,16 @@
 
   <!-- Verweise -->
 
-  <xs:element name="referenzNormen" type="ris:referenzNormen" />
-  <xs:complexType name="referenzNormen">
+  <xs:element name="referenzNorm" type="ris:referenzNorm" />
+  <xs:complexType name="referenzNorm">
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
       >Ein Verweis auf eine Norm</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="abkuerzung" type="ris:referenzNormenAbkuerzung" />
-      <xs:element name="titel" type="ris:referenzNormenTitel" minOccurs="0" />
+      <xs:element name="abkuerzung" type="ris:referenzNormAbkuerzung" />
+      <xs:element name="titel" type="ris:referenzNormTitel" minOccurs="0" />
       <xs:element
         name="einzelnorm"
         type="ris:einzelnorm"
@@ -771,7 +771,7 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
-  <xs:complexType name="referenzNormenAbkuerzung">
+  <xs:complexType name="referenzNormAbkuerzung">
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
@@ -784,7 +784,7 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="referenzNormenTitel">
+  <xs:complexType name="referenzNormTitel">
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
