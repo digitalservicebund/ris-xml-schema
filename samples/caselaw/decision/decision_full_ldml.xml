@@ -120,13 +120,11 @@
               <ris:aktenzeichen
                 domainTerm="Aktenzeichen"
               >previous decision file number</ris:aktenzeichen>
-              <ris:gericht domainTerm="Gericht">
-                <ris:gerichtstyp
-                  domainTerm="Gerichtstyp"
-                >previous decision court type</ris:gerichtstyp>
+              <ris:gericht domainTerm="Gericht" showAs="BGH">
+                <ris:gerichtstyp domainTerm="Gerichtstyp">BGH</ris:gerichtstyp>
                 <ris:gerichtsort
                   domainTerm="Gerichtsort"
-                >previous decision court location</ris:gerichtsort>
+                >Karlsruhe</ris:gerichtsort>
                 <ris:gerichtsbarkeit
                   domainTerm="Gerichtsbarkeit"
                 >previous decision jurisdiction type</ris:gerichtsbarkeit>
@@ -147,13 +145,11 @@
               <ris:aktenzeichen
                 domainTerm="Aktenzeichen"
               >previous decision file number</ris:aktenzeichen>
-              <ris:gericht domainTerm="Gericht">
-                <ris:gerichtstyp
-                  domainTerm="Gerichtstyp"
-                >previous decision court type</ris:gerichtstyp>
+              <ris:gericht domainTerm="Gericht" showAs="AG Aachen">
+                <ris:gerichtstyp domainTerm="Gerichtstyp">AG</ris:gerichtstyp>
                 <ris:gerichtsort
                   domainTerm="Gerichtsort"
-                >previous decision court location</ris:gerichtsort>
+                >Aachen</ris:gerichtsort>
                 <ris:gerichtsbarkeit
                   domainTerm="Gerichtsbarkeit"
                 >previous decision jurisdiction type</ris:gerichtsbarkeit>
@@ -177,10 +173,23 @@
               <ris:aktenzeichen
                 domainTerm="Aktenzeichen"
               >ensuing decision file number</ris:aktenzeichen>
-              <ris:gericht domainTerm="Gericht">
+              <ris:gericht
+                domainTerm="Gericht"
+                refersTo="#organisation-gericht-zentralkommission-fuer-die-rheinschiffahrt-strassburg"
+                showAs="Zentralkommission für die Rheinschiffahrt Straßburg"
+              >
                 <ris:gerichtstyp
                   domainTerm="Gerichtstyp"
-                >ensuing decision court type</ris:gerichtstyp>
+                >Zentralkommission für die Rheinschiffahrt</ris:gerichtstyp>
+                <ris:gerichtsort
+                  domainTerm="Gerichtsort"
+                >Straßburg</ris:gerichtsort>
+                <ris:gerichtsbarkeit
+                  domainTerm="Gerichtsbarkeit"
+                >Besondere Gerichtsbarkeit</ris:gerichtsbarkeit>
+                <ris:spruchkoerper
+                  domainTerm="Spruchkörper"
+                >Berufungsausschuss der Moselkommission</ris:spruchkoerper>
               </ris:gericht>
             </ris:nachgehendeEntscheidung>
           </akn:implicitReference>
@@ -248,7 +257,7 @@
               <ris:dokumentnummer
                 domainTerm="Dokumentnummer"
               >STRE201770751</ris:dokumentnummer>
-              <ris:gericht domainTerm="Gericht">
+              <ris:gericht domainTerm="Gericht" showAs="AG Aachen">
                 <ris:gerichtstyp domainTerm="Gerichtstyp">AG</ris:gerichtstyp>
                 <ris:gerichtsort
                   domainTerm="Gerichtsort"
@@ -423,6 +432,7 @@
           <ris:gericht
             domainTerm="Gericht"
             refersTo="#organisation-gericht-ag-aachen"
+            showAs="AG Aachen"
           >
             <ris:gerichtstyp domainTerm="Gerichtstyp">AG</ris:gerichtstyp>
             <ris:gerichtsort domainTerm="Gerichtsort">Aachen</ris:gerichtsort>
