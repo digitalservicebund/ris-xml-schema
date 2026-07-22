@@ -35,19 +35,17 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <!-- Langtexte. Die typen müssen mit xsi:type angegeben werden -->
-
   <xs:complexType name="rechtsmittelfuehrer">
     <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Rechtsmittelführer
-      </xs:documentation>
+      <xs:documentation
+              xml:lang="de"
+      >Rechtsmittelführer</xs:documentation>
     </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="akn:maincontent">
-        <xs:attribute ref="ris:domainTerm" use="required" />
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
-    </xs:complexContent>
+    </xs:simpleContent>
   </xs:complexType>
 
   <xs:complexType name="rechtsmittelzulassung">
@@ -56,12 +54,27 @@
         Rechtsmittelzulassung
       </xs:documentation>
     </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="rechtsfrage">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Rechtsfrage
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="akn:maincontent">
-        <xs:attribute ref="ris:domainTerm" use="required" />
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+  <!-- Langtexte. Die typen müssen mit xsi:type angegeben werden -->
 
   <xs:complexType name="erledigungsvermerk">
     <xs:annotation>
@@ -76,7 +89,7 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="rechtsfrage">
+  <xs:complexType name="rechtsfrageGesamt">
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Rechtsfrage

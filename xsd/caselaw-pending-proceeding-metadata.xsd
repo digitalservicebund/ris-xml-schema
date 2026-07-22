@@ -57,6 +57,8 @@
               type="ris:organisationen"
               minOccurs="0"
             />
+            <xs:element name="rechtsmittelfuehrer" type="ris:rechtsmittelfuehrer" minOccurs="0" />
+            <xs:element name="rechtsmittelzulassung" type="ris:rechtsmittelzulassung" minOccurs="0" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
@@ -74,6 +76,11 @@
             <xs:element
               name="titelzeile"
               type="ris:titelzeile"
+              minOccurs="0 "
+            />
+            <xs:element
+              name="rechtsfrage"
+              type="ris:rechtsfrage"
               minOccurs="0 "
             />
           </xs:sequence>

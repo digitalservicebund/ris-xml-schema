@@ -55,7 +55,7 @@
         <xs:element ref="akn:introduction">
           <xs:annotation>
             <xs:documentation xml:lang="de">
-              Rechtsmittelführer oder Rechtsmittelzulassung
+              Platzhalter bei fehlendem Entscheidungstext
             </xs:documentation>
           </xs:annotation>
         </xs:element>
