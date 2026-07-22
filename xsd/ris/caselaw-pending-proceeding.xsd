@@ -90,7 +90,7 @@
   <xs:complexType name="rechtsfrageGesamt">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Rechtsfrage
+        Rechtsfrage (gesamt)
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>

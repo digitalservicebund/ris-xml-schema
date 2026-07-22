@@ -228,10 +228,10 @@
         <akn:p>Erledigungsvermerk</akn:p>
       </akn:decision>
       <akn:motivation
-        ris:domainTerm="Rechtsfrage"
+        ris:domainTerm="Rechtsfrage (gesamt)"
         xsi:type="ris:rechtsfrageGesamt"
       >
-        <akn:p alternativeTo="textWrapper">Rechtsfrage</akn:p>
+        <akn:p alternativeTo="textWrapper">Rechtsfrage (gesamt)</akn:p>
       </akn:motivation>
     </akn:judgmentBody>
   </akn:judgment>
