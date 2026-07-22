@@ -37,9 +37,7 @@
 
   <xs:complexType name="rechtsmittelfuehrer">
     <xs:annotation>
-      <xs:documentation
-              xml:lang="de"
-      >Rechtsmittelführer</xs:documentation>
+      <xs:documentation xml:lang="de">Rechtsmittelführer</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">

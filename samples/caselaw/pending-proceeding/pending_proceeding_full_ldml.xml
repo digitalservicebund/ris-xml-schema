@@ -254,8 +254,12 @@
             >Sachgebiet</ris:sachgebiet>
           </ris:sachgebiete>
           <ris:erledigung domainTerm="Erledigung">Ja</ris:erledigung>
-          <ris:rechtsmittelfuehrer domainTerm="Rechtsmittelführer">Rechtsmittelführer</ris:rechtsmittelfuehrer>
-          <ris:rechtsmittelzulassung domainTerm="Rechtsmittelzulassung">Rechtsmittelzulassung</ris:rechtsmittelzulassung>
+          <ris:rechtsmittelfuehrer
+            domainTerm="Rechtsmittelführer"
+          >Rechtsmittelführer</ris:rechtsmittelfuehrer>
+          <ris:rechtsmittelzulassung
+            domainTerm="Rechtsmittelzulassung"
+          >Rechtsmittelzulassung</ris:rechtsmittelzulassung>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
@@ -296,7 +300,10 @@
       >
         <akn:p>Erledigungsvermerk</akn:p>
       </akn:decision>
-      <akn:motivation ris:domainTerm="Rechtsfrage" xsi:type="ris:rechtsfrageGesamt">
+      <akn:motivation
+        ris:domainTerm="Rechtsfrage"
+        xsi:type="ris:rechtsfrageGesamt"
+      >
         <akn:p alternativeTo="textWrapper">Rechtsfrage</akn:p>
       </akn:motivation>
     </akn:judgmentBody>
