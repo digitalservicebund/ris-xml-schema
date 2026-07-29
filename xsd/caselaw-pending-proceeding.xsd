@@ -62,14 +62,7 @@
         <xs:element ref="akn:motivation">
           <xs:annotation>
             <xs:documentation xml:lang="de">
-              Rechtsfrage
-            </xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element ref="akn:decision">
-          <xs:annotation>
-            <xs:documentation xml:lang="de">
-              Erledigungsvermerk
+              Rechtsfrage (gesamt)
             </xs:documentation>
           </xs:annotation>
         </xs:element>

@@ -91,6 +91,11 @@
               type="ris:rechtsfrage"
               minOccurs="0 "
             />
+            <xs:element
+              name="erledigungsvermerk"
+              type="ris:erledigungsvermerk"
+              minOccurs="0 "
+            />
           </xs:sequence>
           <xs:attribute
             name="domainTerm"

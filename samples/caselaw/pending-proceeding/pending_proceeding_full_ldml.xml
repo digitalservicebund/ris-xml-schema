@@ -178,6 +178,9 @@
             <ris:rechtsfrage domainTerm="Rechtsfrage">
               <akn:p>Rechtsfrage</akn:p>
             </ris:rechtsfrage>
+            <ris:erledigungsvermerk domainTerm="Erledigungsvermerk">
+              <akn:p>Erledigungsvermerk</akn:p>
+            </ris:erledigungsvermerk>
           </ris:dokumentarischeKurztexte>
         </akn:otherAnalysis>
       </akn:analysis>
@@ -294,12 +297,6 @@
             </akn:p>
     </akn:header>
     <akn:judgmentBody>
-      <akn:decision
-        ris:domainTerm="Erledigungsvermerk"
-        xsi:type="ris:erledigungsvermerk"
-      >
-        <akn:p>Erledigungsvermerk</akn:p>
-      </akn:decision>
       <akn:motivation
         ris:domainTerm="Rechtsfrage (gesamt)"
         xsi:type="ris:rechtsfrageGesamt"
