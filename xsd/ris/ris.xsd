@@ -899,9 +899,9 @@
     <xs:sequence>
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="caselaw" />
-      <xs:element name="referenzURI" type="ris:referenzURI" />
+      <xs:element name="referenzURI" type="ris:referenzURI" minOccurs="0" />
       <xs:element name="artDerZitierung" type="ris:referenzArtDerZitierung" />
-      <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
+      <xs:element name="dokumentnummer" type="ris:dokumentnummer" minOccurs="0" />
       <xs:element name="gericht" type="ris:gericht" />
       <xs:element name="entscheidungsdatum" type="ris:entscheidungsdatum" />
       <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
@@ -923,9 +923,9 @@
     <xs:sequence>
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="adm" />
-      <xs:element name="referenzURI" type="ris:referenzURI" />
+      <xs:element name="referenzURI" type="ris:referenzURI" minOccurs="0" />
       <xs:element name="artDerZitierung" type="ris:referenzArtDerZitierung" />
-      <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
+      <xs:element name="dokumentnummer" type="ris:dokumentnummer" minOccurs="0" />
       <xs:element name="jurisAbkuerzung" type="ris:jurisAbkuerzung" />
       <xs:element name="fundstelle" type="ris:fundstelle" />
     </xs:sequence>
@@ -945,8 +945,8 @@
     <xs:sequence>
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="uli" />
-      <xs:element name="referenzURI" type="ris:referenzURI" />
-      <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
+      <xs:element name="referenzURI" type="ris:referenzURI" minOccurs="0" />
+      <xs:element name="dokumentnummer" type="ris:dokumentnummer" minOccurs="0" />
       <xs:element name="autor" type="ris:autor" />
       <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
       <!-- dokumenttypLiteratur? -->
@@ -968,8 +968,8 @@
     <xs:sequence>
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="sli" />
-      <xs:element name="referenzURI" type="ris:referenzURI" />
-      <xs:element name="dokumentnummer" type="ris:dokumentnummer" />
+      <xs:element name="referenzURI" type="ris:referenzURI" minOccurs="0" />
+      <xs:element name="dokumentnummer" type="ris:dokumentnummer" minOccurs="0" />
       <xs:element name="autor" type="ris:autor" />
       <xs:element name="titel" type="ris:referenzSelbstaendigeLiteraturTitel" />
       <xs:element
