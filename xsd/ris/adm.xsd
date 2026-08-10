@@ -41,7 +41,7 @@
   <xs:complexType name="inkrafttreten">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-      Datum des Inkrafttreten
+      Datum des Inkrafttretens
     </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
@@ -54,7 +54,7 @@
   <xs:complexType name="ablaufdatum">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-      Datum des Inkrafttreten
+      Datum des Inkrafttretens
     </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
