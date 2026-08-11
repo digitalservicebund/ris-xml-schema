@@ -65,6 +65,7 @@
               minOccurs="0"
             />
             <xs:element name="regionen" type="ris:regionen" minOccurs="0" />
+            <xs:element name="anwendungszeitraum" type="ris:anwendungszeitraum" minOccurs="0" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
