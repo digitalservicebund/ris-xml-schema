@@ -32,13 +32,13 @@
               minOccurs="0"
             />
             <xs:element
-              name="inkrafttreten"
-              type="ris:inkrafttreten"
+              name="inkraft"
+              type="ris:inkraft"
               minOccurs="0"
             />
             <xs:element
-              name="ablaufdatum"
-              type="ris:ablaufdatum"
+              name="ausserkraft"
+              type="ris:ausserkraft"
               minOccurs="0"
             />
             <xs:element name="gliederung" type="ris:gliederung" minOccurs="0" />
@@ -55,8 +55,8 @@
               minOccurs="0"
             />
             <xs:element
-              name="zitierdatumListe"
-              type="ris:zitierdatumListe"
+              name="zitierdaten"
+              type="ris:zitierdaten"
               minOccurs="0"
             />
             <xs:element
