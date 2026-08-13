@@ -15,8 +15,8 @@
   </xs:annotation>
 
   <xs:import
-          namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
-          schemaLocation="../akn/akomantoso30.xsd"
+    namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+    schemaLocation="../akn/akomantoso30.xsd"
   />
 
   <xs:include schemaLocation="domain-term.xsd" />
@@ -137,17 +137,16 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element
-              name="anwendungsbeginn"
-              type="ris:stringWithDomainTerm"
-              minOccurs="0"
+        name="anwendungsbeginn"
+        type="ris:stringWithDomainTerm"
+        minOccurs="0"
       />
       <xs:element
-              name="anwendungsende"
-              type="ris:stringWithDomainTerm"
-              minOccurs="0"
+        name="anwendungsende"
+        type="ris:stringWithDomainTerm"
+        minOccurs="0"
       />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
-
 </xs:schema>

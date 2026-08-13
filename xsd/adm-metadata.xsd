@@ -31,11 +31,7 @@
               type="ris:sachgebiete"
               minOccurs="0"
             />
-            <xs:element
-              name="inkraft"
-              type="ris:inkraft"
-              minOccurs="0"
-            />
+            <xs:element name="inkraft" type="ris:inkraft" minOccurs="0" />
             <xs:element
               name="ausserkraft"
               type="ris:ausserkraft"
@@ -65,7 +61,11 @@
               minOccurs="0"
             />
             <xs:element name="regionen" type="ris:regionen" minOccurs="0" />
-            <xs:element name="anwendungszeitraum" type="ris:anwendungszeitraum" minOccurs="0" />
+            <xs:element
+              name="anwendungszeitraum"
+              type="ris:anwendungszeitraum"
+              minOccurs="0"
+            />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
