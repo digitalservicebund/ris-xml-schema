@@ -270,8 +270,7 @@
           <ris:normgeberListe domainTerm="Normgeber">
             <ris:normgeber
               domainTerm="Normgeber"
-              staat="Gemeinsamer Bundesausschuss"
-            />
+            >Gemeinsamer Bundesausschuss</ris:normgeber>
           </ris:normgeberListe>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
@@ -283,9 +282,9 @@
               sachgebiet-id="SO-05-06-05"
             >SO-05-06-05</ris:sachgebiet>
           </ris:sachgebiete>
-          <ris:inkrafttreten
+          <ris:inkraft
             domainTerm="Datum des Inkrafttretens"
-          >2025-01-01</ris:inkrafttreten>
+          >2025-01-01</ris:inkraft>
           <ris:dokumenttypen domainTerm="Dokumenttypen">
             <ris:dokumenttyp
               domainTerm="Dokumenttyp"
@@ -312,11 +311,11 @@
               domainTerm="Titel Aspekt"
             >DeQSRL Teil 1</ris:titelAspekt>
           </ris:titelAspekte>
-          <ris:zitierdatumListe domainTerm="Zitierdaten">
+          <ris:zitierdaten domainTerm="Zitierdaten">
             <ris:zitierdatum
               domainTerm="Zitierdatum"
             >2024-07-18</ris:zitierdatum>
-          </ris:zitierdatumListe>
+          </ris:zitierdaten>
           <ris:regionen domainTerm="Regionen">
             <ris:region domainTerm="Region">DEU</ris:region>
           </ris:regionen>
