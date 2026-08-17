@@ -900,12 +900,24 @@
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="caselaw" />
       <xs:element name="referenzURI" type="ris:referenzURI" minOccurs="0" />
-      <xs:element name="artDerZitierung" type="ris:referenzArtDerZitierung" />
-      <xs:element name="dokumentnummer" type="ris:dokumentnummer" minOccurs="0" />
-      <xs:element name="gericht" type="ris:gericht" />
-      <xs:element name="entscheidungsdatum" type="ris:entscheidungsdatum" />
-      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
-      <xs:element name="aktenzeichen" type="ris:aktenzeichen" />
+      <xs:element
+        name="artDerZitierung"
+        type="ris:referenzArtDerZitierung"
+        minOccurs="0"
+      />
+      <xs:element
+        name="dokumentnummer"
+        type="ris:dokumentnummer"
+        minOccurs="0"
+      />
+      <xs:element name="gericht" type="ris:gericht" minOccurs="0" />
+      <xs:element
+        name="entscheidungsdatum"
+        type="ris:entscheidungsdatum"
+        minOccurs="0"
+      />
+      <xs:element name="dokumenttyp" type="ris:dokumenttyp" minOccurs="0" />
+      <xs:element name="aktenzeichen" type="ris:aktenzeichen" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
@@ -924,8 +936,16 @@
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="adm" />
       <xs:element name="referenzURI" type="ris:referenzURI" minOccurs="0" />
-      <xs:element name="artDerZitierung" type="ris:referenzArtDerZitierung" />
-      <xs:element name="dokumentnummer" type="ris:dokumentnummer" minOccurs="0" />
+      <xs:element
+        name="artDerZitierung"
+        type="ris:referenzArtDerZitierung"
+        minOccurs="0"
+      />
+      <xs:element
+        name="dokumentnummer"
+        type="ris:dokumentnummer"
+        minOccurs="0"
+      />
       <xs:element name="jurisAbkuerzung" type="ris:jurisAbkuerzung" />
       <xs:element name="fundstelle" type="ris:fundstelle" />
     </xs:sequence>
@@ -946,11 +966,15 @@
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="uli" />
       <xs:element name="referenzURI" type="ris:referenzURI" minOccurs="0" />
-      <xs:element name="dokumentnummer" type="ris:dokumentnummer" minOccurs="0" />
-      <xs:element name="autor" type="ris:autor" />
-      <xs:element name="dokumenttyp" type="ris:dokumenttyp" />
+      <xs:element
+        name="dokumentnummer"
+        type="ris:dokumentnummer"
+        minOccurs="0"
+      />
+      <xs:element name="autor" type="ris:autor" minOccurs="0" />
+      <xs:element name="dokumenttyp" type="ris:dokumenttyp" minOccurs="0" />
       <!-- dokumenttypLiteratur? -->
-      <xs:element name="fundstelle" type="ris:fundstelle" />
+      <xs:element name="fundstelle" type="ris:fundstelle" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
@@ -969,12 +993,21 @@
       <xs:element name="richtung" type="ris:referenzRichtung" />
       <xs:element name="referenzArt" type="ris:referenzArt" fixed="sli" />
       <xs:element name="referenzURI" type="ris:referenzURI" minOccurs="0" />
-      <xs:element name="dokumentnummer" type="ris:dokumentnummer" minOccurs="0" />
-      <xs:element name="autor" type="ris:autor" />
-      <xs:element name="titel" type="ris:referenzSelbstaendigeLiteraturTitel" />
+      <xs:element
+        name="dokumentnummer"
+        type="ris:dokumentnummer"
+        minOccurs="0"
+      />
+      <xs:element name="autor" type="ris:autor" minOccurs="0" />
+      <xs:element
+        name="titel"
+        type="ris:referenzSelbstaendigeLiteraturTitel"
+        minOccurs="0"
+      />
       <xs:element
         name="veroeffentlichungsjahr"
         type="ris:veroeffentlichungsjahr"
+        minOccurs="0"
       />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
@@ -1323,18 +1356,9 @@
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="ris:periodikumTypValue">
-        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-      </xs:extension>
+      <xs:extension base="ris:stringWithDomainTerm" />
     </xs:simpleContent>
   </xs:complexType>
-
-  <xs:simpleType name="periodikumTypValue">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="nichtamtlich" />
-      <xs:enumeration value="amtlich" />
-    </xs:restriction>
-  </xs:simpleType>
 
   <xs:complexType name="periodikumTitel">
     <xs:annotation>
