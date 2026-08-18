@@ -572,13 +572,13 @@
             domainTerm="Mitwirkende Richterinnen und Richter"
           >
             <ris:mitwirkenderRichter
-              domainTerm="Mitwirkende Richterin oder Richter"
+              domainTerm="Mitwirkende Richter"
               refersTo="#person-dr-phil-max-mustermann"
             >
               Dr. Phil. Max Mustermann
             </ris:mitwirkenderRichter>
             <ris:mitwirkenderRichter
-              domainTerm="Mitwirkende Richterin oder Richter"
+              domainTerm="Mitwirkende Richter"
               refersTo="#person-maxima-mustermann"
             >
               Maxima Mustermann
