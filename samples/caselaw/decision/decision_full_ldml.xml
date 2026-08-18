@@ -568,22 +568,22 @@
               <ris:name domainTerm="Name">Maxima Mustermann</ris:name>
             </ris:person>
           </ris:personen>
-          <ris:mitwirkendeRichterInnen
+          <ris:mitwirkendeRichter
             domainTerm="Mitwirkende Richterinnen und Richter"
           >
-            <ris:mitwirkendeRichterIn
+            <ris:mitwirkenderRichter
               domainTerm="Mitwirkende Richterin oder Richter"
               refersTo="#person-dr-phil-max-mustermann"
             >
               Dr. Phil. Max Mustermann
-            </ris:mitwirkendeRichterIn>
-            <ris:mitwirkendeRichterIn
+            </ris:mitwirkenderRichter>
+            <ris:mitwirkenderRichter
               domainTerm="Mitwirkende Richterin oder Richter"
               refersTo="#person-maxima-mustermann"
             >
               Maxima Mustermann
-            </ris:mitwirkendeRichterIn>
-          </ris:mitwirkendeRichterInnen>
+            </ris:mitwirkenderRichter>
+          </ris:mitwirkendeRichter>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>

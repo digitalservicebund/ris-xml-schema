@@ -310,7 +310,7 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="mitwirkendeRichterInnen">
+  <xs:complexType name="mitwirkendeRichter">
     <xs:annotation>
       <xs:documentation xml:lang="de">
         An der Entscheidung mitwirkende Richterinnen und Richter
@@ -321,15 +321,15 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element
-        name="mitwirkendeRichterIn"
-        type="ris:mitwirkendeRichterIn"
+        name="mitwirkenderRichter"
+        type="ris:mitwirkenderRichter"
         maxOccurs="unbounded"
       />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
-  <xs:complexType name="mitwirkendeRichterIn">
+  <xs:complexType name="mitwirkenderRichter">
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Mitwirkende Richterin oder Richter
