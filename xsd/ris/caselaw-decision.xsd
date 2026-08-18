@@ -313,7 +313,7 @@
   <xs:complexType name="mitwirkendeRichter">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        An der Entscheidung mitwirkende Richterinnen und Richter
+        An der Entscheidung mitwirkende Richter
       </xs:documentation>
       <xs:documentation xml:lang="en">
         Participating judges of the decision
@@ -332,7 +332,7 @@
   <xs:complexType name="mitwirkenderRichter">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Mitwirkende Richter
+        Mitwirkender Richter
       </xs:documentation>
       <xs:documentation xml:lang="en">
         Participating judge
