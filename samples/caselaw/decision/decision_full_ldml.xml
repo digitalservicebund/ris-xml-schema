@@ -568,9 +568,7 @@
               <ris:name domainTerm="Name">Maxima Mustermann</ris:name>
             </ris:person>
           </ris:personen>
-          <ris:mitwirkendeRichter
-            domainTerm="Mitwirkende Richter"
-          >
+          <ris:mitwirkendeRichter domainTerm="Mitwirkende Richter">
             <ris:mitwirkenderRichter
               domainTerm="Mitwirkender Richter"
               refersTo="#person-dr-phil-max-mustermann"

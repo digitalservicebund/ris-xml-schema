@@ -319,7 +319,10 @@
       >
         <akn:p>otherLongText test</akn:p>
       </akn:motivation>
-      <akn:motivation ris:domainTerm="Abweichende Meinung" xsi:type="ris:abweichendeMeinung">
+      <akn:motivation
+        ris:domainTerm="Abweichende Meinung"
+        xsi:type="ris:abweichendeMeinung"
+      >
         <akn:p>dissenting test</akn:p>
       </akn:motivation>
     </akn:judgmentBody>
