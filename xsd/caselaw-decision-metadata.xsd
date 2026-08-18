@@ -123,8 +123,8 @@
               minOccurs="0"
             />
             <xs:element
-              name="mitwirkendeRichterInnen"
-              type="ris:mitwirkendeRichterInnen"
+              name="mitwirkendeRichter"
+              type="ris:mitwirkendeRichter"
               minOccurs="0"
             />
           </xs:sequence>

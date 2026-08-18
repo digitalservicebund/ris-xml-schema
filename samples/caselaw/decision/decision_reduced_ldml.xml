@@ -324,22 +324,6 @@
         xsi:type="ris:abweichendeMeinung"
       >
         <akn:p>dissenting test</akn:p>
-        <akn:block name="Mitwirkende Richter">
-          <akn:opinion
-            by="#dr-phil-max-mustermann"
-            ris:domainTerm="Art der Mitwirkung"
-            type="dissenting"
-          >
-            referenced opinions test 1
-          </akn:opinion>
-          <akn:opinion
-            by="#richterin-maxima-mustermann"
-            ris:domainTerm="Art der Mitwirkung"
-            type="dissenting"
-          >
-            referenced opinions test 2
-          </akn:opinion>
-        </akn:block>
       </akn:motivation>
     </akn:judgmentBody>
   </akn:judgment>
