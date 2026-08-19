@@ -91,6 +91,9 @@
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
             <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
+              <ris:referenzURI
+                domainTerm="URI der Referenz"
+              >ris:/rechtsprechung/documentNumber</ris:referenzURI>
               <ris:dokumenttyp
                 domainTerm="Dokumenttyp"
               >previous decision document type</ris:dokumenttyp>
@@ -112,6 +115,9 @@
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
             <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
+              <ris:referenzURI
+                domainTerm="URI der Referenz"
+              >ris:/rechtsprechung/documentNumber</ris:referenzURI>
               <ris:dokumenttyp
                 domainTerm="Dokumenttyp"
               >previous decision document type</ris:dokumenttyp>
