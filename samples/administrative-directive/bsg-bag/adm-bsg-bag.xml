@@ -282,9 +282,9 @@
               sachgebiet-id="SO-05-06-05"
             >SO-05-06-05</ris:sachgebiet>
           </ris:sachgebiete>
-          <ris:inkraft
+          <ris:inkrafttretedatum
             domainTerm="Datum des Inkrafttretens"
-          >2025-01-01</ris:inkraft>
+          >2025-01-01</ris:inkrafttretedatum>
           <ris:dokumenttypen domainTerm="Dokumenttypen">
             <ris:dokumenttyp
               domainTerm="Dokumenttyp"
