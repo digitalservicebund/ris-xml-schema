@@ -57,7 +57,7 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="ausserkraft">
+  <xs:complexType name="ausserkrafttretedatum">
     <xs:annotation>
       <xs:documentation xml:lang="de">
       Datum des Außerkrafttretens
