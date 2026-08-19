@@ -44,7 +44,7 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="inkraft">
+  <xs:complexType name="inkrafttretedatum">
     <xs:annotation>
       <xs:documentation xml:lang="de">
       Datum des Inkrafttretens
