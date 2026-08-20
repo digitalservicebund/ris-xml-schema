@@ -125,3 +125,5 @@ xsd/ldml-ris-literature.xsd
 build
 
 .devcontainer
+
+temp/
