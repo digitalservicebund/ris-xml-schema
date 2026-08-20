@@ -31,7 +31,11 @@
               type="ris:sachgebiete"
               minOccurs="0"
             />
-            <xs:element name="inkrafttretedatum" type="ris:inkrafttretedatum" minOccurs="0" />
+            <xs:element
+              name="inkrafttretedatum"
+              type="ris:inkrafttretedatum"
+              minOccurs="0"
+            />
             <xs:element
               name="ausserkrafttretedatum"
               type="ris:ausserkrafttretedatum"

@@ -1222,7 +1222,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="ris:stringWithDomainTerm"/>
+      <xs:extension base="ris:stringWithDomainTerm" />
     </xs:simpleContent>
   </xs:complexType>
 
