@@ -31,10 +31,10 @@
               type="ris:sachgebiete"
               minOccurs="0"
             />
-            <xs:element name="inkraft" type="ris:inkraft" minOccurs="0" />
+            <xs:element name="inkrafttretedatum" type="ris:inkrafttretedatum" minOccurs="0" />
             <xs:element
-              name="ausserkraft"
-              type="ris:ausserkraft"
+              name="ausserkrafttretedatum"
+              type="ris:ausserkrafttretedatum"
               minOccurs="0"
             />
             <xs:element name="gliederung" type="ris:gliederung" minOccurs="0" />
@@ -66,6 +66,7 @@
               type="ris:anwendungszeitraum"
               minOccurs="0"
             />
+            <xs:element name="risAbkuerzung" type="ris:risAbkuerzung" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>

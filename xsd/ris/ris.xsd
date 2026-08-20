@@ -1215,6 +1215,17 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:complexType name="risAbkuerzung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        RIS-Abkürzung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ris:stringWithDomainTerm"/>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:complexType name="autor">
     <xs:annotation>
       <xs:documentation xml:lang="de">

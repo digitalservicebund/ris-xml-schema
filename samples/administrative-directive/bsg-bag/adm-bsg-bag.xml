@@ -319,6 +319,7 @@
           <ris:regionen domainTerm="Regionen">
             <ris:region domainTerm="Region">DEU</ris:region>
           </ris:regionen>
+          <ris:risAbkuerzung domainTerm="RIS-Abkürzung">VR Gemeinsamer Bundesausschuss 2024-07-18 25756</ris:risAbkuerzung>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
