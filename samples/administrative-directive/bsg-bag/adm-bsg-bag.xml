@@ -275,12 +275,12 @@
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
               domainTerm="Sachgebiet"
-              sachgebiet-id="SO-05-05-10"
-            >SO-05-05-10</ris:sachgebiet>
+              sachgebiet-id="AA-01-01-01"
+            >AA-01-01-01</ris:sachgebiet>
             <ris:sachgebiet
               domainTerm="Sachgebiet"
-              sachgebiet-id="SO-05-06-05"
-            >SO-05-06-05</ris:sachgebiet>
+              sachgebiet-id="AA-01-01-02"
+            >AA-01-01-02</ris:sachgebiet>
           </ris:sachgebiete>
           <ris:inkrafttretedatum
             domainTerm="Datum des Inkrafttretens"
