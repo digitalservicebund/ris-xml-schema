@@ -22,8 +22,8 @@
         <xs:restriction base="ris:meta">
           <xs:sequence>
             <xs:element
-              name="normgeberListe"
-              type="ris:normgeberListe"
+              name="normgeberliste"
+              type="ris:normgeberliste"
               minOccurs="0"
             />
             <xs:element
@@ -43,7 +43,11 @@
             />
             <xs:element name="gliederung" type="ris:gliederung" minOccurs="0" />
             <xs:element name="dokumenttypen" type="ris:dokumenttypen" />
-            <xs:element name="berufsbilder" type="ris:berufsbilder" />
+            <xs:element
+              name="berufsbilder"
+              type="ris:berufsbilder"
+              minOccurs="0"
+            />
             <xs:element
               name="titelAspekte"
               type="ris:titelAspekte"

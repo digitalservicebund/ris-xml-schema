@@ -21,7 +21,7 @@
 
   <xs:include schemaLocation="domain-term.xsd" />
 
-  <xs:complexType name="normgeberListe">
+  <xs:complexType name="normgeberliste">
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Liste der Normgeber

@@ -37,7 +37,7 @@
         <xs:restriction base="akn:openStructure">
           <xs:sequence>
             <xs:element ref="akn:meta" />
-            <xs:element ref="akn:preface" />
+            <xs:element ref="akn:preface" minOccurs="0" />
             <xs:element ref="akn:mainBody" />
           </xs:sequence>
           <xs:attribute

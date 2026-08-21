@@ -267,11 +267,11 @@
       </akn:references>
       <akn:proprietary source="#ris">
         <ris:meta>
-          <ris:normgeberListe domainTerm="Normgeber">
+          <ris:normgeberliste domainTerm="Normgeberliste">
             <ris:normgeber
               domainTerm="Normgeber"
             >Gemeinsamer Bundesausschuss</ris:normgeber>
-          </ris:normgeberListe>
+          </ris:normgeberliste>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
               domainTerm="Sachgebiet"
