@@ -260,18 +260,18 @@
     <xs:annotation>
       <!-- in the harmonization document this field doesn't contain the abbreviation but the full name, but in caselaw we often only have an abbreviation -->
       <xs:documentation xml:lang="de">
-        Abkürzung der Region.
+        Bezeichnung oder Abkürzung der Region bzw. des Sitzes der Behörde.
 
-        Für Bundesländer:
-          Grundsätzlich: Die 2 Buchstaben Abkürzung nach ISO 3166-2
-          Niedersachsen abweichend ND
-          Hamburg HA
-          Bremen BR
-        Für Länder: ISO 3166-1 alpha-3
+        Im BZSt-Kontext ("Sitz der Behörde"):
+          Gibt den Dienstsitz der Behörde im Klartext an.
+          Der Wert ist optional (kann fehlen/null sein).
+          Vorkommende Werte: "Bonn", "Berlin".
 
-        Es werden weitere Codes für andere und ehemalige Gebiete verwendet.
-        Zum Beispiel NL für Neue Länder, AL für Alte Länder oder PR für
-        Preußen
+        Allgemein / Für Bundesländer und Länder (sofern Codes verwendet werden):
+          - Für Bundesländer: Grundsätzlich die 2-Buchstaben-Abkürzung nach ISO 3166-2
+          (Abweichend: Niedersachsen = ND, Hamburg = HA, Bremen = BR)
+          - Für Länder: ISO 3166-1 alpha-3
+          - Weitere Codes für andere und ehemalige Gebiete (z. B. NL für Neue Länder, AL für Alte Länder, PR für Preußen)
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
@@ -1247,6 +1247,17 @@
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="risAbkuerzung">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        RIS-Abkürzung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ris:stringWithDomainTerm" />
     </xs:simpleContent>
   </xs:complexType>
 

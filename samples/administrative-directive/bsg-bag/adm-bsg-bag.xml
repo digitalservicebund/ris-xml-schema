@@ -267,25 +267,24 @@
       </akn:references>
       <akn:proprietary source="#ris">
         <ris:meta>
-          <ris:normgeberListe domainTerm="Normgeber">
+          <ris:normgeberliste domainTerm="Normgeberliste">
             <ris:normgeber
               domainTerm="Normgeber"
-              staat="Gemeinsamer Bundesausschuss"
-            />
-          </ris:normgeberListe>
+            >Gemeinsamer Bundesausschuss</ris:normgeber>
+          </ris:normgeberliste>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
               domainTerm="Sachgebiet"
-              sachgebiet-id="SO-05-05-10"
-            >SO-05-05-10</ris:sachgebiet>
+              sachgebiet-id="AA-01-01-01"
+            >AA-01-01-01</ris:sachgebiet>
             <ris:sachgebiet
               domainTerm="Sachgebiet"
-              sachgebiet-id="SO-05-06-05"
-            >SO-05-06-05</ris:sachgebiet>
+              sachgebiet-id="AA-01-01-02"
+            >AA-01-01-02</ris:sachgebiet>
           </ris:sachgebiete>
-          <ris:inkrafttreten
+          <ris:inkrafttretedatum
             domainTerm="Datum des Inkrafttretens"
-          >2025-01-01</ris:inkrafttreten>
+          >2025-01-01</ris:inkrafttretedatum>
           <ris:dokumenttypen domainTerm="Dokumenttypen">
             <ris:dokumenttyp
               domainTerm="Dokumenttyp"
@@ -312,14 +311,17 @@
               domainTerm="Titel Aspekt"
             >DeQSRL Teil 1</ris:titelAspekt>
           </ris:titelAspekte>
-          <ris:zitierdatumListe domainTerm="Zitierdaten">
+          <ris:zitierdaten domainTerm="Zitierdaten">
             <ris:zitierdatum
               domainTerm="Zitierdatum"
             >2024-07-18</ris:zitierdatum>
-          </ris:zitierdatumListe>
+          </ris:zitierdaten>
           <ris:regionen domainTerm="Regionen">
             <ris:region domainTerm="Region">DEU</ris:region>
           </ris:regionen>
+          <ris:risAbkuerzung
+            domainTerm="RIS-Abkürzung"
+          >VR Gemeinsamer Bundesausschuss 2024-07-18 25756</ris:risAbkuerzung>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>

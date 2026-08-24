@@ -125,13 +125,13 @@
         <ris:meta>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
-              sachgebiet-id="RE-01-02-07"
+              sachgebiet-id="AA-01-01-01"
               domainTerm="Sachgebiet"
-            >RE-01-02-07</ris:sachgebiet>
+            >AA-01-01-01</ris:sachgebiet>
             <ris:sachgebiet
-              sachgebiet-id="RE-01-03-09"
+              sachgebiet-id="AA-01-01-02"
               domainTerm="Sachgebiet"
-            >RE-01-03-09</ris:sachgebiet>
+            >AA-01-01-02</ris:sachgebiet>
           </ris:sachgebiete>
           <ris:veroeffentlichungsJahre domainTerm="Veröffentlichungsjahre">
             <ris:veroeffentlichungsJahr

@@ -2,6 +2,7 @@
 <xs:schema
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1"
+  xmlns:akn="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
   elementFormDefault="qualified"
   targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1"
 >
@@ -9,13 +10,18 @@
     <xs:documentation xml:lang="de">
       Typen, die nur im Bereich Verwaltungsvorschriften vorhanden sind.
 
-      Diese sind nur in einer extra Datei um die Schema-Datein übersichtlicher zu haben.
+      Diese sind nur in einer extra Datei um die Schema-Dateien übersichtlicher zu haben.
     </xs:documentation>
   </xs:annotation>
 
+  <xs:import
+    namespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+    schemaLocation="../akn/akomantoso30.xsd"
+  />
+
   <xs:include schemaLocation="domain-term.xsd" />
 
-  <xs:complexType name="normgeberListe">
+  <xs:complexType name="normgeberliste">
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Liste der Normgeber
@@ -33,12 +39,12 @@
       Normgeber
     </xs:documentation>
     </xs:annotation>
-    <xs:attribute name="staat" use="required" />
-    <xs:attribute name="organ" />
-    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    <xs:simpleContent>
+      <xs:extension base="ris:stringWithDomainTerm" />
+    </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="inkrafttreten">
+  <xs:complexType name="inkrafttretedatum">
     <xs:annotation>
       <xs:documentation xml:lang="de">
       Datum des Inkrafttretens
@@ -51,10 +57,10 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="ablaufdatum">
+  <xs:complexType name="ausserkrafttretedatum">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-      Datum des Inkrafttretens
+      Datum des Außerkrafttretens
     </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
@@ -93,10 +99,10 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="zitierdatumListe">
+  <xs:complexType name="zitierdaten">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-      Liste von Zitierdatums
+      Liste von Zitierdaten
     </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -118,7 +124,28 @@
     <xs:simpleContent>
       <xs:extension base="xs:date">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        <xs:attributeGroup ref="akn:refers" />
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="anwendungszeitraum">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Anwendungszeitraum
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:sequence>
+        <xs:element name="anwendungsbeginn" type="ris:stringWithDomainTerm" />
+        <xs:element
+          name="anwendungsende"
+          type="ris:stringWithDomainTerm"
+          minOccurs="0"
+        />
+      </xs:sequence>
+      <xs:element name="anwendungsende" type="ris:stringWithDomainTerm" />
+    </xs:choice>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 </xs:schema>
