@@ -135,18 +135,17 @@
         Anwendungszeitraum
       </xs:documentation>
     </xs:annotation>
-    <xs:sequence>
-      <xs:element
-        name="anwendungsbeginn"
-        type="ris:stringWithDomainTerm"
-        minOccurs="0"
-      />
-      <xs:element
-        name="anwendungsende"
-        type="ris:stringWithDomainTerm"
-        minOccurs="0"
-      />
-    </xs:sequence>
+    <xs:choice>
+      <xs:sequence>
+        <xs:element name="anwendungsbeginn" type="ris:stringWithDomainTerm" />
+        <xs:element
+          name="anwendungsende"
+          type="ris:stringWithDomainTerm"
+          minOccurs="0"
+        />
+      </xs:sequence>
+      <xs:element name="anwendungsende" type="ris:stringWithDomainTerm" />
+    </xs:choice>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 </xs:schema>

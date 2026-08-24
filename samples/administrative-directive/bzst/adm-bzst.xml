@@ -122,11 +122,11 @@
             <ris:referenzNorm domainTerm="Norm">
               <ris:abkuerzung
                 domainTerm="Abkürzung"
-              >norm reference</ris:abkuerzung>
+              >Normabkürzung</ris:abkuerzung>
               <ris:einzelnorm domainTerm="Einzelnorm">
                 <ris:bezeichnung
                   domainTerm="Bezeichnung"
-                >single norm test</ris:bezeichnung>
+                >§ 1 Abs. 1</ris:bezeichnung>
               </ris:einzelnorm>
             </ris:referenzNorm>
           </akn:implicitReference>
@@ -164,6 +164,14 @@
               domainTerm="Zitierdatum"
             >2001-07-19</ris:zitierdatum>
           </ris:zitierdaten>
+          <ris:anwendungszeitraum domainTerm="Anwendungszeitraum">
+            <ris:anwendungsbeginn
+              domainTerm="Anwendungsbeginn"
+            >2000</ris:anwendungsbeginn>
+            <ris:anwendungsende
+              domainTerm="Anwendungsende"
+            >2032</ris:anwendungsende>
+          </ris:anwendungszeitraum>
           <ris:risAbkuerzung
             domainTerm="RIS-Abkürzung"
           >VV Beispielabkürzung 01</ris:risAbkuerzung>
