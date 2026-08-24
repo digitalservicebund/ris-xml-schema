@@ -85,6 +85,9 @@
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
             <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
+              <ris:referenzURI
+                domainTerm="URI der Referenz"
+              >ris:/rechtsprechung/documentNumber</ris:referenzURI>
               <ris:dokumenttyp domainTerm="Dokumenttyp">
                 previous decision document type
               </ris:dokumenttyp>
@@ -109,6 +112,9 @@
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
             <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
+              <ris:referenzURI
+                domainTerm="URI der Referenz"
+              >ris:/rechtsprechung/documentNumber</ris:referenzURI>
               <ris:dokumenttyp domainTerm="Dokumenttyp">
                 previous decision document type
               </ris:dokumenttyp>
@@ -136,6 +142,9 @@
               art="anhängig"
               domainTerm="Nachgehende Entscheidung"
             >
+              <ris:referenzURI
+                domainTerm="URI der Referenz"
+              >ris:/rechtsprechung/documentNumber</ris:referenzURI>
               <ris:dokumenttyp domainTerm="Dokumenttyp">
                 ensuing decision document type
               </ris:dokumenttyp>
@@ -160,6 +169,9 @@
               art="anhängig"
               domainTerm="Nachgehende Entscheidung"
             >
+              <ris:referenzURI
+                domainTerm="URI der Referenz"
+              >ris:/rechtsprechung/documentNumber</ris:referenzURI>
               <ris:dokumenttyp domainTerm="Dokumenttyp">
                 ensuing decision document type
               </ris:dokumenttyp>
@@ -324,22 +336,6 @@
         xsi:type="ris:abweichendeMeinung"
       >
         <akn:p>dissenting test</akn:p>
-        <akn:block name="Mitwirkende Richter">
-          <akn:opinion
-            by="#dr-phil-max-mustermann"
-            ris:domainTerm="Art der Mitwirkung"
-            type="dissenting"
-          >
-            referenced opinions test 1
-          </akn:opinion>
-          <akn:opinion
-            by="#richterin-maxima-mustermann"
-            ris:domainTerm="Art der Mitwirkung"
-            type="dissenting"
-          >
-            referenced opinions test 2
-          </akn:opinion>
-        </akn:block>
       </akn:motivation>
     </akn:judgmentBody>
   </akn:judgment>

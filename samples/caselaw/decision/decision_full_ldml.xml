@@ -108,6 +108,9 @@
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
             <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
+              <ris:referenzURI
+                domainTerm="URI der Referenz"
+              >ris:/rechtsprechung/documentNumber</ris:referenzURI>
               <ris:dokumenttyp
                 domainTerm="Dokumenttyp"
               >previous decision document type</ris:dokumenttyp>
@@ -133,6 +136,9 @@
           </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Rechtszug">
             <ris:vorgehendeEntscheidung domainTerm="Vorgehende Entscheidung">
+              <ris:referenzURI
+                domainTerm="URI der Referenz"
+              >ris:/rechtsprechung/documentNumber</ris:referenzURI>
               <ris:dokumenttyp
                 domainTerm="Dokumenttyp"
               >previous decision document type</ris:dokumenttyp>
@@ -161,6 +167,9 @@
               domainTerm="Nachgehende Entscheidung"
               art="nachgehend"
             >
+              <ris:referenzURI
+                domainTerm="URI der Referenz"
+              >ris:/rechtsprechung/documentNumber</ris:referenzURI>
               <ris:dokumenttyp
                 domainTerm="Dokumenttyp"
               >ensuing decision document type</ris:dokumenttyp>
@@ -198,6 +207,9 @@
               domainTerm="Nachgehende Entscheidung"
               art="anhängig"
             >
+              <ris:referenzURI
+                domainTerm="URI der Referenz"
+              >ris:/rechtsprechung/documentNumber</ris:referenzURI>
               <ris:dokumenttyp
                 domainTerm="Dokumenttyp"
               >decision document type</ris:dokumenttyp>
@@ -251,12 +263,12 @@
               <ris:referenzURI
                 domainTerm="URI der Referenz"
               >ris:/rechtsprechung/STRE201770751</ris:referenzURI>
-              <ris:artDerZitierung
-                domainTerm="Art der Zitierung"
-              >Vergleiche</ris:artDerZitierung>
               <ris:dokumentnummer
                 domainTerm="Dokumentnummer"
               >STRE201770751</ris:dokumentnummer>
+              <ris:artDerZitierung
+                domainTerm="Art der Zitierung"
+              >Vergleiche</ris:artDerZitierung>
               <ris:gericht domainTerm="Gericht" showAs="AG Aachen">
                 <ris:gerichtstyp domainTerm="Gerichtstyp">AG</ris:gerichtstyp>
                 <ris:gerichtsort
@@ -292,12 +304,12 @@
               <ris:referenzURI
                 domainTerm="URI der Referenz"
               >ris:/verwaltungsvorschrift/KSNR2025000026</ris:referenzURI>
-              <ris:artDerZitierung
-                domainTerm="Art der Zitierung"
-              >Vergleiche</ris:artDerZitierung>
               <ris:dokumentnummer
                 domainTerm="Dokumentnummer"
               >KSNR2025000026</ris:dokumentnummer>
+              <ris:artDerZitierung
+                domainTerm="Art der Zitierung"
+              >Vergleiche</ris:artDerZitierung>
               <ris:jurisAbkuerzung
                 domainTerm="juris-Abkürzung"
               >VV DEU BMF 2004-12-21 IV C 3-EZ 1010-43/04</ris:jurisAbkuerzung>
@@ -568,22 +580,20 @@
               <ris:name domainTerm="Name">Maxima Mustermann</ris:name>
             </ris:person>
           </ris:personen>
-          <ris:mitwirkendeRichterInnen
-            domainTerm="Mitwirkende Richterinnen und Richter"
-          >
-            <ris:mitwirkendeRichterIn
-              domainTerm="Mitwirkende Richterin oder Richter"
+          <ris:mitwirkendeRichter domainTerm="Mitwirkende Richter">
+            <ris:mitwirkenderRichter
+              domainTerm="Mitwirkender Richter"
               refersTo="#person-dr-phil-max-mustermann"
             >
               Dr. Phil. Max Mustermann
-            </ris:mitwirkendeRichterIn>
-            <ris:mitwirkendeRichterIn
-              domainTerm="Mitwirkende Richterin oder Richter"
+            </ris:mitwirkenderRichter>
+            <ris:mitwirkenderRichter
+              domainTerm="Mitwirkender Richter"
               refersTo="#person-maxima-mustermann"
             >
               Maxima Mustermann
-            </ris:mitwirkendeRichterIn>
-          </ris:mitwirkendeRichterInnen>
+            </ris:mitwirkenderRichter>
+          </ris:mitwirkendeRichter>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
