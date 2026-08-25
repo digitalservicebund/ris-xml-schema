@@ -918,6 +918,7 @@
       />
       <xs:element name="dokumenttyp" type="ris:dokumenttyp" minOccurs="0" />
       <xs:element name="aktenzeichen" type="ris:aktenzeichen" minOccurs="0" />
+      <xs:element name="fundstelle" type="ris:fundstelle" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
