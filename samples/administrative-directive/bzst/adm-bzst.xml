@@ -134,11 +134,11 @@
       </akn:analysis>
       <akn:proprietary source="attributsemantik-noch-undefiniert">
         <ris:meta>
-          <ris:normgeberliste domainTerm="Normgeberliste">
+          <ris:normgeberListe domainTerm="List der Normgeber">
             <ris:normgeber
               domainTerm="Normgeber"
             >Normgeber-Beispiel</ris:normgeber>
-          </ris:normgeberliste>
+          </ris:normgeberListe>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
               domainTerm="Sachgebiet"

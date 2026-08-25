@@ -22,8 +22,8 @@
         <xs:restriction base="ris:meta">
           <xs:sequence>
             <xs:element
-              name="normgeberliste"
-              type="ris:normgeberliste"
+              name="normgeberListe"
+              type="ris:normgeberListe"
               minOccurs="0"
             />
             <xs:element
