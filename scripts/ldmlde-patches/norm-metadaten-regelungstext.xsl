@@ -22,7 +22,7 @@
   <xsl:include href="license.xsl" />
 
   <!--  Remove comments  -->
-  <xsl:template match="comment()" />
+  <xsl:template match="comment()" priority="1" />
 
   <xsl:template match="/xs:schema">
     <xs:schema

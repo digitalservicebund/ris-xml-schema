@@ -6,7 +6,6 @@
   version="1.0"
   elementFormDefault="qualified"
 >
-  <!-- ********************************* Hinweis zur Lizensierung ********************************* -->
   <xs:annotation>
     <xs:appinfo>
       <copyright-hinweis
@@ -30,12 +29,10 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       >Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.</hinweis>
     </xs:appinfo>
   </xs:annotation>
-  <!-- ******************************************************************************************** -->
   <xs:import
     namespace="http://www.w3.org/XML/1998/namespace"
     schemaLocation="xml.xsd"
   />
-  <!-- ### Attribut-Typen ### -->
   <xs:simpleType name="altLiterals">
     <xs:annotation>
       <xs:documentation>Alternativer Beschreibungstext</xs:documentation>
@@ -2989,7 +2986,6 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     </xs:annotation>
     <xs:restriction base="xs:integer" />
   </xs:simpleType>
-  <!-- #### Typen des Moduls "Baukasten" #### -->
   <xs:complexType name="liste" mixed="false">
     <xs:annotation>
       <xs:documentation

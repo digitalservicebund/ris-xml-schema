@@ -12,7 +12,7 @@
       />
     </xsl:comment>
   </xsl:template>
-  <xsl:template match="comment()" />
+  <xsl:template match="comment()" priority="1" />
 
   <!-- Update the xs:appinfo while retaining the original schema and adding a fork notice -->
   <xsl:template match="/xs:schema/xs:annotation/xs:appinfo">

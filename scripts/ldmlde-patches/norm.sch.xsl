@@ -16,7 +16,7 @@
   <xsl:include href="license.xsl" />
 
   <!--  Remove comments  -->
-  <xsl:template match="comment()" />
+  <xsl:template match="comment()" priority="1" />
 
   <!-- Copy over all elements and attributes that are not explicitly matched by other templates -->
   <xsl:template match="@*|node()">
