@@ -4,21 +4,6 @@
   queryBinding="xslt2"
   schemaVersion="LegalDocML.de 1.9 (03.11.2025)"
 >
-  <!--
-
-********************************* Hinweis zur Lizensierung ***********************************
- 2025 Copyright © 2021–2025 Bundesministerium des Innern und für Heimat,
- Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Verwaltungsarbeit
-
-      Lizenz: CC-BY-3.0 (Creative Commons Namensnennung 3.0)
- Information: https://creativecommons.org/licenses/by/3.0/legalcode.de
-**********************************************************************************************
-
-
-
-Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.
-
--->
   <sch:ns uri="http://Inhaltsdaten.LegalDocML.de/1.9/" prefix="akn" />
   <sch:ns
     uri="http://MetadatenRegelungstext.LegalDocML.de/1.9/"
@@ -47,7 +32,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     prefix="sonst"
   />
   <sch:ns uri="lokale-funktionen" prefix="fkt" />
-  <!-- Dokumenteigenschaften: Form -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="form"
@@ -73,7 +57,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="form-nicht-vorhanden"
     value="'nicht-vorhanden'"
   />
-  <!-- Authorities -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="authority-egesetzgebung"
@@ -89,7 +72,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="authority-rechtsinformationssystem"
     value="'https://www.ris.bund.de'"
   />
-  <!-- Dokumenteigenschaften: Fassung -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="ist-entwurfsfassung"
@@ -105,7 +87,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="ist-konsolidierte-fassung"
     value="starts-with(/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRuri/@value, $authority-rechtsinformationssystem)"
   />
-  <!-- Dokumenteigenschaften: Typ -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="typ"
@@ -146,7 +127,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="typ-satzung"
     value="'satzung'"
   />
-  <!-- Dokumenteigenschaften: Ontologischer Teildokument-Typ (früher: "meta:art") -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="teildokument-uri"
@@ -202,13 +182,11 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="art-bekanntmachungstext-uri"
     value="( '/akn/ontology/de/concept/documenttype/bund/sonstiger-veroeffentlichungstext' )"
   />
-  <!-- Determinanten für Dokumentvarianten: bearbeitende-institution -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="bearbeitende-institution-frbrauthor"
     value="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRauthor/@href"
   />
-  <!-- Nähere Qualifizierungen innerhalb von Einzelvorschriften -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="refersto-literal-geltungszeitregel"
@@ -264,7 +242,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="refersto-literal-ausschussueberweisung"
     value="'ausschussueberweisung'"
   />
-  <!-- Lebenszyklus-bezogene Angaben -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="type-literal-ereignisreferenz-generation"
@@ -360,7 +337,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="dokumentarten-mit-lebenszyklus-angaben-formulierung-satzanfang-nominativ"
     value="'Ein Regelungstext, ein Bekanntmachungstext oder eine Vereinbarung'"
   />
-  <!-- Sonstige Literale innerhalb der fachlichen Semantik -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="refersto-literal-vorblattabschnitt-erfüllungsaufwand"
@@ -386,8 +362,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="zitierbare-elementtypen"
     value="('article', 'paragraph')"
   />
-  <!-- ================================================================================================================================================ -->
-  <!-- Lookup-Table zur Beschleunigung der uniqueness-Prüfung -->
   <xsl:key
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="nodes-by-GUID"
@@ -405,8 +379,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="platzhalter-datum-unbekannt"
     value="'0001-01-01'"
   />
-  <!-- ================================================================================================================================================ -->
-  <!-- Regeln -->
   <sch:title
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   >Regelungstext Entwurfsfassung</sch:title>
@@ -502,16 +474,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         test="not(./akn:conclusions)"
       >Ein Regelungstext in Stammform in einer Mantelform darf keinen Schlussteil enthalten.</sch:assert>
     </sch:rule>
-    <!-- TODO: Klären, wie es mit Neufassungen weitergehen soll. -->
-    <!--<sch:rule id="SCH-00049" context="/akn:akomaNtoso/akn:act[@name = $art-regelungstext-uri and $fassung = $fassung-neufassung]">
-         <!-\-<sch:assert id="SCH-00049-005" role="error" test="not(./akn:preamble/akn:formula)">Ein Regelungstext in der Neufassung darf keine Eingangsformel enthalten.</sch:assert>-\->
-         <!-\-<sch:assert id="SCH-00049-010" role="error" test="not(./akn:conclusions)">Ein Regelungstext in der Neufassung darf keine Schlussformel enthalten.</sch:assert>-\->
-         <sch:assert id="SCH-00049-015" role="error" test="$form = $form-stammform">Ein Regelungstext als Neufassung darf nur in einer Stammform vorkommen.</sch:assert>
-         <sch:assert id="SCH-00049-020" role="error" test="not(./akn:preface/akn:block)">Für einen Regelungstext in der Neufassung darf kein Datums-Container innerhalb des Dokumentenkopfes verwendet werden.</sch:assert>
-      </sch:rule>
-      <sch:rule id="SCH-00050" context="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $typ = ($typ-gesetz, $typ-vertragsgesetz)]">
-         <sch:assert id="SCH-00050-005" role="error" test="./akn:preamble/akn:formula">Für ein Gesetz muss eine Eingangsformel verwendet werden.</sch:assert>
-      </sch:rule>-->
     <sch:rule
       id="SCH-00060"
       context="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $typ = ($typ-verordnung, $typ-vertragsverordnung)]"
@@ -550,13 +512,7 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       >Für einen Regelungstext in der Verkündungsfassung muss ein Signaturblock verwendet werden.</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <!-- TODO: War beschränkt auf Nicht-Neufassungen -->
-    <!--      <sch:rule id="SCH-00072" context="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $typ = $typ-gesetz and not($form = $form-eingebundene-stammform)]">
-         <sch:assert id="SCH-00072-005" role="error" test="exists(./akn:conclusions/akn:formula)">Für einen Regelungstext in der Verkündungsfassung muss eine Schlussformel verwendet werden.</sch:assert>
-      </sch:rule>
--->
-  </sch:pattern>
+  <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform" />
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule id="SCH-00073" context="akn:act/akn:conclusions/akn:formula">
       <sch:assert
@@ -714,7 +670,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       >Gemäß HdR 4 sollen Inkrafttreten und Außerkrafttreten in getrennten Einzelvorschriften gefasst werden, die entsprechend mit den refersTo-Literalen geltungszeitregel-inkrafttreten und geltungszeitregel-ausserkrafttreten auszuzeichnen sind. Das refersTo-Literal "geltungszeitregel" soll in Entwurfsfassungen nicht mehr verwendet werden.</sch:report>
     </sch:rule>
   </sch:pattern>
-  <!-- HINWEIS: SCH-00185-000 wurde im Zuge von https://projekte.kosit.org/ldml_de/tickets/-/issues/278 in 1.8.2 entfernt. -->
   <sch:title
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   >Aufzählungen</sch:title>
@@ -1196,19 +1151,7 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       >Wenn ein Änderungsbefehl eine Einfügung beinhaltet, muss in seinen Metadaten eine Positionsangabe mittels @pos angegeben werden.</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <!-- TODO: Klären, wie es mit Neufassungen weitergehen soll. -->
-    <!--      <sch:rule id="SCH-00421" context="
-            akn:article
-            [
-            $form = ($form-stammform, $form-eingebundene-stammform) or
-            $fassung = $fassung-neufassung or
-            $typ = $typ-sonstige-bekanntmachung
-            ]">
-         <sch:assert id="SCH-00421-000" test="not(exists(descendant::akn:mod))">Änderungsbefehle dürfen nur im Rahmen einer Mantelform vorkommen.</sch:assert>
-      </sch:rule>
--->
-  </sch:pattern>
+  <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform" />
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule id="SCH-00422" context="//akn:mod[not(ancestor::akn:mod)]">
       <sch:let
@@ -1375,7 +1318,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     </sch:rule>
   </sch:pattern>
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <!-- z-Typ-eIds müssen mittels der normalisierten Inhalte der betreffenden Art- und Zählbezeichnung gebildet werden -->
     <sch:rule
       id="SCH-000431"
       context="@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-zitierbar) and parent::*/akn:num != '']"
@@ -1384,42 +1326,34 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       <sch:let name="eingabe-textknoten" value="parent::*/akn:num/text()" />
       <sch:let name="doppelparagraph" value="'§§ '" />
       <sch:let name="platzhalter" value="'µµ '" />
-      <!-- Schritt 1: Weißraumnormalisierung und Umwandlung in Kleinbuchstaben -->
       <sch:let
         name="weißraumnormalisiert"
         value="normalize-space(lower-case($eingabe-textknoten))"
       />
-      <!-- Schritt 2: Temporär etwaige Vorkommnisse von '§§ ' durch 'µµ ' ersetzen -->
       <sch:let
         name="mit-platzhaltern"
         value="replace($weißraumnormalisiert, $doppelparagraph, $platzhalter)"
       />
-      <!-- Schritt 3: Ggf. Weglassen von '§ ', 'Art. ', 'Art ' und 'Artikel ' (in den Suchausdrücken kleingeschrieben, da bereits lower-case aus vorherigem Schritt) -->
       <sch:let
         name="ohne-sonderzeichen"
         value="replace($mit-platzhaltern, '(§ )|(art\. )|(art )|(artikel )', '')"
       />
-      <!-- Schritt 4: Weglassen der Klammern bei Ausdrücken wie '(1)' oder '(1337bb)' -->
       <sch:let
         name="ohne-klammern"
         value="replace($ohne-sonderzeichen, '(\()(\d+[a-z]*)(\))', '$2')"
       />
-      <!-- Schritt 5: Maskierung von -, _ und . als ~ -->
       <sch:let
         name="maskiert"
         value="translate($ohne-klammern, '-_.', '~~~')"
       />
-      <!-- Schritt 6: Etwaige temporäre Platzhalter wieder zurückverwandeln -->
       <sch:let
         name="ggf-mit-doppelten-paragraphenzeichen"
         value="replace($maskiert, $platzhalter, $doppelparagraph)"
       />
-      <!-- Schritt 7: uri-Encoding -->
       <sch:let
         name="normalisierte-positionsangabe-eid"
         value="encode-for-uri($ggf-mit-doppelten-paragraphenzeichen)"
       />
-      <!-- Schritt 8: Konstruktion der erwarteteten Positionsangabe -->
       <sch:let
         name="positionsangabe-soll"
         value="lower-case(concat($präfix-eid-zitierbar, $normalisierte-positionsangabe-eid))"
@@ -1451,7 +1385,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       />" zu verwenden.</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Wenn akn:num/@refersTo ist, dann darf das Elternelement kein z-Typ sein, sondern muss eine n-Typ-eId besitzen -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule
       id="SCH-00433"
@@ -1476,7 +1409,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       />".</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Wenn n-Typ, dann ordinale Zählung: Die Positionsangabe muss zum Rang passen! (Einzelvorschriften müssen gesondert behandelt werden, dies wird in SCH-00437 deklariert.) -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule
       id="SCH-00434"
@@ -1506,7 +1438,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       />].</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Wenn akn:num vorhanden und keine Ausnahme qua @refersTo, dann kein n-Typ, sondern z-Typ! -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule
       id="SCH-00435"
@@ -1546,8 +1477,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       />")!</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Wenn es sich um eine Einzelvorschrift mit ordinaler Zählung handelt, dann muss ihre Positionsangabe zum Rang passen. Innerhalb von Änderungsbefehlen ist dabei lokal zu zählen, 
-        außerhalb hingegen global, aber ohne Berücksichtigung etwaiger Einzelvorschriften innerhalb enthaltener Änderungsbefehle. -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule
       id="SCH-00437"
@@ -1598,7 +1527,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     </sch:rule>
   </sch:pattern>
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <!-- dokumentweite eId-uniqueness -->
     <sch:rule id="SCH-00450" context="@eId">
       <sch:let name="kontext-eId-inhalt" value="." />
       <sch:assert
@@ -1612,7 +1540,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       />-mal vor!</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- dokumentweite GUID-uniqueness -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule id="SCH-00460" context="@GUID">
       <sch:let name="kontext-guid-inhalt" value="." />
@@ -1714,7 +1641,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="eli-subagent"
     value="tokenize(/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRauthor/@href, '/')[last()]"
   />
-  <!-- FRBRthis -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="FRBRthis-verkündungsfassung-work-beschreibung"
@@ -1850,7 +1776,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="FRBRthis-entwurfsfassung-manifestation-inhalt"
     value="string-join(($eli-präfix-entwurfsfassung, $eli-year, $eli-agent-entwurf, $eli-process-identifier, $eli-type-of-legislative-process-document, $eli-subagent, $eli-point-in-time, $eli-version, $eli-language, concat($eli-subtype, '.', $eli-format)), '/')"
   />
-  <!-- FRBRuri -->
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="FRBRuri-verkündungsfassung-work-beschreibung"
@@ -1986,9 +1911,7 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     name="FRBRuri-entwurfsfassung-manifestation-inhalt"
     value="string-join(($eli-präfix-entwurfsfassung, $eli-year, $eli-agent-entwurf, $eli-process-identifier, $eli-type-of-legislative-process-document, $eli-subagent, $eli-point-in-time, $eli-version, $eli-language, concat($eli-subtype, '.', $eli-format)), '/')"
   />
-  <!-- Regeln für die Zusammensetzung der ELI-Uris -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <!-- FRBRthis: Work-Ebene -->
     <sch:rule
       id="SCH-00500"
       context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRthis"
@@ -2027,7 +1950,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         select="$FRBRthis-konsolidierte-fassung-work-inhalt"
       />".</sch:assert>
     </sch:rule>
-    <!-- FRBRthis: Expression-Ebene -->
     <sch:rule
       id="SCH-00510"
       context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRthis"
@@ -2066,7 +1988,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         select="$FRBRthis-konsolidierte-fassung-expression-inhalt"
       />".</sch:assert>
     </sch:rule>
-    <!-- FRBRthis: Manifestation-Ebene -->
     <sch:rule
       id="SCH-00520"
       context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRManifestation/akn:FRBRthis"
@@ -2107,7 +2028,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     </sch:rule>
   </sch:pattern>
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <!-- FRBRuri: Work-Ebene -->
     <sch:rule
       id="SCH-00530"
       context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRuri"
@@ -2146,7 +2066,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         select="$FRBRuri-konsolidierte-fassung-work-inhalt"
       />".</sch:assert>
     </sch:rule>
-    <!-- FRBRuri: Expression-Ebene -->
     <sch:rule
       id="SCH-00540"
       context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRuri"
@@ -2185,7 +2104,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         select="$FRBRuri-konsolidierte-fassung-expression-inhalt"
       />".</sch:assert>
     </sch:rule>
-    <!-- FRBRuri: Manifestation-Ebene -->
     <sch:rule
       id="SCH-00550"
       context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRManifestation/akn:FRBRuri"
@@ -2235,7 +2153,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         select="$authority-rechtsinformationssystem"
       />".</sch:assert>
     </sch:rule>
-    <!-- akn:FRBRdate/@name auf Work-Ebene ist abhängig von Verkündungs- vs. Entwurfsfassung -->
     <sch:rule
       id="SCH-00560"
       context="/akn:akomaNtoso/akn:act/@name"
@@ -2247,7 +2164,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       > Ein Regelungstext in der Verkündungsfassung darf nicht als Entwurfsfassung gekennzeichnet sein, wie es jedoch aktuell anhand von akn:FRBRWork/akn:FRBRdate/@name deklariert ist.</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Metadaten: proprietary -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule
       id="SCH-00590"
@@ -2259,37 +2175,31 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         test="if ($ist-entwurfsfassung) then (redok:fna = 'nicht-vorhanden' (: das Literal ist im Metadatenmodell als @default des einfachen Typs xs:token umgesetzt, daher hier als Literal anstatt einer dynamischen Referenzierung :)) else true()"
       >In der Entwurfsfassung muss als Wert für den Fundstellennachweis das Literal "nicht-vorhanden" angegeben werden.</sch:assert>
     </sch:rule>
-    <!-- Das Rechtsetzungsdokument muss abhängig davon, wer bearbeitende Institution ist, über bestimmte Metadaten-Schemata-Einbindungen verfügen -->
     <sch:rule
       id="SCH-00591"
       context="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument']"
     >
-      <!-- Das Rechtsetzungsdokument muss stets einen Metadatenblock Rechtsetzungsdokument besitzen -->
       <sch:assert
         id="SCH-00591-000"
         role="error"
         test="count(akn:proprietary/redok:legalDocML.de_metadaten) eq 1"
       >Ein Rechtsetzungsdokument muss genau einen Block mit "Metadaten Rechtsetzungsdokument" besitzen.</sch:assert>
-      <!-- Metadaten Bundestag -->
       <sch:assert
         id="SCH-00591-005"
         role="error"
         test="if ($ist-entwurfsfassung and $bearbeitende-institution-frbrauthor = 'recht.bund.de/institution/bundestag') then (count(akn:proprietary/btag:legalDocML.de_metadaten) eq 1) else true()"
       >Wenn der Bundestag bearbeitende Institution ist, müssen dessen Metadaten genau einmal angegeben werden.</sch:assert>
-      <!-- Metadaten Bundesrat -->
       <sch:assert
         id="SCH-00591-010"
         role="error"
         test="if ($ist-entwurfsfassung and $bearbeitende-institution-frbrauthor = 'recht.bund.de/institution/bundesrat') then (count(akn:proprietary/brat:legalDocML.de_metadaten) eq 1) else true()"
       >Wenn der Bundesrat bearbeitende Institution ist, müssen dessen Metadaten genau einmal angegeben werden.</sch:assert>
-      <!-- Metadaten Bundesregierung -->
       <sch:assert
         id="SCH-00591-015"
         role="error"
         test="if ($ist-entwurfsfassung and $bearbeitende-institution-frbrauthor = 'recht.bund.de/institution/bundesregierung') then (count(akn:proprietary/breg:legalDocML.de_metadaten) eq 1) else true()"
       >Wenn die Bundesregierung bearbeitende Institution ist, müssen deren Metadaten genau einmal angegeben werden.</sch:assert>
     </sch:rule>
-    <!-- Ein Regelungstext muss über einen Metadatenblock Regelungstext verfügen -->
     <sch:rule
       id="SCH-00592"
       context="akn:meta[$teildokument-uri = ('/akn/ontology/de/concept/documenttype/bund/regelungstext-entwurf', '/akn/ontology/de/concept/documenttype/bund/regelungstext')]"
@@ -2299,7 +2209,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         test="count(akn:proprietary/regtxt:legalDocML.de_metadaten) eq 1"
       >Ein Regelungstext muss über genau einen Metadatenblock Regelungstext verfügen.</sch:assert>
     </sch:rule>
-    <!-- Die NKR-Stellungnahme muss den Metadatenblock Normenkontrollrat enthalten  -->
     <sch:rule
       id="SCH-00593"
       context="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/nkr-stellungnahme']"
@@ -2309,7 +2218,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         test="count(akn:proprietary/nkr:legalDocML.de_metadaten) eq 1"
       >Die NKR-Stellungnahme muss genau einen Metadatenblock Normenkontrollrat enthalten.</sch:assert>
     </sch:rule>
-    <!-- Die NKR-Stellungnahme muss den Metadatenblock Normenkontrollrat enthalten  -->
     <sch:rule
       id="SCH-00595"
       context="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/sonstiger-veroeffentlichungstext']"
@@ -2322,52 +2230,43 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
   </sch:pattern>
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule id="SCH-00594" context="akn:meta">
-      <!-- Metadaten Bundestag: Nur im Rechtsetzungsdokument -->
       <sch:assert
         id="SCH-00594-000"
         role="error"
         test="if (akn:proprietary/btag:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument') else true()"
       >Das Metadatenschema Bundestag darf nur im Rechtsetzungsdokument eingebunden werden.</sch:assert>
-      <!-- Metadaten Bundesrat: Nur im Rechtsetzungsdokument -->
       <sch:assert
         id="SCH-00594-005"
         role="error"
         test="if (akn:proprietary/brat:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument') else true()"
       >Das Metadatenschema Bundesrat darf nur im Rechtsetzungsdokument eingebunden werden.</sch:assert>
-      <!-- Metadaten Bundesregierung: Nur im Rechtsetzungsdokument -->
       <sch:assert
         id="SCH-00594-010"
         role="error"
         test="if (akn:proprietary/breg:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument') else true()"
       >Das Metadatenschema Bundesregierung darf nur im Rechtsetzungsdokument eingebunden werden.</sch:assert>
-      <!-- Metadaten NKR: Nur in NKR-Stellungnahme -->
       <sch:assert
         id="SCH-00594-015"
         test="if (akn:proprietary/nkr:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/nkr-stellungnahme') else true()"
       >Das Metadatenschema Normenkontrollrat darf nur in der NKR-Stellungnahme eingebunden werden.</sch:assert>
-      <!-- Metadaten Rechtsetzungsdokument: Nur im Rechtsetzungsdokument -->
       <sch:assert
         id="SCH-00594-020"
         test="if (akn:proprietary/redok:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument') else true()"
       >Das Metadatenschema Rechtsetzungsdokument darf nur im Rechtsetzungsdokument eingebunden werden.</sch:assert>
-      <!-- Metadaten Formulierungshilfe: Nur in begruendung-regelungstext, regelungstext-entwurf oder vorblatt-regelungstext -->
       <sch:assert
         id="SCH-00594-025"
         test="if (akn:proprietary/fhilf:legalDocML.de_metadaten) then ($teildokument-uri = ('/akn/ontology/de/concept/documenttype/bund/begruendung-regelungstext', '/akn/ontology/de/concept/documenttype/bund/regelungstext-entwurf', '/akn/ontology/de/concept/documenttype/bund/vorblatt-regelungstext')) else true()"
       >Das Metadatenschema Formulierungshilfe darf nur in einer Begründung zu einem Regelungstext, in einem Regelungstext (Entwurf) oder dem Vorblatt zu einem Regelungstext eingebunden werden.</sch:assert>
-      <!-- Metadaten Regelungstext: Nur in regelungstext-entwurf oder regelungstext -->
       <sch:assert
         id="SCH-00594-030"
         test="if (akn:proprietary/regtxt:legalDocML.de_metadaten) then ($teildokument-uri = ('/akn/ontology/de/concept/documenttype/bund/regelungstext-entwurf', '/akn/ontology/de/concept/documenttype/bund/regelungstext')) else true()"
       >Das Metadatenschema Regelungstext darf nur in einem Regelungstext (Entwurf) oder einem Regelungstext eingebunden werden.</sch:assert>
-      <!-- Metadaten Sonstiger-Veröffentlichungstext: Nur in Sonstiger-Veröffentlichungstext-->
       <sch:assert
         id="SCH-00594-035"
         test="if (akn:proprietary/sonst:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/sonstiger-veroeffentlichungstext') else true()"
       >Das Metadatenschema Sonstiger-Veröffentlichungstext darf nur in einem Sonstigen Veröffentlichungstext eingebunden werden.</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Regeln zur Geltungszeit -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule id="SCH-00600" context="akn:timeInterval">
       <sch:let name="beginn-geltungszeitintervall-uri" value="@start" />
@@ -2451,7 +2350,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       />" angegeben werden.</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Regeln zur Versionierung (Identifikation von Vorgänger- aktueller und Nachfolger-Version) -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule id="SCH-00630" context="akn:FRBRExpression">
       <sch:let name="guid-vorherige-version" value="'vorherige-version-id'" />
@@ -2474,7 +2372,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       >Sämtliche mittels @value angegebenen GUIDs der Versionen müssen sich voneinander unterscheiden."/&gt;</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Regeln zum Lebenszyklus -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:let
       name="zulässige-literale-in-kombination-mit-repeal"
@@ -2658,30 +2555,7 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       />" vorhanden sein. </sch:assert>
     </sch:rule>
   </sch:pattern>
-  <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <!-- TODO: Klären, wie es mit Neufassungen weitergehen soll. -->
-    <!--      <sch:rule id="SCH-00670" context="akn:meta/akn:lifecycle[$fassung = $fassung-neufassung and $teildokument-uri = $art-regelungstext-uri] (: nur Neufassung :)">
-         <sch:assert id="SCH-00670-000" test="count(akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-neufassung]) ge 1">Ein Regelungstext als Neufassung muss mindestens ein Neufassungsereignis enthalten (&lt;eventRef&gt; mit @type = '<sch:value-of select="$type-literal-ereignisreferenz-generation"/>' und @refersTo = '<sch:value-of select="$refersto-literal-ereignisreferenz-neufassung"/>'.).</sch:assert>
-
-         <sch:let name="frühestes-datum-neufassung-als-reine-ziffern" value="
-               min(for $n in akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = '{ldml.de:refersToLiterals.ereignisReferenz => neufassung}']/@date
-               return
-                  format-date($n, '[Y,4][M,2][D,2]'))"/>
-         <sch:let name="früheste-neufassung" value="
-               if (not(empty($frühestes-datum-neufassung-als-reine-ziffern))) then
-                  (xs:date(concat(
-                  substring($frühestes-datum-neufassung-als-reine-ziffern, 1, 4), '-',
-                  substring($frühestes-datum-neufassung-als-reine-ziffern, 5, 2), '-',
-                  substring($frühestes-datum-neufassung-als-reine-ziffern, 7, 2))))
-               else
-                  '0001-01-01'"/>
-
-         <sch:let name="ausfertigung" value="akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-ausfertigung]/@date"/>
-         <sch:assert id="SCH-00670-005" test="xs:date($früheste-neufassung) gt xs:date($ausfertigung)">Das Datum der frühesten Neufassung (&lt;eventRef&gt; mit @type='<sch:value-of select="$type-literal-ereignisreferenz-generation"/>' und @refersTo='<sch:value-of select="$refersto-literal-ereignisreferenz-neufassung"/>') muss nach dem initialen Ausfertigungsdatum (&lt;eventRef&gt; mit @type='<sch:value-of select="$type-literal-ereignisreferenz-generation"/>' und @refersTo='<sch:value-of select="$refersto-literal-ereignisreferenz-verkündungsfassung-ausfertigung"/>') liegen; angegeben wurden jedoch als Ausfertigungsdatum '<sch:value-of select="$ausfertigung"/>' und als Datum der Neufassung '<sch:value-of select="$früheste-neufassung"/>'.</sch:assert>
-      </sch:rule>
--->
-  </sch:pattern>
-  <!-- Regeln zu Kardinalitäten von Inline-Elementen -->
+  <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform" />
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule
       id="SCH-00680"
@@ -2694,7 +2568,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       >Ein dokumentenkopfTitel (akn:longtitle) muss genau einen Dokumententitel (akn:docTitle) besitzen.</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Sitzung (z. B. eines Ausschusses) -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule id="SCH-00730" context="akn:session" subject="@refersTo">
       <sch:assert
@@ -2703,7 +2576,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       >Es muss einen lokalen Verweis auf eine Organisation geben, deren Sitzung ausgezeichnet wird. Dieser besteht aus einer Raute (#), gefolgt von der @eId der betreffenden akn:organization.</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- TLC-Verweise-->
   <sch:title
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   >Verweise auf TLC-Klassen</sch:title>
@@ -2787,7 +2659,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       >Ein akn:marker mit @refersTo='satzende' darf kein Attribut @name haben.</sch:assert>
     </sch:rule>
     <sch:rule id="SCH-00803" context="akn:inline/@name">
-      <!-- akn:inline/@name ist mandatorisch; ein fixes Literal kann aber mit XSD 1.0 auf Schemaebene nicht konditional (nämlich genau dann, wenn nicht @refersTo="neuris" gilt) vergeben werden; daher wird dieser Aspekt behelfsweise in Schematronm geregelt; vgl. spezifikation#660. -->
       <sch:assert
         id="SCH-00803-000"
         test="if (not(parent::*/@refersTo = 'neuris')) then (. = 'attributsemantik-noch-undefiniert') else true()"
@@ -2811,7 +2682,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
   <sch:title
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   >Ontologie</sch:title>
-  <!-- Ontologie der (Teil-)dokumente -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:rule
       id="SCH-00820"
@@ -2883,7 +2753,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   >Regeln zu Regelungstext-Anlagen</sch:title>
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <!-- Wenn anlage-regelungstext, dann zwingend Angaben zur Anlage im docTitle (und nur diese) -->
     <sch:rule
       id="SCH-00920"
       context="akn:doc[$teildokument-uri = $art-anlage-regelungstext-uri]"
@@ -2894,7 +2763,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         test="count(akn:preface//akn:docTitle/akn:inline[@refersTo = 'anlageregelungstext-num']) eq 1 and count(akn:preface//akn:docTitle/akn:inline[@refersTo = 'anlageregelungstext-bezug']) le 1 and count(akn:preface//akn:docTitle/akn:inline[@refersTo = 'anlageregelungstext-heading']) le 1 and count(akn:preface//akn:docTitle/*) le 3"
       >Eine Anlage zu einem Regelungstext muss in ihrem Dokumententitel Angaben zur Zählbezeichnung und kann Angaben zum Bezug und zur Überschrift besitzen.</sch:assert>
     </sch:rule>
-    <!-- inline/@refersTo-Literale für Regelungstextanlagen nur in ebendiesen erlauben -->
     <sch:rule id="SCH-00921" context="akn:inline/@refersTo">
       <sch:assert
         id="SCH-00921-000"
@@ -2986,7 +2854,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       >URI-Verweise müssen eine der drei folgenden Formen haben: 1) vollständige http/https-URI, 2) nur absoluter Pfad-Teil (beginnend mit '/eli', d. h. innerhalb derselben Authority wie das aktuelle Dokument) oder 3) nur Dateiname und ggf. Fragment (d. h. innerhalb der selben Expression).</sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Pflicht: expression.FRBRdate in Entwurfs- und konsolidierter Fassung -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:title
     >expression.FRBRdate in Entwurfs- und konsolidierter Fassung</sch:title>
@@ -3003,7 +2870,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
          </sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Verbot: expression.FRBRdate in Verkündungsfassung -->
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <sch:title>Kein expression.FRBRdate in der Verkündungsfassung</sch:title>
     <sch:rule
@@ -3019,5 +2885,4 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
          </sch:assert>
     </sch:rule>
   </sch:pattern>
-  <!-- Einschränkungen für Attributtypen, deren Facetten nur in Verkündungsfassungen bzw. Entwurfsfassungen Gültigkeit besitzen -->
 </sch:schema>
