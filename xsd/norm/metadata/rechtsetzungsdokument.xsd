@@ -1,8 +1,8 @@
 <xs:schema
-  xmlns="http://rechtsinformationen.bund.de/schema/norm/metadata/rechtsetzungsdokument/0.1"
+  xmlns="http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-rechtsetzungsdokument/0.1"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:ldmlde="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
-  targetNamespace="http://rechtsinformationen.bund.de/schema/norm/metadata/rechtsetzungsdokument/0.1"
+  targetNamespace="http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-rechtsetzungsdokument/0.1"
   version="1.0"
   elementFormDefault="qualified"
 >

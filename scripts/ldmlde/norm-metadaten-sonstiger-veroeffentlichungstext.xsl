@@ -1,7 +1,7 @@
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:ldmlde="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
+  xmlns:ldmlde="http://MetadatenSonstigerVeroeffentlichungstext.LegalDocML.de/1.9/"
   version="1.0"
 >
   <xsl:output
@@ -26,8 +26,8 @@
 
   <xsl:template match="/xs:schema">
     <xs:schema
-      xmlns="http://rechtsinformationen.bund.de/schema/norm/metadata/rechtsetzungsdokument/0.1"
-      targetNamespace="http://rechtsinformationen.bund.de/schema/norm/metadata/rechtsetzungsdokument/0.1"
+      xmlns="http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-sonstiger-veroeffentlichungstext/0.1"
+      targetNamespace="http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-sonstiger-veroeffentlichungstext/0.1"
       version="1.0"
     >
       <xsl:apply-templates

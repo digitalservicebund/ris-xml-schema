@@ -26,8 +26,8 @@
 
   <xsl:template match="/xs:schema">
     <xs:schema
-      xmlns="http://rechtsinformationen.bund.de/schema/norm/metadata/regelungstext/0.1"
-      targetNamespace="http://rechtsinformationen.bund.de/schema/norm/metadata/regelungstext/0.1"
+      xmlns="http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-regelungstext/0.1"
+      targetNamespace="http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-regelungstext/0.1"
       version="1.0"
     >
       <xsl:apply-templates
