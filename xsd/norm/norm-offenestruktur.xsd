@@ -6,6 +6,11 @@
   version="1.0"
   elementFormDefault="qualified"
 >
+  <!-- ********************************* Hinweis zur Lizensierung ********************************* 
+
+Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.
+
+-->
   <xs:annotation>
     <xs:appinfo>
       <copyright-hinweis
