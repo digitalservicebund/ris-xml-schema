@@ -7,6 +7,7 @@ ROOT_DIR=$(realpath "$SCRIPTS_DIR/..")
 TEMP_DIR="$ROOT_DIR/temp"
 TEMP_LDMLDE_DIR="$TEMP_DIR/ldml_de"
 
+trap 'rm -rf "$TEMP_DIR"' EXIT
 mkdir -p "$TEMP_DIR"
 
 echo  "Clone LDML.de specification…"
