@@ -1,8 +1,8 @@
 <xs:schema
-  xmlns="http://rechtsinformationen.bund.de/schema/norm/metadata/regelungstext/0.1"
+  xmlns="http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-regelungstext/0.1"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:ldmlde="http://MetadatenRegelungstext.LegalDocML.de/1.9/"
-  targetNamespace="http://rechtsinformationen.bund.de/schema/norm/metadata/regelungstext/0.1"
+  targetNamespace="http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-regelungstext/0.1"
   version="1.0"
   elementFormDefault="qualified"
 >
