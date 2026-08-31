@@ -3,6 +3,9 @@ fileignoreconfig:
     allowed_patterns:
       - secrets
       - Secrets
+  - filename: xsd/norm/README-de.md
+    allowed_patterns:
+      - 'https://gitlab\.opencode\.de/\S+'
   - filename: LICENSE
     allowed_patterns:
       - "keys"
@@ -36,3 +39,4 @@ allowed_patterns:
   - REPORTS_BUCKET_SECRET_ACCESS_KEY
   - BUCKET_ACCESS_KEY_ID
   - BUCKET_SECRET_ACCESS_KEY
+  - a654f19fa6182ec8dabbb9bcc0d826ab07ac54f9
