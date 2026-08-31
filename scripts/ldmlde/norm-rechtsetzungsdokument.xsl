@@ -46,14 +46,14 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Update the reference to shared.xsd -->
+  <!-- Update the reference to norm-baukasten.xsd -->
   <xsl:template
     match="/xs:schema/xs:include[@schemaLocation='legalDocML.de-baukasten.xsd']"
   >
     <xsl:copy>
       <xsl:apply-templates select="@*[name()!='schemaLocation']|node()" />
       <xsl:attribute name="schemaLocation">
-        <xsl:text>shared.xsd</xsl:text>
+        <xsl:text>norm-baukasten.xsd</xsl:text>
       </xsl:attribute>
     </xsl:copy>
   </xsl:template>

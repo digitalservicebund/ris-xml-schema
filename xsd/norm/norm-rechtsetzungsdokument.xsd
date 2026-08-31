@@ -33,7 +33,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     namespace="http://www.w3.org/XML/1998/namespace"
     schemaLocation="../akn/xml.xsd"
   />
-  <xs:include schemaLocation="shared.xsd" />
+  <xs:include schemaLocation="norm-baukasten.xsd" />
   <xs:element name="akomaNtoso">
     <xs:complexType>
       <xs:sequence>
