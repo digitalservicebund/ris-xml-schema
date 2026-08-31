@@ -4,6 +4,21 @@
   queryBinding="xslt2"
   schemaVersion="LegalDocML.de 1.9 (03.11.2025)"
 >
+  <!--
+
+********************************* Hinweis zur Lizensierung ***********************************
+ 2025 Copyright © 2021–2025 Bundesministerium des Innern und für Heimat,
+ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Verwaltungsarbeit
+
+      Lizenz: CC-BY-3.0 (Creative Commons Namensnennung 3.0)
+ Information: https://creativecommons.org/licenses/by/3.0/legalcode.de
+**********************************************************************************************
+
+
+
+Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.
+
+-->
   <sch:ns uri="http://Inhaltsdaten.LegalDocML.de/1.9/" prefix="akn" />
   <sch:ns
     uri="http://MetadatenRegelungstext.LegalDocML.de/1.9/"

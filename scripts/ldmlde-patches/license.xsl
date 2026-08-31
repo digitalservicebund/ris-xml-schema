@@ -5,7 +5,7 @@
   version="1.0"
 >
   <!-- Keep the original license information and append the fork notice -->
-  <xsl:template match="comment()[contains(., 'Lizenz')]">
+  <xsl:template match="comment()[contains(., 'Lizenz')]" priority="2">
     <xsl:comment>
       <xsl:value-of
         select="concat(., '&#10;&#10;Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.&#10;&#10;')"
