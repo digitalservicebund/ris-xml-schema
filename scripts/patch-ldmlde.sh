@@ -5,10 +5,11 @@ set -ex
 SCRIPTS_DIR=$(dirname "$(realpath "$0")")
 ROOT_DIR=$(realpath "$SCRIPTS_DIR/..")
 PATCHES_DIR="$SCRIPTS_DIR/ldmlde-patches"
-TEMP_DIR="$ROOT_DIR/temp"
+TEMP_DIR="$PATCHES_DIR/temp"
 TEMP_LDMLDE_DIR="$TEMP_DIR/ldml_de"
 TEMP_OUTPUT_DIR="$TEMP_DIR/out"
 
+rm -rf "$TEMP_DIR"
 trap 'rm -rf "$TEMP_DIR"' EXIT
 mkdir -p "$TEMP_DIR"
 
