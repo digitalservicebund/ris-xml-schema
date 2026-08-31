@@ -4,6 +4,7 @@ set -ex
 
 SCRIPTS_DIR=$(dirname "$(realpath "$0")")
 ROOT_DIR=$(realpath "$SCRIPTS_DIR/..")
+PATCHES_DIR="$SCRIPTS_DIR/ldmlde-patches"
 TEMP_DIR="$ROOT_DIR/temp"
 TEMP_LDMLDE_DIR="$TEMP_DIR/ldml_de"
 TEMP_OUTPUT_DIR="$TEMP_DIR/out"
@@ -36,7 +37,7 @@ XSD_TYPES=(
 
 for type in "${XSD_TYPES[@]}"; do
     xsltproc \
-        "ldmlde/norm-${type}.xsl" \
+        "$PATCHES_DIR/norm-${type}.xsl" \
         "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-${type}.xsd" \
         > "$TEMP_OUTPUT_DIR/norm-${type}.xsd"
 done
@@ -47,7 +48,7 @@ SCH_TYPES=(
 )
 
 for sch in "${SCH_TYPES[@]}"; do
-    xsltproc "ldmlde/norm.sch.xsl" \
+    xsltproc "$PATCHES_DIR/norm.sch.xsl" \
              "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de${sch}" \
              > "$TEMP_OUTPUT_DIR/norm${sch}"
 done
