@@ -4308,6 +4308,12 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     </xs:annotation>
     <xs:sequence>
       <xs:group ref="HTMLblock" maxOccurs="unbounded" />
+      <xs:element
+        name="blockList"
+        type="liste"
+        minOccurs="0"
+        maxOccurs="unbounded"
+      />
     </xs:sequence>
     <xs:attribute name="marker" use="required" type="markerLiterals" />
     <xs:attribute

@@ -669,4 +669,19 @@
       />
     </xsl:copy>
   </xsl:template>
+
+  <!-- Add akn:blockList to akn:note -->
+  <xsl:template
+    match="xs:complexType[@name='nichtamtlicheFussnote']/xs:sequence"
+  >
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()" />
+      <xs:element
+        name="blockList"
+        type="liste"
+        minOccurs="0"
+        maxOccurs="unbounded"
+      />
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>
