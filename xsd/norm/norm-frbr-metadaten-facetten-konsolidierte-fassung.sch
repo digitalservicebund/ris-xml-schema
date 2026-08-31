@@ -1,3 +1,22 @@
+<!--
+
+Diese Datei ist Bestandteil der Schematronregeln des Standards LegalDocML.de 1.9 (03.11.2025).
+Sie wird inkludiert von der Schematron-Hauptdatei.
+
+                
+********************************* Hinweis zur Lizensierung ***********************************
+ 2025 Copyright © 2021–2025 Bundesministerium des Innern und für Heimat,
+ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Verwaltungsarbeit
+
+      Lizenz: CC-BY-3.0 (Creative Commons Namensnennung 3.0)
+ Information: https://creativecommons.org/licenses/by/3.0/legalcode.de
+**********************************************************************************************
+
+
+
+Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.
+
+-->
 <sch:pattern xmlns:sch="http://purl.oclc.org/dsdl/schematron">
   <sch:rule
     role="error"
