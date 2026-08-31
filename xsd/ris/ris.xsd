@@ -319,14 +319,15 @@
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
-      >Aktenzeichen der Entscheidung, hier kann es zu Dopplungen mit anderen Entscheidungen kommen, auch in Kombination mit Entscheidungsdatum und Gericht.</xs:documentation>
+      >Aktenzeichen der Entscheidung, hier kann es zu Dopplungen mit anderen Entscheidungen kommen, auch in Kombination mit Entscheidungsdatum und Gericht. Bei Gemeinsamen Ländererlassen (GLE) innerhalb der Dokumentart Verwaltungsvorschriften wird über das Attribut 'normgeber' der jeweilige ausgebende Normgeber des Bundeslandes angegeben.</xs:documentation>
       <xs:documentation
-        xml:lang="de"
-      >File number of the decision; may appear multiple times in combination with decision date and court.</xs:documentation>
+        xml:lang="en"
+      >File number of the decision; may appear multiple times in combination with decision date and court. For joint state decrees (GLE) in administrative directives, the optional 'normgeber' attribute specifies the issuing body.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        <xs:attribute name="normgeber" type="xs:string" />
         <xs:attribute
           name="refersTo"
           type="akn:conceptRef"
