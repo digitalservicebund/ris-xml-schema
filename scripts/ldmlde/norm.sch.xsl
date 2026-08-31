@@ -11,8 +11,6 @@
     omit-xml-declaration="yes"
   />
 
-  <xsl:param name="merge" />
-
   <xsl:strip-space elements="*" />
 
   <xsl:include href="license.xsl" />
@@ -42,12 +40,4 @@
   <xsl:template
     match="sch:title[.='Zulässigkeit von Literalen / Mustern je Attribut an FRBR-Typen, abhängig von der Fassung (Entwurf vs. Verkündung)']"
   />
-
-  <!-- Merge additional Schematron rules into the main schema -->
-  <xsl:template match="/sch:schema">
-    <xsl:copy>
-      <xsl:apply-templates select="@*|node()" />
-      <xsl:apply-templates select="document($merge)/sch:pattern" />
-    </xsl:copy>
-  </xsl:template>
 </xsl:stylesheet>
