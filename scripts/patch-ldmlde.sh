@@ -22,21 +22,38 @@ cd "$SCRIPTS_DIR"
 
 echo "Transform files"
 mkdir -p "$TEMP_OUTPUT_DIR"
-# transform schema files
-xsltproc "ldmlde/norm-baukasten.xsl" "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-baukasten.xsd" > "$TEMP_OUTPUT_DIR/norm-baukasten.xsd"
-xsltproc "ldmlde/norm-rechtsetzungsdokument.xsl" "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-rechtsetzungsdokument.xsd" > "$TEMP_OUTPUT_DIR/norm-rechtsetzungsdokument.xsd"
-xsltproc "ldmlde/norm-regelungstext.xsl" "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-regelungstext.xsd" > "$TEMP_OUTPUT_DIR/norm-regelungstext.xsd"
-xsltproc "ldmlde/norm-offenestruktur.xsl" "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-offenestruktur.xsd" > "$TEMP_OUTPUT_DIR/norm-offenestruktur.xsd"
-xsltproc "ldmlde/norm-sonstigerveroeffentlichungstext.xsl" "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-sonstigerveroeffentlichungstext.xsd" > "$TEMP_OUTPUT_DIR/norm-sonstigerveroeffentlichungstext.xsd"
-xsltproc "ldmlde/norm-metadaten-rechtsetzungsdokument.xsl" "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-metadaten-rechtsetzungsdokument.xsd" > "$TEMP_OUTPUT_DIR/norm-metadaten-rechtsetzungsdokument.xsd"
-xsltproc "ldmlde/norm-metadaten-regelungstext.xsl" "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-metadaten-regelungstext.xsd" > "$TEMP_OUTPUT_DIR/norm-metadaten-regelungstext.xsd"
-xsltproc "ldmlde/norm-metadaten-sonstiger-veroeffentlichungstext.xsl" "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-metadaten-sonstiger-veroeffentlichungstext.xsd" > "$TEMP_OUTPUT_DIR/norm-metadaten-sonstiger-veroeffentlichungstext.xsd"
-# transform schematron files
-xsltproc "ldmlde/norm.sch.xsl" "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de.sch" > "$TEMP_OUTPUT_DIR/norm.sch"
-xsltproc "ldmlde/norm.sch.xsl" "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-frbr-metadaten-facetten-konsolidierte-fassung.sch" > "$TEMP_OUTPUT_DIR/norm-frbr-metadaten-facetten-konsolidierte-fassung.sch"
+
+XSD_TYPES=(
+    "baukasten"
+    "rechtsetzungsdokument"
+    "regelungstext"
+    "offenestruktur"
+    "sonstigerveroeffentlichungstext"
+    "metadaten-rechtsetzungsdokument"
+    "metadaten-regelungstext"
+    "metadaten-sonstiger-veroeffentlichungstext"
+)
+
+for type in "${XSD_TYPES[@]}"; do
+    xsltproc \
+        "ldmlde/norm-${type}.xsl" \
+        "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de-${type}.xsd" \
+        > "$TEMP_OUTPUT_DIR/norm-${type}.xsd"
+done
+
+SCH_TYPES=(
+    ".sch"
+    "-frbr-metadaten-facetten-konsolidierte-fassung.sch"
+)
+
+for sch in "${SCH_TYPES[@]}"; do
+    xsltproc "ldmlde/norm.sch.xsl" \
+             "$TEMP_LDMLDE_DIR/Grammatiken/legalDocML.de${sch}" \
+             > "$TEMP_OUTPUT_DIR/norm${sch}"
+done
 
 echo "Copy transformed files to the schema directory…"
 mkdir -p "$ROOT_DIR/xsd/norm"
-rm -Rf "$ROOT_DIR/xsd/norm"/*.xsd
-rm -Rf "$ROOT_DIR/xsd/norm"/*.sch
-cp -R "$TEMP_OUTPUT_DIR"/* "$ROOT_DIR/xsd/norm/"
+rm -rf "$ROOT_DIR/xsd/norm"/*.xsd
+rm -rf "$ROOT_DIR/xsd/norm"/*.sch
+cp -r "$TEMP_OUTPUT_DIR"/* "$ROOT_DIR/xsd/norm/"
