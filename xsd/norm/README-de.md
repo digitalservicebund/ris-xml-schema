@@ -10,23 +10,22 @@ Im Folgenden werden die Anpassungen von LegalDocML.de aufgelistet. Abseits diese
 
 Aus LegalDocML.de wurden nur die folgenden XML-Schemata übernommen:
 
-| Datei                                      | Basierend auf                                                 |
-| ------------------------------------------ | ------------------------------------------------------------- |
-| `metadata-rechtsetzungsdokument`           | `legalDocML.de-metadaten-rechtsetzungsdokument.xsd`           |
-| `metadata-regelungstext`                   | `legalDocML.de-metadaten-regelungstext.xsd`                   |
-| `metadata-sonstigerveroeffentlichungstext` | `legalDocML.de-metadaten-sonstigerveroeffentlichungstext.xsd` |
-| `offenestruktur.xsd`                       | `legalDocML.de-offenestruktur`                                |
-| `rechtsetzungsdokument.xsd`                | `legalDocML.de-rechtsetzungsdokument`                         |
-| `regelungstext.xsd`                        | `legalDocML.de-regelungstext`                                 |
-| `shared.xsd`                               | `legalDocML.de-baukasten`                                     |
-| `sonstigerveroeffentlichungstext.xsd`      | `legalDocML.de-sonstigerveroeffentlichungstext`               |
+- `.xsd`-Dateien
+  - `legalDocML.de-baukasten.xsd`
+  - `legalDocML.de-metadaten-rechtsetzungsdokument.xsd`
+  - `legalDocML.de-metadaten-regelungstext.xsd`
+  - `legalDocML.de-metadaten-sonstigerveroeffentlichungstext.xsd`
+  - `legalDocML.de-offenestruktur.xsd`
+  - `legalDocML.de-rechtsetzungsdokument.xsd`
+  - `legalDocML.de-regelungstext.xsd`
+  - `legalDocML.de-sonstigerveroeffentlichungstext.xsd`
+- `.sch`-Dateien
+  - `legalDocML.de-frbr-metadaten-facetten-konsolidierte-fassung.sch`
+  - `legalDocML.de.sch`
 
-Zusätzlich wurden die folgenden Schematron-Regeln übernommen:
-
-| Datei                       | Basierend auf                                                     |
-| --------------------------- | ----------------------------------------------------------------- |
-| `shared.sch`                | `legalDocML.de.sch`                                               |
-| `konsolidierte-fassung.sch` | `legalDocML.de-frbr-metadaten-facetten-konsolidierte-fassung.sch` |
+Durch Anwendung der `.xsl`-Dateien in [`scripts/ldmlde-patches`](../../scripts/ldmlde-patches) auf die entsprechenden `.xsd`- und `.sch`-Dateien
+wurden die entsprechenden `.xsd`- und `.sch`-Dateien für das Rechtsinformationsportal erzeugt (mittels [`patch-ldmlde.sh`](../../scripts/patch-ldmlde.sh)).
+Diese Dateien sind in [`xsd/norm/`](../../xsd/norm) abgelegt.
 
 Das XML-Schemata von LegalDocML.de ist umfangreich und für das Rechtsinformationsportal wurden nur die relevanten Typen übernommen.
 
@@ -34,8 +33,8 @@ Das XML-Schemata von LegalDocML.de ist umfangreich und für das Rechtsinformatio
 
 Als Konvention werden die folgenden URIs für Namespaces verwendet:
 
-| Alter URI                                                  | Neuer URI                                                                           |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `http://Inhaltsdaten.LegalDocML.de/1.9/`                   | `http://rechtsinformationen.bund.de/schema/norm/0.1`                                |
-| `http://MetadatenRegelungstext.LegalDocML.de/1.9/`         | `http://rechtsinformationen.bund.de/schema/norm/metadata/regelungstext/0.1`         |
-| `http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/` | `http://rechtsinformationen.bund.de/schema/norm/metadata/rechtsetzungsdokument/0.1` |
+| Alter URI                                                  | Neuer URI                                                                                 |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `http://Inhaltsdaten.LegalDocML.de/1.9/`                   | `http://rechtsinformationen.bund.de/schema/norm/0.1`                                      |
+| `http://MetadatenRegelungstext.LegalDocML.de/1.9/`         | `http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-regelungstext/0.1`         |
+| `http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/` | `http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-rechtsetzungsdokument/0.1` |
