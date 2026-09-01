@@ -19,6 +19,8 @@ fileignoreconfig:
   - filename: .github/workflows/pipeline.yml
     allowed_patterns:
       - "key: "
+  - filename: xsd/norm/norm.sch
+    checksum: 1bf45ccb03beaa932f6d385031061994bc08fe7f619d7a526941a233128efb92
   - filename: gradlew
     checksum: df5f105ae542d08dedb564dae33c4f97a47ef1549229a69eff6de10c4de11a00
   - filename: build.gradle.kts
