@@ -3,6 +3,9 @@ fileignoreconfig:
     allowed_patterns:
       - secrets
       - Secrets
+  - filename: xsd/norm/README-de.md
+    allowed_patterns:
+      - 'https://gitlab\.opencode\.de/\S+'
   - filename: LICENSE
     allowed_patterns:
       - "keys"
@@ -16,6 +19,8 @@ fileignoreconfig:
   - filename: .github/workflows/pipeline.yml
     allowed_patterns:
       - "key: "
+  - filename: xsd/norm/norm.sch
+    checksum: a9988c413b72bb3971218747e632ac5b208f0ff6a30581dbb6e0ea3b23ea9f64
   - filename: gradlew
     checksum: df5f105ae542d08dedb564dae33c4f97a47ef1549229a69eff6de10c4de11a00
   - filename: build.gradle.kts
@@ -36,3 +41,4 @@ allowed_patterns:
   - REPORTS_BUCKET_SECRET_ACCESS_KEY
   - BUCKET_ACCESS_KEY_ID
   - BUCKET_SECRET_ACCESS_KEY
+  - a654f19fa6182ec8dabbb9bcc0d826ab07ac54f9

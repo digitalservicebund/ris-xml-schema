@@ -123,3 +123,5 @@ xsd/ldml-ris-literature.xsd
 
 .gradle
 build
+
+temp/
