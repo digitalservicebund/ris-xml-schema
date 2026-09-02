@@ -30,9 +30,6 @@
     match="sch:include[@href='legalDocML.de-frbr-metadaten-facetten-entwurfsfassung.sch']"
   />
   <xsl:template
-    match="sch:include[@href='legalDocML.de-frbr-metadaten-facetten-konsolidierte-fassung.sch']"
-  />
-  <xsl:template
     match="sch:include[@href='legalDocML.de-frbr-metadaten-facetten-verkündungsfassung.sch']"
   />
 
