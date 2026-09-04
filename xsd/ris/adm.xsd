@@ -39,9 +39,17 @@
       Normgeber
     </xs:documentation>
     </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="ris:stringWithDomainTerm" />
-    </xs:simpleContent>
+    <xs:sequence>
+      <xs:element name="kurzBezeichnung" type="ris:stringWithDomainTerm" />
+      <xs:element
+        name="langBezeichnung"
+        type="ris:stringWithDomainTerm"
+        minOccurs="0"
+      />
+      <xs:element name="region" type="ris:stringWithDomainTerm" minOccurs="0" />
+      <xs:element name="sitz" type="ris:stringWithDomainTerm" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
   <xs:complexType name="inkrafttretedatum">

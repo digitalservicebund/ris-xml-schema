@@ -173,9 +173,11 @@
       <akn:proprietary source="attributsemantik-noch-undefiniert">
         <ris:meta>
           <ris:normgeberListe domainTerm="List der Normgeber">
-            <ris:normgeber
-              domainTerm="Normgeber"
-            >Normgeber-Beispiel</ris:normgeber>
+            <ris:normgeber domainTerm="Normgeber">
+              <ris:kurzBezeichnung
+                domainTerm="Kurz-Bezeichnung"
+              >Normgeber-Beispiel</ris:kurzBezeichnung>
+            </ris:normgeber>
           </ris:normgeberListe>
           <ris:sachgebiete domainTerm="Sachgebiete">
             <ris:sachgebiet
