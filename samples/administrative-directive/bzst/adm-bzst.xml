@@ -174,12 +174,12 @@
         <ris:meta>
           <ris:normgeberListe domainTerm="Liste der Normgeber">
             <ris:normgeber domainTerm="Normgeber">
-              <ris:kurzBezeichnung
-                domainTerm="Kurz-Bezeichnung"
-              >BW FinMin</ris:kurzBezeichnung>
-              <ris:langBezeichnung
-                domainTerm="Lang-Bezeichnung"
-              >Ministerium für Finanzen des Landes Baden-Württemberg</ris:langBezeichnung>
+              <ris:kurzbezeichnung
+                domainTerm="Kurzbezeichnung"
+              >BW FinMin</ris:kurzbezeichnung>
+              <ris:langbezeichnung
+                domainTerm="Langbezeichnung"
+              >Ministerium für Finanzen des Landes Baden-Württemberg</ris:langbezeichnung>
               <ris:region domainTerm="Region">Baden-Württemberg</ris:region>
               <ris:sitz domainTerm="Sitz">Stuttgart</ris:sitz>
             </ris:normgeber>

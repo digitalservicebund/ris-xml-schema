@@ -269,12 +269,12 @@
         <ris:meta>
           <ris:normgeberListe domainTerm="Liste der Normgeber">
             <ris:normgeber domainTerm="Normgeber">
-              <ris:kurzBezeichnung
-                domainTerm="Kurz-Bezeichnung"
-              >G-BA</ris:kurzBezeichnung>
-              <ris:langBezeichnung
-                domainTerm="Lang-Bezeichnung"
-              >Gemeinsamer Bundesausschuss</ris:langBezeichnung>
+              <ris:kurzbezeichnung
+                domainTerm="Kurzbezeichnung"
+              >G-BA</ris:kurzbezeichnung>
+              <ris:langbezeichnung
+                domainTerm="Langbezeichnung"
+              >Gemeinsamer Bundesausschuss</ris:langbezeichnung>
               <ris:sitz domainTerm="Sitz">Berlin</ris:sitz>
             </ris:normgeber>
           </ris:normgeberListe>

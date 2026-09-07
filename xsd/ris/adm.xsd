@@ -40,9 +40,9 @@
     </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="kurzBezeichnung" type="ris:stringWithDomainTerm" />
+      <xs:element name="kurzbezeichnung" type="ris:stringWithDomainTerm" />
       <xs:element
-        name="langBezeichnung"
+        name="langbezeichnung"
         type="ris:stringWithDomainTerm"
         minOccurs="0"
       />
