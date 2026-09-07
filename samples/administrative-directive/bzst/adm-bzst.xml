@@ -172,11 +172,16 @@
       </akn:analysis>
       <akn:proprietary source="attributsemantik-noch-undefiniert">
         <ris:meta>
-          <ris:normgeberListe domainTerm="List der Normgeber">
+          <ris:normgeberListe domainTerm="Liste der Normgeber">
             <ris:normgeber domainTerm="Normgeber">
               <ris:kurzBezeichnung
                 domainTerm="Kurz-Bezeichnung"
-              >Normgeber-Beispiel</ris:kurzBezeichnung>
+              >BW FinMin</ris:kurzBezeichnung>
+              <ris:langBezeichnung
+                domainTerm="Lang-Bezeichnung"
+              >Ministerium für Finanzen des Landes Baden-Württemberg</ris:langBezeichnung>
+              <ris:region domainTerm="Region">Baden-Württemberg</ris:region>
+              <ris:sitz domainTerm="Sitz">Stuttgart</ris:sitz>
             </ris:normgeber>
           </ris:normgeberListe>
           <ris:sachgebiete domainTerm="Sachgebiete">
