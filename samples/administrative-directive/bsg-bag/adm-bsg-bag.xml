@@ -322,6 +322,18 @@
               domainTerm="Zitierdatum"
             >2024-07-18</ris:zitierdatum>
           </ris:zitierdaten>
+          <ris:aktenzeichenListe domainTerm="Liste der Aktenzeichen">
+            <ris:aktenzeichen
+              domainTerm="Aktenzeichen"
+              normgeber="Ministerium der Finanzen und für Europa des Landes Brandenburg"
+              normgeberRegion="Brandenburg"
+            >31-S 4500/15#01#02</ris:aktenzeichen>
+            <ris:aktenzeichen
+              domainTerm="Aktenzeichen"
+              normgeber="Senatsverwaltung für Finanzen"
+              normgeberRegion="Berlin"
+            >S 4521-10/2012-3</ris:aktenzeichen>
+          </ris:aktenzeichenListe>
           <ris:regionen domainTerm="Regionen">
             <ris:region domainTerm="Region">DEU</ris:region>
           </ris:regionen>
