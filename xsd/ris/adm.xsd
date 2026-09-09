@@ -156,4 +156,78 @@
     </xs:choice>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
+
+  <xs:element name="verweisNorm" type="ris:verweisNorm" />
+  <xs:complexType name="verweisNorm">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Verweis auf eine Norm
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="abkuerzung" type="ris:stringWithDomainTerm" />
+      <xs:element
+        name="einzelnorm"
+        type="ris:verweisEinzelnorm"
+        minOccurs="0"
+        maxOccurs="unbounded"
+      />
+      <xs:element
+        name="verweistyp"
+        type="ris:stringWithDomainTerm"
+        minOccurs="0"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:element
+    name="verweisVerwaltungsvorschrift"
+    type="ris:verweisVerwaltungsvorschrift"
+  />
+  <xs:complexType name="verweisVerwaltungsvorschrift">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Verweis auf eine Verwaltungsvorschrift
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="abkuerzung" type="ris:stringWithDomainTerm" />
+      <xs:element
+        name="einzelnorm"
+        type="ris:verweisEinzelnorm"
+        minOccurs="0"
+        maxOccurs="unbounded"
+      />
+      <xs:element
+        name="verweistyp"
+        type="ris:stringWithDomainTerm"
+        minOccurs="0"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="verweisEinzelnorm">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Ein Teil einer Norm oder Verwaltungsvorschrift, auf den verwiesen wird
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="bezeichnung" type="ris:stringWithDomainTerm" />
+      <xs:element
+        name="normtext"
+        type="ris:stringWithDomainTerm"
+        minOccurs="0"
+      />
+      <xs:element name="fassungsdatum" type="ris:fassungsdatum" minOccurs="0" />
+      <xs:element
+        name="ausserkrafttretedatum"
+        type="ris:ausserkrafttretedatum"
+        minOccurs="0"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
 </xs:schema>

@@ -130,6 +130,46 @@
               </ris:einzelnorm>
             </ris:referenzNorm>
           </akn:implicitReference>
+          <akn:implicitReference ris:domainTerm="Normverweis">
+            <ris:verweisNorm domainTerm="Normverweis">
+              <ris:abkuerzung domainTerm="Abkürzung">EStG</ris:abkuerzung>
+              <ris:einzelnorm domainTerm="Einzelnorm">
+                <ris:bezeichnung domainTerm="Bezeichnung">§ 7g</ris:bezeichnung>
+                <ris:normtext domainTerm="Normtext">Abs 8</ris:normtext>
+                <ris:fassungsdatum
+                  domainTerm="Fassungsdatum"
+                >2000-12-20</ris:fassungsdatum>
+                <ris:ausserkrafttretedatum
+                  domainTerm="Datum des Außerkrafttretens"
+                >2010-01-01</ris:ausserkrafttretedatum>
+              </ris:einzelnorm>
+              <ris:verweistyp
+                domainTerm="Verweistyp"
+              >Durchführungsvorschrift</ris:verweistyp>
+            </ris:verweisNorm>
+          </akn:implicitReference>
+          <akn:implicitReference ris:domainTerm="Verweis Verwaltungsvorschrift">
+            <ris:verweisVerwaltungsvorschrift
+              domainTerm="Verweis Verwaltungsvorschrift"
+            >
+              <ris:abkuerzung domainTerm="Abkürzung">EStR 1953</ris:abkuerzung>
+              <ris:einzelnorm domainTerm="Einzelnorm">
+                <ris:bezeichnung
+                  domainTerm="Bezeichnung"
+                >Abschn 30</ris:bezeichnung>
+                <ris:normtext domainTerm="Normtext">Abs 3</ris:normtext>
+                <ris:fassungsdatum
+                  domainTerm="Fassungsdatum"
+                >2000-12-20</ris:fassungsdatum>
+                <ris:ausserkrafttretedatum
+                  domainTerm="Datum des Außerkrafttretens"
+                >2010-01-01</ris:ausserkrafttretedatum>
+              </ris:einzelnorm>
+              <ris:verweistyp
+                domainTerm="Verweistyp"
+              >Durchführungsvorschrift</ris:verweistyp>
+            </ris:verweisVerwaltungsvorschrift>
+          </akn:implicitReference>
           <akn:implicitReference ris:domainTerm="Referenz Rechtsprechung">
             <ris:referenzRechtsprechung domainTerm="Referenz Rechtsprechung">
               <ris:richtung
