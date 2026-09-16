@@ -1,4 +1,6 @@
-# Normen
+# XSD
+
+## Normen
 
 XML-Schema für die strukturierte Bereitstellung von Normen im Rechtsinformationsportal, das auf [LegalDocML.de 1.9](https://gitlab.opencode.de/bmi/e-gesetzgebung/ldml_de) aufbaut und die Anforderungen des konsolidierten Bestandsrechts berücksichtigt. LegalDocML.de selbst ist ein deutsches Anwendungsprofil des OASIS-Standards Akoma Ntoso (LegalDocML).
 
