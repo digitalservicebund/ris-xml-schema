@@ -18,7 +18,7 @@ This repo contains the XML-Schema files for the XML-files produced by the Rechts
 | [xsd/literature-uli.xsd](./xsd/literature-uli.xsd)                                           | `http://docs.oasis-open.org/legaldocml/ns/akn/3.0`   | Schema for ULIs. (You should validate against this one)                           |
 | [xsd/literature-uli-metadata.xsd](./xsd/literature-uli-metadata.xsd)                         | `http://rechtsinformationen.bund.de/schema/ris/0.1`  | Restrictions for the ris namespace that only apply to ULIs                        |
 | [xsd/literature-uli-metadata.xsd](./xsd/literature-uli-metadata.xsd)                         | `http://rechtsinformationen.bund.de/schema/ris/0.1`  | Restrictions for the ris namespace that only apply to ULIs                        |
-| [xsd/norm/*.xsd](./xsd/norm/)                                                                | `http://rechtsinformationen.bund.de/schema/norm/0.1` | Schemas for norms (see documentation in [German](./xsd/norm/README-de.md))        |
+| [xsd/norm-*.xsd](./xsd/)                                                                     | `http://rechtsinformationen.bund.de/schema/norm/0.1` | Schemas for norms (see documentation in [German](./xsd/norm-de.md))               |
 
 ## Usage
 

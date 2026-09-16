@@ -25,7 +25,7 @@ Aus LegalDocML.de wurden nur die folgenden XML-Schemata übernommen:
 
 Durch Anwendung der `.xsl`-Dateien in [`scripts/ldmlde-patches`](../../scripts/ldmlde-patches) auf die entsprechenden `.xsd`- und `.sch`-Dateien
 wurden die entsprechenden `.xsd`- und `.sch`-Dateien für das Rechtsinformationsportal erzeugt (mittels [`patch-ldmlde.sh`](../../scripts/patch-ldmlde.sh)).
-Diese Dateien sind in [`xsd/norm/`](../../xsd/norm) abgelegt.
+Diese Dateien sind in [`xsd/norm-*`](../../xsd) abgelegt.
 
 Das XML-Schemata von LegalDocML.de ist umfangreich und für das Rechtsinformationsportal wurden nur die relevanten Typen übernommen.
 
@@ -33,8 +33,8 @@ Das XML-Schemata von LegalDocML.de ist umfangreich und für das Rechtsinformatio
 
 Als Konvention werden die folgenden URIs für Namespaces verwendet:
 
-| Alter URI                                                  | Neuer URI                                                                                 |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `http://Inhaltsdaten.LegalDocML.de/1.9/`                   | `http://rechtsinformationen.bund.de/schema/norm/0.1`                                      |
-| `http://MetadatenRegelungstext.LegalDocML.de/1.9/`         | `http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-regelungstext/0.1`         |
-| `http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/` | `http://rechtsinformationen.bund.de/schema/norm/norm-metadaten-rechtsetzungsdokument/0.1` |
+| Alter URI                                                  | Neuer URI                                                                            |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `http://Inhaltsdaten.LegalDocML.de/1.9/`                   | `http://rechtsinformationen.bund.de/schema/norm/0.1`                                 |
+| `http://MetadatenRegelungstext.LegalDocML.de/1.9/`         | `http://rechtsinformationen.bund.de/schema/norm-metadaten-regelungstext/0.1`         |
+| `http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/` | `http://rechtsinformationen.bund.de/schema/norm-metadaten-rechtsetzungsdokument/0.1` |

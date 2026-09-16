@@ -55,7 +55,9 @@ for sch in "${SCH_TYPES[@]}"; do
 done
 
 echo "Copy transformed files to the schema directory…"
-mkdir -p "$ROOT_DIR/xsd/norm"
-rm -rf "$ROOT_DIR/xsd/norm"/norm-*.xsd
-rm -rf "$ROOT_DIR/xsd/norm"/norm-*.sch
-cp -r "$TEMP_OUTPUT_DIR"/* "$ROOT_DIR/xsd/norm/"
+rm -rf "$ROOT_DIR/xsd/norm-*.xsd"
+rm -rf "$ROOT_DIR/xsd/norm-*.sch"
+cp -r "$TEMP_OUTPUT_DIR"/* "$ROOT_DIR/xsd/"
+
+echo "Apply formatting to the copied files…"
+npm run format:fix
