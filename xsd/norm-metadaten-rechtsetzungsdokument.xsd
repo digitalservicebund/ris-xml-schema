@@ -6,20 +6,17 @@
   version="1.0"
   elementFormDefault="qualified"
 >
-  <!-- ********************************* Hinweis zur Lizensierung *********************************
+  <!-- ********************************* Hinweis zur Lizensierung ********************************* 
 
-Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter
-  derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.
+Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.
 
 -->
   <xs:annotation>
     <xs:appinfo>
       <copyright-hinweis
         xmlns="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
-      >2025 Copyright © 2021–2025
-      Bundesministerium des Innern und für Heimat,
-        Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische
-      Verwaltungsarbeit</copyright-hinweis>
+      >2025 Copyright © 2021–2025 Bundesministerium des Innern und für Heimat, 
+Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Verwaltungsarbeit</copyright-hinweis>
       <lizenz
         xmlns="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
         url="https://creativecommons.org/licenses/by/3.0/legalcode.de"
@@ -34,8 +31,7 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       />
       <hinweis
         xmlns=""
-      >Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen
-      stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.</hinweis>
+      >Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.</hinweis>
     </xs:appinfo>
   </xs:annotation>
   <xs:element name="legalDocML.de_metadaten">
@@ -44,18 +40,13 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         <xs:element name="fna" type="xs:token" default="nicht-vorhanden">
           <xs:annotation>
             <xs:documentation
-            >Der Fundstellennachweis A (FNA) weist die Fundstellen der im
-              Bundesgesetzblatt oder Bundesanzeiger veröffentlichten geltenden Gesetze und
-              Rechtsverordnungen der Bundesrepublik Deutschland nach. In der Entwurfsfassung ist das
-              Literal "nicht-vorhanden" zu verwenden.</xs:documentation>
+            >Der Fundstellennachweis A (FNA) weist die Fundstellen der im Bundesgesetzblatt oder Bundesanzeiger veröffentlichten geltenden Gesetze und Rechtsverordnungen der Bundesrepublik Deutschland nach. In der Entwurfsfassung ist das Literal "nicht-vorhanden" zu verwenden.</xs:documentation>
           </xs:annotation>
         </xs:element>
         <xs:element name="gesta" type="xs:token" default="nicht-vorhanden">
           <xs:annotation>
             <xs:documentation
-            >Die GESTA-Ordnungsnummer ist eine von der Parlamentsdokumentation des
-              Bundestages vergebene Kennzeichnung eines Gesetzgebungsverfahrens. Falls sie unbekannt
-              ist, ist das Literal 'nicht-vorhanden' anzugeben.</xs:documentation>
+            >Die GESTA-Ordnungsnummer ist eine von der Parlamentsdokumentation des Bundestages vergebene Kennzeichnung eines Gesetzgebungsverfahrens. Falls sie unbekannt ist, ist das Literal 'nicht-vorhanden' anzugeben.</xs:documentation>
           </xs:annotation>
         </xs:element>
         <xs:element name="gegenstandlos" minOccurs="0">
@@ -63,8 +54,7 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
             <xs:attribute name="seit" type="xs:date" use="optional">
               <xs:annotation>
                 <xs:documentation
-                >Kennzeichnung, wann das vorliegende Rechtsetzungsdokument als
-                  gegenstandslos deklariert wurde.</xs:documentation>
+                >Kennzeichnung, wann das vorliegende Rechtsetzungsdokument als gegenstandslos deklariert wurde.</xs:documentation>
               </xs:annotation>
             </xs:attribute>
           </xs:complexType>
