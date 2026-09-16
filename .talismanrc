@@ -3,7 +3,7 @@ fileignoreconfig:
     allowed_patterns:
       - secrets
       - Secrets
-  - filename: xsd/norm-de.md
+  - filename: xsd/README-de.md
     allowed_patterns:
       - 'https://gitlab\.opencode\.de/\S+'
   - filename: LICENSE
