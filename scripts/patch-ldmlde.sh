@@ -56,7 +56,7 @@ done
 
 echo "Copy transformed files to the schema directory…"
 rm -rf "$ROOT_DIR/xsd/norm-*.xsd"
-rm -rf "$ROOT_DIR/xsd/norm-*.sch"
+rm -rf "$ROOT_DIR/xsd/norm*.sch"
 cp -r "$TEMP_OUTPUT_DIR"/* "$ROOT_DIR/xsd/"
 
 echo "Apply formatting to the copied files…"
