@@ -568,6 +568,17 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       />
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="eIdLiterals.dokumentenStatus">
+    <xs:annotation>
+      <xs:documentation
+      >Die ELI-Kurzbezeichnung für den fachlichen Typ "dokumentenStatus" (AKN-Typ "docStage") lautet in LegalDocML.de "docstadium".</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern
+        value="([a-z0-9]+-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)_)*(docstadium)-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)"
+      />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="eIdLiterals.dokumentenkopf">
     <xs:annotation>
       <xs:documentation
@@ -3487,6 +3498,22 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       <xs:element name="date" type="datum" />
     </xs:choice>
   </xs:group>
+  <xs:complexType name="dokumentenStatus" mixed="true">
+    <xs:annotation>
+      <xs:documentation
+      >Die Klasse "dokumentenStatus" wird benutzt, um den Prozessstatus eines Rechtsetzungsdokuments in der Entwurfsfassung anzugeben (z. B. Referentenentwurf, Regierungsentwurf ect.).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group ref="inlineelement" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute
+      name="eId"
+      use="required"
+      type="eIdLiterals.dokumentenStatus"
+    />
+    <xs:attribute name="GUID" use="required" type="GUIDLiterals" />
+    <xs:attribute ref="xml:id" use="optional" />
+  </xs:complexType>
   <xs:complexType name="dokumententitel" mixed="true">
     <xs:annotation>
       <xs:documentation
@@ -3524,6 +3551,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:choice>
       <xs:element name="docTitle" type="dokumententitel" />
       <xs:element name="shortTitle" type="kurztitel" />
+      <xs:element name="docStage" type="dokumentenStatus" />
     </xs:choice>
   </xs:group>
   <xs:complexType name="inline" mixed="true">

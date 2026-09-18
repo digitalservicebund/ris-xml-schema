@@ -161,9 +161,6 @@
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.dokumentenkopfAnschreibenAdresse']"
   />
   <xsl:template
-    match="/xs:schema/xs:simpleType[@name='eIdLiterals.dokumentenStatus']"
-  />
-  <xsl:template
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.dokumentenTyp']"
   />
   <xsl:template
@@ -454,7 +451,6 @@
   />
   <xsl:template match="/xs:schema/xs:complexType[@name='bezugsdokument']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='dokumentauswertung']" />
-  <xsl:template match="/xs:schema/xs:complexType[@name='dokumentenStatus']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='dokumentenTyp']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='drucksachennummer']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='endeSeite']" />
@@ -675,7 +671,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@*" />
       <xsl:apply-templates
-        select="xs:element[@name='docTitle' or @name='shortTitle']"
+        select="xs:element[@name='docTitle' or @name='shortTitle' or @name='docStage']"
       />
     </xsl:copy>
   </xsl:template>
