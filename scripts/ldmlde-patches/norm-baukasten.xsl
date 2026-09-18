@@ -560,6 +560,19 @@
     </xsl:element>
   </xsl:template>
 
+  <!-- Update namespace of xs:any elements referencing weitereMetadaten -->
+  <xsl:template
+    match="xs:complexType[@name='weitereMetadaten']//xs:any[@namespace='http://www.ris.bund.de/grammatiken/metadaten/']"
+  >
+    <xsl:copy>
+      <xsl:apply-templates select="@*[name()!='namespace']|node()" />
+      <xsl:attribute name="namespace">
+        <xsl:text
+        >http://rechtsinformationen.bund.de/schema/norm-metadata/0.1</xsl:text>
+      </xsl:attribute>
+    </xsl:copy>
+  </xsl:template>
+
   <!-- Modify xs:complexType elements to account for exclude types -->
   <xsl:template
     match="/xs:schema/xs:complexType[@name='eingangsformelUndVerzeichnis']/xs:sequence"

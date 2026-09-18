@@ -4217,7 +4217,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
           processContents="lax"
           minOccurs="0"
           maxOccurs="unbounded"
-          namespace="http://www.ris.bund.de/grammatiken/metadaten/"
+          namespace="http://rechtsinformationen.bund.de/schema/norm-metadata/0.1"
         />
       </xs:choice>
     </xs:sequence>
