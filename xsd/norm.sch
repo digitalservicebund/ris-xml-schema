@@ -19,7 +19,10 @@
 Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.
 
 -->
-  <sch:ns uri="http://Inhaltsdaten.LegalDocML.de/1.9/" prefix="akn" />
+  <sch:ns
+    uri="http://rechtsinformationen.bund.de/schema/norm/0.1"
+    prefix="akn"
+  />
   <sch:ns
     uri="http://MetadatenRegelungstext.LegalDocML.de/1.9/"
     prefix="regtxt"

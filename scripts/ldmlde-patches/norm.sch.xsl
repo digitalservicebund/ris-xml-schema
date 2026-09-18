@@ -48,6 +48,14 @@
     match="sch:title[.='Zulässigkeit von Literalen / Mustern je Attribut an FRBR-Typen, abhängig von der Fassung (Entwurf vs. Verkündung)']"
   />
 
+  <!-- Rewrite the akn namespace to match the RIS content namespace -->
+  <xsl:template match="sch:ns[@prefix='akn']">
+    <sch:ns
+      uri="http://rechtsinformationen.bund.de/schema/norm/0.1"
+      prefix="akn"
+    />
+  </xsl:template>
+
   <!-- Declare the xs prefix used by XPath expressions but missing from the source schema -->
   <xsl:template match="sch:ns[@prefix='fkt']">
     <xsl:copy>
