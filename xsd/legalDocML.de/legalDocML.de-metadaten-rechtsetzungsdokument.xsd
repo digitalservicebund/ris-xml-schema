@@ -1,39 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema
-  xmlns="http://rechtsinformationen.bund.de/schema/norm-metadaten-rechtsetzungsdokument/0.1"
+  xmlns="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:ldmlde="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
-  targetNamespace="http://rechtsinformationen.bund.de/schema/norm-metadaten-rechtsetzungsdokument/0.1"
-  version="1.0"
   elementFormDefault="qualified"
+  targetNamespace="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
+  version="LegalDocML.de 1.9 (03.11.2025)"
 >
-  <!-- ********************************* Hinweis zur Lizensierung ********************************* 
-
-Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.
-
--->
+  <!-- ********************************* Hinweis zur Lizensierung ********************************* -->
   <xs:annotation>
     <xs:appinfo>
       <copyright-hinweis
-        xmlns="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
       >2025 Copyright © 2021–2025 Bundesministerium des Innern und für Heimat, 
 Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Verwaltungsarbeit</copyright-hinweis>
       <lizenz
-        xmlns="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
         url="https://creativecommons.org/licenses/by/3.0/legalcode.de"
         kurzbezeichnung="CC-BY-3.0"
         langbezeichnung="Creative Commons Namensnennung 3.0"
       />
       <autor
-        xmlns="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
         organisation="Bundesministerium des Innern und für Heimat"
         referat="DG II 6"
         organisatorischer-rahmen="Maßnahmen Enterprise Resource Management und Elektronische Verwaltungsarbeit"
       />
-      <hinweis
-        xmlns=""
-      >Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.</hinweis>
     </xs:appinfo>
   </xs:annotation>
+  <!-- ******************************************************************************************** -->
   <xs:element name="legalDocML.de_metadaten">
     <xs:complexType>
       <xs:sequence>

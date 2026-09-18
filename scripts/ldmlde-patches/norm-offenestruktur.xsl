@@ -41,7 +41,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@*[name()!='schemaLocation']|node()" />
       <xsl:attribute name="schemaLocation">
-        <xsl:text>../akn/xml.xsd</xsl:text>
+        <xsl:text>./akn/xml.xsd</xsl:text>
       </xsl:attribute>
     </xsl:copy>
   </xsl:template>

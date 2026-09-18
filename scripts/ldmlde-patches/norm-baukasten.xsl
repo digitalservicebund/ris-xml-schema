@@ -25,6 +25,16 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- Update reference to xml.xsd -->
+  <xsl:template match="xs:import[@schemaLocation='xml.xsd']">
+    <xsl:copy>
+      <xsl:apply-templates select="@*[name()!='schemaLocation']|node()" />
+      <xsl:attribute name="schemaLocation">
+        <xsl:text>./akn/xml.xsd</xsl:text>
+      </xsl:attribute>
+    </xsl:copy>
+  </xsl:template>
+
   <!-- Ensure the root xs:schema element has the correct targetNamespace and version -->
   <xsl:template match="/xs:schema">
     <xs:schema
@@ -151,9 +161,6 @@
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.dokumentenkopfAnschreibenAdresse']"
   />
   <xsl:template
-    match="/xs:schema/xs:simpleType[@name='eIdLiterals.dokumentenStatus']"
-  />
-  <xsl:template
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.dokumentenTyp']"
   />
   <xsl:template
@@ -207,9 +214,6 @@
   <xsl:template match="/xs:schema/xs:simpleType[@name='eIdLiterals.ort']" />
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.personenname']"
-  />
-  <xsl:template
-    match="/xs:schema/xs:simpleType[@name='eIdLiterals.referenz']"
   />
   <xsl:template match="/xs:schema/xs:simpleType[@name='eIdLiterals.sitzung']" />
   <xsl:template
@@ -444,7 +448,6 @@
   />
   <xsl:template match="/xs:schema/xs:complexType[@name='bezugsdokument']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='dokumentauswertung']" />
-  <xsl:template match="/xs:schema/xs:complexType[@name='dokumentenStatus']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='dokumentenTyp']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='drucksachennummer']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='endeSeite']" />
@@ -477,7 +480,6 @@
   <xsl:template match="/xs:schema/xs:complexType[@name='organisation']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='ort']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='personenname']" />
-  <xsl:template match="/xs:schema/xs:complexType[@name='referenz']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='referenzen']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='sitzung']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='textaenderung']" />
@@ -558,6 +560,19 @@
     </xsl:element>
   </xsl:template>
 
+  <!-- Update namespace of xs:any elements referencing weitereMetadaten -->
+  <xsl:template
+    match="xs:complexType[@name='weitereMetadaten']//xs:any[@namespace='http://www.ris.bund.de/grammatiken/metadaten/']"
+  >
+    <xsl:copy>
+      <xsl:apply-templates select="@*[name()!='namespace']|node()" />
+      <xsl:attribute name="namespace">
+        <xsl:text
+        >http://rechtsinformationen.bund.de/schema/norm-metadata/0.1</xsl:text>
+      </xsl:attribute>
+    </xsl:copy>
+  </xsl:template>
+
   <!-- Modify xs:complexType elements to account for exclude types -->
   <xsl:template
     match="/xs:schema/xs:complexType[@name='eingangsformelUndVerzeichnis']/xs:sequence"
@@ -603,7 +618,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@*" />
       <xsl:apply-templates
-        select="xs:element[@name='authorialNote' or @name='noteRef']"
+        select="xs:element[@name='authorialNote' or @name='noteRef' or @name='ref']"
       />
     </xsl:copy>
   </xsl:template>
@@ -615,7 +630,7 @@
       <xsl:apply-templates select="@*" />
       <xsl:apply-templates
         select="
-        xs:element[@name='marker' or @name='inline' or @name='authorialNote']
+        xs:element[@name='marker' or @name='inline' or @name='authorialNote' or @name='ref']
         | xs:group[@ref='HTMLinline']
       "
       />
@@ -665,7 +680,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@*" />
       <xsl:apply-templates
-        select="xs:element[@name='docTitle' or @name='shortTitle']"
+        select="xs:element[@name='docTitle' or @name='shortTitle' or @name='docStage']"
       />
     </xsl:copy>
   </xsl:template>

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -eo pipefail
 
 SCRIPTS_DIR=$(dirname "$(realpath "$0")")
 ROOT_DIR=$(realpath "$SCRIPTS_DIR/..")
@@ -31,9 +31,6 @@ XSD_TYPES=(
     "regelungstext"
     "offenestruktur"
     "sonstigerveroeffentlichungstext"
-    "metadaten-rechtsetzungsdokument"
-    "metadaten-regelungstext"
-    "metadaten-sonstiger-veroeffentlichungstext"
 )
 
 for type in "${XSD_TYPES[@]}"; do
@@ -57,7 +54,21 @@ done
 echo "Copy transformed files to the schema directory…"
 rm -rf "$ROOT_DIR/xsd/norm-*.xsd"
 rm -rf "$ROOT_DIR/xsd/norm*.sch"
+rm -rf "$ROOT_DIR/xsd/legalDocML.de"
 cp -r "$TEMP_OUTPUT_DIR"/* "$ROOT_DIR/xsd/"
+
+echo "Copy original files to the schema directory…"
+mkdir -p "$ROOT_DIR/xsd/legalDocML.de"
+
+ORIGINAL_XSD_TYPES=(
+    "legalDocML.de-metadaten-rechtsetzungsdokument"
+    "legalDocML.de-metadaten-regelungstext"
+    "legalDocML.de-metadaten-sonstiger-veroeffentlichungstext"
+)
+
+for type in "${ORIGINAL_XSD_TYPES[@]}"; do
+    cp "$TEMP_LDMLDE_DIR/Grammatiken/${type}.xsd" "$ROOT_DIR/xsd/legalDocML.de/"
+done
 
 echo "Apply formatting to the copied files…"
 npm run format:fix
