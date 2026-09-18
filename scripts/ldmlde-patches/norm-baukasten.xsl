@@ -215,9 +215,6 @@
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.personenname']"
   />
-  <xsl:template
-    match="/xs:schema/xs:simpleType[@name='eIdLiterals.referenz']"
-  />
   <xsl:template match="/xs:schema/xs:simpleType[@name='eIdLiterals.sitzung']" />
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.sprachfassungPraeambelInhaltsuebersicht']"
@@ -483,7 +480,6 @@
   <xsl:template match="/xs:schema/xs:complexType[@name='organisation']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='ort']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='personenname']" />
-  <xsl:template match="/xs:schema/xs:complexType[@name='referenz']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='referenzen']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='sitzung']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='textaenderung']" />
@@ -609,7 +605,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@*" />
       <xsl:apply-templates
-        select="xs:element[@name='authorialNote' or @name='noteRef']"
+        select="xs:element[@name='authorialNote' or @name='noteRef' or @name='ref']"
       />
     </xsl:copy>
   </xsl:template>
@@ -621,7 +617,7 @@
       <xsl:apply-templates select="@*" />
       <xsl:apply-templates
         select="
-        xs:element[@name='marker' or @name='inline' or @name='authorialNote']
+        xs:element[@name='marker' or @name='inline' or @name='authorialNote' or @name='ref']
         | xs:group[@ref='HTMLinline']
       "
       />
