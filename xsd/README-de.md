@@ -14,9 +14,6 @@ Aus LegalDocML.de wurden nur die folgenden XML-Schemata übernommen:
 
 - `.xsd`-Dateien
   - `legalDocML.de-baukasten.xsd`
-  - `legalDocML.de-metadaten-rechtsetzungsdokument.xsd`
-  - `legalDocML.de-metadaten-regelungstext.xsd`
-  - `legalDocML.de-metadaten-sonstigerveroeffentlichungstext.xsd`
   - `legalDocML.de-offenestruktur.xsd`
   - `legalDocML.de-rechtsetzungsdokument.xsd`
   - `legalDocML.de-regelungstext.xsd`
@@ -25,9 +22,7 @@ Aus LegalDocML.de wurden nur die folgenden XML-Schemata übernommen:
   - `legalDocML.de-frbr-metadaten-facetten-konsolidierte-fassung.sch`
   - `legalDocML.de.sch`
 
-Durch Anwendung der `.xsl`-Dateien in [`scripts/ldmlde-patches`](../../scripts/ldmlde-patches) auf die entsprechenden `.xsd`- und `.sch`-Dateien
-wurden die entsprechenden `.xsd`- und `.sch`-Dateien für das Rechtsinformationsportal erzeugt (mittels [`patch-ldmlde.sh`](../../scripts/patch-ldmlde.sh)).
-Diese Dateien sind in [`xsd/norm-*`](../../xsd) abgelegt.
+Durch Anwendung der `.xsl`-Dateien in [`scripts/ldmlde-patches`](../../scripts/ldmlde-patches) auf die entsprechenden `.xsd`- und `.sch`-Dateien wurden die entsprechenden `.xsd`- und `.sch`-Dateien für das Rechtsinformationsportal erzeugt (mittels [`patch-ldmlde.sh`](../../scripts/patch-ldmlde.sh)). Diese Dateien sind in [`xsd/norm-*`](../../xsd) abgelegt.
 
 Das XML-Schemata von LegalDocML.de ist umfangreich und für das Rechtsinformationsportal wurden nur die relevanten Typen übernommen.
 
@@ -35,8 +30,7 @@ Das XML-Schemata von LegalDocML.de ist umfangreich und für das Rechtsinformatio
 
 Als Konvention werden die folgenden URIs für Namespaces verwendet:
 
-| Alter URI                                                  | Neuer URI                                                                            |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `http://Inhaltsdaten.LegalDocML.de/1.9/`                   | `http://rechtsinformationen.bund.de/schema/norm/0.1`                                 |
-| `http://MetadatenRegelungstext.LegalDocML.de/1.9/`         | `http://rechtsinformationen.bund.de/schema/norm-metadaten-regelungstext/0.1`         |
-| `http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/` | `http://rechtsinformationen.bund.de/schema/norm-metadaten-rechtsetzungsdokument/0.1` |
+| Alter URI                                       | Neuer URI                                                     |
+| ----------------------------------------------- | ------------------------------------------------------------- |
+| `http://Inhaltsdaten.LegalDocML.de/1.9/`        | `http://rechtsinformationen.bund.de/schema/norm/0.1`          |
+| `http://www.ris.bund.de/grammatiken/metadaten/` | `http://rechtsinformationen.bund.de/schema/norm-metadata/0.1` |
