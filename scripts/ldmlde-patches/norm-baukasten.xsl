@@ -25,6 +25,16 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- Update reference to xml.xsd -->
+  <xsl:template match="xs:import[@schemaLocation='xml.xsd']">
+    <xsl:copy>
+      <xsl:apply-templates select="@*[name()!='schemaLocation']|node()" />
+      <xsl:attribute name="schemaLocation">
+        <xsl:text>./akn/xml.xsd</xsl:text>
+      </xsl:attribute>
+    </xsl:copy>
+  </xsl:template>
+
   <!-- Ensure the root xs:schema element has the correct targetNamespace and version -->
   <xsl:template match="/xs:schema">
     <xs:schema
