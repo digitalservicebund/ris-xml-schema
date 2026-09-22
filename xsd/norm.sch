@@ -19,7 +19,10 @@
 Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.
 
 -->
-  <sch:ns uri="http://Inhaltsdaten.LegalDocML.de/1.9/" prefix="akn" />
+  <sch:ns
+    uri="http://rechtsinformationen.bund.de/schema/norm/0.1"
+    prefix="akn"
+  />
   <sch:ns
     uri="http://MetadatenRegelungstext.LegalDocML.de/1.9/"
     prefix="regtxt"
@@ -47,6 +50,7 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     prefix="sonst"
   />
   <sch:ns uri="lokale-funktionen" prefix="fkt" />
+  <sch:ns uri="http://www.w3.org/2001/XMLSchema" prefix="xs" />
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="form"
@@ -2900,7 +2904,5 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
          </sch:assert>
     </sch:rule>
   </sch:pattern>
-  <sch:include
-    href="legalDocML.de-frbr-metadaten-facetten-konsolidierte-fassung.sch"
-  />
+  <sch:include href="norm-frbr-metadaten-facetten-konsolidierte-fassung.sch" />
 </sch:schema>

@@ -36,7 +36,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
   </xs:annotation>
   <xs:import
     namespace="http://www.w3.org/XML/1998/namespace"
-    schemaLocation="xml.xsd"
+    schemaLocation="./akn/xml.xsd"
   />
   <xs:simpleType name="altLiterals">
     <xs:annotation>
@@ -565,6 +565,17 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:restriction base="xs:string">
       <xs:pattern
         value="([a-z0-9]+-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)_)*(analysis)-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)"
+      />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="eIdLiterals.dokumentenStatus">
+    <xs:annotation>
+      <xs:documentation
+      >Die ELI-Kurzbezeichnung für den fachlichen Typ "dokumentenStatus" (AKN-Typ "docStage") lautet in LegalDocML.de "docstadium".</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern
+        value="([a-z0-9]+-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)_)*(docstadium)-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)"
       />
     </xs:restriction>
   </xs:simpleType>
@@ -1280,6 +1291,17 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:restriction base="xs:string">
       <xs:pattern
         value="([a-z0-9]+-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)_)*(rdokhauptteil)-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)"
+      />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="eIdLiterals.referenz">
+    <xs:annotation>
+      <xs:documentation
+      >Die ELI-Kurzbezeichnung für den fachlichen Typ "referenz" (AKN-Typ "ref") lautet in LegalDocML.de "ref".</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern
+        value="([a-z0-9]+-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)_)*(ref)-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)"
       />
     </xs:restriction>
   </xs:simpleType>
@@ -3248,6 +3270,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
   </xs:group>
   <xs:group name="ANinline">
     <xs:choice>
+      <xs:element name="ref" type="referenz" />
       <xs:element name="authorialNote" type="amtlicheFussnote" />
       <xs:element name="noteRef" type="verweisAufNichtamtlicheFussnote" />
     </xs:choice>
@@ -3297,6 +3320,28 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       use="required"
       type="eIdLiterals.verweisAufNichtamtlicheFussnote"
     />
+  </xs:complexType>
+  <xs:complexType name="referenz" mixed="true">
+    <xs:annotation>
+      <xs:documentation
+      >Die Klasse "referenz" wird verwendet, um einen Verweis auf ein dokumentinternes Element oder auf ein Element eines externen Dokuments einzufügen.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group
+        ref="formatierteInlineelemente"
+        minOccurs="0"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="eId" use="required" type="eIdLiterals.referenz" />
+    <xs:attribute name="GUID" use="required" type="GUIDLiterals" />
+    <xs:attribute name="href" use="required" type="hrefLiterals" />
+    <xs:attribute
+      name="refersTo"
+      use="optional"
+      type="refersToLiterals.referenz"
+    />
+    <xs:attribute ref="xml:id" use="optional" />
   </xs:complexType>
   <xs:complexType name="a" mixed="true">
     <xs:annotation>
@@ -3353,6 +3398,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       <xs:element name="marker" type="marker" />
       <xs:element name="inline" type="inline" />
       <xs:element name="authorialNote" type="amtlicheFussnote" />
+      <xs:element name="ref" type="referenz" />
     </xs:choice>
   </xs:group>
   <xs:group name="HTMLinline">
@@ -3487,6 +3533,22 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       <xs:element name="date" type="datum" />
     </xs:choice>
   </xs:group>
+  <xs:complexType name="dokumentenStatus" mixed="true">
+    <xs:annotation>
+      <xs:documentation
+      >Die Klasse "dokumentenStatus" wird benutzt, um den Prozessstatus eines Rechtsetzungsdokuments in der Entwurfsfassung anzugeben (z. B. Referentenentwurf, Regierungsentwurf ect.).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group ref="inlineelement" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute
+      name="eId"
+      use="required"
+      type="eIdLiterals.dokumentenStatus"
+    />
+    <xs:attribute name="GUID" use="required" type="GUIDLiterals" />
+    <xs:attribute ref="xml:id" use="optional" />
+  </xs:complexType>
   <xs:complexType name="dokumententitel" mixed="true">
     <xs:annotation>
       <xs:documentation
@@ -3524,6 +3586,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:choice>
       <xs:element name="docTitle" type="dokumententitel" />
       <xs:element name="shortTitle" type="kurztitel" />
+      <xs:element name="docStage" type="dokumentenStatus" />
     </xs:choice>
   </xs:group>
   <xs:complexType name="inline" mixed="true">
@@ -4154,7 +4217,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
           processContents="lax"
           minOccurs="0"
           maxOccurs="unbounded"
-          namespace="http://www.ris.bund.de/grammatiken/metadaten/"
+          namespace="http://rechtsinformationen.bund.de/schema/norm-metadata/0.1"
         />
       </xs:choice>
     </xs:sequence>
