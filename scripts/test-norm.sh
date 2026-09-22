@@ -33,21 +33,7 @@ if [ ! -d "$SAXON_DIR" ]; then
     rm "$PERSISTENT_TEMP_DIR/SaxonHE13-0J.zip"
 fi
 
-SCHXSLT2_DIR="$PERSISTENT_TEMP_DIR/schxslt2-1.11.2"
-if [ ! -d "$SCHXSLT2_DIR" ]; then
-    echo "Downloading schxslt2-1.11.2..."
-    curl -L -o "$PERSISTENT_TEMP_DIR/schxslt2-1.11.2.zip" "https://codeberg.org/SchXslt/schxslt2/releases/download/v1.11.2/schxslt2-1.11.2.zip"
-    unzip "$PERSISTENT_TEMP_DIR/schxslt2-1.11.2.zip" -d "$SCHXSLT2_DIR"
-    rm "$PERSISTENT_TEMP_DIR/schxslt2-1.11.2.zip"
-fi
-
-echo "Compiling Schematron…"
-TRANSPILE_XSL="$SCHXSLT2_DIR/schxslt2-1.11.2/transpile.xsl"
-SCHEMATRON_XSL="$TEMP_DIR/norm.sch.xsl"
-java -jar "$SAXON_DIR/saxon-he-13.0.jar" \
-  -s:"$XSD_DIR/norm.sch" \
-  -xsl:"$TRANSPILE_XSL" \
-  -o:"$SCHEMATRON_XSL"
+SCHEMATRON_XSL="$XSD_DIR/norm.sch.xsl"
 
 # Since xmllint can only validate against a single schema, we'll need to create temporary
 # schemas that combine all other schemas.

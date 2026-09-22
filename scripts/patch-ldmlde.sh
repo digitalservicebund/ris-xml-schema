@@ -9,6 +9,28 @@ TEMP_DIR="$PATCHES_DIR/temp"
 TEMP_LDMLDE_DIR="$TEMP_DIR/ldml_de"
 TEMP_OUTPUT_DIR="$TEMP_DIR/out"
 
+PERSISTENT_TEMP_DIR="$ROOT_DIR/temp"
+if [ ! -d "$PERSISTENT_TEMP_DIR" ]; then
+    mkdir -p "$PERSISTENT_TEMP_DIR"
+fi
+
+SAXON_DIR="$PERSISTENT_TEMP_DIR/SaxonHE13-0J"
+if [ ! -d "$SAXON_DIR" ]; then
+    echo "Downloading SaxonHE13-0J..."
+    curl -L -o "$PERSISTENT_TEMP_DIR/SaxonHE13-0J.zip" "https://downloads.saxonica.com/SaxonJ/HE/13/SaxonHE13-0J.zip"
+    unzip "$PERSISTENT_TEMP_DIR/SaxonHE13-0J.zip" -d "$SAXON_DIR"
+    rm "$PERSISTENT_TEMP_DIR/SaxonHE13-0J.zip"
+fi
+
+SCHXSLT2_DIR="$PERSISTENT_TEMP_DIR/schxslt2-1.11.2"
+if [ ! -d "$SCHXSLT2_DIR" ]; then
+    echo "Downloading schxslt2-1.11.2..."
+    curl -L -o "$PERSISTENT_TEMP_DIR/schxslt2-1.11.2.zip" "https://codeberg.org/SchXslt/schxslt2/releases/download/v1.11.2/schxslt2-1.11.2.zip"
+    unzip "$PERSISTENT_TEMP_DIR/schxslt2-1.11.2.zip" -d "$SCHXSLT2_DIR"
+    rm "$PERSISTENT_TEMP_DIR/schxslt2-1.11.2.zip"
+fi
+# --------------------------------------------------------------------------------------------
+
 rm -rf "$TEMP_DIR"
 trap 'rm -rf "$TEMP_DIR"' EXIT
 mkdir -p "$TEMP_DIR"
@@ -51,11 +73,24 @@ for sch in "${SCH_TYPES[@]}"; do
              > "$TEMP_OUTPUT_DIR/norm${sch}"
 done
 
+echo "Compiling Schematron…"
+TRANSPILE_XSL="$SCHXSLT2_DIR/schxslt2-1.11.2/transpile.xsl"
+
+# Ausschließlich die Hauptdatei norm.sch in xsl umwandeln
+java -jar "$SAXON_DIR/saxon-he-13.0.jar" \
+  -s:"$TEMP_OUTPUT_DIR/norm.sch" \
+  -xsl:"$TRANSPILE_XSL" \
+  -o:"$TEMP_OUTPUT_DIR/norm.sch.xsl"
+# ---------------------------------------------------------------------------------
+
 echo "Copy transformed files to the schema directory…"
-rm -rf "$ROOT_DIR/xsd/norm-*.xsd"
-rm -rf "$ROOT_DIR/xsd/norm*.sch"
-rm -rf "$ROOT_DIR/xsd/legalDocML.de"
-cp -r "$TEMP_OUTPUT_DIR"/* "$ROOT_DIR/xsd/"
+# exclude norm-metadata from removal
+find "$ROOT_DIR/xsd" -maxdepth 1 -type f -name "norm-*.xsd" ! -name "norm-metadata.xsd" -delete
+rm -rf "$ROOT_DIR"/xsd/norm*.sch
+rm -rf "$ROOT_DIR"/xsd/norm*.sch.xsl
+rm -rf "$ROOT_DIR"/xsd/legalDocML.de
+
+cp -r "$TEMP_OUTPUT_DIR"/* "$ROOT_DIR"/xsd/
 
 echo "Copy original files to the schema directory…"
 mkdir -p "$ROOT_DIR/xsd/legalDocML.de"
