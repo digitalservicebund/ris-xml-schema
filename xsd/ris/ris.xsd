@@ -956,10 +956,10 @@
   </xs:complexType>
 
   <xs:element
-    name="referenzUnselbstaendigeLiteratur"
-    type="ris:referenzUnselbstaendigeLiteratur"
+    name="referenzUnselbststaendigeLiteratur"
+    type="ris:referenzUnselbststaendigeLiteratur"
   />
-  <xs:complexType name="referenzUnselbstaendigeLiteratur">
+  <xs:complexType name="referenzUnselbststaendigeLiteratur">
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
@@ -983,10 +983,10 @@
   </xs:complexType>
 
   <xs:element
-    name="referenzSelbstaendigeLiteratur"
-    type="ris:referenzSelbstaendigeLiteratur"
+    name="referenzSelbststaendigeLiteratur"
+    type="ris:referenzSelbststaendigeLiteratur"
   />
-  <xs:complexType name="referenzSelbstaendigeLiteratur">
+  <xs:complexType name="referenzSelbststaendigeLiteratur">
     <xs:annotation>
       <xs:documentation
         xml:lang="de"
@@ -1004,7 +1004,7 @@
       <xs:element name="autor" type="ris:autor" minOccurs="0" />
       <xs:element
         name="titel"
-        type="ris:referenzSelbstaendigeLiteraturTitel"
+        type="ris:referenzSelbststaendigeLiteraturTitel"
         minOccurs="0"
       />
       <xs:element
@@ -1016,7 +1016,7 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
-  <xs:complexType name="referenzSelbstaendigeLiteraturTitel">
+  <xs:complexType name="referenzSelbststaendigeLiteraturTitel">
     <xs:annotation>
       <xs:documentation xml:lang="de">Titel</xs:documentation>
     </xs:annotation>
