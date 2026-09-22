@@ -21,6 +21,8 @@ fileignoreconfig:
       - "key: "
   - filename: xsd/norm.sch
     checksum: 7895402bcbcef7888fa723aab7c6d18f249441a92e82fea8c7f2c92864d3acdf
+  - filename: xsd/norm.sch.xsl
+    checksum: 454c33dfb6b88c4829858b4f398fd208ed5a9751251944573d4c5b04d062370d
   - filename: gradlew
     checksum: df5f105ae542d08dedb564dae33c4f97a47ef1549229a69eff6de10c4de11a00
   - filename: build.gradle.kts
