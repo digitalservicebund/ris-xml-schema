@@ -21,7 +21,7 @@ tasks.named<Jar>("jar") {
     group = "build"
 
     from("xsd") {
-        include("**/*.xsd")
+        include("**/*.xsd", "**/*.sch", "**/*.xsl")
         into("schema")
     }
 }
