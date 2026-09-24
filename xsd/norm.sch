@@ -2523,14 +2523,6 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         name="datum-ausserkafttreten"
         value="akn:eventRef[@type = $type-literal-ereignisreferenz-repeal and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-ausserkrafttreten]/@date"
       />
-      <sch:assert
-        id="SCH-00660-015"
-        test="if (akn:eventRef[@type = $type-literal-ereignisreferenz-repeal and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-ausserkrafttreten]) then (xs:date($datum-ausserkafttreten) gt xs:date($datum-ausfertigung)) else true()"
-      >Das Datum des Außerkrafttretens muss nach der Ausfertigung liegen; angegeben wurden jedoch für das Außerkrafttreten '<sch:value-of
-        select="$datum-ausserkafttreten"
-      />' und für die Ausfertigung '<sch:value-of
-        select="$datum-ausfertigung"
-      />'.</sch:assert>
       <sch:let
         name="frühestes-datum-amendment-ausfertigung-als-reine-ziffern"
         value="min(for $n in akn:eventRef[@type = $type-literal-ereignisreferenz-amendment and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-ausfertigung]/@date return format-date($n, '[Y,4][M,2][D,2]'))"

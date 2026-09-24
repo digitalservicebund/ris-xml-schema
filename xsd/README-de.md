@@ -34,3 +34,7 @@ Als Konvention werden die folgenden URIs für Namespaces verwendet:
 | ----------------------------------------------- | ------------------------------------------------------------- |
 | `http://Inhaltsdaten.LegalDocML.de/1.9/`        | `http://rechtsinformationen.bund.de/schema/norm/0.1`          |
 | `http://www.ris.bund.de/grammatiken/metadaten/` | `http://rechtsinformationen.bund.de/schema/norm-metadata/0.1` |
+
+### Anpassungen der Schematron Regeln
+
+- Schematron Regel SCH-00660-015 wurde entfernt
