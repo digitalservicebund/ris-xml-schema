@@ -42,7 +42,7 @@
               minOccurs="0"
             />
             <xs:element name="gliederung" type="ris:gliederung" minOccurs="0" />
-            <xs:element name="dokumenttypen" type="ris:dokumenttypen" />
+            <xs:element name="dokumenttypen" type="ris:dokumenttypen" minOccurs="0" />
             <xs:element
               name="berufsbilder"
               type="ris:berufsbilder"
@@ -74,7 +74,7 @@
               type="ris:anwendungszeitraum"
               minOccurs="0"
             />
-            <xs:element name="risAbkuerzung" type="ris:risAbkuerzung" />
+            <xs:element name="risAbkuerzung" type="ris:risAbkuerzung" minOccurs="0" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
