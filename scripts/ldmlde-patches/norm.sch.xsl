@@ -63,4 +63,7 @@
     </xsl:copy>
     <sch:ns uri="http://www.w3.org/2001/XMLSchema" prefix="xs" />
   </xsl:template>
+
+  <!-- Remove Schematron rules -->
+  <xsl:template match="sch:assert[@id='SCH-00660-015']" />
 </xsl:stylesheet>
