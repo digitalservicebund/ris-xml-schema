@@ -411,7 +411,9 @@
             </ris:definition>
           </ris:definitionen>
           <ris:tarifvertraege domainTerm="Tarifverträge">
-            <ris:tarifvertrag domainTerm="Tarifvertrag">Mantel</ris:tarifvertrag>
+            <ris:tarifvertrag
+              domainTerm="Tarifvertrag"
+            >Mantel</ris:tarifvertrag>
           </ris:tarifvertraege>
           <ris:titelAspekte domainTerm="Titelaspekte">
             <ris:titelAspekt
