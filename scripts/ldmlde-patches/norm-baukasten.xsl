@@ -680,7 +680,7 @@
     <xsl:copy>
       <xsl:apply-templates select="@*" />
       <xsl:apply-templates
-        select="xs:element[@name='docTitle' or @name='shortTitle' or @name='docStage']"
+        select="xs:element[@name='docTitle' or @name='shortTitle']"
       />
     </xsl:copy>
   </xsl:template>
