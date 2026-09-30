@@ -106,35 +106,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="tarifvertraege">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Tarifverträge
-      </xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element
-        name="tarifvertrag"
-        type="ris:tarifvertrag"
-        maxOccurs="unbounded"
-      />
-    </xs:sequence>
-    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="tarifvertrag">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Tarifvertrag
-      </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
   <xs:complexType name="streitjahre">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -159,35 +130,6 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:gYear">
-        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
-  <xs:complexType name="kuendigungsgruende">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Kündigungsgründe
-      </xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element
-        name="kuendigungsgrund"
-        type="ris:kuendigungsgrund"
-        maxOccurs="unbounded"
-      />
-    </xs:sequence>
-    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="kuendigungsgrund">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Kündigungsgrund
-      </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>

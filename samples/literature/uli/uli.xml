@@ -355,6 +355,13 @@
               domainTerm="Veröffentlichungsjahr"
             >2023</ris:veroeffentlichungsJahr>
           </ris:veroeffentlichungsJahre>
+          <ris:abweichendeDokumentnummern
+            domainTerm="Abweichende Dokumentnummern"
+          >
+            <ris:abweichendeDokumentnummer
+              domainTerm="Abweichende Dokumentnummer"
+            >KSLU223344556</ris:abweichendeDokumentnummer>
+          </ris:abweichendeDokumentnummern>
           <ris:gliederung domainTerm="Gliederung">
             <ris:gliederungEntry
               domainTerm="Gliederungseintrag"
@@ -396,6 +403,26 @@
               domainTerm="Gliederungseintrag"
             >Diskussion</ris:gliederungEntry>
           </ris:gliederung>
+          <ris:definitionen domainTerm="Definitionen">
+            <ris:definition domainTerm="Definition">
+              <ris:definierterBegriff
+                domainTerm="Definierter Begriff"
+              >Krankheit</ris:definierterBegriff>
+            </ris:definition>
+          </ris:definitionen>
+          <ris:tarifvertraege domainTerm="Tarifverträge">
+            <ris:tarifvertrag domainTerm="Tarifvertrag">Mantel</ris:tarifvertrag>
+          </ris:tarifvertraege>
+          <ris:titelAspekte domainTerm="Titelaspekte">
+            <ris:titelAspekt
+              domainTerm="Titelaspekt"
+            >gesetzliche Krankenversicherung</ris:titelAspekt>
+          </ris:titelAspekte>
+          <ris:kuendigungsgruende domainTerm="Kündigungsgründe">
+            <ris:kuendigungsgrund
+              domainTerm="Kündigungsgrund"
+            >Straftat</ris:kuendigungsgrund>
+          </ris:kuendigungsgruende>
           <ris:personen domainTerm="Personen">
             <ris:person
               domainTerm="Person"
