@@ -35,6 +35,11 @@
               name="veroeffentlichungsJahre"
               type="ris:veroeffentlichungsJahre"
             />
+            <xs:element
+              name="abweichendeDokumentnummern"
+              type="ris:abweichendeDokumentnummern"
+              minOccurs="0"
+            />
             <xs:element name="gliederung" type="ris:gliederung" minOccurs="0" />
             <xs:element
               name="gesamttitelAngaben"
@@ -63,6 +68,31 @@
             <xs:element
               name="problemkreise"
               type="ris:problemkreise"
+              minOccurs="0"
+            />
+            <xs:element
+              name="definitionen"
+              type="ris:definitionen"
+              minOccurs="0"
+            />
+            <xs:element
+              name="tarifvertraege"
+              type="ris:tarifvertraege"
+              minOccurs="0"
+            />
+            <xs:element
+              name="berufsbilder"
+              type="ris:berufsbilder"
+              minOccurs="0"
+            />
+            <xs:element
+              name="titelAspekte"
+              type="ris:titelAspekte"
+              minOccurs="0"
+            />
+            <xs:element
+              name="kuendigungsgruende"
+              type="ris:kuendigungsgruende"
               minOccurs="0"
             />
             <xs:element

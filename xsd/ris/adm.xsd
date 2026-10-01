@@ -78,35 +78,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="titelAspekte">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-      Titelaspekte
-    </xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element
-        name="titelAspekt"
-        type="ris:titelAspekt"
-        maxOccurs="unbounded"
-      />
-    </xs:sequence>
-    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="titelAspekt">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-      Titelaspekt
-    </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
   <xs:complexType name="zitierdaten">
     <xs:annotation>
       <xs:documentation xml:lang="de">
