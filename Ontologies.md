@@ -37,6 +37,11 @@ Wird in `akn:doc` bzw. `akn:judgment` genutzt um den genauen Dokumenttyp anzugeb
 /akn/ontology/de/concept/documenttype/bund/literatur/selbststaendig
 ```
 
+### Verwaltungsvorschrift
+```
+/akn/ontology/de/concept/documenttype/bund/verwaltungsvorschrift
+```
+
 ## Gericht
 
 Grundsätzlich
@@ -66,6 +71,19 @@ Bundesgerichte
 ### Beispiele
 
 - BVerfG: `/akn/ontology/organizations/de/ris/dokumentationsstelle/bverwg`
+
+## Normgeber
+
+```
+/akn/ontology/organizations/de/ris/normgeber/{abkürzung oder langbezeichnung, falls abkürzung fehlt}
+```
+
+### Beispiele
+
+- BMJV: `/akn/ontology/organizations/de/ris/normgeber/bmjv`
+- Bundesministerium der Justiz und für Verbraucherschutz: 
+  `/akn/ontology/organizations/de/ris/normgeber/bundesministerium-der-justiz-und-fuer-verbraucherschutz`
+
 
 ## Rechtsinformationssystem des Bundes
 
