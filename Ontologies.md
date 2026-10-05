@@ -38,6 +38,7 @@ Wird in `akn:doc` bzw. `akn:judgment` genutzt um den genauen Dokumenttyp anzugeb
 ```
 
 ### Verwaltungsvorschrift
+
 ```
 /akn/ontology/de/concept/documenttype/bund/verwaltungsvorschrift
 ```
@@ -81,9 +82,8 @@ Bundesgerichte
 ### Beispiele
 
 - BMJV: `/akn/ontology/organizations/de/ris/normgeber/bmjv`
-- Bundesministerium der Justiz und für Verbraucherschutz: 
+- Bundesministerium der Justiz und für Verbraucherschutz:
   `/akn/ontology/organizations/de/ris/normgeber/bundesministerium-der-justiz-und-fuer-verbraucherschutz`
-
 
 ## Rechtsinformationssystem des Bundes
 
