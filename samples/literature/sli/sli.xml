@@ -250,9 +250,7 @@
               eId="person-institution-boeckenfoerde-ernst-wolfgang"
               showAs="Böckenförde, Ernst-Wolfgang"
             >
-              <ris:name
-                domainTerm="Name"
-              >Böckenförde, Ernst-Wolfgang</ris:name>
+              <ris:name domainTerm="Name">Böckenförde, Ernst-Wolfgang</ris:name>
               <ris:zusatz
                 domainTerm="Zusatz"
               >Prof Dr, Bundesverfassungsrichter a D</ris:zusatz>
