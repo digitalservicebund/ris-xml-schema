@@ -4695,6 +4695,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:sequence>
       <xs:element name="num" type="artUndZaehlbezeichnung" />
       <xs:element name="heading" type="ueberschrift" />
+      <xs:element name="paragraph" type="juristischerAbsatz" minOccurs="0" />
       <xs:group ref="regelungstextGliederung" minOccurs="0" />
     </xs:sequence>
     <xs:attribute
@@ -4718,6 +4719,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:sequence>
       <xs:element name="num" type="artUndZaehlbezeichnung" />
       <xs:element name="heading" type="ueberschrift" />
+      <xs:element name="paragraph" type="juristischerAbsatz" minOccurs="0" />
       <xs:group ref="regelungstextGliederung" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="eId" use="required" type="eIdLiterals.gliederungBuch" />
@@ -4737,6 +4739,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:sequence>
       <xs:element name="num" type="artUndZaehlbezeichnung" />
       <xs:element name="heading" type="ueberschrift" />
+      <xs:element name="paragraph" type="juristischerAbsatz" minOccurs="0" />
       <xs:group ref="regelungstextGliederung" minOccurs="0" />
     </xs:sequence>
     <xs:attribute
@@ -4760,6 +4763,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:sequence>
       <xs:element name="num" type="artUndZaehlbezeichnung" />
       <xs:element name="heading" type="ueberschrift" />
+      <xs:element name="paragraph" type="juristischerAbsatz" minOccurs="0" />
       <xs:group ref="regelungstextGliederung" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="eId" use="required" type="eIdLiterals.gliederungTeil" />
@@ -4779,6 +4783,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:sequence>
       <xs:element name="num" type="artUndZaehlbezeichnung" />
       <xs:element name="heading" type="ueberschrift" />
+      <xs:element name="paragraph" type="juristischerAbsatz" minOccurs="0" />
       <xs:group ref="regelungstextGliederung" minOccurs="0" />
     </xs:sequence>
     <xs:attribute
@@ -4802,6 +4807,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:sequence>
       <xs:element name="num" type="artUndZaehlbezeichnung" />
       <xs:element name="heading" type="ueberschrift" />
+      <xs:element name="paragraph" type="juristischerAbsatz" minOccurs="0" />
       <xs:group ref="regelungstextGliederung" minOccurs="0" />
     </xs:sequence>
     <xs:attribute
@@ -4825,6 +4831,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:sequence>
       <xs:element name="num" type="artUndZaehlbezeichnung" />
       <xs:element name="heading" type="ueberschrift" />
+      <xs:element name="paragraph" type="juristischerAbsatz" minOccurs="0" />
       <xs:group ref="regelungstextGliederung" minOccurs="0" />
     </xs:sequence>
     <xs:attribute
@@ -4848,6 +4855,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:sequence>
       <xs:element name="num" type="artUndZaehlbezeichnung" />
       <xs:element name="heading" type="ueberschrift" />
+      <xs:element name="paragraph" type="juristischerAbsatz" minOccurs="0" />
       <xs:group ref="regelungstextGliederung" minOccurs="0" />
     </xs:sequence>
     <xs:attribute
