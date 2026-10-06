@@ -38,3 +38,9 @@ Als Konvention werden die folgenden URIs für Namespaces verwendet:
 ### Anpassungen der Schematron Regeln
 
 - Schematron Regel SCH-00660-015 wurde entfernt
+
+## Von LDML.de unabhängige Schemata
+
+### norm-work-metadata.xsd
+
+Beinhaltet Metadaten auf Werkebene des FRBR-Modells.
