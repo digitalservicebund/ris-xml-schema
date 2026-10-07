@@ -97,12 +97,22 @@ mkdir -p "$ROOT_DIR/xsd/legalDocML.de"
 
 ORIGINAL_XSD_TYPES=(
     "legalDocML.de-metadaten-rechtsetzungsdokument"
-    "legalDocML.de-metadaten-regelungstext"
-    "legalDocML.de-metadaten-sonstiger-veroeffentlichungstext"
 )
 
 for type in "${ORIGINAL_XSD_TYPES[@]}"; do
     cp "$TEMP_LDMLDE_DIR/Grammatiken/${type}.xsd" "$ROOT_DIR/xsd/legalDocML.de/"
+done
+
+PATCHED_ORIGINAL_XSD_TYPES=(
+    "legalDocML.de-metadaten-regelungstext"
+    "legalDocML.de-metadaten-sonstiger-veroeffentlichungstext"
+)
+
+for type in "${PATCHED_ORIGINAL_XSD_TYPES[@]}"; do
+    xsltproc \
+        "$PATCHES_DIR/norm-metadaten-${type#legalDocML.de-metadaten-}.xsl" \
+        "$TEMP_LDMLDE_DIR/Grammatiken/${type}.xsd" \
+        > "$ROOT_DIR/xsd/legalDocML.de/${type}.xsd"
 done
 
 echo "Apply formatting to the copied files…"

@@ -39,6 +39,10 @@ Als Konvention werden die folgenden URIs für Namespaces verwendet:
 
 - Schematron Regel SCH-00660-015 wurde entfernt
 
+### Anpassungen der Metadaten-Schemata
+
+- In `legalDocML.de-metadaten-regelungstext.xsd` und `legalDocML.de-metadaten-sonstiger-veroeffentlichungstext.xsd` wurden die Werte `vertragsgesetz` und `vertragsverordnung` aus dem `xs:simpleType name="typen"` entfernt (betrifft `regtxt:typ` bzw. `sonst:typ`)
+
 ## Von LDML.de unabhängige Schemata
 
 ### norm-work-metadata.xsd

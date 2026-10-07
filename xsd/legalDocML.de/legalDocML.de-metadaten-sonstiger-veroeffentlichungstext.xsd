@@ -6,7 +6,11 @@
   targetNamespace="http://MetadatenSonstigerVeroeffentlichungstext.LegalDocML.de/1.9/"
   version="LegalDocML.de 1.9 (03.11.2025)}"
 >
-  <!-- ********************************* Hinweis zur Lizensierung ********************************* -->
+  <!-- ********************************* Hinweis zur Lizensierung ********************************* 
+
+Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.
+
+-->
   <xs:annotation>
     <xs:appinfo>
       <copyright-hinweis
@@ -22,9 +26,11 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
         referat="DG II 6"
         organisatorischer-rahmen="Maßnahmen Enterprise Resource Management und Elektronische Verwaltungsarbeit"
       />
+      <hinweis
+        xmlns=""
+      >Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderungen stehen unter derselben Lizenz (CC-BY-3.0), sofern nicht anders angegeben.</hinweis>
     </xs:appinfo>
   </xs:annotation>
-  <!-- ******************************************************************************************** -->
   <xs:element name="legalDocML.de_metadaten">
     <xs:complexType>
       <xs:sequence>
@@ -57,8 +63,6 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       <xs:enumeration value="verordnung" />
       <xs:enumeration value="satzung" />
       <xs:enumeration value="verwaltungsvorschrift" />
-      <xs:enumeration value="vertragsgesetz" />
-      <xs:enumeration value="vertragsverordnung" />
       <xs:enumeration value="sonstige-bekanntmachung" />
       <xs:enumeration value="geschäftsordnung" />
       <xs:enumeration value="satzung" />
