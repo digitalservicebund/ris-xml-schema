@@ -4341,7 +4341,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       <xs:documentation
       >Die Klasse "nichtamtlicheFussnote" wird benutzt, um eine nicht-amtliche Fußnote zu diesem Dokument abzubilden.</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
+    <xs:choice maxOccurs="unbounded">
       <xs:group ref="HTMLblock" maxOccurs="unbounded" />
       <xs:element
         name="blockList"
@@ -4349,7 +4349,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
         minOccurs="0"
         maxOccurs="unbounded"
       />
-    </xs:sequence>
+    </xs:choice>
     <xs:attribute name="marker" use="required" type="markerLiterals" />
     <xs:attribute
       name="placement"

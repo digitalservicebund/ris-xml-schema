@@ -689,7 +689,7 @@
   <xsl:template
     match="xs:complexType[@name='nichtamtlicheFussnote']/xs:sequence"
   >
-    <xsl:copy>
+    <xs:choice maxOccurs="unbounded">
       <xsl:apply-templates select="@*|node()" />
       <xs:element
         name="blockList"
@@ -697,6 +697,6 @@
         minOccurs="0"
         maxOccurs="unbounded"
       />
-    </xsl:copy>
+    </xs:choice>
   </xsl:template>
 </xsl:stylesheet>
