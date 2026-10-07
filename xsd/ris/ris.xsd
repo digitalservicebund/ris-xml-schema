@@ -842,10 +842,16 @@
   <!-- Person Role Lists -->
 
   <xs:complexType name="personRoleItem">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Person in einer bestimmten Rolle (z.B. Verfasser, Bearbeiter). Verweist
+        über das refersTo-Attribut auf die näher definierte ris:person.
+      </xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-        <xs:attribute name="refersTo" type="xs:string" use="required" />
+        <xs:attribute name="refersTo" type="akn:conceptRef" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>

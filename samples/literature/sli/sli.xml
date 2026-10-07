@@ -25,13 +25,6 @@
             name="Erfassungsdatum"
             ris:domainTerm="Erfassungsdatum"
           />
-          <akn:FRBRauthor as="#verfasser" href="#person-xx" />
-          <akn:FRBRauthor as="#herausgeber-person" href="#person-farzin-sina" />
-          <akn:FRBRauthor
-            as="#herausgeber-person"
-            href="#person-jordan-stefan"
-          />
-          <akn:FRBRauthor as="#bearbeiter" href="#person-satzky-manfred" />
           <akn:FRBRauthor
             as="#hochschule"
             href="#organisation-universitaet-erlangen-jurfak"
@@ -192,12 +185,12 @@
             >Straftat</ris:kuendigungsgrund>
           </ris:kuendigungsgruende>
           <ris:personen domainTerm="Personen">
-            <ris:person domainTerm="Person" eId="person-xx" showAs="XX">
+            <ris:person domainTerm="Person" eId="person-xx-1" showAs="XX">
               <ris:name domainTerm="Name">XX</ris:name>
             </ris:person>
             <ris:person
               domainTerm="Person"
-              eId="person-farzin-sina"
+              eId="person-farzin-sina-2"
               showAs="Farzin, Sina, M A, PhD-Fellow an der Bremen International Graduate School of Social Sciences der Universität Bremen"
             >
               <ris:name domainTerm="Name">Farzin, Sina</ris:name>
@@ -207,7 +200,7 @@
             </ris:person>
             <ris:person
               domainTerm="Person"
-              eId="person-jordan-stefan"
+              eId="person-jordan-stefan-3"
               showAs="Jordan, Stefan, Dr phil, wiss Angestellter der Historischen Kommission bei der Bayerischen Akademie der Wissenschaften"
             >
               <ris:name domainTerm="Name">Jordan, Stefan</ris:name>
@@ -217,13 +210,35 @@
             </ris:person>
             <ris:person
               domainTerm="Person"
-              eId="person-satzky-manfred"
+              eId="person-satzky-manfred-4"
               showAs="Satzky, Manfred, Amtsrat"
             >
               <ris:name domainTerm="Name">Satzky, Manfred</ris:name>
               <ris:titel domainTerm="Titel">Amtsrat</ris:titel>
             </ris:person>
           </ris:personen>
+          <ris:verfasserListe domainTerm="Liste der Verfasser">
+            <ris:verfasser
+              domainTerm="Verfasser"
+              refersTo="#person-xx-1"
+            >XX</ris:verfasser>
+          </ris:verfasserListe>
+          <ris:herausgeberPersonen domainTerm="Herausgebende Personen">
+            <ris:herausgeberPerson
+              domainTerm="Herausgebende Person"
+              refersTo="#person-farzin-sina-2"
+            >Farzin, Sina</ris:herausgeberPerson>
+            <ris:herausgeberPerson
+              domainTerm="Herausgebende Person"
+              refersTo="#person-jordan-stefan-3"
+            >Jordan, Stefan</ris:herausgeberPerson>
+          </ris:herausgeberPersonen>
+          <ris:bearbeiterListe domainTerm="Liste der Bearbeiter">
+            <ris:bearbeiter
+              domainTerm="Bearbeiter"
+              refersTo="#person-satzky-manfred-4"
+            >Satzky, Manfred</ris:bearbeiter>
+          </ris:bearbeiterListe>
           <ris:organisationen domainTerm="Organisationen">
             <ris:organisation
               domainTerm="Organisation"
