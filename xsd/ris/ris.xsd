@@ -839,6 +839,99 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:complexType name="personenInstitutionen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste an Personen/Institutionen. Auf diese wird z.B. aus
+        ris:ueberPersonInstitution verwiesen.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="personInstitution"
+        type="ris:personInstitution"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="personInstitution">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Person/Institution
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="ris:personInstitutionName" />
+      <xs:element
+        name="zusatz"
+        type="ris:personInstitutionZusatz"
+        minOccurs="0"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    <xs:attributeGroup ref="akn:showopt" />
+    <xs:attributeGroup ref="akn:idreq" />
+  </xs:complexType>
+
+  <xs:complexType name="personInstitutionName">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Name einer Person/Institution
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="personInstitutionZusatz">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Zusatz zu einer Person/Institution, z.B. akademischer Titel oder Amt
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="ueberPersonenInstitutionen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste an Personen/Institutionen, über die dieses Dokument handelt
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="ueberPersonInstitution"
+        type="ris:ueberPersonInstitution"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="ueberPersonInstitution">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Person/Institution, über die dieses Dokument handelt. Verweist über
+        das refersTo-Attribut auf die näher definierte ris:personInstitution.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        <xs:attribute name="refersTo" type="akn:conceptRef" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <!-- Person Role Lists -->
 
   <xs:complexType name="personRoleItem">
