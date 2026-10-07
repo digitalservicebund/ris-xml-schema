@@ -21,6 +21,7 @@
             name="Erfassungsdatum"
             ris:domainTerm="Erfassungsdatum"
           />
+          <akn:FRBRauthor href="TODO" />
           <akn:FRBRcountry value="de" />
           <akn:FRBRsubtype value="LU" />
           <akn:FRBRnumber value="TODO" />
