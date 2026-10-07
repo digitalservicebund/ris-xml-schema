@@ -839,6 +839,67 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <!-- Person Role Lists -->
+
+  <xs:complexType name="personRoleItem">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        <xs:attribute name="refersTo" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="verfasserListe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Liste der Verfasser</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="verfasser" type="ris:personRoleItem" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="mitarbeiterListe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Liste der Mitarbeiter</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="mitarbeiter" type="ris:personRoleItem" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="herausgeberPersonen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Herausgebende Personen</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="herausgeberPerson" type="ris:personRoleItem" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="begruenderListe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Liste der Begründer</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="begruender" type="ris:personRoleItem" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="bearbeiterListe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Liste der Bearbeiter</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="bearbeiter" type="ris:personRoleItem" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <!-- Verweise -->
 
   <xs:element name="referenzNorm" type="ris:referenzNorm" />

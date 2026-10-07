@@ -83,6 +83,11 @@
               minOccurs="0"
             />
             <xs:element name="personen" type="ris:personen" minOccurs="0" />
+            <xs:element name="verfasserListe" type="ris:verfasserListe" minOccurs="0" />
+            <xs:element name="mitarbeiterListe" type="ris:mitarbeiterListe" minOccurs="0" />
+            <xs:element name="herausgeberPersonen" type="ris:herausgeberPersonen" minOccurs="0" />
+            <xs:element name="begruenderListe" type="ris:begruenderListe" minOccurs="0" />
+            <xs:element name="bearbeiterListe" type="ris:bearbeiterListe" minOccurs="0" />
             <xs:element
               name="organisationen"
               type="ris:organisationen"
