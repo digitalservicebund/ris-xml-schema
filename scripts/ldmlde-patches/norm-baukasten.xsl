@@ -699,4 +699,19 @@
       />
     </xs:choice>
   </xsl:template>
+
+  <!-- Allow akn:paragraph as a direct child of Gliederungsebenen -->
+  <xsl:template match="xs:group[@name='regelungstextGliederung']/xs:sequence">
+    <xsl:copy>
+      <xs:element
+        name="paragraph"
+        type="juristischerAbsatz"
+        minOccurs="0"
+        maxOccurs="unbounded"
+      />
+      <xsl:apply-templates
+        select="xs:element[@name='article'] | xs:group[@ref='regelungstextUntergliederung']"
+      />
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>
