@@ -244,6 +244,26 @@
               <ris:ort domainTerm="Ort">Stuttgart</ris:ort>
             </ris:organisation>
           </ris:organisationen>
+          <ris:personenInstitutionen domainTerm="Personen/Institutionen">
+            <ris:personInstitution
+              domainTerm="Person/Institution"
+              eId="person-institution-boeckenfoerde-ernst-wolfgang"
+              showAs="Böckenförde, Ernst-Wolfgang"
+            >
+              <ris:name domainTerm="Name">Böckenförde, Ernst-Wolfgang</ris:name>
+              <ris:zusatz
+                domainTerm="Zusatz"
+              >Prof Dr, Bundesverfassungsrichter a D</ris:zusatz>
+            </ris:personInstitution>
+          </ris:personenInstitutionen>
+          <ris:ueberPersonenInstitutionen
+            domainTerm="Über Personen/Institutionen"
+          >
+            <ris:ueberPersonInstitution
+              domainTerm="Über Person/Institution"
+              refersTo="#person-institution-boeckenfoerde-ernst-wolfgang"
+            >Böckenförde, Ernst-Wolfgang</ris:ueberPersonInstitution>
+          </ris:ueberPersonenInstitutionen>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
