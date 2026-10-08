@@ -791,6 +791,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="name" type="ris:organisationName" />
+      <xs:element name="zusatz" type="ris:organisationZusatz" minOccurs="0" />
       <xs:element name="ort" type="ris:organisationOrt" minOccurs="0" />
       <xs:element name="jahr" type="ris:organisationJahr" minOccurs="0" />
     </xs:sequence>
@@ -803,6 +804,19 @@
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Name einer Organistation
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="organisationZusatz">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Zusatz zu einer Organisation, z.B. nähere Bezeichnung oder Amt
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
@@ -932,6 +946,38 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <!-- Kongresse -->
+
+  <xs:complexType name="kongresse">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste an Kongressen. Auf diese wird z.B. aus ris:kongressvermerk oder
+        ris:ueberkongress verwiesen.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="kongress" type="ris:kongress" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="kongress">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Kongress, Konferenz, Tagung, Seminar oder ähnliche Veranstaltung
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="ris:stringWithDomainTerm" />
+      <xs:element name="jahr" type="ris:organisationJahr" minOccurs="0" />
+      <xs:element name="ort" type="ris:stringWithDomainTerm" minOccurs="0" />
+      <xs:element name="land" type="ris:stringWithDomainTerm" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+    <xs:attributeGroup ref="akn:showopt" />
+    <xs:attributeGroup ref="akn:idreq" />
+  </xs:complexType>
+
   <!-- Person Role Lists -->
 
   <xs:complexType name="personRoleItem">
@@ -1013,6 +1059,134 @@
       <xs:element
         name="bearbeiter"
         type="ris:personRoleItem"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <!-- Institution Role Lists -->
+
+  <xs:complexType name="organisationRoleItem">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Institution in einer bestimmten Rolle (z.B. Urheber, Verlag). Verweist
+        über das refersTo-Attribut auf die näher definierte
+        ris:organisation.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        <xs:attribute name="refersTo" type="akn:conceptRef" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="kongressRoleItem">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Verweis auf einen Kongress (z.B. Kongressvermerk, Überkongress).
+        Verweist über das refersTo-Attribut auf den näher definierten
+        ris:kongress.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        <xs:attribute name="refersTo" type="akn:conceptRef" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="herausgeberInstitutionen">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Herausgebende Institutionen</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="herausgeberInstitution"
+        type="ris:organisationRoleItem"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="hochschulschriftenvermerke">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Liste der Hochschulschriftenvermerke</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="hochschulschriftenvermerk"
+        type="ris:organisationRoleItem"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="kongressvermerke">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Liste der Kongressvermerke</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="kongressvermerk"
+        type="ris:kongressRoleItem"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="ueberkongresse">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Liste der Über-Kongresse</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="ueberkongress"
+        type="ris:kongressRoleItem"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="urheberListe">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">Liste der Urheber</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="urheber"
+        type="ris:organisationRoleItem"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="verlagsangaben">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Liste der Verlagsangaben</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="verlagsangabe"
+        type="ris:organisationRoleItem"
         maxOccurs="unbounded"
       />
     </xs:sequence>

@@ -123,6 +123,27 @@
               type="ris:ueberPersonenInstitutionen"
               minOccurs="0"
             />
+            <xs:element name="kongresse" type="ris:kongresse" minOccurs="0" />
+            <xs:element
+              name="herausgeberInstitutionen"
+              type="ris:herausgeberInstitutionen"
+              minOccurs="0"
+            />
+            <xs:element
+              name="kongressvermerke"
+              type="ris:kongressvermerke"
+              minOccurs="0"
+            />
+            <xs:element
+              name="ueberkongresse"
+              type="ris:ueberkongresse"
+              minOccurs="0"
+            />
+            <xs:element
+              name="urheberListe"
+              type="ris:urheberListe"
+              minOccurs="0"
+            />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
