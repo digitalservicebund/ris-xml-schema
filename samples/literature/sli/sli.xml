@@ -27,7 +27,7 @@
           />
           <akn:FRBRauthor
             as="#hochschule"
-            href="#organisation-universitaet-erlangen-jurfak"
+            href="#organisation-universitaet-erlangen-jurfak-1"
           />
           <akn:FRBRauthor as="#verlag" href="#reclam-verlag-1" />
           <akn:FRBRcountry value="de" />
@@ -242,7 +242,7 @@
           <ris:organisationen domainTerm="Organisationen">
             <ris:organisation
               domainTerm="Organisation"
-              eId="organisation-universitaet-erlangen-jurfak"
+              eId="organisation-universitaet-erlangen-jurfak-1"
               showAs="Universität Erlangen, JurFak, 1984"
             >
               <ris:name
@@ -252,11 +252,39 @@
             </ris:organisation>
             <ris:organisation
               domainTerm="Organisation"
-              eId="organisation-reclam"
+              eId="organisation-reclam-2"
               showAs="Reclam, Stuttgart"
             >
               <ris:name domainTerm="Name">Reclam</ris:name>
               <ris:ort domainTerm="Ort">Stuttgart</ris:ort>
+            </ris:organisation>
+            <ris:organisation
+              domainTerm="Organisation"
+              eId="organisation-iab-institut-fuer-arbeitsmark-und-berufsforschung-der-bundesantstalt-fuer-arbeit-3"
+              showAs="IAB, Institut für Arbeitsmarkt- und Berufsforschung der Bundesanstalt für Arbeit"
+            >
+              <ris:name
+                domainTerm="Name"
+              >IAB, Institut für Arbeitsmarkt- und Berufsforschung der Bundesanstalt für Arbeit</ris:name>
+              <ris:zusatz
+                domainTerm="Zusatz"
+              >Die Forschungseinrichtung der Bundesagentur für Arbeit</ris:zusatz>
+            </ris:organisation>
+            <ris:organisation
+              domainTerm="Organisation"
+              eId="organisation-dgb-4"
+              showAs="DGB"
+            >
+              <ris:name domainTerm="Name">DGB</ris:name>
+              <ris:zusatz domainTerm="Zusatz">Bundesausschuß</ris:zusatz>
+            </ris:organisation>
+            <ris:organisation
+              domainTerm="Organisation"
+              eId="organisation-vsa-5"
+              showAs="VSA"
+            >
+              <ris:name domainTerm="Name">VSA</ris:name>
+              <ris:ort domainTerm="Ort">Hamburg</ris:ort>
             </ris:organisation>
           </ris:organisationen>
           <ris:personenInstitutionen domainTerm="Personen/Institutionen">
@@ -279,6 +307,72 @@
               refersTo="#person-institution-boeckenfoerde-ernst-wolfgang"
             >Böckenförde, Ernst-Wolfgang</ris:ueberPersonInstitution>
           </ris:ueberPersonenInstitutionen>
+          <ris:kongresse domainTerm="Kongresse">
+            <ris:kongress
+              domainTerm="Kongress"
+              eId="kongress-internationaler-kongress-fuer-das-recht-der-arbeit-und-der-sozialen-sicherheit-international-congress-for-labour-and-social-legislation-13-kongress-1"
+              showAs="Internationaler Kongreß für das Recht der Arbeit und der Sozialen Sicherheit (International Congress for Labour and Social Legislation) (13)"
+            >
+              <ris:name
+                domainTerm="Name"
+              >Internationaler Kongreß für das Recht der Arbeit und der Sozialen Sicherheit (International Congress for Labour and Social Legislation) (13)</ris:name>
+              <ris:jahr domainTerm="Jahr">1991</ris:jahr>
+              <ris:ort domainTerm="Ort">Athen</ris:ort>
+              <ris:land domainTerm="Land">GRC</ris:land>
+            </ris:kongress>
+            <ris:kongress
+              domainTerm="Kongress"
+              eId="kongress-associazione-italiana-di-diritto-de-lavoro-e-della-sicurezza-sociale-2"
+              showAs="Associazione Italiana di diritto de lavoro e della sicurezza sociale"
+            >
+              <ris:name
+                domainTerm="Name"
+              >Associazione Italiana di diritto de lavoro e della sicurezza sociale</ris:name>
+              <ris:jahr domainTerm="Jahr">1969</ris:jahr>
+              <ris:ort domainTerm="Ort">Florenz</ris:ort>
+              <ris:land domainTerm="Land">ITA</ris:land>
+            </ris:kongress>
+          </ris:kongresse>
+          <ris:herausgeberInstitutionen
+            domainTerm="Herausgebende Institutionen"
+          >
+            <ris:herausgeberInstitution
+              domainTerm="Herausgebende Institution"
+              refersTo="#organisation-iab-institut-fuer-arbeitsmark-und-berufsforschung-der-bundesantstalt-fuer-arbeit-3"
+            >IAB, Institut für Arbeitsmarkt- und Berufsforschung der Bundesanstalt für Arbeit</ris:herausgeberInstitution>
+          </ris:herausgeberInstitutionen>
+          <ris:hochschulschriftenvermerke
+            domainTerm="Hochschulschriftenvermerke"
+          >
+            <ris:hochschulschriftenvermerk
+              domainTerm="Hochschulschriftenvermerk"
+              refersTo="#organisation-universitaet-erlangen-jurfak-1"
+            >Universität Erlangen, JurFak</ris:hochschulschriftenvermerk>
+          </ris:hochschulschriftenvermerke>
+          <ris:kongressvermerke domainTerm="Kongressvermerke">
+            <ris:kongressvermerk
+              domainTerm="Kongressvermerk"
+              refersTo="#kongress-internationaler-kongress-fuer-das-recht-der-arbeit-und-der-sozialen-sicherheit-international-congress-for-labour-and-social-legislation-13-kongress-1"
+            >Internationaler Kongreß für das Recht der Arbeit und der Sozialen Sicherheit (International Congress for Labour and Social Legislation) (13)</ris:kongressvermerk>
+          </ris:kongressvermerke>
+          <ris:ueberkongresse domainTerm="Über Kongresse">
+            <ris:ueberkongress
+              domainTerm="Über Kongress"
+              refersTo="#kongress-associazione-italiana-di-diritto-de-lavoro-e-della-sicurezza-sociale-2"
+            >Associazione Italiana di diritto de lavoro e della sicurezza sociale</ris:ueberkongress>
+          </ris:ueberkongresse>
+          <ris:urheberListe domainTerm="Liste der Urheber">
+            <ris:urheber
+              domainTerm="Urheber"
+              refersTo="#organisation-dgb-4"
+            >DGB</ris:urheber>
+          </ris:urheberListe>
+          <ris:verlagsangaben domainTerm="Verlagsangaben">
+            <ris:verlagsangabe
+              domainTerm="Verlagsangabe"
+              refersTo="#organisation-vsa-5"
+            >VSA</ris:verlagsangabe>
+          </ris:verlagsangaben>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
