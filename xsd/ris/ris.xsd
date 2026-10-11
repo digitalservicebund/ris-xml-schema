@@ -857,7 +857,7 @@
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Liste an Personen/Institutionen. Auf diese wird z.B. aus
-        ris:ueberPersonInstitution verwiesen.
+        ris:ueberPersonInstitution oder ris:fuerPersonInstitution verwiesen.
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -935,6 +935,37 @@
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Person/Institution, über die dieses Dokument handelt. Verweist über
+        das refersTo-Attribut auf die näher definierte ris:personInstitution.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+        <xs:attribute name="refersTo" type="akn:conceptRef" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="fuerPersonenInstitutionen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste an Personen/Institutionen, für die dieses Dokument handelt
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="fuerPersonInstitution"
+        type="ris:fuerPersonInstitution"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="fuerPersonInstitution">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Person/Institution, für die dieses Dokument handelt. Verweist über
         das refersTo-Attribut auf die näher definierte ris:personInstitution.
       </xs:documentation>
     </xs:annotation>
