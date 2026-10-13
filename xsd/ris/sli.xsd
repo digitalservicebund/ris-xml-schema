@@ -15,7 +15,7 @@
 
   <xs:include schemaLocation="domain-term.xsd" />
 
-  <xs:complexType name="gesamttitelAngaben">
+  <xs:complexType name="gesamttitelangaben">
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Angaben zum Gesamttitel

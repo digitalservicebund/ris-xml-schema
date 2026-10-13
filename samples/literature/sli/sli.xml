@@ -141,7 +141,7 @@
               domainTerm="Abweichende Dokumentnummer"
             >KSLU223344556</ris:abweichendeDokumentnummer>
           </ris:abweichendeDokumentnummern>
-          <ris:gesamttitelAngaben domainTerm="Gesamttitel Liste">
+          <ris:gesamttitelangaben domainTerm="Gesamttitel Liste">
             <ris:gesamttitel domainTerm="Gesamttitel">
               <ris:titel
                 domainTerm="Titel"
@@ -150,7 +150,7 @@
                 domainTerm="Bandbezeichnung"
               >Nr 19297</ris:bandbezeichnung>
             </ris:gesamttitel>
-          </ris:gesamttitelAngaben>
+          </ris:gesamttitelangaben>
           <ris:besitznachweise domainTerm="Besitznachweise">
             <ris:besitznachweis domainTerm="Besitznachweis">
               <ris:institution domainTerm="Institution">BSG</ris:institution>
