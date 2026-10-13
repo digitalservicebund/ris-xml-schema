@@ -357,45 +357,45 @@
             >KSLU223344556</ris:abweichendeDokumentnummer>
           </ris:abweichendeDokumentnummern>
           <ris:gliederung domainTerm="Gliederung">
-            <ris:gliederungEntry
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Zusammenfassung</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Zusammenfassung</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Einleitung</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Einleitung</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Methodik</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Methodik</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Studiendesign</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Studiendesign</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Datenquelle</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Datenquelle</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Datenerfassung</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Datenerfassung</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Statistische Analyse</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Statistische Analyse</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Ergebnisse</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Ergebnisse</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Strichprobe</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Strichprobe</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Zustandekommen einer Behandlung</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Zustandekommen einer Behandlung</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Gründe für Nicht-Zustandekommen von Therapie</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Gründe für Nicht-Zustandekommen von Therapie</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Reform und Zustandekommen einer Behandlung</ris:gliederungEntry>
-            <ris:gliederungEntry
+            >Reform und Zustandekommen einer Behandlung</ris:gliederungseintrag>
+            <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
-            >Diskussion</ris:gliederungEntry>
+            >Diskussion</ris:gliederungseintrag>
           </ris:gliederung>
           <ris:definitionen domainTerm="Definitionen">
             <ris:definition domainTerm="Definition">

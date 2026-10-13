@@ -641,7 +641,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="xs:gYear">
+      <xs:extension base="xs:string">
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
@@ -655,15 +655,15 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element
-        name="gliederungEntry"
-        type="ris:gliederungEntry"
+        name="gliederungseintrag"
+        type="ris:gliederungseintrag"
         maxOccurs="unbounded"
       />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
-  <xs:complexType name="gliederungEntry">
+  <xs:complexType name="gliederungseintrag">
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Eintrag der Gliederung

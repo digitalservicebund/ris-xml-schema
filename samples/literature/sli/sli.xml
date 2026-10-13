@@ -157,11 +157,7 @@
               <ris:signatur domainTerm="Signatur">VwiK 1032</ris:signatur>
             </ris:besitznachweis>
           </ris:besitznachweise>
-          <ris:kollation domainTerm="Kollation">
-            <ris:umfangsangabe
-              domainTerm="Umfangsangabe"
-            >359 S</ris:umfangsangabe>
-          </ris:kollation>
+          <ris:kollation domainTerm="Kollation">359 S</ris:kollation>
           <ris:definitionen domainTerm="Definitionen">
             <ris:definition domainTerm="Definition">
               <ris:definierterBegriff
