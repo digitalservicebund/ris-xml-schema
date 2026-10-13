@@ -39,7 +39,11 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="titel" type="ris:gesamttitelTitel" />
-      <xs:element name="bandbezeichnung" type="ris:bandbezeichnung" />
+      <xs:element
+        name="bandbezeichnung"
+        type="ris:bandbezeichnung"
+        minOccurs="0"
+      />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
@@ -61,6 +65,35 @@
     <xs:annotation>
       <xs:documentation xml:lang="de">
         Bezeichnung des Bandes
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="gesamtfussnoten">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Gesamtfussnoten
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="gesamtfussnote"
+        type="ris:gesamtfussnote"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="gesamtfussnote">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Gesamtfussnote
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>

@@ -151,6 +151,17 @@
               >Nr 19297</ris:bandbezeichnung>
             </ris:gesamttitel>
           </ris:gesamttitelangaben>
+          <ris:gesamtfussnoten domainTerm="Gesamtfussnoten">
+            <ris:gesamtfussnote
+              domainTerm="Gesamtfussnote"
+            >1. Auflage 1976</ris:gesamtfussnote>
+            <ris:gesamtfussnote
+              domainTerm="Gesamtfussnote"
+            >2., völlig neubearbeitete Auflage 1983</ris:gesamtfussnote>
+            <ris:gesamtfussnote
+              domainTerm="Gesamtfussnote"
+            >3., neubearbeitete Auflage 1985</ris:gesamtfussnote>
+          </ris:gesamtfussnoten>
           <ris:besitznachweise domainTerm="Besitznachweise">
             <ris:besitznachweis domainTerm="Besitznachweis">
               <ris:institution domainTerm="Institution">BSG</ris:institution>

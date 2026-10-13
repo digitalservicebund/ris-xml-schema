@@ -46,6 +46,11 @@
               type="ris:gesamttitelangaben"
               minOccurs="0"
             />
+            <xs:element
+              name="gesamtfussnoten"
+              type="ris:gesamtfussnoten"
+              minOccurs="0"
+            />
             <xs:element name="regionen" type="ris:regionen" minOccurs="0" />
             <xs:element
               name="titelkurzformen"
