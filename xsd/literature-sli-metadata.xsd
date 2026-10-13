@@ -42,8 +42,8 @@
             />
             <xs:element name="gliederung" type="ris:gliederung" minOccurs="0" />
             <xs:element
-              name="gesamttitelAngaben"
-              type="ris:gesamttitelAngaben"
+              name="gesamttitelangaben"
+              type="ris:gesamttitelangaben"
               minOccurs="0"
             />
             <xs:element name="regionen" type="ris:regionen" minOccurs="0" />
