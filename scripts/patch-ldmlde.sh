@@ -84,10 +84,10 @@ java -jar "$SAXON_DIR/saxon-he-13.0.jar" \
 # ---------------------------------------------------------------------------------
 
 echo "Copy transformed files to the schema directory…"
-# exclude norm-metadata from removal
-find "$ROOT_DIR/xsd" -maxdepth 1 -type f -name "norm-*.xsd" ! -name "norm-metadata.xsd" -delete
-rm -rf "$ROOT_DIR"/xsd/norm*.sch
-rm -rf "$ROOT_DIR"/xsd/norm*.sch.xsl
+# remove generated schema/schematron files first
+rm -f "$ROOT_DIR/xsd/norm-"{baukasten,offenestruktur,rechtsetzungsdokument,regelungstext,sonstigerveroeffentlichungstext}".xsd"
+rm -f "$ROOT_DIR/xsd/"{norm,norm-frbr-metadaten-facetten-konsolidierte-fassung}".sch"
+rm -f "$ROOT_DIR"/xsd/norm.sch.xsl
 rm -rf "$ROOT_DIR"/xsd/legalDocML.de
 
 cp -r "$TEMP_OUTPUT_DIR"/* "$ROOT_DIR"/xsd/
