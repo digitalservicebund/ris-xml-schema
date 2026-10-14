@@ -49,6 +49,10 @@ Dazu wird in der Gruppe `regelungstextGliederung` am Verweis auf `regelungstextU
 
 Innerhalb der Gruppe `regelungstextGliederung` wurde ein optionales, wiederholbares `paragraph`-Element (Typ `juristischerAbsatz`) hinzugefügt. Dadurch dürfen Gliederungsebenen wie `book`, `part`, `chapter`, `subchapter`, `section`, `subsection`, etc. freien Text in Form von Absätzen enthalten, bevor Artikel oder weitere Untergliederungen folgen. Hintergrund: In den Bestandsdaten enthalten Gliederungselemente teils freien Text (z. B. einleitende Absätze, Tabellen oder Formulartexte), der ansonsten nicht abgebildet werden könnte.
 
+### Erlauben von `akn:blockList` in `akn:note`
+
+Innerhalb von `akn:note` wurden `akn:blockList` erlaubt. Hintergrund: Innerhalb der Bestandsdaten existieren verschalchtelte Aufzählungen, die eine entsprechende Key-Value Struktur erfordern.
+
 ## Von LDML.de unabhängige Schemata
 
 ### norm-work-metadata.xsd
