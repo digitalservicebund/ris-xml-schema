@@ -714,4 +714,16 @@
       />
     </xsl:copy>
   </xsl:template>
+
+  <!-- Allow Gliederungselemente (book, part, chapter, ...) to be mixed and repeated on the same level -->
+  <xsl:template
+    match="/xs:schema/xs:group[@name='regelungstextGliederung']/xs:sequence/xs:group[@ref='regelungstextUntergliederung']"
+  >
+    <xsl:copy>
+      <xsl:apply-templates select="@*[name()!='maxOccurs']" />
+      <xsl:attribute name="maxOccurs">
+        <xsl:text>unbounded</xsl:text>
+      </xsl:attribute>
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>

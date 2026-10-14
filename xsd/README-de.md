@@ -35,6 +35,12 @@ Als Konvention werden die folgenden URIs für Namespaces verwendet:
 | `http://Inhaltsdaten.LegalDocML.de/1.9/`        | `http://rechtsinformationen.bund.de/schema/norm/0.1`          |
 | `http://www.ris.bund.de/grammatiken/metadaten/` | `http://rechtsinformationen.bund.de/schema/norm-metadata/0.1` |
 
+### Anpassungen der Gliederungselemente
+
+In `norm-baukasten.xsd` dürfen die Gliederungselemente (`book`, `part`, `chapter`, `subchapter`, `section`, `subsection`, `title`, `subtitle`) auf derselben Ebene gemischt und in beliebiger Reihenfolge vorkommen. In LegalDocML.de 1.9 ist pro Ebene nur ein Typ erlaubt, z. B. führt `part` nach `book` zu einem Validierungsfehler.
+
+Dazu wird in der Gruppe `regelungstextGliederung` am Verweis auf `regelungstextUntergliederung` `maxOccurs="unbounded"` ergänzt (siehe [`norm-baukasten.xsl`](../../scripts/ldmlde-patches/norm-baukasten.xsl)).
+
 ### Anpassungen der Schematron Regeln
 
 - Schematron Regel SCH-00660-015 wurde entfernt

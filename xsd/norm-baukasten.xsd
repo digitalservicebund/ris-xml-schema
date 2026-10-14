@@ -4877,7 +4877,11 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
         minOccurs="0"
         maxOccurs="unbounded"
       />
-      <xs:group ref="regelungstextUntergliederung" minOccurs="0" />
+      <xs:group
+        ref="regelungstextUntergliederung"
+        minOccurs="0"
+        maxOccurs="unbounded"
+      />
     </xs:sequence>
   </xs:group>
   <xs:group name="regelungstextUntergliederung">
