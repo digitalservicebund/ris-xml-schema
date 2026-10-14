@@ -726,4 +726,9 @@
       </xsl:attribute>
     </xsl:copy>
   </xsl:template>
+
+  <!-- Remove akn:docStage -->
+  <xsl:template
+    match="xs:*[@name='eIdLiterals.dokumentenStatus' or @name='dokumentenStatus']"
+  />
 </xsl:stylesheet>
