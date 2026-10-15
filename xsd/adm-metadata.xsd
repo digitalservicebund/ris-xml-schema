@@ -83,11 +83,7 @@
               type="ris:risAbkuerzung"
               minOccurs="0"
             />
-            <xs:element
-              name="langtitel"
-              type="ris:langtitel"
-              minOccurs="0"
-            />
+            <xs:element name="langtitel" type="ris:langtitel" minOccurs="0" />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
