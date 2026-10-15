@@ -27,6 +27,11 @@
             showAs="Aktenzeichen"
             value="CD 678/9"
           />
+          <akn:FRBRalias
+                  name="langtitel"
+                  showAs="Amtliche Langüberschrift"
+                  value="Richtlinien über den Erlass von Planrechtsentscheidungen"
+          />
           <akn:FRBRdate date="1900-01-01" name="TODO" showAs="TODO" />
           <akn:FRBRauthor
             href="#organisation-normgeber-ministerium-fuer-digitales-und-verkehr"
@@ -82,6 +87,7 @@
               domainTerm="Aktenzeichen"
             >CD 678/9</ris:aktenzeichen>
           </ris:aktenzeichenListe>
+          <ris:langtitel domainTerm="Amtliche Langüberschrift">Richtlinien über den Erlass von Planrechtsentscheidungen</ris:langtitel>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
