@@ -51,6 +51,10 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
   />
   <sch:ns uri="lokale-funktionen" prefix="fkt" />
   <sch:ns uri="http://www.w3.org/2001/XMLSchema" prefix="xs" />
+  <sch:ns
+    uri="http://rechtsinformationen.bund.de/schema/norm-metadata/0.1"
+    prefix="ris"
+  />
   <sch:let
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     name="form"
@@ -2897,4 +2901,14 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
     </sch:rule>
   </sch:pattern>
   <sch:include href="norm-frbr-metadaten-facetten-konsolidierte-fassung.sch" />
+  <sch:pattern>
+    <sch:title>Interne Abkürzung der Norm</sch:title>
+    <sch:rule id="SCH-RIS-0001" context="ris:legalDocML.de_metadaten">
+      <sch:assert
+        id="SCH-RIS-0001-000"
+        role="error"
+        test="count(ris:abkuerzung[@refersTo = 'interne-abkuerzung']) le 1"
+      >Ein RIS-Metadatenblock darf höchstens eine interne Abkürzung enthalten.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 </sch:schema>
