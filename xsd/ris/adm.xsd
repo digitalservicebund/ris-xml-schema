@@ -206,10 +206,10 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
-  <xs:complexType name="langtitel">
+  <xs:complexType name="langueberschrift">
     <xs:annotation>
       <xs:documentation xml:lang="de">
-        Langtitel
+        Amtliche Langüberschrift
       </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>

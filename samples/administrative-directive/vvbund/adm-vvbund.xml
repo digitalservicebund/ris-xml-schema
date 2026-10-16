@@ -28,7 +28,7 @@
             value="CD 678/9"
           />
           <akn:FRBRalias
-            name="langtitel"
+            name="langueberschrift"
             showAs="Amtliche Langüberschrift"
             value="Richtlinien über den Erlass von Planrechtsentscheidungen"
           />
@@ -87,9 +87,9 @@
               domainTerm="Aktenzeichen"
             >CD 678/9</ris:aktenzeichen>
           </ris:aktenzeichenListe>
-          <ris:langtitel
+          <ris:langueberschrift
             domainTerm="Amtliche Langüberschrift"
-          >Richtlinien über den Erlass von Planrechtsentscheidungen</ris:langtitel>
+          >Richtlinien über den Erlass von Planrechtsentscheidungen</ris:langueberschrift>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
