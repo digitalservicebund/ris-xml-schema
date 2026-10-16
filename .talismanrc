@@ -20,9 +20,9 @@ fileignoreconfig:
     allowed_patterns:
       - "key: "
   - filename: xsd/norm.sch
-    checksum: 300688f247f9bc3889e02df5cecfb04b49e420038abc8cce914eb4ac96579f56
+    checksum: f1b19d626437c94dfe14d163a99b92c6a39eda0ddc248d98f0064eb3279349a5
   - filename: xsd/norm.sch.xsl
-    checksum: 9359b8c006a99b2ce2ba9408112f22158d4b022dd5210331270af9512a0c7874
+    checksum: 82c1bd6d28cb2b685ecd641d2d2c32f8925a07fb46c0564acc858d3238a4026c
   - filename: gradlew
     checksum: df5f105ae542d08dedb564dae33c4f97a47ef1549229a69eff6de10c4de11a00
   - filename: build.gradle.kts
