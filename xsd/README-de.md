@@ -55,7 +55,7 @@ Beinhaltet Metadaten auf Werkebene des FRBR-Modells.
 
 ### norm-metadata.xsd
 
-Beinhaltet die RIS-spezifischen Metadaten (Namespace `http://rechtsinformationen.bund.de/schema/norm-metadata/0.1`).
+Beinhaltet die RIS-spezifischen Metadaten für Normen (Namespace `http://rechtsinformationen.bund.de/schema/norm-metadata/0.1`).
 
 #### `dokumenttypen`
 
@@ -63,7 +63,9 @@ Enthält die Dokumenttypen einer Norm. Das Element wird bei der Migration aus de
 
 ```xml
 <ris:dokumenttypen domainTerm="Dokumenttypen">
-  <ris:dokumenttyp domainTerm="Dokumenttyp">Gesetz im formellen Sinne</ris:dokumenttyp>
+  <ris:dokumenttyp
+    domainTerm="Dokumenttyp"
+  >Gesetz im formellen Sinne</ris:dokumenttyp>
 </ris:dokumenttypen>
 ```
 
