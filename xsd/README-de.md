@@ -52,3 +52,24 @@ Innerhalb von `akn:note` wurden `akn:blockList` erlaubt. Hintergrund: Innerhalb 
 ### norm-work-metadata.xsd
 
 Beinhaltet Metadaten auf Werkebene des FRBR-Modells.
+
+### norm-metadata.xsd
+
+Beinhaltet die RIS-spezifischen Metadaten für Normen (Namespace `http://rechtsinformationen.bund.de/schema/norm-metadata/0.1`).
+
+#### `dokumenttypen`
+
+Enthält die Dokumenttypen einer Norm. Das Element wird bei der Migration aus den Bestandsdaten befüllt und steht im jeweiligen Dokument (Rechtsetzungsdokument, Regelungstext, Anlage etc.).
+
+```xml
+<ris:dokumenttypen domainTerm="Dokumenttypen">
+  <ris:dokumenttyp
+    domainTerm="Dokumenttyp"
+  >Gesetz im formellen Sinne</ris:dokumenttyp>
+</ris:dokumenttypen>
+```
+
+- `dokumenttypen`: optional, höchstens einmal; steht nach `textnachweis-geltung-ab` und vor `gegenstandslos`. Mindestens ein `dokumenttyp` ist erforderlich.
+- `dokumenttyp`: nicht-leerer Text mit der Bezeichnung des Dokumenttyps mit `domainTerm` als erforderliches Attribut.
+- Die Bezeichnungen stammen aus der Wertetabelle „Dokumenttyp“ (`ris-lookup-tables.document_type`).
+- Das Attribut `manuell` der Eingangsdaten wird aktuell nicht berücksichtigt.

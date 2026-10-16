@@ -81,6 +81,12 @@
           maxOccurs="1"
         />
         <xs:element
+          name="dokumenttypen"
+          type="DokumenttypenType"
+          minOccurs="0"
+          maxOccurs="1"
+        />
+        <xs:element
           name="gegenstandslos"
           type="EmptyType"
           minOccurs="0"
@@ -129,6 +135,26 @@
           type="standangabeTypeLiterals"
           use="required"
         />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="DokumenttypenType">
+    <xs:sequence>
+      <xs:element
+        name="dokumenttyp"
+        type="DokumenttypType"
+        minOccurs="1"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="DokumenttypType">
+    <xs:simpleContent>
+      <xs:extension base="StringNotEmpty">
+        <xs:attribute name="domainTerm" type="xs:string" use="required" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
