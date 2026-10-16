@@ -83,6 +83,11 @@
               type="ris:risAbkuerzung"
               minOccurs="0"
             />
+            <xs:element
+              name="langueberschrift"
+              type="ris:langueberschrift"
+              minOccurs="0"
+            />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>

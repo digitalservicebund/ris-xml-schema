@@ -205,4 +205,17 @@
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
+
+  <xs:complexType name="langueberschrift">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Amtliche Langüberschrift
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 </xs:schema>
