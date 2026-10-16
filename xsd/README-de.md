@@ -22,7 +22,7 @@ Aus LegalDocML.de wurden nur die folgenden XML-Schemata übernommen:
   - `legalDocML.de-frbr-metadaten-facetten-konsolidierte-fassung.sch`
   - `legalDocML.de.sch`
 
-Durch Anwendung der `.xsl`-Dateien in [`scripts/ldmlde-patches`](../../scripts/ldmlde-patches) auf die entsprechenden `.xsd`- und `.sch`-Dateien wurden die entsprechenden `.xsd`- und `.sch`-Dateien für das Rechtsinformationsportal erzeugt (mittels [`patch-ldmlde.sh`](../../scripts/patch-ldmlde.sh)). Diese Dateien sind in [`xsd/norm-*`](../../xsd) abgelegt.
+Durch Anwendung der `.xsl`-Dateien in [`scripts/ldmlde-patches`](../../scripts/ldmlde-patches) auf die entsprechenden `.xsd`- und `.sch`-Dateien wurden die entsprechenden `.xsd`- und `.sch`-Dateien für das Rechtsinformationsportal erzeugt (mittels [`norms-ldml-tool.sh`](../scripts/norms-ldml-tool.sh)). Diese Dateien sind in [`xsd/norm-*`](../../xsd) abgelegt.
 
 Das XML-Schemata von LegalDocML.de ist umfangreich und für das Rechtsinformationsportal wurden nur die relevanten Typen übernommen.
 
@@ -46,6 +46,22 @@ Innerhalb der Gruppe `regelungstextGliederung` wurde ein optionales, wiederholba
 ### Erlauben von `akn:blockList` in `akn:note`
 
 Innerhalb von `akn:note` wurden `akn:blockList` erlaubt. Hintergrund: Innerhalb der Bestandsdaten existieren verschalchtelte Aufzählungen, die eine entsprechende Key-Value Struktur erfordern.
+
+### Schemata aktualisieren und prüfen
+
+Voraussetzung: `make` und `docker`/`podman` Compose.
+Änderungen an den Patches in [`scripts/ldmlde-patches`](../scripts/ldmlde-patches)
+vornehmen und vom Repository-Stammverzeichnis aus ausführen:
+
+```bash
+make -C scripts patch-ldml
+make -C scripts verify-ldml
+```
+
+`patch` erzeugt die Schemata neu. `verify` prüft sie ohne Änderungen und liefert
+bei fehlenden oder abweichenden Dateien Exit-Code 1. Anschließend den Diff prüfen
+und die Patch- und Schemaänderungen gemeinsam committen.
+Der Pre-Commit-Hook führt `verify` bei Änderungen an betroffenen Dateien automatisch aus.
 
 ## Von LDML.de unabhängige Schemata
 
