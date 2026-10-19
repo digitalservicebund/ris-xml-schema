@@ -10,6 +10,7 @@
   xmlns:nkr="http://MetadatenNormenkontrollrat.LegalDocML.de/1.9/"
   xmlns:redok="http://MetadatenRechtsetzungsdokument.LegalDocML.de/1.9/"
   xmlns:regtxt="http://MetadatenRegelungstext.LegalDocML.de/1.9/"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/norm-metadata/0.1"
   xmlns:sonst="http://MetadatenSonstigerVeroeffentlichungstext.LegalDocML.de/1.9/"
   xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -520,12 +521,12 @@
     on-no-match="shallow-skip"
   />
   <mode
-    name="group.d7e180"
+    name="group.d7e183"
     on-no-match="shallow-skip"
     streamable="false"
     use-accumulators=""
   />
-  <template match="* | root()" mode="group.d7e180" priority="-10">
+  <template match="* | root()" mode="group.d7e183" priority="-10">
     <apply-templates select="@*" mode="#current" />
     <apply-templates select="node()" mode="#current" />
   </template>
@@ -536,8 +537,8 @@
   />
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $form = $form-eingebundene-stammform]"
-    mode="group.d7e180"
-    priority="121"
+    mode="group.d7e183"
+    priority="122"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -550,7 +551,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e180' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e183' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00019"
           context="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $form = $form-eingebundene-stammform]"
@@ -581,16 +582,6 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e184'">
-              <variable
-                name="severity"
-                as="Q{http://www.w3.org/2001/XMLSchema}string"
-                select="'fatal'"
-              />
-              <sequence
-                select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
-              />
-            </map-entry>
             <map-entry key="'d7e187'">
               <variable
                 name="severity"
@@ -611,12 +602,22 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
+            <map-entry key="'d7e193'">
+              <variable
+                name="severity"
+                as="Q{http://www.w3.org/2001/XMLSchema}string"
+                select="'fatal'"
+              />
+              <sequence
+                select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
+              />
+            </map-entry>
           </map>
         </variable>
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e184') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e187') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:preface/akn:block))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -658,7 +659,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e187') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e190') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:preamble/akn:formula))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -700,7 +701,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e190') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e193') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:conclusions))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -745,7 +746,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e180', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e183', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -753,8 +754,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $typ = ($typ-gesetz, $typ-vertragsgesetz)]"
-    mode="group.d7e180"
-    priority="120"
+    mode="group.d7e183"
+    priority="121"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -767,7 +768,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e180' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e183' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00020"
           context="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $typ = ($typ-gesetz, $typ-vertragsgesetz)]"
@@ -798,7 +799,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e196'">
+            <map-entry key="'d7e199'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -808,7 +809,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e199'">
+            <map-entry key="'d7e202'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -823,7 +824,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e196') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e199') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(./akn:preamble/akn:formula)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -865,7 +866,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e199') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e202') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:conclusions/akn:formula))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -910,7 +911,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e180', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e183', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -918,8 +919,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $typ = ($typ-verordnung, $typ-vertragsverordnung)]"
-    mode="group.d7e180"
-    priority="119"
+    mode="group.d7e183"
+    priority="120"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -932,7 +933,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e180' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e183' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00030"
           context="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $typ = ($typ-verordnung, $typ-vertragsverordnung)]"
@@ -963,7 +964,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e205'">
+            <map-entry key="'d7e208'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -973,7 +974,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e208'">
+            <map-entry key="'d7e211'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -988,7 +989,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e205') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e208') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:preamble/akn:formula))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1030,7 +1031,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e208') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e211') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:conclusions/akn:formula))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1075,7 +1076,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e180', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e183', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -1083,8 +1084,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $typ = $typ-verwaltungsvorschrift]"
-    mode="group.d7e180"
-    priority="118"
+    mode="group.d7e183"
+    priority="119"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1097,7 +1098,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e180' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e183' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00040"
           context="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $typ = $typ-verwaltungsvorschrift]"
@@ -1128,7 +1129,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e214'">
+            <map-entry key="'d7e217'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -1138,7 +1139,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e217'">
+            <map-entry key="'d7e220'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -1153,7 +1154,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e214') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e217') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:preamble/akn:formula))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1195,7 +1196,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e217') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e220') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:conclusions/akn:formula))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1240,7 +1241,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e180', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e183', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -1248,8 +1249,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $form = $form-eingebundene-stammform]"
-    mode="group.d7e180"
-    priority="117"
+    mode="group.d7e183"
+    priority="118"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1262,7 +1263,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e226' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e228' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00048"
           context="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $form = $form-eingebundene-stammform]"
@@ -1293,7 +1294,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e232'">
+            <map-entry key="'d7e234'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -1303,7 +1304,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e235'">
+            <map-entry key="'d7e237'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -1313,7 +1314,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e238'">
+            <map-entry key="'d7e240'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -1328,7 +1329,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e232') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e234') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:preface/akn:block))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1370,7 +1371,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e235') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e237') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:preamble/akn:formula))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1412,7 +1413,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e238') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e240') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:conclusions))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1457,7 +1458,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e226', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e228', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -1465,8 +1466,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $typ = ($typ-verordnung, $typ-vertragsverordnung)]"
-    mode="group.d7e180"
-    priority="116"
+    mode="group.d7e183"
+    priority="117"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1479,7 +1480,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e226' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e228' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00060"
           context="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $typ = ($typ-verordnung, $typ-vertragsverordnung)]"
@@ -1510,7 +1511,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e244'">
+            <map-entry key="'d7e246'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -1525,7 +1526,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e244') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e246') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:preamble/akn:formula))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1570,7 +1571,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e226', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e228', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -1578,8 +1579,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $typ = $typ-verwaltungsvorschrift]"
-    mode="group.d7e180"
-    priority="115"
+    mode="group.d7e183"
+    priority="116"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1592,7 +1593,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e226' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e228' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00070"
           context="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $typ = $typ-verwaltungsvorschrift]"
@@ -1623,7 +1624,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e250'">
+            <map-entry key="'d7e252'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -1638,7 +1639,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e250') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e252') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:preamble/akn:formula))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1683,7 +1684,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e226', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e228', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -1691,8 +1692,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:act[@name = $art-regelungstext-uri and $ist-verkündungsfassung and not($form = $form-eingebundene-stammform)]"
-    mode="group.d7e180"
-    priority="114"
+    mode="group.d7e183"
+    priority="115"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1705,7 +1706,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e255' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e257' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00071"
           context="/akn:akomaNtoso/akn:act[@name = $art-regelungstext-uri and $ist-verkündungsfassung and not($form = $form-eingebundene-stammform)]"
@@ -1736,7 +1737,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e259'">
+            <map-entry key="'d7e261'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -1746,7 +1747,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e262'">
+            <map-entry key="'d7e264'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -1761,7 +1762,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e259') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e261') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(./akn:preface/akn:block)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1803,7 +1804,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e262') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e264') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(./akn:conclusions/akn:blockContainer)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1848,7 +1849,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e255', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e257', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -1856,8 +1857,8 @@
   </template>
   <template
     match="akn:act/akn:conclusions/akn:formula"
-    mode="group.d7e180"
-    priority="113"
+    mode="group.d7e183"
+    priority="114"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1870,7 +1871,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e269' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e271' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00073"
           context="akn:act/akn:conclusions/akn:formula"
@@ -1901,7 +1902,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e273'">
+            <map-entry key="'d7e275'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -1916,7 +1917,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e273') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e275') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(empty(preceding-sibling::akn:*))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -1959,7 +1960,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e269', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e271', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -1967,8 +1968,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*[@name = $art-regelungstext-uri and $typ = ($typ-gesetz, $typ-vertragsgesetz)]/akn:preamble"
-    mode="group.d7e180"
-    priority="112"
+    mode="group.d7e183"
+    priority="113"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1981,7 +1982,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e282' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e284' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00100"
           context="/akn:akomaNtoso/*[@name = $art-regelungstext-uri and $typ = ($typ-gesetz, $typ-vertragsgesetz)]/akn:preamble"
@@ -2012,7 +2013,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e286'">
+            <map-entry key="'d7e288'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -2027,7 +2028,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e286') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e288') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(./akn:citations))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -2072,7 +2073,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e282', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e284', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -2080,8 +2081,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/* [ @name = $art-regelungstext-uri and $typ = ($typ-verordnung, $typ-vertragsverordnung) and $form = ($form-stammform, $form-mantelform) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]/akn:preamble"
-    mode="group.d7e180"
-    priority="111"
+    mode="group.d7e183"
+    priority="112"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2094,7 +2095,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e282' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e284' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00110"
           context="/akn:akomaNtoso/* [ @name = $art-regelungstext-uri and $typ = ($typ-verordnung, $typ-vertragsverordnung) and $form = ($form-stammform, $form-mantelform) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]/akn:preamble"
@@ -2125,7 +2126,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e292'">
+            <map-entry key="'d7e294'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -2140,7 +2141,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e292') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e294') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(./akn:citations)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -2185,7 +2186,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e282', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e284', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -2193,8 +2194,8 @@
   </template>
   <template
     match="akn:quotedStructure//akn:article [ $form = $form-mantelform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) ]"
-    mode="group.d7e180"
-    priority="110"
+    mode="group.d7e183"
+    priority="111"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2207,7 +2208,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e297' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e299' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00120"
           context="akn:quotedStructure//akn:article [ $form = $form-mantelform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) ]"
@@ -2238,7 +2239,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e301'">
+            <map-entry key="'d7e303'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -2253,7 +2254,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e301') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e303') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not((@refersTo = ($refersto-literal-mantelform, $refersto-literal-stammform, $refersto-literal-geltungszeitregel, $refersto-literal-geltungszeitregel-inkrafttreten, $refersto-literal-geltungszeitregel-ausserkrafttreten, $refersto-literal-vertragsgesetz, $refersto-literal-vertragsverordnung)))"
@@ -2298,7 +2299,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e297', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e299', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -2306,8 +2307,8 @@
   </template>
   <template
     match="akn:article[not(ancestor::akn:quotedStructure)]/@refersTo [ $form = $form-mantelform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]"
-    mode="group.d7e180"
-    priority="109"
+    mode="group.d7e183"
+    priority="110"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2320,7 +2321,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e306' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e308' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00121"
           context="akn:article[not(ancestor::akn:quotedStructure)]/@refersTo [ $form = $form-mantelform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]"
@@ -2351,7 +2352,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e310'">
+            <map-entry key="'d7e312'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -2366,7 +2367,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e310') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e312') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(. = ($refersto-literal-hauptaenderung, $refersto-literal-folgeaenderung, $refersto-literal-eingebundene-stammform, $refersto-literal-geltungszeitregel, $refersto-literal-geltungszeitregel-inkrafttreten, $refersto-literal-geltungszeitregel-ausserkrafttreten))"
@@ -2411,7 +2412,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e306', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e308', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -2419,8 +2420,8 @@
   </template>
   <template
     match="akn:article/@refersTo [ $form = $form-stammform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]"
-    mode="group.d7e180"
-    priority="108"
+    mode="group.d7e183"
+    priority="109"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2433,7 +2434,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e315' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e317' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00122"
           context="akn:article/@refersTo [ $form = $form-stammform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]"
@@ -2464,7 +2465,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e319'">
+            <map-entry key="'d7e321'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -2479,7 +2480,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e319') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e321') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not((. = $refersto-literal-geltungszeitregel and count(//akn:article/@refersTo) = 1) or (. = $refersto-literal-geltungszeitregel-inkrafttreten and (every $r in //akn:article/@refersTo satisfies $r = $refersto-literal-geltungszeitregel-inkrafttreten or $r = $refersto-literal-geltungszeitregel-ausserkrafttreten)))"
@@ -2524,7 +2525,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e315', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e317', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -2532,8 +2533,8 @@
   </template>
   <template
     match="akn:article[descendant::akn:mod and not(ancestor::akn:quotedStructure)] [ $form = $form-mantelform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) ]"
-    mode="group.d7e180"
-    priority="107"
+    mode="group.d7e183"
+    priority="108"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2546,7 +2547,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e324' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e326' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00123"
           context="akn:article[descendant::akn:mod and not(ancestor::akn:quotedStructure)] [ $form = $form-mantelform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) ]"
@@ -2577,7 +2578,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e328'">
+            <map-entry key="'d7e330'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -2592,7 +2593,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e328') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e330') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(@refersTo = ($refersto-literal-hauptaenderung, $refersto-literal-folgeaenderung, $refersto-literal-geltungszeitregel, $refersto-literal-geltungszeitregel-inkrafttreten, $refersto-literal-geltungszeitregel-ausserkrafttreten))"
@@ -2637,7 +2638,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e324', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e326', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -2645,8 +2646,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:bill/akn:meta/akn:identification/akn:FRBRWork"
-    mode="group.d7e180"
-    priority="106"
+    mode="group.d7e183"
+    priority="107"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2659,7 +2660,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e333' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e336' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00125"
           context="/akn:akomaNtoso/akn:bill/akn:meta/akn:identification/akn:FRBRWork"
@@ -2690,7 +2691,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e337'">
+            <map-entry key="'d7e340'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -2705,7 +2706,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e337') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e340') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(count(akn:FRBRdate) eq 1)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -2748,7 +2749,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e333', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e336', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -2756,8 +2757,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri]/akn:preamble"
-    mode="group.d7e180"
-    priority="105"
+    mode="group.d7e183"
+    priority="106"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2770,7 +2771,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e346' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e348' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00130"
           context="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri]/akn:preamble"
@@ -2801,7 +2802,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e350'">
+            <map-entry key="'d7e352'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -2811,7 +2812,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e353'">
+            <map-entry key="'d7e355'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -2826,7 +2827,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e350') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e352') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="count(./akn:blockContainer[@refersTo = 'inhaltsuebersicht']) gt 1"
@@ -2873,7 +2874,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e353') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e355') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="count(./akn:blockContainer[@refersTo = 'anlagenuebersicht']) gt 1"
@@ -2923,7 +2924,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e346', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e348', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -2931,8 +2932,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:body[$form = $form-mantelform and ($ist-entwurfsfassung or $ist-verkündungsfassung)]"
-    mode="group.d7e180"
-    priority="104"
+    mode="group.d7e183"
+    priority="105"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2945,7 +2946,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e361' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e363' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00150"
           context="/akn:akomaNtoso/*/akn:body[$form = $form-mantelform and ($ist-entwurfsfassung or $ist-verkündungsfassung)]"
@@ -2976,7 +2977,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e365'">
+            <map-entry key="'d7e367'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -2991,7 +2992,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e365') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e367') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="./akn:book or ./akn:part or ./akn:chapter or ./akn:subchapter or ./akn:section or ./akn:subsection or ./akn:title or ./akn:subtitle"
@@ -3041,7 +3042,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e361', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e363', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -3049,8 +3050,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:body[ $form = ($form-mantelform, $form-stammform) and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-vertragsgesetz, $typ-vertragsverordnung) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]"
-    mode="group.d7e180"
-    priority="103"
+    mode="group.d7e183"
+    priority="104"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3063,7 +3064,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e370' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e372' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00160"
           context="/akn:akomaNtoso/*/akn:body[ $form = ($form-mantelform, $form-stammform) and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-vertragsgesetz, $typ-vertragsverordnung) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]"
@@ -3094,7 +3095,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e374'">
+            <map-entry key="'d7e376'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -3109,7 +3110,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e374') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e376') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not((count(//akn:article[@refersTo = $refersto-literal-geltungszeitregel]) = 1 and empty(//akn:article[@refersTo = ($refersto-literal-geltungszeitregel-inkrafttreten, $refersto-literal-geltungszeitregel-ausserkrafttreten)])) or (count(//akn:article[@refersTo = $refersto-literal-geltungszeitregel-inkrafttreten]) = 1 and count(//akn:article[@refersTo = $refersto-literal-geltungszeitregel-ausserkrafttreten]) le 1 and empty(//akn:article[@refersTo = $refersto-literal-geltungszeitregel])))"
@@ -3156,7 +3157,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e370', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e372', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -3164,8 +3165,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:body[$form = $form-eingebundene-stammform]"
-    mode="group.d7e180"
-    priority="102"
+    mode="group.d7e183"
+    priority="103"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3178,7 +3179,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e370' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e372' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00170"
           context="/akn:akomaNtoso/*/akn:body[$form = $form-eingebundene-stammform]"
@@ -3209,7 +3210,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e380'">
+            <map-entry key="'d7e382'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -3224,7 +3225,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e380') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e382') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($form = $form-eingebundene-stammform) then (count(//akn:article[@refersTo = ($refersto-literal-geltungszeitregel, $refersto-literal-geltungszeitregel-inkrafttreten)]) = 0) else ())"
@@ -3269,7 +3270,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e370', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e372', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -3277,8 +3278,8 @@
   </template>
   <template
     match="akn:article[@refersTo = $refersto-literal-geltungszeitregel]"
-    mode="group.d7e180"
-    priority="101"
+    mode="group.d7e183"
+    priority="102"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3291,7 +3292,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e385' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e388' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00180"
           context="akn:article[@refersTo = $refersto-literal-geltungszeitregel]"
@@ -3322,7 +3323,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e389'">
+            <map-entry key="'d7e392'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -3337,7 +3338,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e389') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e392') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="$ist-entwurfsfassung">
                 <variable
@@ -3385,7 +3386,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e385', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e388', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -3393,8 +3394,8 @@
   </template>
   <template
     match="//akn:article/akn:paragraph//akn:list[$ist-entwurfsfassung]"
-    mode="group.d7e180"
-    priority="100"
+    mode="group.d7e183"
+    priority="101"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3407,7 +3408,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e398' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e400' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00200"
           context="//akn:article/akn:paragraph//akn:list[$ist-entwurfsfassung]"
@@ -3438,7 +3439,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e402'">
+            <map-entry key="'d7e404'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -3453,7 +3454,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e402') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e404') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="count(ancestor::akn:list) &gt; 4">
                 <variable
@@ -3501,7 +3502,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e398', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e400', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -3509,8 +3510,8 @@
   </template>
   <template
     match="//akn:article[$ist-entwurfsfassung]"
-    mode="group.d7e180"
-    priority="99"
+    mode="group.d7e183"
+    priority="100"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3523,7 +3524,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e407' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e409' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00210"
           context="//akn:article[$ist-entwurfsfassung]"
@@ -3554,7 +3555,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e411'">
+            <map-entry key="'d7e413'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -3569,7 +3570,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e411') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e413') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="count(./akn:paragraph) &gt; 6">
                 <variable
@@ -3617,13 +3618,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e407', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e409', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:book" mode="group.d7e180" priority="98">
+  <template match="akn:book" mode="group.d7e183" priority="99">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -3635,7 +3636,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e419' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e421' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00230" context="akn:book">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -3660,7 +3661,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e423'">
+            <map-entry key="'d7e425'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -3675,7 +3676,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e423') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e425') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="akn:book[not(@refersTo = 'vom-hdr-abweichende-gliederungsebene')]"
@@ -3725,13 +3726,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e419', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e421', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:part" mode="group.d7e180" priority="97">
+  <template match="akn:part" mode="group.d7e183" priority="98">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -3743,7 +3744,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e419' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e421' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00240" context="akn:part">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -3768,7 +3769,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e429'">
+            <map-entry key="'d7e431'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -3783,7 +3784,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e429') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e431') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="(akn:book | akn:part)[not(@refersTo = 'vom-hdr-abweichende-gliederungsebene')]"
@@ -3833,13 +3834,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e419', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e421', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:chapter" mode="group.d7e180" priority="96">
+  <template match="akn:chapter" mode="group.d7e183" priority="97">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -3851,7 +3852,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e419' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e421' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00250" context="akn:chapter">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -3876,7 +3877,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e435'">
+            <map-entry key="'d7e437'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -3891,7 +3892,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e435') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e437') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="(akn:book | akn:part | akn:chapter)[not(@refersTo = 'vom-hdr-abweichende-gliederungsebene')]"
@@ -3941,13 +3942,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e419', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e421', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:subchapter" mode="group.d7e180" priority="95">
+  <template match="akn:subchapter" mode="group.d7e183" priority="96">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -3959,7 +3960,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e419' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e421' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00260" context="akn:subchapter">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -3984,7 +3985,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e441'">
+            <map-entry key="'d7e443'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -3999,7 +4000,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e441') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e443') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="(akn:book | akn:part | akn:chapter | akn:subchapter)[not(@refersTo = 'vom-hdr-abweichende-gliederungsebene')]"
@@ -4049,13 +4050,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e419', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e421', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:section" mode="group.d7e180" priority="94">
+  <template match="akn:section" mode="group.d7e183" priority="95">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -4067,7 +4068,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e419' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e421' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00270" context="akn:section">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -4092,7 +4093,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e447'">
+            <map-entry key="'d7e449'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -4107,7 +4108,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e447') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e449') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="(akn:book | akn:part | akn:chapter | akn:subchapter | akn:section)[not(@refersTo = 'vom-hdr-abweichende-gliederungsebene')]"
@@ -4157,13 +4158,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e419', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e421', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:subsection" mode="group.d7e180" priority="93">
+  <template match="akn:subsection" mode="group.d7e183" priority="94">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -4175,7 +4176,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e419' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e421' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00280" context="akn:subsection">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -4200,7 +4201,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e454'">
+            <map-entry key="'d7e456'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -4215,7 +4216,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e454') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e456') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="(akn:book | akn:part | akn:chapter | akn:subchapter | akn:section | akn:subsection)[not(@refersTo = 'vom-hdr-abweichende-gliederungsebene')]"
@@ -4265,13 +4266,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e419', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e421', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:title" mode="group.d7e180" priority="92">
+  <template match="akn:title" mode="group.d7e183" priority="93">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -4283,7 +4284,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e419' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e421' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00290" context="akn:title">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -4308,7 +4309,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e460'">
+            <map-entry key="'d7e462'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -4323,7 +4324,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e460') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e462') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="(akn:book | akn:part | akn:chapter | akn:subchapter | akn:section | akn:subsection | akn:title)[not(@refersTo = 'vom-hdr-abweichende-gliederungsebene')]"
@@ -4373,13 +4374,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e419', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e421', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:subtitle" mode="group.d7e180" priority="91">
+  <template match="akn:subtitle" mode="group.d7e183" priority="92">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -4391,7 +4392,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e419' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e421' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00300" context="akn:subtitle">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -4416,7 +4417,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e466'">
+            <map-entry key="'d7e468'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -4431,7 +4432,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e466') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e468') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="(akn:book | akn:part | akn:chapter | akn:subchapter | akn:section | akn:subsection | akn:title | akn:subtitle)[not(@refersTo = 'vom-hdr-abweichende-gliederungsebene')]"
@@ -4481,7 +4482,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e419', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e421', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -4489,8 +4490,8 @@
   </template>
   <template
     match="regtxt:vomHdrAbweichendeGliederung"
-    mode="group.d7e180"
-    priority="90"
+    mode="group.d7e183"
+    priority="91"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -4503,7 +4504,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e471' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e474' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00305"
           context="regtxt:vomHdrAbweichendeGliederung"
@@ -4534,7 +4535,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e475'">
+            <map-entry key="'d7e478'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -4549,7 +4550,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e475') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e478') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="count(//(akn:book | akn:part | akn:chapter | akn:subchapter | akn:section | akn:subsection | akn:title | akn:subtitle)[@refersTo = 'vom-hdr-abweichende-gliederungsebene']) = 0"
@@ -4602,7 +4603,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e471', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e474', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -4610,8 +4611,8 @@
   </template>
   <template
     match="(akn:book | akn:part | akn:chapter | akn:subchapter | akn:section | akn:subsection | akn:title | akn:subtitle)[@refersTo = 'vom-hdr-abweichende-gliederungsebene']"
-    mode="group.d7e180"
-    priority="89"
+    mode="group.d7e183"
+    priority="90"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -4624,7 +4625,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e471' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e474' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00306"
           context="(akn:book | akn:part | akn:chapter | akn:subchapter | akn:section | akn:subsection | akn:title | akn:subtitle)[@refersTo = 'vom-hdr-abweichende-gliederungsebene']"
@@ -4655,7 +4656,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e484'">
+            <map-entry key="'d7e487'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -4670,7 +4671,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e484') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e487') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(//regtxt:vomHdrAbweichendeGliederung))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -4718,7 +4719,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e471', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e474', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -4726,8 +4727,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri]/akn:conclusions"
-    mode="group.d7e180"
-    priority="88"
+    mode="group.d7e183"
+    priority="89"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -4740,7 +4741,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e496' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e498' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00310"
           context="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri]/akn:conclusions"
@@ -4771,7 +4772,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e500'">
+            <map-entry key="'d7e502'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -4781,7 +4782,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e503'">
+            <map-entry key="'d7e505'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -4796,7 +4797,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e500') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e502') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="./akn:blockContainer and $bearbeitende-institution-frbrauthor = 'recht.bund.de/institution/bundesregierung'"
@@ -4843,7 +4844,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e503') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e505') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="./akn:blockContainer and $bearbeitende-institution-frbrauthor = 'recht.bund.de/institution/bundesrat'"
@@ -4893,7 +4894,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e496', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e498', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -4901,8 +4902,8 @@
   </template>
   <template
     match="akn:act/akn:conclusions/akn:blockContainer"
-    mode="group.d7e180"
-    priority="87"
+    mode="group.d7e183"
+    priority="88"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -4915,7 +4916,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e508' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e510' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00320"
           context="akn:act/akn:conclusions/akn:blockContainer"
@@ -4946,7 +4947,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e512'">
+            <map-entry key="'d7e514'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -4961,7 +4962,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e512') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e514') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(count(akn:p) ge 2)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -5006,7 +5007,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e508', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e510', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -5014,8 +5015,8 @@
   </template>
   <template
     match="(akn:act | akn:bill)/akn:conclusions/akn:blockContainer/akn:p[1]"
-    mode="group.d7e180"
-    priority="86"
+    mode="group.d7e183"
+    priority="87"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -5028,7 +5029,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e508' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e510' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00321"
           context="(akn:act | akn:bill)/akn:conclusions/akn:blockContainer/akn:p[1]"
@@ -5059,7 +5060,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e518'">
+            <map-entry key="'d7e520'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5069,7 +5070,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e521'">
+            <map-entry key="'d7e523'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5084,7 +5085,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e518') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e520') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(akn:location))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -5126,7 +5127,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e521') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e523') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(akn:date))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -5171,7 +5172,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e508', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e510', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -5179,8 +5180,8 @@
   </template>
   <template
     match="(akn:act | akn:bill)/akn:conclusions/akn:blockContainer/akn:p[position() ge 2]"
-    mode="group.d7e180"
-    priority="85"
+    mode="group.d7e183"
+    priority="86"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -5193,7 +5194,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e508' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e510' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00322"
           context="(akn:act | akn:bill)/akn:conclusions/akn:blockContainer/akn:p[position() ge 2]"
@@ -5224,7 +5225,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e527'">
+            <map-entry key="'d7e529'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5239,7 +5240,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e527') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e529') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(akn:signature))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -5284,7 +5285,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e508', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e510', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -5292,8 +5293,8 @@
   </template>
   <template
     match="//akn:doc[@name = $art-vorblatt-regelungstext-uri]/akn:mainBody"
-    mode="group.d7e180"
-    priority="84"
+    mode="group.d7e183"
+    priority="85"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -5306,7 +5307,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e535' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e537' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00330"
           context="//akn:doc[@name = $art-vorblatt-regelungstext-uri]/akn:mainBody"
@@ -5337,7 +5338,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e539'">
+            <map-entry key="'d7e541'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5347,7 +5348,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e542'">
+            <map-entry key="'d7e544'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5357,7 +5358,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e545'">
+            <map-entry key="'d7e547'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5367,7 +5368,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e548'">
+            <map-entry key="'d7e550'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5377,7 +5378,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e551'">
+            <map-entry key="'d7e553'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5387,7 +5388,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e555'">
+            <map-entry key="'d7e557'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5397,7 +5398,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e558'">
+            <map-entry key="'d7e560'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5407,7 +5408,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e561'">
+            <map-entry key="'d7e563'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5417,7 +5418,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e564'">
+            <map-entry key="'d7e566'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5427,7 +5428,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e567'">
+            <map-entry key="'d7e569'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5442,7 +5443,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e539') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e541') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-problem-und-ziel']))"
@@ -5486,7 +5487,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e542') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e544') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-loesung']))"
@@ -5530,7 +5531,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e545') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e547') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-alternativen']))"
@@ -5574,7 +5575,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e548') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e550') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-haushaltsausgaben-ohne-erfuellungsaufwand']))"
@@ -5618,7 +5619,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e551') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e553') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-erfuellungsaufwand']))"
@@ -5662,7 +5663,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e555') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e557') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-erfuellungsaufwand']//akn:tblock[@refersTo = 'erfuellungsaufwand-fuer-die-wirtschaft']))"
@@ -5706,7 +5707,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e558') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e560') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-erfuellungsaufwand']//akn:tblock[@refersTo = 'erfuellungsaufwand-fuer-die-wirtschaft']/akn:tblock[@refersTo = 'davon-buerokratiekosten-aus-informationspflichten']))"
@@ -5750,7 +5751,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e561') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e563') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-erfuellungsaufwand']//akn:tblock[@refersTo = 'erfuellungsaufwand-fuer-buergerinnen-und-buerger']))"
@@ -5794,7 +5795,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e564') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e566') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-erfuellungsaufwand']//akn:tblock[@refersTo = 'erfuellungsaufwand-der-verwaltung']))"
@@ -5838,7 +5839,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e567') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e569') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-weitere-kosten']))"
@@ -5885,7 +5886,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e535', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e537', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -5893,8 +5894,8 @@
   </template>
   <template
     match="//akn:doc[@name = $art-vorblatt-uri]/akn:mainBody/akn:hcontainer[@refersTo = $refersto-literal-vorblattabschnitt-erfüllungsaufwand]//akn:tblock"
-    mode="group.d7e180"
-    priority="83"
+    mode="group.d7e183"
+    priority="84"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -5907,7 +5908,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e535' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e537' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00335"
           context="//akn:doc[@name = $art-vorblatt-uri]/akn:mainBody/akn:hcontainer[@refersTo = $refersto-literal-vorblattabschnitt-erfüllungsaufwand]//akn:tblock"
@@ -5938,7 +5939,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e577'">
+            <map-entry key="'d7e579'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -5961,7 +5962,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e577') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e579') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (exists(@refersTo)) then (@refersTo = $zulässige-literale-zum-erfüllungsaufwand) else true())"
@@ -6022,7 +6023,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e535', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e537', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -6030,8 +6031,8 @@
   </template>
   <template
     match="//akn:doc[@name = $art-vorblatt-beschlussempfehlung-uri]/akn:mainBody"
-    mode="group.d7e180"
-    priority="82"
+    mode="group.d7e183"
+    priority="83"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -6044,7 +6045,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e592' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e594' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00336"
           context="//akn:doc[@name = $art-vorblatt-beschlussempfehlung-uri]/akn:mainBody"
@@ -6075,7 +6076,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e596'">
+            <map-entry key="'d7e598'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6085,7 +6086,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e599'">
+            <map-entry key="'d7e601'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6095,7 +6096,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e602'">
+            <map-entry key="'d7e604'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6105,7 +6106,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e605'">
+            <map-entry key="'d7e607'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6120,7 +6121,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e596') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e598') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-problem']))"
@@ -6164,7 +6165,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e599') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e601') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-loesung']))"
@@ -6208,7 +6209,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e602') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e604') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-alternativen']))"
@@ -6252,7 +6253,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e605') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e607') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'vorblattabschnitt-kosten']))"
@@ -6299,7 +6300,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e592', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e594', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -6307,8 +6308,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:doc[@name = $art-begründung-uri and $typ = ($typ-gesetz, $typ-verordnung, $typ-verwaltungsvorschrift)]"
-    mode="group.d7e180"
-    priority="81"
+    mode="group.d7e183"
+    priority="82"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -6321,7 +6322,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e613' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e615' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00340"
           context="/akn:akomaNtoso/akn:doc[@name = $art-begründung-uri and $typ = ($typ-gesetz, $typ-verordnung, $typ-verwaltungsvorschrift)]"
@@ -6352,7 +6353,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e617'">
+            <map-entry key="'d7e619'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6362,7 +6363,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e620'">
+            <map-entry key="'d7e622'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6372,7 +6373,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e623'">
+            <map-entry key="'d7e625'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6387,7 +6388,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e617') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e619') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(./akn:mainBody/akn:hcontainer[@refersTo = 'begruendung-allgemeiner-teil'])"
@@ -6431,7 +6432,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e620') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e622') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(./akn:mainBody/akn:hcontainer[@refersTo = 'begruendung-besonderer-teil'])"
@@ -6475,7 +6476,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e623') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e625') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="./akn:conclusions">
                 <variable
@@ -6523,7 +6524,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e613', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e615', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -6531,8 +6532,8 @@
   </template>
   <template
     match="//akn:doc[@name = $art-begründung-uri]/akn:mainBody//akn:hcontainer[@refersTo = 'begruendungsabschnitt-regelungsfolgen']//akn:tblock"
-    mode="group.d7e180"
-    priority="80"
+    mode="group.d7e183"
+    priority="81"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -6545,7 +6546,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e613' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e615' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00345"
           context="//akn:doc[@name = $art-begründung-uri]/akn:mainBody//akn:hcontainer[@refersTo = 'begruendungsabschnitt-regelungsfolgen']//akn:tblock"
@@ -6576,7 +6577,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e633'">
+            <map-entry key="'d7e635'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6599,7 +6600,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e633') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e635') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (exists(@refersTo)) then (@refersTo = $zulässige-literale-zu-regelungsfolgen) else true())"
@@ -6660,7 +6661,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e613', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e615', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -6668,8 +6669,8 @@
   </template>
   <template
     match="//akn:doc[@name = $art-begründung-uri]/akn:mainBody/akn:hcontainer[@refersTo = 'begruendung-allgemeiner-teil']"
-    mode="group.d7e180"
-    priority="79"
+    mode="group.d7e183"
+    priority="80"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -6682,7 +6683,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e647' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e649' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00350"
           context="//akn:doc[@name = $art-begründung-uri]/akn:mainBody/akn:hcontainer[@refersTo = 'begruendung-allgemeiner-teil']"
@@ -6713,7 +6714,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e651'">
+            <map-entry key="'d7e653'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6723,7 +6724,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e654'">
+            <map-entry key="'d7e656'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6733,7 +6734,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e657'">
+            <map-entry key="'d7e659'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6743,7 +6744,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e660'">
+            <map-entry key="'d7e662'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6753,7 +6754,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e663'">
+            <map-entry key="'d7e665'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -6768,7 +6769,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e651') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e653') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'begruendungsabschnitt-zielsetzung-und-notwendigkeit']))"
@@ -6812,7 +6813,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e654') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e656') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'begruendungsabschnitt-wesentlicher-inhalt']))"
@@ -6856,7 +6857,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e657') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e659') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'begruendungsabschnitt-alternativen']))"
@@ -6900,7 +6901,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e660') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e662') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'begruendungsabschnitt-regelungskompetenz']))"
@@ -6944,7 +6945,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e663') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e665') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:hcontainer[@refersTo = 'begruendungsabschnitt-regelungsfolgen']))"
@@ -6991,7 +6992,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e647', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e649', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -6999,8 +7000,8 @@
   </template>
   <template
     match="//akn:doc[@name = $art-begründung-uri]/akn:mainBody/akn:hcontainer[@refersTo = 'begruendung-allgemeiner-teil']/akn:hcontainer[@refersTo = 'begruendungsabschnitt-regelungsfolgen']/akn:content"
-    mode="group.d7e180"
-    priority="78"
+    mode="group.d7e183"
+    priority="79"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -7013,7 +7014,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e672' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e674' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00360"
           context="//akn:doc[@name = $art-begründung-uri]/akn:mainBody/akn:hcontainer[@refersTo = 'begruendung-allgemeiner-teil']/akn:hcontainer[@refersTo = 'begruendungsabschnitt-regelungsfolgen']/akn:content"
@@ -7044,7 +7045,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e676'">
+            <map-entry key="'d7e678'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7054,7 +7055,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e679'">
+            <map-entry key="'d7e681'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7064,7 +7065,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e682'">
+            <map-entry key="'d7e684'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7074,7 +7075,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e685'">
+            <map-entry key="'d7e687'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7084,7 +7085,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e688'">
+            <map-entry key="'d7e690'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7094,7 +7095,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e692'">
+            <map-entry key="'d7e694'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7104,7 +7105,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e695'">
+            <map-entry key="'d7e697'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7119,7 +7120,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e676') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e678') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:tblock[@refersTo = 'regelungsfolgen-abschnitt-rechts-und-verwaltungsvereinfachung']))"
@@ -7163,7 +7164,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e679') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e681') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:tblock[@refersTo = 'regelungsfolgen-abschnitt-nachhaltigkeitsaspekte']))"
@@ -7207,7 +7208,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e682') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e684') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:tblock[@refersTo = 'regelungsfolgen-abschnitt-erfuellungsaufwand']))"
@@ -7251,7 +7252,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e685') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e687') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:tblock[@refersTo = 'regelungsfolgen-abschnitt-weitere-kosten']))"
@@ -7295,7 +7296,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e688') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e690') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:tblock[@refersTo = 'regelungsfolgen-abschnitt-gleichstellungspolitische-relevanzpruefung']))"
@@ -7339,7 +7340,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e692') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e694') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:tblock[@refersTo = 'regelungsfolgen-abschnitt-haushaltsausgaben-ohne-erfuellungsaufwand']))"
@@ -7383,7 +7384,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e695') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e697') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(./akn:tblock[@refersTo = 'regelungsfolgen-abschnitt-weitere-regelungsfolgen']))"
@@ -7430,7 +7431,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e672', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e674', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -7438,8 +7439,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:doc[@name = $art-anschreiben-uri]"
-    mode="group.d7e180"
-    priority="77"
+    mode="group.d7e183"
+    priority="78"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -7452,7 +7453,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e703' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e705' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00380"
           context="/akn:akomaNtoso/akn:doc[@name = $art-anschreiben-uri]"
@@ -7483,7 +7484,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e707'">
+            <map-entry key="'d7e709'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7498,7 +7499,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e707') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e709') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="$bearbeitende-institution-frbrauthor = ( 'recht.bund.de/institution/bundesregierung', 'recht.bund.de/institution/bundestag', 'recht.bund.de/institution/bundeskanzler', 'recht.bund.de/institution/bundespraesident' ) and ./akn:mainBody/akn:p/akn:date[@refersTo = 'fristablauf-datum']"
@@ -7548,7 +7549,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e703', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e705', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -7556,8 +7557,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:doc[@name = ($art-anschreiben-uri, $art-vorblatt-uri)]/akn:preface/akn:longTitle/akn:p"
-    mode="group.d7e180"
-    priority="76"
+    mode="group.d7e183"
+    priority="77"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -7570,7 +7571,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e715' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e717' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00390"
           context="/akn:akomaNtoso/akn:doc[@name = ($art-anschreiben-uri, $art-vorblatt-uri)]/akn:preface/akn:longTitle/akn:p"
@@ -7601,7 +7602,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e719'">
+            <map-entry key="'d7e721'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7611,7 +7612,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e722'">
+            <map-entry key="'d7e724'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7626,7 +7627,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e719') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e721') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="./akn:inline[@refersTo = $refersto-literal-ausschussueberweisung] and $bearbeitende-institution-frbrauthor = ( 'recht.bund.de/institution/bundesregierung', 'recht.bund.de/institution/bundestag', 'recht.bund.de/institution/bundeskanzler', 'recht.bund.de/institution/bundespraesident' )"
@@ -7673,7 +7674,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e722') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e724') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="./akn:docNumber and $bearbeitende-institution-frbrauthor = ( 'recht.bund.de/institution/bundesregierung', 'recht.bund.de/institution/bundeskanzler', 'recht.bund.de/institution/bundespraesident' )"
@@ -7723,7 +7724,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e715', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e717', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -7731,8 +7732,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:act[@name = $art-vereinbarung-uri]/akn:body"
-    mode="group.d7e180"
-    priority="75"
+    mode="group.d7e183"
+    priority="76"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -7745,7 +7746,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e731' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e733' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00400"
           context="/akn:akomaNtoso/akn:act[@name = $art-vereinbarung-uri]/akn:body"
@@ -7776,7 +7777,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e735'">
+            <map-entry key="'d7e737'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7786,7 +7787,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e738'">
+            <map-entry key="'d7e740'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7801,7 +7802,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e735') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e737') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(@refersTo = ( 'notenwechsel', 'vertrag', 'fakultativprotokoll' ))"
@@ -7845,7 +7846,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e738') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e740') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(./akn:hcontainer[@refersTo = 'verbindliche-sprachfassung']) &gt;= 1)"
@@ -7892,7 +7893,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e731', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e733', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -7900,8 +7901,8 @@
   </template>
   <template
     match="//akn:textualMod[@type = 'insertion']"
-    mode="group.d7e180"
-    priority="74"
+    mode="group.d7e183"
+    priority="75"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -7914,7 +7915,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e746' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e748' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00420"
           context="//akn:textualMod[@type = 'insertion']"
@@ -7945,7 +7946,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e750'">
+            <map-entry key="'d7e752'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -7960,7 +7961,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e750') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e752') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(./akn:destination/@pos)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -8005,7 +8006,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e746', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e748', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -8013,8 +8014,8 @@
   </template>
   <template
     match="//akn:mod[not(ancestor::akn:mod)]"
-    mode="group.d7e180"
-    priority="73"
+    mode="group.d7e183"
+    priority="74"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -8027,7 +8028,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e757' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e759' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00422"
           context="//akn:mod[not(ancestor::akn:mod)]"
@@ -8058,7 +8059,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e765'">
+            <map-entry key="'d7e767'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8081,7 +8082,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e765') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e767') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count($alle-textänderungen[@href = $gesuchte-änderungsbefehl-id]) = 1)"
@@ -8130,7 +8131,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e757', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e759', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -8138,8 +8139,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:analysis/akn:activeModifications/akn:textualMod/akn:source | /akn:akomaNtoso/*/akn:meta/akn:analysis/akn:activeModifications/akn:forceMod/akn:source"
-    mode="group.d7e180"
-    priority="72"
+    mode="group.d7e183"
+    priority="73"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -8152,7 +8153,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e772' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e775' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00423"
           context="/akn:akomaNtoso/*/akn:meta/akn:analysis/akn:activeModifications/akn:textualMod/akn:source | /akn:akomaNtoso/*/akn:meta/akn:analysis/akn:activeModifications/akn:forceMod/akn:source"
@@ -8183,7 +8184,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e778'">
+            <map-entry key="'d7e781'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8193,7 +8194,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e783'">
+            <map-entry key="'d7e786'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8212,7 +8213,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e778') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e781') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(//akn:mod[@eId = $referenzierte-änderungsbefehl-id]) = 1)"
@@ -8258,7 +8259,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e783') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e786') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(starts-with(@href, '#'))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -8301,7 +8302,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e772', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e775', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -8309,8 +8310,8 @@
   </template>
   <template
     match="akn:mod[@refersTo = 'aenderungsbefehl-umnummerierung']"
-    mode="group.d7e180"
-    priority="71"
+    mode="group.d7e183"
+    priority="72"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -8323,7 +8324,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e789' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e791' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00424"
           context="akn:mod[@refersTo = 'aenderungsbefehl-umnummerierung']"
@@ -8354,7 +8355,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e793'">
+            <map-entry key="'d7e795'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8369,7 +8370,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e793') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e795') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(akn:span[@refersTo = 'neue-verweisangabe']))"
@@ -8414,7 +8415,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e789', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e791', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -8422,8 +8423,8 @@
   </template>
   <template
     match="akn:span[@refersTo = 'neue-verweisangabe']"
-    mode="group.d7e180"
-    priority="70"
+    mode="group.d7e183"
+    priority="71"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -8436,7 +8437,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e798' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e800' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00425"
           context="akn:span[@refersTo = 'neue-verweisangabe']"
@@ -8467,7 +8468,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e802'">
+            <map-entry key="'d7e804'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8482,7 +8483,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e802') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e804') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(exists(parent::akn:mod[@refersTo = 'aenderungsbefehl-umnummerierung']))"
@@ -8527,7 +8528,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e798', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e800', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -8535,8 +8536,8 @@
   </template>
   <template
     match="akn:mod[@refersTo and not(ancestor::akn:mod)]"
-    mode="group.d7e180"
-    priority="69"
+    mode="group.d7e183"
+    priority="70"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -8549,7 +8550,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e807' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e809' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00426"
           context="akn:mod[@refersTo and not(ancestor::akn:mod)]"
@@ -8580,7 +8581,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e819'">
+            <map-entry key="'d7e821'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8590,7 +8591,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e827'">
+            <map-entry key="'d7e829'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8600,7 +8601,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e835'">
+            <map-entry key="'d7e837'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8610,7 +8611,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e843'">
+            <map-entry key="'d7e845'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8620,7 +8621,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e851'">
+            <map-entry key="'d7e853'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8630,7 +8631,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e859'">
+            <map-entry key="'d7e861'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8640,7 +8641,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e867'">
+            <map-entry key="'d7e869'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -8662,7 +8663,7 @@
           <variable name="textualmod-type-renumbering" select="'renumbering'" />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e819') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e821') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo = 'aenderungsbefehl-einfuegen') then (//akn:textualMod[akn:source/@href = concat('#', current()/@eId) and @type = $textualmod-type-insertion]) else true())"
@@ -8711,7 +8712,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e827') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e829') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo = 'aenderungsbefehl-ersetzen') then (//akn:textualMod[akn:source/@href = concat('#', current()/@eId) and @type = $textualmod-type-substitution]) else true())"
@@ -8764,7 +8765,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e835') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e837') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo = 'aenderungsbefehl-streichen') then (//akn:textualMod[akn:source/@href = concat('#', current()/@eId) and @type = $textualmod-type-repeal]) else true())"
@@ -8817,7 +8818,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e843') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e845') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo = 'aenderungsbefehl-umnummerierung') then (//akn:textualMod[akn:source/@href = concat('#', current()/@eId) and @type = $textualmod-type-renumbering]) else true())"
@@ -8870,7 +8871,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e851') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e853') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo = 'aenderungsbefehl-neufassung') then (//akn:textualMod[akn:source/@href = concat('#', current()/@eId) and @type = $textualmod-type-substitution]) else true())"
@@ -8923,7 +8924,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e859') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e861') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo = 'aenderungsbefehl-ersetzen-weggefallen') then (//akn:textualMod[akn:source/@href = concat('#', current()/@eId) and @type = $textualmod-type-substitution]) else true())"
@@ -8976,7 +8977,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e867') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e869') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo = 'aenderungsbefehl-neufassung-weggefallen') then (//akn:textualMod[akn:source/@href = concat('#', current()/@eId) and @type = $textualmod-type-substitution]) else true())"
@@ -9032,7 +9033,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e807', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e809', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -9040,8 +9041,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/(akn:act | akn:bill | akn:doc | akn:statement | akn:documentCollection)//* [(@eId and exists(parent::*[@eId])) and not(local-name() = 'article' and not(ancestor::akn:quotedStructure))]"
-    mode="group.d7e180"
-    priority="68"
+    mode="group.d7e183"
+    priority="69"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9054,7 +9055,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e880' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e882' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00430"
           context="/akn:akomaNtoso/(akn:act | akn:bill | akn:doc | akn:statement | akn:documentCollection)//* [(@eId and exists(parent::*[@eId])) and not(local-name() = 'article' and not(ancestor::akn:quotedStructure))]"
@@ -9085,7 +9086,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e892'">
+            <map-entry key="'d7e894'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -9107,7 +9108,7 @@
           <variable name="vorgänger-eid" select="ancestor::*[1]/@eId" />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e892') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e894') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not($geprüfte-eid = concat($vorgänger-eid, $trennzeichen-zwischen-eids, $geprüfte-eid-lokaler-teil))"
@@ -9168,7 +9169,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e880', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e882', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -9176,8 +9177,8 @@
   </template>
   <template
     match="@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-zitierbar) and parent::*/akn:num != '']"
-    mode="group.d7e180"
-    priority="67"
+    mode="group.d7e183"
+    priority="68"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9190,7 +9191,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e903' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e906' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-000431"
           context="@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-zitierbar) and parent::*/akn:num != '']"
@@ -9221,7 +9222,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e933'">
+            <map-entry key="'d7e936'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -9278,7 +9279,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e933') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e936') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (not(parent::*/akn:num[@refersTo = 'ordinale-zaehlung-eid'])) then $positionsangabe-ist = $positionsangabe-soll else true())"
@@ -9338,7 +9339,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e903', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e906', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -9346,8 +9347,8 @@
   </template>
   <template
     match="@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-zitierbar)]"
-    mode="group.d7e180"
-    priority="66"
+    mode="group.d7e183"
+    priority="67"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9360,7 +9361,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e903' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e906' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00432"
           context="@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-zitierbar)]"
@@ -9391,7 +9392,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e947'">
+            <map-entry key="'d7e950'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -9406,7 +9407,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e947') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e950') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(parent::*/akn:num))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -9457,7 +9458,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e903', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e906', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -9465,8 +9466,8 @@
   </template>
   <template
     match="akn:num[@refersTo = $literal-deklaration-ausnahme-eid-zählweise]"
-    mode="group.d7e180"
-    priority="65"
+    mode="group.d7e183"
+    priority="66"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9479,7 +9480,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e957' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e959' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00433"
           context="akn:num[@refersTo = $literal-deklaration-ausnahme-eid-zählweise]"
@@ -9510,7 +9511,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e961'">
+            <map-entry key="'d7e963'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -9520,7 +9521,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e964'">
+            <map-entry key="'d7e966'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -9535,7 +9536,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e961') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e963') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(local-name(parent::*) = $zitierbare-elementtypen)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -9569,7 +9570,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e964') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e966') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(starts-with(tokenize(parent::*/@eId, '-')[last()], $präfix-eid-nummerierbar))"
@@ -9626,7 +9627,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e957', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e959', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -9634,8 +9635,8 @@
   </template>
   <template
     match="*[@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-nummerierbar)] and not(local-name() = 'article')]"
-    mode="group.d7e180"
-    priority="64"
+    mode="group.d7e183"
+    priority="65"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9648,7 +9649,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e977' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e979' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00434"
           context="*[@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-nummerierbar)] and not(local-name() = 'article')]"
@@ -9679,7 +9680,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e989'">
+            <map-entry key="'d7e991'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -9707,7 +9708,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e989') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e991') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not($elementrang-ist = $elementrang-soll)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -9762,7 +9763,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e977', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e979', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -9770,8 +9771,8 @@
   </template>
   <template
     match="*[local-name() = $zitierbare-elementtypen and @eId[starts-with(tokenize(., '-')[last()], $präfix-eid-nummerierbar)] and exists(akn:num)]"
-    mode="group.d7e180"
-    priority="63"
+    mode="group.d7e183"
+    priority="64"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9784,7 +9785,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1002' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1004' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00435"
           context="*[local-name() = $zitierbare-elementtypen and @eId[starts-with(tokenize(., '-')[last()], $präfix-eid-nummerierbar)] and exists(akn:num)]"
@@ -9815,7 +9816,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1006'">
+            <map-entry key="'d7e1008'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -9830,7 +9831,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1006') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1008') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(akn:num/@refersTo = 'ordinale-zaehlung-eid')">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -9873,7 +9874,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1002', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1004', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -9881,8 +9882,8 @@
   </template>
   <template
     match="akn:passiveModifications/akn:textualMod/akn:destination/@href"
-    mode="group.d7e180"
-    priority="62"
+    mode="group.d7e183"
+    priority="63"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9895,7 +9896,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1014' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1016' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00436"
           context="akn:passiveModifications/akn:textualMod/akn:destination/@href"
@@ -9926,7 +9927,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1018'">
+            <map-entry key="'d7e1020'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -9936,7 +9937,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1025'">
+            <map-entry key="'d7e1027'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -9959,7 +9960,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1018') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1020') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(starts-with(., '#'))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -9999,7 +10000,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1025') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1027') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(/akn:akomaNtoso//*[@eId eq $lokaler-verweis-ohne-zeichenbereich]) = 1)"
@@ -10048,7 +10049,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1014', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1016', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -10056,8 +10057,8 @@
   </template>
   <template
     match="akn:article[@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-nummerierbar)]]"
-    mode="group.d7e180"
-    priority="61"
+    mode="group.d7e183"
+    priority="62"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -10070,7 +10071,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1032' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1035' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00437"
           context="akn:article[@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-nummerierbar)]]"
@@ -10101,7 +10102,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1047'">
+            <map-entry key="'d7e1050'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10133,7 +10134,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1047') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1050') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not($elementrang-ist = $elementrang-soll)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -10182,7 +10183,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1032', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1035', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -10190,8 +10191,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/(akn:act | akn:bill | akn:doc | akn:statement | akn:documentCollection)//akn:article[not(ancestor::akn:quotedStructure)]/@eId"
-    mode="group.d7e180"
-    priority="60"
+    mode="group.d7e183"
+    priority="61"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -10204,7 +10205,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1057' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1059' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00438"
           context="/akn:akomaNtoso/(akn:act | akn:bill | akn:doc | akn:statement | akn:documentCollection)//akn:article[not(ancestor::akn:quotedStructure)]/@eId"
@@ -10235,7 +10236,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1061'">
+            <map-entry key="'d7e1063'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10250,7 +10251,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1061') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1063') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(starts-with(., 'art-'))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -10293,7 +10294,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1057', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1059', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -10301,8 +10302,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/(akn:act | akn:bill | akn:doc | akn:statement | akn:documentCollection)//akn:article[ancestor::akn:quotedStructure]/@eId"
-    mode="group.d7e180"
-    priority="59"
+    mode="group.d7e183"
+    priority="60"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -10315,7 +10316,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1057' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1059' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00439"
           context="/akn:akomaNtoso/(akn:act | akn:bill | akn:doc | akn:statement | akn:documentCollection)//akn:article[ancestor::akn:quotedStructure]/@eId"
@@ -10346,7 +10347,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1067'">
+            <map-entry key="'d7e1069'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10361,7 +10362,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1067') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1069') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(matches(., '([a-zäöüß0-9]+-(n[1-9]{1}[0-9]*|z[0-9a-zäöüß~%]*)_)+art-(z|n)\d*[0-9a-zäöüß~%]*$'))"
@@ -10406,13 +10407,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1057', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1059', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="@eId" mode="group.d7e180" priority="58">
+  <template match="@eId" mode="group.d7e183" priority="59">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -10424,7 +10425,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1072' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1074' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00450" context="@eId">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -10449,7 +10450,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1078'">
+            <map-entry key="'d7e1080'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10465,7 +10466,7 @@
           <variable name="kontext-eId-inhalt" select="." />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1078') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1080') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(key('nodes-by-eId', $kontext-eId-inhalt)) eq 1)"
@@ -10522,13 +10523,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1072', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1074', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="@GUID" mode="group.d7e180" priority="57">
+  <template match="@GUID" mode="group.d7e183" priority="58">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -10540,7 +10541,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1087' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1089' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00460" context="@GUID">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -10565,7 +10566,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1095'">
+            <map-entry key="'d7e1097'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10585,7 +10586,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1095') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1097') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(xs:int($häufigkeit-der-aktuellen-guid) eq 1)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -10635,7 +10636,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1087', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1089', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -10643,8 +10644,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRthis"
-    mode="group.d7e180"
-    priority="56"
+    mode="group.d7e183"
+    priority="57"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -10657,7 +10658,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1259' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1261' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00500"
           context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRthis"
@@ -10688,7 +10689,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1263'">
+            <map-entry key="'d7e1265'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10698,7 +10699,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1271'">
+            <map-entry key="'d7e1273'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10708,7 +10709,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1279'">
+            <map-entry key="'d7e1281'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10723,7 +10724,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1263') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1265') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung) then (@value = $FRBRthis-entwurfsfassung-work-inhalt) else true())"
@@ -10782,7 +10783,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1271') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1273') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-verkündungsfassung) then (@value = $FRBRthis-verkündungsfassung-work-inhalt) else true())"
@@ -10841,7 +10842,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1279') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1281') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (@value = $FRBRthis-konsolidierte-fassung-work-inhalt) else true())"
@@ -10903,7 +10904,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1259', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1261', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -10911,8 +10912,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRthis"
-    mode="group.d7e180"
-    priority="55"
+    mode="group.d7e183"
+    priority="56"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -10925,7 +10926,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1259' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1261' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00510"
           context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRthis"
@@ -10956,7 +10957,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1290'">
+            <map-entry key="'d7e1292'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10966,7 +10967,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1298'">
+            <map-entry key="'d7e1300'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10976,7 +10977,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1306'">
+            <map-entry key="'d7e1308'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -10991,7 +10992,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1290') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1292') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung) then (@value = $FRBRthis-entwurfsfassung-expression-inhalt) else true())"
@@ -11050,7 +11051,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1298') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1300') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-verkündungsfassung) then (@value = $FRBRthis-verkündungsfassung-expression-inhalt) else true())"
@@ -11109,7 +11110,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1306') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1308') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (@value = $FRBRthis-konsolidierte-fassung-expression-inhalt) else true())"
@@ -11171,7 +11172,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1259', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1261', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -11179,8 +11180,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRManifestation/akn:FRBRthis"
-    mode="group.d7e180"
-    priority="54"
+    mode="group.d7e183"
+    priority="55"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -11193,7 +11194,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1259' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1261' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00520"
           context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRManifestation/akn:FRBRthis"
@@ -11224,7 +11225,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1317'">
+            <map-entry key="'d7e1319'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -11234,7 +11235,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1325'">
+            <map-entry key="'d7e1327'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -11244,7 +11245,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1333'">
+            <map-entry key="'d7e1335'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -11259,7 +11260,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1317') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1319') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung) then (@value = $FRBRthis-entwurfsfassung-manifestation-inhalt) else true())"
@@ -11318,7 +11319,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1325') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1327') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-verkündungsfassung) then (@value = $FRBRthis-verkündungsfassung-manifestation-inhalt) else true())"
@@ -11377,7 +11378,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1333') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1335') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (@value = $FRBRthis-konsolidierte-fassung-manifestation-inhalt) else true())"
@@ -11439,7 +11440,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1259', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1261', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -11447,8 +11448,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRuri"
-    mode="group.d7e180"
-    priority="53"
+    mode="group.d7e183"
+    priority="54"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -11461,7 +11462,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1343' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1345' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00530"
           context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRuri"
@@ -11492,7 +11493,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1347'">
+            <map-entry key="'d7e1349'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -11502,7 +11503,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1355'">
+            <map-entry key="'d7e1357'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -11512,7 +11513,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1363'">
+            <map-entry key="'d7e1365'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -11527,7 +11528,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1347') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1349') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung) then (@value = $FRBRuri-entwurfsfassung-work-inhalt) else true())"
@@ -11582,7 +11583,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1355') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1357') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-verkündungsfassung) then (@value = $FRBRuri-verkündungsfassung-work-inhalt) else true())"
@@ -11641,7 +11642,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1363') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1365') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (@value = $FRBRuri-konsolidierte-fassung-work-inhalt) else true())"
@@ -11703,7 +11704,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1343', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1345', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -11711,8 +11712,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRuri"
-    mode="group.d7e180"
-    priority="52"
+    mode="group.d7e183"
+    priority="53"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -11725,7 +11726,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1343' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1345' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00540"
           context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRuri"
@@ -11756,7 +11757,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1374'">
+            <map-entry key="'d7e1376'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -11766,7 +11767,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1382'">
+            <map-entry key="'d7e1384'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -11776,7 +11777,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1390'">
+            <map-entry key="'d7e1392'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -11791,7 +11792,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1374') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1376') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung) then (@value = $FRBRuri-entwurfsfassung-expression-inhalt) else true())"
@@ -11850,7 +11851,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1382') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1384') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-verkündungsfassung) then (@value = $FRBRuri-verkündungsfassung-expression-inhalt) else true())"
@@ -11909,7 +11910,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1390') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1392') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (@value = $FRBRuri-konsolidierte-fassung-expression-inhalt) else true())"
@@ -11971,7 +11972,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1343', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1345', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -11979,8 +11980,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRManifestation/akn:FRBRuri"
-    mode="group.d7e180"
-    priority="51"
+    mode="group.d7e183"
+    priority="52"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -11993,7 +11994,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1343' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1345' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00550"
           context="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRManifestation/akn:FRBRuri"
@@ -12024,7 +12025,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1401'">
+            <map-entry key="'d7e1403'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12034,7 +12035,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1409'">
+            <map-entry key="'d7e1411'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12044,7 +12045,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1417'">
+            <map-entry key="'d7e1419'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12054,7 +12055,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1425'">
+            <map-entry key="'d7e1427'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12069,7 +12070,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1401') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1403') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung) then (@value = $FRBRuri-entwurfsfassung-manifestation-inhalt) else true())"
@@ -12128,7 +12129,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1409') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1411') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-verkündungsfassung) then (@value = $FRBRuri-verkündungsfassung-manifestation-inhalt) else true())"
@@ -12187,7 +12188,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1417') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1419') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (@value = $FRBRuri-konsolidierte-fassung-manifestation-inhalt) else true())"
@@ -12246,7 +12247,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1425') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1427') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(starts-with(@value, $authority-egesetzgebung) or starts-with(@value, $authority-everkündung) or starts-with(@value, $authority-rechtsinformationssystem))"
@@ -12301,7 +12302,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1343', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1345', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -12309,8 +12310,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:act/@name"
-    mode="group.d7e180"
-    priority="50"
+    mode="group.d7e183"
+    priority="51"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -12323,7 +12324,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1343' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1345' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00560"
           role="error"
@@ -12356,7 +12357,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1437'">
+            <map-entry key="'d7e1439'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12371,7 +12372,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1437') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1439') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (. = 'regelungstext') then $ist-verkündungsfassung or $ist-konsolidierte-fassung else true())"
@@ -12416,7 +12417,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1343', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1345', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -12424,8 +12425,8 @@
   </template>
   <template
     match="akn:meta/akn:proprietary/redok:legalDocML.de_metadaten"
-    mode="group.d7e180"
-    priority="49"
+    mode="group.d7e183"
+    priority="50"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -12438,7 +12439,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1442' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1444' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00590"
           context="akn:meta/akn:proprietary/redok:legalDocML.de_metadaten"
@@ -12469,7 +12470,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1446'">
+            <map-entry key="'d7e1448'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12484,7 +12485,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1446') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1448') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung) then (redok:fna = 'nicht-vorhanden' (: das Literal ist im Metadatenmodell als @default des einfachen Typs xs:token umgesetzt, daher hier als Literal anstatt einer dynamischen Referenzierung :)) else true())"
@@ -12523,7 +12524,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1442', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1444', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -12531,8 +12532,8 @@
   </template>
   <template
     match="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument']"
-    mode="group.d7e180"
-    priority="48"
+    mode="group.d7e183"
+    priority="49"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -12545,7 +12546,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1442' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1444' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00591"
           context="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument']"
@@ -12576,7 +12577,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1452'">
+            <map-entry key="'d7e1454'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12586,7 +12587,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1455'">
+            <map-entry key="'d7e1457'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12596,7 +12597,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1458'">
+            <map-entry key="'d7e1460'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12606,7 +12607,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1461'">
+            <map-entry key="'d7e1463'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12621,7 +12622,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1452') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1454') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:proprietary/redok:legalDocML.de_metadaten) eq 1)"
@@ -12665,7 +12666,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1455') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1457') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung and $bearbeitende-institution-frbrauthor = 'recht.bund.de/institution/bundestag') then (count(akn:proprietary/btag:legalDocML.de_metadaten) eq 1) else true())"
@@ -12709,7 +12710,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1458') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1460') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung and $bearbeitende-institution-frbrauthor = 'recht.bund.de/institution/bundesrat') then (count(akn:proprietary/brat:legalDocML.de_metadaten) eq 1) else true())"
@@ -12753,7 +12754,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1461') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1463') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung and $bearbeitende-institution-frbrauthor = 'recht.bund.de/institution/bundesregierung') then (count(akn:proprietary/breg:legalDocML.de_metadaten) eq 1) else true())"
@@ -12800,7 +12801,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1442', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1444', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -12808,8 +12809,8 @@
   </template>
   <template
     match="akn:meta[$teildokument-uri = ('/akn/ontology/de/concept/documenttype/bund/regelungstext-entwurf', '/akn/ontology/de/concept/documenttype/bund/regelungstext')]"
-    mode="group.d7e180"
-    priority="47"
+    mode="group.d7e183"
+    priority="48"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -12822,7 +12823,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1442' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1444' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00592"
           context="akn:meta[$teildokument-uri = ('/akn/ontology/de/concept/documenttype/bund/regelungstext-entwurf', '/akn/ontology/de/concept/documenttype/bund/regelungstext')]"
@@ -12853,7 +12854,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1467'">
+            <map-entry key="'d7e1469'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12868,7 +12869,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1467') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1469') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:proprietary/regtxt:legalDocML.de_metadaten) eq 1)"
@@ -12913,7 +12914,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1442', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1444', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -12921,8 +12922,8 @@
   </template>
   <template
     match="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/nkr-stellungnahme']"
-    mode="group.d7e180"
-    priority="46"
+    mode="group.d7e183"
+    priority="47"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -12935,7 +12936,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1442' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1444' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00593"
           context="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/nkr-stellungnahme']"
@@ -12966,7 +12967,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1473'">
+            <map-entry key="'d7e1475'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -12981,7 +12982,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1473') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1475') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:proprietary/nkr:legalDocML.de_metadaten) eq 1)"
@@ -13026,7 +13027,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1442', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1444', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -13034,8 +13035,8 @@
   </template>
   <template
     match="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/sonstiger-veroeffentlichungstext']"
-    mode="group.d7e180"
-    priority="45"
+    mode="group.d7e183"
+    priority="46"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -13048,7 +13049,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1442' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1444' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00595"
           context="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/sonstiger-veroeffentlichungstext']"
@@ -13079,7 +13080,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1479'">
+            <map-entry key="'d7e1481'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -13094,7 +13095,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1479') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1481') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:proprietary/sonst:legalDocML.de_metadaten) eq 1)"
@@ -13139,13 +13140,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1442', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1444', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:meta" mode="group.d7e180" priority="44">
+  <template match="akn:meta" mode="group.d7e183" priority="45">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -13157,7 +13158,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1484' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1487' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00594" context="akn:meta">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -13182,16 +13183,6 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1488'">
-              <variable
-                name="severity"
-                as="Q{http://www.w3.org/2001/XMLSchema}string"
-                select="'fatal'"
-              />
-              <sequence
-                select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
-              />
-            </map-entry>
             <map-entry key="'d7e1491'">
               <variable
                 name="severity"
@@ -13232,7 +13223,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1504'">
+            <map-entry key="'d7e1503'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -13262,12 +13253,22 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
+            <map-entry key="'d7e1513'">
+              <variable
+                name="severity"
+                as="Q{http://www.w3.org/2001/XMLSchema}string"
+                select="'fatal'"
+              />
+              <sequence
+                select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
+              />
+            </map-entry>
           </map>
         </variable>
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1488') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1491') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (akn:proprietary/btag:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument') else true())"
@@ -13311,7 +13312,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1491') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1494') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (akn:proprietary/brat:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument') else true())"
@@ -13355,7 +13356,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1494') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1497') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (akn:proprietary/breg:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument') else true())"
@@ -13399,7 +13400,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1497') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1500') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (akn:proprietary/nkr:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/nkr-stellungnahme') else true())"
@@ -13441,7 +13442,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1500') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1503') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (akn:proprietary/redok:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument') else true())"
@@ -13483,7 +13484,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1504') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1507') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (akn:proprietary/fhilf:legalDocML.de_metadaten) then ($teildokument-uri = ('/akn/ontology/de/concept/documenttype/bund/begruendung-regelungstext', '/akn/ontology/de/concept/documenttype/bund/regelungstext-entwurf', '/akn/ontology/de/concept/documenttype/bund/vorblatt-regelungstext')) else true())"
@@ -13525,7 +13526,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1507') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1510') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (akn:proprietary/regtxt:legalDocML.de_metadaten) then ($teildokument-uri = ('/akn/ontology/de/concept/documenttype/bund/regelungstext-entwurf', '/akn/ontology/de/concept/documenttype/bund/regelungstext')) else true())"
@@ -13567,7 +13568,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1510') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1513') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (akn:proprietary/sonst:legalDocML.de_metadaten) then ($teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/sonstiger-veroeffentlichungstext') else true())"
@@ -13612,13 +13613,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1484', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1487', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:timeInterval" mode="group.d7e180" priority="43">
+  <template match="akn:timeInterval" mode="group.d7e183" priority="44">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -13630,7 +13631,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1516' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1518' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00600" context="akn:timeInterval">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -13655,7 +13656,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1528'">
+            <map-entry key="'d7e1530'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -13665,7 +13666,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1532'">
+            <map-entry key="'d7e1534'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -13675,7 +13676,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1537'">
+            <map-entry key="'d7e1539'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -13685,7 +13686,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1542'">
+            <map-entry key="'d7e1544'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -13710,7 +13711,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1528') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1530') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(exists(@end) and exists(@duration)))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -13750,7 +13751,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1532') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1534') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(substring($beginn-geltungszeitintervall-uri, 2) = /akn:akomaNtoso/*/akn:meta/akn:lifecycle/akn:eventRef/@eId)"
@@ -13796,7 +13797,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1537') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1539') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (not(empty(@end))) then (substring($ende-geltungszeitintervall-uri, 2) = /akn:akomaNtoso/*/akn:meta/akn:lifecycle/akn:eventRef/@eId) else true())"
@@ -13842,7 +13843,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1542') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1544') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (not(empty($beginn-geltungszeitintervall)) and not(empty($ende-geltungszeitintervall))) then (xs:date($beginn-geltungszeitintervall) le xs:date($ende-geltungszeitintervall)) else true())"
@@ -13893,7 +13894,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1516', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1518', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -13901,8 +13902,8 @@
   </template>
   <template
     match="(akn:activeModifications | akn:passiveModifications)/akn:textualMod/akn:force | akn:article[@period] | akn:paragraph[@period] | akn:list[@period]"
-    mode="group.d7e180"
-    priority="42"
+    mode="group.d7e183"
+    priority="43"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -13915,7 +13916,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1516' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1518' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00610"
           context="(akn:activeModifications | akn:passiveModifications)/akn:textualMod/akn:force | akn:article[@period] | akn:paragraph[@period] | akn:list[@period]"
@@ -13946,7 +13947,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1556'">
+            <map-entry key="'d7e1558'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -13969,7 +13970,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1556') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1558') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not($verweis-auf-geltungszeitgruppe = $geltungszeitgruppen-im-dokument)"
@@ -14023,13 +14024,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1516', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1518', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:eventRef" mode="group.d7e180" priority="41">
+  <template match="akn:eventRef" mode="group.d7e183" priority="42">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -14041,7 +14042,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1516' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1518' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00620" context="akn:eventRef">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -14066,7 +14067,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1571'">
+            <map-entry key="'d7e1573'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14076,7 +14077,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1578'">
+            <map-entry key="'d7e1580'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14097,7 +14098,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1571') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1573') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ereignisdatum = $platzhalter-datum-unbekannt) then (ends-with($ereignisart, $literalsuffix-für-unbekanntes-datum)) else true())"
@@ -14147,7 +14148,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1578') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1580') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (ends-with($ereignisart, $literalsuffix-für-unbekanntes-datum)) then ($ereignisdatum = $platzhalter-datum-unbekannt) else true())"
@@ -14200,13 +14201,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1516', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1518', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:FRBRExpression" mode="group.d7e180" priority="40">
+  <template match="akn:FRBRExpression" mode="group.d7e183" priority="41">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -14218,7 +14219,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1587' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1589' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00630" context="akn:FRBRExpression">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -14243,7 +14244,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1597'">
+            <map-entry key="'d7e1599'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14253,7 +14254,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1600'">
+            <map-entry key="'d7e1602'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14263,7 +14264,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1604'">
+            <map-entry key="'d7e1606'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14290,7 +14291,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1597') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1599') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:FRBRalias[@name = $guid-vorherige-version]) le 1)"
@@ -14332,7 +14333,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1600') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1602') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:FRBRalias[@name = $guid-aktuelle-version]) eq 1)"
@@ -14374,7 +14375,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1604') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1606') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:FRBRalias) eq count(distinct-values(akn:FRBRalias/@value)))"
@@ -14413,13 +14414,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1587', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1589', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:meta/akn:lifecycle" mode="group.d7e180" priority="39">
+  <template match="akn:meta/akn:lifecycle" mode="group.d7e183" priority="40">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -14431,7 +14432,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1609' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1611' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00640" context="akn:meta/akn:lifecycle">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -14456,7 +14457,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1615'">
+            <map-entry key="'d7e1617'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14466,7 +14467,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1621'">
+            <map-entry key="'d7e1623'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14481,7 +14482,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1615') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1617') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:eventRef[@type = $type-literal-ereignisreferenz-repeal and @refersTo = $zulässige-literale-in-kombination-mit-repeal]) le 1)"
@@ -14532,7 +14533,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1621') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1623') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:eventRef[@type = $type-literal-ereignisreferenz-repeal and @refersTo = $zulässige-literale-in-kombination-mit-repeal]) le 1)"
@@ -14589,7 +14590,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1609', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1611', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -14597,8 +14598,8 @@
   </template>
   <template
     match="akn:meta/akn:lifecycle[$ist-entwurfsfassung]"
-    mode="group.d7e180"
-    priority="38"
+    mode="group.d7e183"
+    priority="39"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -14611,7 +14612,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1630' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1632' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00650"
           context="akn:meta/akn:lifecycle[$ist-entwurfsfassung]"
@@ -14642,7 +14643,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1634'">
+            <map-entry key="'d7e1636'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14652,7 +14653,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1653'">
+            <map-entry key="'d7e1655'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14662,7 +14663,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1661'">
+            <map-entry key="'d7e1663'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14672,7 +14673,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1669'">
+            <map-entry key="'d7e1671'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -14687,7 +14688,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1634') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1636') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($teildokument-uri = ($art-regelungstext-uri, $art-vereinbarung-uri, $art-bekanntmachungstext-uri)) then (akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-entwurfsfassung-ausfertigung-mit-unbekanntem-datum] and akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-entwurfsfassung-verkuendung-mit-unbekanntem-datum] and (akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-entwurfsfassung-inkrafttreten-mit-unbekanntem-datum] or akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-entwurfsfassung-inkrafttreten])) else true())"
@@ -14768,7 +14769,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1653') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1655') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-entwurfsfassung) then (akn:eventRef[@type = ($type-literal-ereignisreferenz-generation, $type-literal-ereignisreferenz-repeal)]) else ())"
@@ -14825,7 +14826,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1661') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1663') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($teildokument-uri = ($art-regelungstext-uri, $art-vereinbarung-uri, $art-bekanntmachungstext-uri)) then (count(akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-entwurfsfassung-ausfertigung-mit-unbekanntem-datum]) = 1) else true())"
@@ -14880,7 +14881,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1669') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1671') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($teildokument-uri = ($art-regelungstext-uri)) then (count(akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-entwurfsfassung-verkuendung-mit-unbekanntem-datum]) = 1) else true())"
@@ -14938,7 +14939,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1630', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1632', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -14946,8 +14947,8 @@
   </template>
   <template
     match="akn:meta/akn:lifecycle[$ist-verkündungsfassung or $ist-konsolidierte-fassung]"
-    mode="group.d7e180"
-    priority="37"
+    mode="group.d7e183"
+    priority="38"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -14960,7 +14961,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1679' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1681' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00660"
           context="akn:meta/akn:lifecycle[$ist-verkündungsfassung or $ist-konsolidierte-fassung]"
@@ -14991,7 +14992,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1683'">
+            <map-entry key="'d7e1685'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15001,7 +15002,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1702'">
+            <map-entry key="'d7e1704'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15011,7 +15012,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1725'">
+            <map-entry key="'d7e1727'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15054,7 +15055,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1683') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1685') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-ausfertigung] and ( akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-inkrafttreten] or akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-inkrafttreten-grundsaetzlich] or akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-inkrafttreten-abweichend] or akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-inkrafttreten-mit-unbekanntem-datum] ))"
@@ -15135,7 +15136,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1702') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1704') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-ausfertigung]) = 1)"
@@ -15190,7 +15191,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1725') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1727') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (not(xs:date($frühestes-datum-amendment-ausfertigung) = xs:date('0001-01-01'))) then (xs:date($frühestes-datum-amendment-ausfertigung) ge xs:date($ausfertigungsdatum-stammform)) else true())"
@@ -15235,7 +15236,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1679', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1681', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -15243,8 +15244,8 @@
   </template>
   <template
     match="akn:meta/akn:lifecycle/akn:eventRef [($ist-verkündungsfassung or $ist-konsolidierte-fassung) and @type = $type-literal-ereignisreferenz-generation ]"
-    mode="group.d7e180"
-    priority="36"
+    mode="group.d7e183"
+    priority="37"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -15257,7 +15258,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1730' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1733' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00665"
           context="akn:meta/akn:lifecycle/akn:eventRef [($ist-verkündungsfassung or $ist-konsolidierte-fassung) and @type = $type-literal-ereignisreferenz-generation ]"
@@ -15288,7 +15289,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1734'">
+            <map-entry key="'d7e1737'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15303,7 +15304,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1734') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1737') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-inkrafttreten-grundsaetzlich) then not( preceding-sibling::akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-inkrafttreten-abweichend]/@date eq current()/@date or following-sibling::akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-inkrafttreten-abweichend]/@date eq current()/@date ) else if (@refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-inkrafttreten-abweichend) then not( preceding-sibling::akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-inkrafttreten-grundsaetzlich]/@date eq current()/@date or following-sibling::akn:eventRef[@type = $type-literal-ereignisreferenz-generation and @refersTo = $refersto-literal-ereignisreferenz-verkündungsfassung-inkrafttreten-grundsaetzlich]/@date eq current()/@date ) else true())"
@@ -15348,7 +15349,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1730', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1733', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -15356,8 +15357,8 @@
   </template>
   <template
     match="akn:meta/akn:lifecycle[$ist-verkündungsfassung and $teildokument-uri = $art-regelungstext-uri]"
-    mode="group.d7e180"
-    priority="35"
+    mode="group.d7e183"
+    priority="36"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -15370,7 +15371,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1740' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1742' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00667"
           context="akn:meta/akn:lifecycle[$ist-verkündungsfassung and $teildokument-uri = $art-regelungstext-uri]"
@@ -15401,7 +15402,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1744'">
+            <map-entry key="'d7e1746'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15416,7 +15417,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1744') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1746') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:eventRef[@refersTo = $refersto-literal-ereignisreferenz-verkuendung]) = 1)"
@@ -15469,7 +15470,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1740', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1742', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -15477,8 +15478,8 @@
   </template>
   <template
     match="akn:p[parent::akn:longTitle and $teildokument-uri = $art-regelungstext-uri]"
-    mode="group.d7e180"
-    priority="34"
+    mode="group.d7e183"
+    priority="35"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -15491,7 +15492,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1753' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1755' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00680"
           context="akn:p[parent::akn:longTitle and $teildokument-uri = $art-regelungstext-uri]"
@@ -15522,7 +15523,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1757'">
+            <map-entry key="'d7e1759'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15537,7 +15538,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1757') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1759') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(count(akn:docTitle) = 1)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -15580,13 +15581,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1753', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1755', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:session" mode="group.d7e180" priority="33">
+  <template match="akn:session" mode="group.d7e183" priority="34">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -15598,7 +15599,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1762' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1764' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00730" context="akn:session">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -15623,7 +15624,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1766'">
+            <map-entry key="'d7e1768'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15638,7 +15639,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1766') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1768') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(starts-with(@refersTo, '#') and substring(@refersTo, 2) = //akn:organization/@eId)"
@@ -15677,13 +15678,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1762', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1764', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:person" mode="group.d7e180" priority="32">
+  <template match="akn:person" mode="group.d7e183" priority="33">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -15695,7 +15696,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1774' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1777' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00740" context="akn:person">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -15720,7 +15721,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1780'">
+            <map-entry key="'d7e1783'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15730,7 +15731,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1785'">
+            <map-entry key="'d7e1788'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15749,7 +15750,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1780') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1783') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo) then (count(ancestor::akn:akomaNtoso/*/akn:meta/akn:references/akn:TLCPerson[@eId = $referenzierte-eId]) = 1) else true())"
@@ -15789,7 +15790,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1785') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1788') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(@refersTo) and ($ist-entwurfsfassung or $ist-verkündungsfassung)"
@@ -15839,13 +15840,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1774', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1777', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:role" mode="group.d7e180" priority="31">
+  <template match="akn:role" mode="group.d7e183" priority="32">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -15857,7 +15858,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1774' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1777' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00750" context="akn:role">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -15882,7 +15883,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1793'">
+            <map-entry key="'d7e1796'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15892,7 +15893,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1798'">
+            <map-entry key="'d7e1801'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -15911,7 +15912,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1793') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1796') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo) then (count(ancestor::akn:akomaNtoso/*/akn:meta/akn:references/akn:TLCRole[@eId = $referenzierte-eId]) = 1) else true())"
@@ -15951,7 +15952,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1798') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1801') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(@refersTo) and ($ist-entwurfsfassung or $ist-verkündungsfassung)"
@@ -16001,13 +16002,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1774', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1777', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:organization" mode="group.d7e180" priority="30">
+  <template match="akn:organization" mode="group.d7e183" priority="31">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -16019,7 +16020,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1774' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1777' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00760" context="akn:organization">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -16044,17 +16045,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1806'">
-              <variable
-                name="severity"
-                as="Q{http://www.w3.org/2001/XMLSchema}string"
-                select="'fatal'"
-              />
-              <sequence
-                select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
-              />
-            </map-entry>
-            <map-entry key="'d7e1811'">
+            <map-entry key="'d7e1809'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -16074,6 +16065,16 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
+            <map-entry key="'d7e1817'">
+              <variable
+                name="severity"
+                as="Q{http://www.w3.org/2001/XMLSchema}string"
+                select="'fatal'"
+              />
+              <sequence
+                select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
+              />
+            </map-entry>
           </map>
         </variable>
         <for-each select=".">
@@ -16083,7 +16084,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1806') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1809') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (@refersTo) then (count(ancestor::akn:akomaNtoso/*/akn:meta/akn:references/akn:TLCOrganization[@eId = $referenzierte-eId]) = 1) else true())"
@@ -16123,7 +16124,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1811') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1814') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(@refersTo) and ($ist-entwurfsfassung or $ist-verkündungsfassung)"
@@ -16170,7 +16171,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1814') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1817') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (not(@refersTo)) then (@title) else if (not(@title)) then (@refersTo) else true())"
@@ -16215,13 +16216,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1774', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1777', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:references" mode="group.d7e180" priority="29">
+  <template match="akn:references" mode="group.d7e183" priority="30">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -16233,7 +16234,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1774' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1777' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00770" context="akn:references">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -16258,7 +16259,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1822'">
+            <map-entry key="'d7e1825'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -16277,7 +16278,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1822') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1825') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(ancestor::akn:akomaNtoso/*/akn:meta/akn:references/(akn:TLCOrganization, akn:TLCPerson)[@eId = $referenzierte-eId]) = 1)"
@@ -16326,7 +16327,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1774', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1777', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -16334,8 +16335,8 @@
   </template>
   <template
     match="akn:marker[@refersTo = 'satzende']"
-    mode="group.d7e180"
-    priority="28"
+    mode="group.d7e183"
+    priority="29"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -16348,7 +16349,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1833' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1835' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00802"
           context="akn:marker[@refersTo = 'satzende']"
@@ -16379,7 +16380,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1837'">
+            <map-entry key="'d7e1839'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -16394,7 +16395,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1837') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1839') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(empty(@name))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -16437,13 +16438,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1833', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1835', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:inline/@name" mode="group.d7e180" priority="27">
+  <template match="akn:inline/@name" mode="group.d7e183" priority="28">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -16455,7 +16456,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1833' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1835' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00803" context="akn:inline/@name">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -16480,7 +16481,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1843'">
+            <map-entry key="'d7e1845'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -16495,7 +16496,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1843') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1845') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (not(parent::*/@refersTo = 'neuris')) then (. = 'attributsemantik-noch-undefiniert') else true())"
@@ -16540,7 +16541,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1833', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1835', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -16548,8 +16549,8 @@
   </template>
   <template
     match="(akn:act | akn:bill)[akn:meta/akn:proprietary/regtxt:legalDocML.de_metadaten/regtxt:form = ($form-stammform, $form-eingebundene-stammform)]//akn:list"
-    mode="group.d7e180"
-    priority="26"
+    mode="group.d7e183"
+    priority="27"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -16562,7 +16563,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1851' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1853' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00810"
           context="(akn:act | akn:bill)[akn:meta/akn:proprietary/regtxt:legalDocML.de_metadaten/regtxt:form = ($form-stammform, $form-eingebundene-stammform)]//akn:list"
@@ -16593,7 +16594,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1855'">
+            <map-entry key="'d7e1857'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -16608,7 +16609,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1855') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1857') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(false())">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -16651,7 +16652,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1851', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1853', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -16659,8 +16660,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/akn:*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRsubtype"
-    mode="group.d7e180"
-    priority="25"
+    mode="group.d7e183"
+    priority="26"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -16673,7 +16674,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1863' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1866' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00820"
           context="/akn:akomaNtoso/akn:*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRsubtype"
@@ -16704,7 +16705,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1869'">
+            <map-entry key="'d7e1872'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -16723,7 +16724,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1869') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1872') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(matches(@value, concat($teildokument-id, '-\d+')))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -16772,7 +16773,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1863', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1866', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -16780,8 +16781,8 @@
   </template>
   <template
     match="akn:statement/akn:conclusions/akn:blockContainer"
-    mode="group.d7e180"
-    priority="24"
+    mode="group.d7e183"
+    priority="25"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -16794,7 +16795,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1880' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1882' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00900"
           context="akn:statement/akn:conclusions/akn:blockContainer"
@@ -16825,7 +16826,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1884'">
+            <map-entry key="'d7e1886'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -16840,7 +16841,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1884') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1886') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(count(akn:p) ge 3)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -16885,7 +16886,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1880', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1882', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -16893,8 +16894,8 @@
   </template>
   <template
     match="akn:statement/akn:conclusions/akn:blockContainer/akn:p[1]"
-    mode="group.d7e180"
-    priority="23"
+    mode="group.d7e183"
+    priority="24"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -16907,7 +16908,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1880' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1882' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00901"
           context="akn:statement/akn:conclusions/akn:blockContainer/akn:p[1]"
@@ -16938,7 +16939,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1890'">
+            <map-entry key="'d7e1892'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -16948,7 +16949,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1893'">
+            <map-entry key="'d7e1895'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -16963,7 +16964,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1890') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1892') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(akn:location))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -17005,7 +17006,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1893') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1895') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(akn:date))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -17050,7 +17051,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1880', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1882', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -17058,8 +17059,8 @@
   </template>
   <template
     match="akn:statement/akn:conclusions/akn:blockContainer/akn:p[2]"
-    mode="group.d7e180"
-    priority="22"
+    mode="group.d7e183"
+    priority="23"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17072,7 +17073,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1880' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1882' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00902"
           context="akn:statement/akn:conclusions/akn:blockContainer/akn:p[2]"
@@ -17103,7 +17104,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1899'">
+            <map-entry key="'d7e1901'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -17118,7 +17119,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1899') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1901') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(akn:organization))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -17163,7 +17164,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1880', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1882', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -17171,8 +17172,8 @@
   </template>
   <template
     match="akn:statement/akn:conclusions/akn:blockContainer/akn:p[position() ge 3]"
-    mode="group.d7e180"
-    priority="21"
+    mode="group.d7e183"
+    priority="22"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17185,7 +17186,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1880' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1882' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00903"
           context="akn:statement/akn:conclusions/akn:blockContainer/akn:p[position() ge 3]"
@@ -17216,7 +17217,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1905'">
+            <map-entry key="'d7e1907'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -17231,7 +17232,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1905') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1907') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(akn:signature))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -17276,7 +17277,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1880', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1882', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -17284,8 +17285,8 @@
   </template>
   <template
     match="akn:doc[$teildokument-uri = $art-anlage-regelungstext-uri]"
-    mode="group.d7e180"
-    priority="20"
+    mode="group.d7e183"
+    priority="21"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17298,7 +17299,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1913' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1915' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00920"
           context="akn:doc[$teildokument-uri = $art-anlage-regelungstext-uri]"
@@ -17329,7 +17330,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1917'">
+            <map-entry key="'d7e1919'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -17344,7 +17345,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1917') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1919') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(count(akn:preface//akn:docTitle/akn:inline[@refersTo = 'anlageregelungstext-num']) eq 1 and count(akn:preface//akn:docTitle/akn:inline[@refersTo = 'anlageregelungstext-bezug']) le 1 and count(akn:preface//akn:docTitle/akn:inline[@refersTo = 'anlageregelungstext-heading']) le 1 and count(akn:preface//akn:docTitle/*) le 3)"
@@ -17391,13 +17392,13 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1913', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1915', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
     </choose>
   </template>
-  <template match="akn:inline/@refersTo" mode="group.d7e180" priority="19">
+  <template match="akn:inline/@refersTo" mode="group.d7e183" priority="20">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -17409,7 +17410,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1913' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1915' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule id="SCH-00921" context="akn:inline/@refersTo">
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
@@ -17434,7 +17435,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1923'">
+            <map-entry key="'d7e1925'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -17449,7 +17450,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1923') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1925') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (. = ('anlageregelungstext-num', 'anlageregelungstext-bezug', 'anlageregelungstext-heading')) then ($teildokument-uri = $art-anlage-regelungstext-uri) else true())"
@@ -17497,7 +17498,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1913', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1915', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -17505,8 +17506,8 @@
   </template>
   <template
     match="akn:doc[$teildokument-uri = $art-bericht-uri]/akn:conclusions/akn:blockContainer"
-    mode="group.d7e180"
-    priority="18"
+    mode="group.d7e183"
+    priority="19"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17519,7 +17520,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1933' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1936' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00930"
           context="akn:doc[$teildokument-uri = $art-bericht-uri]/akn:conclusions/akn:blockContainer"
@@ -17550,7 +17551,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1937'">
+            <map-entry key="'d7e1940'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -17565,7 +17566,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1937') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1940') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(count(akn:p) ge 2)">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -17610,7 +17611,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1933', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1936', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -17618,8 +17619,8 @@
   </template>
   <template
     match="akn:doc[$teildokument-uri = $art-bericht-uri]/akn:conclusions/akn:blockContainer/akn:p[position() ge 2 and empty(akn:organization)]"
-    mode="group.d7e180"
-    priority="17"
+    mode="group.d7e183"
+    priority="18"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17632,7 +17633,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1933' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1936' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00933"
           context="akn:doc[$teildokument-uri = $art-bericht-uri]/akn:conclusions/akn:blockContainer/akn:p[position() ge 2 and empty(akn:organization)]"
@@ -17663,7 +17664,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1943'">
+            <map-entry key="'d7e1946'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -17678,7 +17679,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1943') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1946') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(akn:signature))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -17723,7 +17724,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1933', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1936', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -17731,8 +17732,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:proprietary/sonst:legalDocML.de_metadaten"
-    mode="group.d7e180"
-    priority="16"
+    mode="group.d7e183"
+    priority="17"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17745,7 +17746,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1952' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1954' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00940"
           context="/akn:akomaNtoso/*/akn:meta/akn:proprietary/sonst:legalDocML.de_metadaten"
@@ -17776,7 +17777,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1956'">
+            <map-entry key="'d7e1958'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -17786,7 +17787,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1959'">
+            <map-entry key="'d7e1961'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -17801,7 +17802,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1956') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1958') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (sonst:typ = 'berichtigung') then (exists(sonst:bezugstyp)) else true())"
@@ -17839,7 +17840,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1959') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1961') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (not(sonst:typ = 'berichtigung')) then (not(exists(sonst:bezugstyp))) else true())"
@@ -17883,7 +17884,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1952', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1954', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -17891,8 +17892,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:proprietary/regtxt:legalDocML.de_metadaten"
-    mode="group.d7e180"
-    priority="15"
+    mode="group.d7e183"
+    priority="16"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17905,7 +17906,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1964' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1966' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-00941"
           context="/akn:akomaNtoso/*/akn:meta/akn:proprietary/regtxt:legalDocML.de_metadaten"
@@ -17936,7 +17937,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1968'">
+            <map-entry key="'d7e1970'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -17946,7 +17947,7 @@
                 select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
               />
             </map-entry>
-            <map-entry key="'d7e1971'">
+            <map-entry key="'d7e1973'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -17961,7 +17962,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1968') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1970') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (regtxt:typ = 'berichtigung') then (exists(regtxt:bezugstyp)) else true())"
@@ -17999,7 +18000,7 @@
           </choose>
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1971') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1973') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if (not(regtxt:typ = 'berichtigung')) then (not(exists(regtxt:bezugstyp))) else true())"
@@ -18043,7 +18044,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1964', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1966', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -18051,8 +18052,8 @@
   </template>
   <template
     match="@href | @src | @from | @upTo"
-    mode="group.d7e180"
-    priority="14"
+    mode="group.d7e183"
+    priority="15"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18065,7 +18066,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1979' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1981' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-01010"
           context="@href | @src | @from | @upTo"
@@ -18093,7 +18094,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1985'">
+            <map-entry key="'d7e1987'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -18112,7 +18113,7 @@
           />
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1985') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1987') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(parent::akn:FRBRauthor or $teil-ohne-fragment = '' or matches($teil-ohne-fragment, '^([a-zöäüßA-ZÄÖÜẞ]+-)+\d+\.[a-zA-Z]+$') or starts-with($teil-ohne-fragment, 'http://') or starts-with($teil-ohne-fragment, 'https://') or starts-with($teil-ohne-fragment, '/eli'))"
@@ -18157,7 +18158,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1979', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1981', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -18165,8 +18166,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification[$ist-entwurfsfassung or $ist-konsolidierte-fassung]"
-    mode="group.d7e180"
-    priority="13"
+    mode="group.d7e183"
+    priority="14"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18179,7 +18180,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e1990' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e1993' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-01015"
           context="/akn:akomaNtoso/*/akn:meta/akn:identification[$ist-entwurfsfassung or $ist-konsolidierte-fassung]"
@@ -18210,7 +18211,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e1997'">
+            <map-entry key="'d7e2000'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -18225,7 +18226,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e1997') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2000') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(exists(akn:FRBRExpression/akn:FRBRdate))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -18271,7 +18272,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e1990', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e1993', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -18279,8 +18280,8 @@
   </template>
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification[$ist-verkündungsfassung]"
-    mode="group.d7e180"
-    priority="12"
+    mode="group.d7e183"
+    priority="13"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18293,7 +18294,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2003' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2005' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           id="SCH-01016"
           context="/akn:akomaNtoso/*/akn:meta/akn:identification[$ist-verkündungsfassung]"
@@ -18324,7 +18325,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2010'">
+            <map-entry key="'d7e2012'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -18339,7 +18340,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2010') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2012') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if test="not(not(akn:FRBRExpression/akn:FRBRdate))">
                 <variable name="failed-assert" as="element(svrl:failed-assert)">
@@ -18385,7 +18386,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2003', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2005', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -18393,8 +18394,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRExpression/akn:FRBRauthor/@href"
-    mode="group.d7e180"
-    priority="11"
+    mode="group.d7e183"
+    priority="12"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18407,7 +18408,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRExpression/akn:FRBRauthor/@href"
@@ -18438,7 +18439,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2019'">
+            <map-entry key="'d7e2021'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -18453,7 +18454,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2019') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2021') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (. = ('recht.bund.de/institution/bundesregierung', 'recht.bund.de/institution/bundeskanzler', 'recht.bund.de/institution/bundespraesident')) else true())"
@@ -18501,7 +18502,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -18509,8 +18510,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRauthor/@href"
-    mode="group.d7e180"
-    priority="10"
+    mode="group.d7e183"
+    priority="11"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18523,7 +18524,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRWork/akn:FRBRauthor/@href"
@@ -18554,7 +18555,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2027'">
+            <map-entry key="'d7e2029'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -18569,7 +18570,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2027') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2029') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (. = ('recht.bund.de/institution/bundesregierung', 'recht.bund.de/institution/bundeskanzler', 'recht.bund.de/institution/bundespraesident')) else true())"
@@ -18617,7 +18618,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -18625,8 +18626,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRExpression/akn:FRBRdate/@name"
-    mode="group.d7e180"
-    priority="9"
+    mode="group.d7e183"
+    priority="10"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18639,7 +18640,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRExpression/akn:FRBRdate/@name"
@@ -18670,7 +18671,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2035'">
+            <map-entry key="'d7e2037'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -18685,7 +18686,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2035') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2037') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (. = ('ausfertigung', 'ausfertigung-aenderung')) else true())"
@@ -18733,7 +18734,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -18741,8 +18742,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRExpression/akn:FRBRthis/@value"
-    mode="group.d7e180"
-    priority="8"
+    mode="group.d7e183"
+    priority="9"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18755,7 +18756,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRExpression/akn:FRBRthis/@value"
@@ -18786,7 +18787,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2043'">
+            <map-entry key="'d7e2045'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -18801,7 +18802,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2043') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2045') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (matches(., '^https://www.ris.bund.de/eli/bund/[-a-z0-9]+/\d{4}/[-a-z0-9äöüß]+/\d{4}-\d{2}-\d{2}/\d+/[a-z]{3}/[a-zöäüß\-]+-\d+$')) else true())"
@@ -18849,7 +18850,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -18857,8 +18858,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRExpression/akn:FRBRuri/@value"
-    mode="group.d7e180"
-    priority="7"
+    mode="group.d7e183"
+    priority="8"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18871,7 +18872,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRExpression/akn:FRBRuri/@value"
@@ -18902,7 +18903,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2051'">
+            <map-entry key="'d7e2053'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -18917,7 +18918,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2051') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2053') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (matches(., '^https://www.ris.bund.de/eli/bund/[-a-z0-9]+/\d{4}/[-a-z0-9äöüß]+/\d{4}-\d{2}-\d{2}/\d+/[a-z]{3}$')) else true())"
@@ -18965,7 +18966,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -18973,8 +18974,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRManifestation/akn:FRBRthis/@value"
-    mode="group.d7e180"
-    priority="6"
+    mode="group.d7e183"
+    priority="7"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18987,7 +18988,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRManifestation/akn:FRBRthis/@value"
@@ -19018,7 +19019,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2060'">
+            <map-entry key="'d7e2062'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -19033,7 +19034,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2060') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2062') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (matches(., '^https://www.ris.bund.de/eli/bund/[-a-z0-9]+/\d{4}/[-a-z0-9äöüß]+/\d{4}-\d{2}-\d{2}/\d+/[a-z]{3}/\d{4}-\d{2}-\d{2}/[a-zöäüß\-]+-\d+\.[a-zöäüß]+$')) else true())"
@@ -19081,7 +19082,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -19089,8 +19090,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRManifestation/akn:FRBRuri/@value"
-    mode="group.d7e180"
-    priority="5"
+    mode="group.d7e183"
+    priority="6"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19103,7 +19104,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRManifestation/akn:FRBRuri/@value"
@@ -19134,7 +19135,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2068'">
+            <map-entry key="'d7e2070'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -19149,7 +19150,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2068') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2070') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (matches(., '^https://www.ris.bund.de/eli/bund/[-a-z0-9]+/\d{4}/[-a-z0-9äöüß]+/\d{4}-\d{2}-\d{2}/\d+/[a-z]{3}/\d{4}-\d{2}-\d{2}/[a-zöäüß\-]+-\d+\.[a-zöäüß]+$')) else true())"
@@ -19197,7 +19198,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -19205,8 +19206,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRname/@value"
-    mode="group.d7e180"
-    priority="4"
+    mode="group.d7e183"
+    priority="5"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19219,7 +19220,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRWork/akn:FRBRname/@value"
@@ -19250,7 +19251,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2076'">
+            <map-entry key="'d7e2078'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -19265,7 +19266,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2076') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2078') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (. = ('bgbl', 'bgbl-1', 'bgbl-2', 'banz-at', 'banz', 'ebanz', 'vkbl', 'hist')) else true())"
@@ -19313,7 +19314,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -19321,8 +19322,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRnumber/@value"
-    mode="group.d7e180"
-    priority="3"
+    mode="group.d7e183"
+    priority="4"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19335,7 +19336,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRWork/akn:FRBRnumber/@value"
@@ -19366,7 +19367,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2084'">
+            <map-entry key="'d7e2086'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -19381,7 +19382,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2084') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2086') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (matches(., '^[-a-zäöüß0-9]+$')) else true())"
@@ -19429,7 +19430,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -19437,8 +19438,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRsubtype/@value"
-    mode="group.d7e180"
-    priority="2"
+    mode="group.d7e183"
+    priority="3"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19451,7 +19452,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRWork/akn:FRBRsubtype/@value"
@@ -19482,7 +19483,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2092'">
+            <map-entry key="'d7e2094'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -19497,7 +19498,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2092') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2094') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (matches(., '^(anlage-regelungstext|rechtsetzungsdokument|regelungstext|vereinbarung-verkuendung|sonstiger-veroeffentlichungstext|sonstiges-teildokument)(-[0-9]+)$')) else true())"
@@ -19545,7 +19546,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -19553,8 +19554,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRthis/@value"
-    mode="group.d7e180"
-    priority="1"
+    mode="group.d7e183"
+    priority="2"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19567,7 +19568,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRWork/akn:FRBRthis/@value"
@@ -19598,7 +19599,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2100'">
+            <map-entry key="'d7e2102'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -19613,7 +19614,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2100') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2102') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (matches(., '^https://www.ris.bund.de/eli/bund/[-a-z0-9]+/\d{4}/[-a-z0-9äöüß]+/[a-zöäüß\-]+-\d+$')) else true())"
@@ -19661,7 +19662,7 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -19669,8 +19670,8 @@
   </template>
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRuri/@value"
-    mode="group.d7e180"
-    priority="0"
+    mode="group.d7e183"
+    priority="1"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19683,7 +19684,7 @@
       select="."
     />
     <choose>
-      <when test="'d7e2015' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+      <when test="'d7e2017' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
         <svrl:suppressed-rule
           role="error"
           context="akn:identification/akn:FRBRWork/akn:FRBRuri/@value"
@@ -19714,7 +19715,7 @@
           as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
         >
           <map>
-            <map-entry key="'d7e2109'">
+            <map-entry key="'d7e2111'">
               <variable
                 name="severity"
                 as="Q{http://www.w3.org/2001/XMLSchema}string"
@@ -19729,7 +19730,7 @@
         <for-each select=".">
           <choose>
             <when
-              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2109') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2111') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
             >
               <if
                 test="not(if ($ist-konsolidierte-fassung) then (matches(., '^https://www.ris.bund.de/eli/bund/[-a-z0-9]+/\d{4}/[-a-z0-9äöüß]+$')) else true())"
@@ -19777,7 +19778,122 @@
           <with-param
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
-            select="('d7e2015', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+            select="('d7e2017', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+          />
+        </next-match>
+      </otherwise>
+    </choose>
+  </template>
+  <template
+    match="ris:legalDocML.de_metadaten"
+    mode="group.d7e183"
+    priority="0"
+  >
+    <param
+      name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
+      as="Q{http://www.w3.org/2001/XMLSchema}string*"
+      select="()"
+    />
+    <variable
+      name="Q{http://dmaus.name/ns/2023/schxslt}rule-context"
+      as="node()"
+      select="."
+    />
+    <choose>
+      <when test="'d7e2118' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+        <svrl:suppressed-rule
+          id="SCH-RIS-0001"
+          context="ris:legalDocML.de_metadaten"
+        >
+          <if test="(document-uri(.), base-uri(root()))[1]">
+            <attribute
+              name="document"
+              select="(document-uri(.), base-uri(root()))[1]"
+            />
+          </if>
+        </svrl:suppressed-rule>
+        <next-match />
+      </when>
+      <otherwise>
+        <svrl:fired-rule
+          id="SCH-RIS-0001"
+          context="ris:legalDocML.de_metadaten"
+        >
+          <if test="(document-uri(.), base-uri(root()))[1]">
+            <attribute
+              name="document"
+              select="(document-uri(.), base-uri(root()))[1]"
+            />
+          </if>
+        </svrl:fired-rule>
+        <variable
+          name="Q{http://dmaus.name/ns/2023/schxslt}severity"
+          as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
+        >
+          <map>
+            <map-entry key="'d7e2125'">
+              <variable
+                name="severity"
+                as="Q{http://www.w3.org/2001/XMLSchema}string"
+                select="'fatal'"
+              />
+              <sequence
+                select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
+              />
+            </map-entry>
+          </map>
+        </variable>
+        <for-each select=".">
+          <choose>
+            <when
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2125') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+            >
+              <if
+                test="not(count(ris:abkuerzung[@refersTo = 'interne-abkuerzung']) le 1)"
+              >
+                <variable name="failed-assert" as="element(svrl:failed-assert)">
+                  <svrl:failed-assert
+                    id="SCH-RIS-0001-000"
+                    role="error"
+                    test="count(ris:abkuerzung[@refersTo = 'interne-abkuerzung']) le 1"
+                    ruleId="SCH-RIS-0001"
+                  >
+                    <where-populated>
+                      <attribute
+                        name="location"
+                        select="path($Q{http://dmaus.name/ns/2023/schxslt}rule-context)"
+                      />
+                    </where-populated>
+                    <svrl:text
+                    >Ein RIS-Metadatenblock darf höchstens eine interne Abkürzung enthalten.</svrl:text>
+                  </svrl:failed-assert>
+                </variable>
+                <sequence select="$failed-assert" />
+              </if>
+            </when>
+            <otherwise>
+              <svrl:skipped-assert
+                severityThreshold="info"
+                id="SCH-RIS-0001-000"
+                role="error"
+                test="count(ris:abkuerzung[@refersTo = 'interne-abkuerzung']) le 1"
+                ruleId="SCH-RIS-0001"
+              >
+                <where-populated>
+                  <attribute
+                    name="location"
+                    select="path($Q{http://dmaus.name/ns/2023/schxslt}rule-context)"
+                  />
+                </where-populated>
+              </svrl:skipped-assert>
+            </otherwise>
+          </choose>
+        </for-each>
+        <next-match>
+          <with-param
+            name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
+            as="Q{http://www.w3.org/2001/XMLSchema}string*"
+            select="('d7e2118', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -19832,6 +19948,10 @@
       <svrl:ns-prefix-in-attribute-values
         prefix="xs"
         uri="http://www.w3.org/2001/XMLSchema"
+      />
+      <svrl:ns-prefix-in-attribute-values
+        prefix="ris"
+        uri="http://rechtsinformationen.bund.de/schema/norm-metadata/0.1"
       />
       <!--SchXslt2 1.11.2-->
       <try>
@@ -19970,7 +20090,10 @@
       >Kein expression.FRBRdate in der Verkündungsfassung</attribute>
     </svrl:active-pattern>
     <svrl:active-pattern />
-    <apply-templates select="root()" mode="group.d7e180" />
+    <svrl:active-pattern>
+      <attribute name="name">Interne Abkürzung der Norm</attribute>
+    </svrl:active-pattern>
+    <apply-templates select="root()" mode="group.d7e183" />
   </template>
   <function
     name="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity"
