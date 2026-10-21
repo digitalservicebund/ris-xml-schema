@@ -1,0 +1,15 @@
+services:
+  patch-ldml:
+    build:
+      context: ..
+      dockerfile: scripts/Dockerfile
+    command: ["patch"]
+    volumes:
+      - ../xsd:/workspace/xsd:z
+  verify-ldml:
+    build:
+      context: ..
+      dockerfile: scripts/Dockerfile
+    command: ["verify"]
+    volumes:
+      - ../xsd:/workspace/xsd:ro,z
