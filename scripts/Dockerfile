@@ -1,4 +1,4 @@
-FROM alpine:3.23
+FROM alpine:3.24
 
 # Install necessary packages for building and running the project
 RUN apk add --no-cache \
@@ -9,7 +9,7 @@ RUN apk add --no-cache \
         git \
         nodejs \
         npm \
-        openjdk17-jre-headless \
+        openjdk25-jre-headless \
         unzip \
         libxslt
 
