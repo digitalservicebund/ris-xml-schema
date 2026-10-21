@@ -334,21 +334,6 @@
       </akn:references>
       <akn:proprietary source="#ris">
         <ris:meta>
-          <ris:sachgebiete domainTerm="Sachgebiete">
-            <ris:sachgebiet
-              sachgebiet-id="AA-01-01-01"
-              domainTerm="Sachgebiet"
-            >AA-01-01-01</ris:sachgebiet>
-            <ris:sachgebiet
-              sachgebiet-id="AA-01-01-02"
-              domainTerm="Sachgebiet"
-            >AA-01-01-02</ris:sachgebiet>
-          </ris:sachgebiete>
-          <ris:veroeffentlichungsJahre domainTerm="Veröffentlichungsjahre">
-            <ris:veroeffentlichungsJahr
-              domainTerm="Veröffentlichungsjahr"
-            >2023</ris:veroeffentlichungsJahr>
-          </ris:veroeffentlichungsJahre>
           <ris:abweichendeDokumentnummern
             domainTerm="Abweichende Dokumentnummern"
           >
@@ -356,6 +341,21 @@
               domainTerm="Abweichende Dokumentnummer"
             >KSLU223344556</ris:abweichendeDokumentnummer>
           </ris:abweichendeDokumentnummern>
+          <ris:definitionen domainTerm="Definitionen">
+            <ris:definition domainTerm="Definition">
+              <ris:definierterBegriff
+                domainTerm="Definierter Begriff"
+              >Krankheit</ris:definierterBegriff>
+            </ris:definition>
+          </ris:definitionen>
+          <ris:fuerPersonenInstitutionen
+            domainTerm="Für Personen/Institutionen"
+          >
+            <ris:fuerPersonInstitution
+              domainTerm="Für Person/Institution"
+              refersTo="#person-institution-boeckenfoerde-ernst-wolfgang"
+            >Böckenförde, Ernst-Wolfgang</ris:fuerPersonInstitution>
+          </ris:fuerPersonenInstitutionen>
           <ris:gliederung domainTerm="Gliederung">
             <ris:gliederungseintrag
               domainTerm="Gliederungseintrag"
@@ -397,23 +397,6 @@
               domainTerm="Gliederungseintrag"
             >Diskussion</ris:gliederungseintrag>
           </ris:gliederung>
-          <ris:definitionen domainTerm="Definitionen">
-            <ris:definition domainTerm="Definition">
-              <ris:definierterBegriff
-                domainTerm="Definierter Begriff"
-              >Krankheit</ris:definierterBegriff>
-            </ris:definition>
-          </ris:definitionen>
-          <ris:tarifvertraege domainTerm="Tarifverträge">
-            <ris:tarifvertrag
-              domainTerm="Tarifvertrag"
-            >Mantel</ris:tarifvertrag>
-          </ris:tarifvertraege>
-          <ris:titelAspekte domainTerm="Titelaspekte">
-            <ris:titelAspekt
-              domainTerm="Titelaspekt"
-            >gesetzliche Krankenversicherung</ris:titelAspekt>
-          </ris:titelAspekte>
           <ris:kuendigungsgruende domainTerm="Kündigungsgründe">
             <ris:kuendigungsgrund
               domainTerm="Kündigungsgrund"
@@ -479,6 +462,46 @@
               <ris:name domainTerm="Name">Kobes, Jörg</ris:name>
             </ris:person>
           </ris:personen>
+          <ris:personenInstitutionen domainTerm="Personen/Institutionen">
+            <ris:personInstitution
+              domainTerm="Person/Institution"
+              eId="person-institution-boeckenfoerde-ernst-wolfgang"
+              showAs="Böckenförde, Ernst-Wolfgang"
+            >
+              <ris:name domainTerm="Name">Böckenförde, Ernst-Wolfgang</ris:name>
+              <ris:zusatz
+                domainTerm="Zusatz"
+              >Prof Dr, Bundesverfassungsrichter a D</ris:zusatz>
+            </ris:personInstitution>
+          </ris:personenInstitutionen>
+          <ris:sachgebiete domainTerm="Sachgebiete">
+            <ris:sachgebiet
+              sachgebiet-id="AA-01-01-01"
+              domainTerm="Sachgebiet"
+            >AA-01-01-01</ris:sachgebiet>
+            <ris:sachgebiet
+              sachgebiet-id="AA-01-01-02"
+              domainTerm="Sachgebiet"
+            >AA-01-01-02</ris:sachgebiet>
+          </ris:sachgebiete>
+          <ris:tarifvertraege domainTerm="Tarifverträge">
+            <ris:tarifvertrag
+              domainTerm="Tarifvertrag"
+            >Mantel</ris:tarifvertrag>
+          </ris:tarifvertraege>
+          <ris:titelAspekte domainTerm="Titelaspekte">
+            <ris:titelAspekt
+              domainTerm="Titelaspekt"
+            >gesetzliche Krankenversicherung</ris:titelAspekt>
+          </ris:titelAspekte>
+          <ris:ueberPersonenInstitutionen
+            domainTerm="Über Personen/Institutionen"
+          >
+            <ris:ueberPersonInstitution
+              domainTerm="Über Person/Institution"
+              refersTo="#person-institution-boeckenfoerde-ernst-wolfgang"
+            >Böckenförde, Ernst-Wolfgang</ris:ueberPersonInstitution>
+          </ris:ueberPersonenInstitutionen>
           <ris:verfasserListe domainTerm="Liste der Verfasser">
             <ris:verfasser
               domainTerm="Verfasser"
@@ -509,34 +532,11 @@
               refersTo="#person-kobes-joerg-7"
             >Kobes, Jörg</ris:verfasser>
           </ris:verfasserListe>
-          <ris:personenInstitutionen domainTerm="Personen/Institutionen">
-            <ris:personInstitution
-              domainTerm="Person/Institution"
-              eId="person-institution-boeckenfoerde-ernst-wolfgang"
-              showAs="Böckenförde, Ernst-Wolfgang"
-            >
-              <ris:name domainTerm="Name">Böckenförde, Ernst-Wolfgang</ris:name>
-              <ris:zusatz
-                domainTerm="Zusatz"
-              >Prof Dr, Bundesverfassungsrichter a D</ris:zusatz>
-            </ris:personInstitution>
-          </ris:personenInstitutionen>
-          <ris:ueberPersonenInstitutionen
-            domainTerm="Über Personen/Institutionen"
-          >
-            <ris:ueberPersonInstitution
-              domainTerm="Über Person/Institution"
-              refersTo="#person-institution-boeckenfoerde-ernst-wolfgang"
-            >Böckenförde, Ernst-Wolfgang</ris:ueberPersonInstitution>
-          </ris:ueberPersonenInstitutionen>
-          <ris:fuerPersonenInstitutionen
-            domainTerm="Für Personen/Institutionen"
-          >
-            <ris:fuerPersonInstitution
-              domainTerm="Für Person/Institution"
-              refersTo="#person-institution-boeckenfoerde-ernst-wolfgang"
-            >Böckenförde, Ernst-Wolfgang</ris:fuerPersonInstitution>
-          </ris:fuerPersonenInstitutionen>
+          <ris:veroeffentlichungsJahre domainTerm="Veröffentlichungsjahre">
+            <ris:veroeffentlichungsJahr
+              domainTerm="Veröffentlichungsjahr"
+            >2023</ris:veroeffentlichungsJahr>
+          </ris:veroeffentlichungsJahre>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>

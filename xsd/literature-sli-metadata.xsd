@@ -22,113 +22,14 @@
         <xs:restriction base="ris:meta">
           <xs:sequence>
             <xs:element
-              name="dokumenttypen"
-              type="ris:dokumenttypen"
-              minOccurs="0"
-            />
-            <xs:element
-              name="sachgebiete"
-              type="ris:sachgebiete"
-              minOccurs="0"
-            />
-            <xs:element
-              name="veroeffentlichungsJahre"
-              type="ris:veroeffentlichungsJahre"
-            />
-            <xs:element
               name="abweichendeDokumentnummern"
               type="ris:abweichendeDokumentnummern"
               minOccurs="0"
             />
-            <xs:element name="gliederung" type="ris:gliederung" minOccurs="0" />
-            <xs:element
-              name="gesamttitelangaben"
-              type="ris:gesamttitelangaben"
-              minOccurs="0"
-            />
-            <xs:element
-              name="gesamtfussnoten"
-              type="ris:gesamtfussnoten"
-              minOccurs="0"
-            />
-            <xs:element name="regionen" type="ris:regionen" minOccurs="0" />
-            <xs:element
-              name="titelkurzformen"
-              type="ris:titelkurzformen"
-              minOccurs="0"
-            />
             <xs:element name="ausgabe" type="ris:ausgabe" minOccurs="0" />
             <xs:element
-              name="besitznachweise"
-              type="ris:besitznachweise"
-              minOccurs="0"
-            />
-            <xs:element name="kollation" type="ris:kollation" minOccurs="0" />
-            <xs:element name="teilbaende" type="ris:teilbaende" minOccurs="0" />
-            <xs:element
-              name="bibliothekarischeVerweisungen"
-              type="ris:bibliothekarischeVerweisungen"
-              minOccurs="0"
-            />
-            <xs:element
-              name="problemkreise"
-              type="ris:problemkreise"
-              minOccurs="0"
-            />
-            <xs:element
-              name="definitionen"
-              type="ris:definitionen"
-              minOccurs="0"
-            />
-            <xs:element
-              name="tarifvertraege"
-              type="ris:tarifvertraege"
-              minOccurs="0"
-            />
-            <xs:element
-              name="berufsbilder"
-              type="ris:berufsbilder"
-              minOccurs="0"
-            />
-            <xs:element
-              name="titelAspekte"
-              type="ris:titelAspekte"
-              minOccurs="0"
-            />
-            <xs:element
-              name="kuendigungsgruende"
-              type="ris:kuendigungsgruende"
-              minOccurs="0"
-            />
-            <xs:element
-              name="sonstigerSachtitelListe"
-              type="ris:sonstigerSachtitelListe"
-              minOccurs="0"
-            />
-            <xs:element
-              name="vorauflagen"
-              type="ris:vorauflagen"
-              minOccurs="0"
-            />
-            <xs:element
-              name="dubletteToleriert"
-              type="ris:dubletteToleriert"
-              minOccurs="0"
-            />
-            <xs:element name="personen" type="ris:personen" minOccurs="0" />
-            <xs:element
-              name="verfasserListe"
-              type="ris:verfasserListe"
-              minOccurs="0"
-            />
-            <xs:element
-              name="mitarbeiterListe"
-              type="ris:mitarbeiterListe"
-              minOccurs="0"
-            />
-            <xs:element
-              name="herausgeberPersonen"
-              type="ris:herausgeberPersonen"
+              name="bearbeiterListe"
+              type="ris:bearbeiterListe"
               minOccurs="0"
             />
             <xs:element
@@ -137,23 +38,23 @@
               minOccurs="0"
             />
             <xs:element
-              name="bearbeiterListe"
-              type="ris:bearbeiterListe"
+              name="berufsbilder"
+              type="ris:berufsbilder"
               minOccurs="0"
             />
             <xs:element
-              name="organisationen"
-              type="ris:organisationen"
+              name="bibliothekarischeVerweisungen"
+              type="ris:bibliothekarischeVerweisungen"
               minOccurs="0"
             />
             <xs:element
-              name="personenInstitutionen"
-              type="ris:personenInstitutionen"
+              name="definitionen"
+              type="ris:definitionen"
               minOccurs="0"
             />
             <xs:element
-              name="ueberPersonenInstitutionen"
-              type="ris:ueberPersonenInstitutionen"
+              name="dokumenttypen"
+              type="ris:dokumenttypen"
               minOccurs="0"
             />
             <xs:element
@@ -161,10 +62,25 @@
               type="ris:fuerPersonenInstitutionen"
               minOccurs="0"
             />
-            <xs:element name="kongresse" type="ris:kongresse" minOccurs="0" />
+            <xs:element
+              name="gesamtfussnoten"
+              type="ris:gesamtfussnoten"
+              minOccurs="0"
+            />
+            <xs:element
+              name="gesamttitelangaben"
+              type="ris:gesamttitelangaben"
+              minOccurs="0"
+            />
+            <xs:element name="gliederung" type="ris:gliederung" minOccurs="0" />
             <xs:element
               name="herausgeberInstitutionen"
               type="ris:herausgeberInstitutionen"
+              minOccurs="0"
+            />
+            <xs:element
+              name="herausgeberPersonen"
+              type="ris:herausgeberPersonen"
               minOccurs="0"
             />
             <xs:element
@@ -172,9 +88,59 @@
               type="ris:hochschulschriftenvermerke"
               minOccurs="0"
             />
+            <xs:element name="kollation" type="ris:kollation" minOccurs="0" />
+            <xs:element name="kongresse" type="ris:kongresse" minOccurs="0" />
             <xs:element
               name="kongressvermerke"
               type="ris:kongressvermerke"
+              minOccurs="0"
+            />
+            <xs:element
+              name="kuendigungsgruende"
+              type="ris:kuendigungsgruende"
+              minOccurs="0"
+            />
+            <xs:element
+              name="mitarbeiterListe"
+              type="ris:mitarbeiterListe"
+              minOccurs="0"
+            />
+            <xs:element
+              name="organisationen"
+              type="ris:organisationen"
+              minOccurs="0"
+            />
+            <xs:element name="personen" type="ris:personen" minOccurs="0" />
+            <xs:element
+              name="personenInstitutionen"
+              type="ris:personenInstitutionen"
+              minOccurs="0"
+            />
+            <xs:element name="regionen" type="ris:regionen" minOccurs="0" />
+            <xs:element
+              name="sachgebiete"
+              type="ris:sachgebiete"
+              minOccurs="0"
+            />
+            <xs:element
+              name="sonstigerSachtitelListe"
+              type="ris:sonstigerSachtitelListe"
+              minOccurs="0"
+            />
+            <xs:element
+              name="tarifvertraege"
+              type="ris:tarifvertraege"
+              minOccurs="0"
+            />
+            <xs:element name="teilbaende" type="ris:teilbaende" minOccurs="0" />
+            <xs:element
+              name="titelAspekte"
+              type="ris:titelAspekte"
+              minOccurs="0"
+            />
+            <xs:element
+              name="titelkurzformen"
+              type="ris:titelkurzformen"
               minOccurs="0"
             />
             <xs:element
@@ -183,13 +149,32 @@
               minOccurs="0"
             />
             <xs:element
+              name="ueberPersonenInstitutionen"
+              type="ris:ueberPersonenInstitutionen"
+              minOccurs="0"
+            />
+            <xs:element
               name="urheberListe"
               type="ris:urheberListe"
               minOccurs="0"
             />
             <xs:element
+              name="verfasserListe"
+              type="ris:verfasserListe"
+              minOccurs="0"
+            />
+            <xs:element
               name="verlagsangaben"
               type="ris:verlagsangaben"
+              minOccurs="0"
+            />
+            <xs:element
+              name="veroeffentlichungsJahre"
+              type="ris:veroeffentlichungsJahre"
+            />
+            <xs:element
+              name="vorauflagen"
+              type="ris:vorauflagen"
               minOccurs="0"
             />
           </xs:sequence>
