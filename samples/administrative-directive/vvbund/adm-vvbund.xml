@@ -32,7 +32,11 @@
             showAs="Amtliche Langüberschrift"
             value="Richtlinien über den Erlass von Planrechtsentscheidungen"
           />
-          <akn:FRBRdate date="1900-01-01" name="TODO" showAs="TODO" />
+          <akn:FRBRdate
+            date="2026-01-01"
+            name="erlassdatum"
+            showAs="Erlassdatum"
+          />
           <akn:FRBRauthor
             href="#organisation-normgeber-ministerium-fuer-digitales-und-verkehr"
           />
@@ -41,7 +45,11 @@
         <akn:FRBRExpression>
           <akn:FRBRthis value="VVBU123456789" />
           <akn:FRBRuri value="VVBU123456789" />
-          <akn:FRBRdate date="1900-01-01" name="TODO" showAs="TODO" />
+          <akn:FRBRdate
+            date="2026-01-01"
+            name="erlassdatum"
+            showAs="Erlassdatum"
+          />
           <akn:FRBRauthor
             href="#organisation-normgeber-ministerium-fuer-digitales-und-verkehr"
           />
@@ -90,6 +98,10 @@
           <ris:langueberschrift
             domainTerm="Amtliche Langüberschrift"
           >Richtlinien über den Erlass von Planrechtsentscheidungen</ris:langueberschrift>
+          <ris:erlassdatum
+            refersTo="#erlassdatum"
+            domainTerm="Erlassdatum"
+          >2026-01-01</ris:erlassdatum>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>

@@ -88,6 +88,11 @@
               type="ris:langueberschrift"
               minOccurs="0"
             />
+            <xs:element
+              name="erlassdatum"
+              type="ris:erlassdatum"
+              minOccurs="0"
+            />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
