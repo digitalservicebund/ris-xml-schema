@@ -39,9 +39,22 @@ Als Konvention werden die folgenden URIs für Namespaces verwendet:
 
 - Schematron Regel SCH-00660-015 wurde entfernt
 
-### Erlauben von `akn:paragraph` in Gliederungsebenen
+### Erlauben von `akn:hcontainer` mit `akn:paragraph` in Gliederungsebenen
 
-Innerhalb der Gruppe `regelungstextGliederung` wurde ein optionales, wiederholbares `paragraph`-Element (Typ `juristischerAbsatz`) hinzugefügt. Dadurch dürfen Gliederungsebenen wie `book`, `part`, `chapter`, `subchapter`, `section`, `subsection`, etc. freien Text in Form von Absätzen enthalten, bevor Artikel oder weitere Untergliederungen folgen. Hintergrund: In den Bestandsdaten enthalten Gliederungselemente teils freien Text (z. B. einleitende Absätze, Tabellen oder Formulartexte), der ansonsten nicht abgebildet werden könnte.
+Innerhalb der Gruppe `regelungstextGliederung` wurde ein optionales `hcontainer`-Element (neuer Typ `gliederungHcontainer`, maximal einmal) hinzugefügt, das beliebig viele (auch keine) `paragraph`-Elemente (Typ `juristischerAbsatz`) enthalten darf. Dadurch dürfen Gliederungsebenen wie `book`, `part`, `chapter`, `subchapter`, `section`, `subsection`, etc. freien Text in Form von Absätzen enthalten, bevor Artikel oder weitere Untergliederungen folgen. Der `hcontainer` orientiert sich an der Klasse `begruendungsteilAbschnitt` (AKN-Element `akn:hcontainer`) und verwendet deren bestehende Literale (werden dafür nicht mehr entfernt): `eIdLiterals.begruendungsteilAbschnitt` (ELI-Kurzbezeichnung `container`) für `eId`, `nameLiterals.begruendungsteilAbschnitt` für das optionale Attribut `name` und `refersToLiterals.begruendungsteilAbschnitt` für das optionale Attribut `refersTo`, erweitert um den zusätzlichen Wert `gliederungstext`. Anders als in LegalDocML.de sind `num` (`artUndZaehlbezeichnung`) und `heading` (`ueberschrift`) optional, und `content` (`inhalt`) ist optional. Danach sind beliebig viele (auch keine) `paragraph`-Elemente erlaubt.
+
+```xml
+<chapter>
+  <hcontainer>
+    <paragraph />
+  </hcontainer>
+  <article>
+    <paragraph />
+  </article>
+</chapter>
+```
+
+Hintergrund: In den Bestandsdaten enthalten Gliederungselemente teils freien Text (z. B. einleitende Absätze, Tabellen oder Formulartexte), der ansonsten nicht abgebildet werden könnte.
 
 ### Erlauben von `akn:blockList` in `akn:note`
 

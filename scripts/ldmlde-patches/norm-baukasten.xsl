@@ -115,9 +115,7 @@
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.begruendungsteil']"
   />
-  <xsl:template
-    match="/xs:schema/xs:simpleType[@name='eIdLiterals.begruendungsteilAbschnitt']"
-  />
+  <!-- eIdLiterals.begruendungsteilAbschnitt (AKN-Typ "hcontainer", eId-Kurzbezeichnung "container") is kept and reused by gliederungHcontainer -->
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.begruendungVertRASchlussbemerkung']"
   />
@@ -297,9 +295,7 @@
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='nameLiterals.begruendungsteil']"
   />
-  <xsl:template
-    match="/xs:schema/xs:simpleType[@name='nameLiterals.begruendungsteilAbschnitt']"
-  />
+  <!-- nameLiterals.begruendungsteilAbschnitt (AKN-Typ "hcontainer") is kept and reused by gliederungHcontainer -->
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='nameLiterals.bericht']"
   />
@@ -357,9 +353,15 @@
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='refersToLiterals.begruendungsteil']"
   />
+  <!-- refersToLiterals.begruendungsteilAbschnitt (AKN-Typ "hcontainer") is kept for gliederungHcontainer and extended by "gliederungstext" -->
   <xsl:template
-    match="/xs:schema/xs:simpleType[@name='refersToLiterals.begruendungsteilAbschnitt']"
-  />
+    match="/xs:schema/xs:simpleType[@name='refersToLiterals.begruendungsteilAbschnitt']/xs:restriction"
+  >
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()" />
+      <xs:enumeration value="gliederungstext" />
+    </xsl:copy>
+  </xsl:template>
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='refersToLiterals.berichtAbschnitt']"
   />
@@ -700,14 +702,55 @@
     </xs:choice>
   </xsl:template>
 
-  <!-- Allow akn:paragraph as a direct child of Gliederungsebenen -->
+  <!-- Add types for akn:hcontainer wrapping akn:paragraph in Gliederungsebenen -->
+  <xsl:template match="/xs:schema/xs:complexType[@name='juristischerAbsatz']">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()" />
+    </xsl:copy>
+    <xs:complexType name="gliederungHcontainer" mixed="false">
+      <xs:annotation>
+        <xs:documentation
+        >Die Klasse "gliederungHcontainer" (AKN-Element akn:hcontainer) fasst innerhalb einer Gliederungsebene freie Absätze (juristischerAbsatz) zusammen, die vor Einzelvorschriften oder weiteren Untergliederungen stehen.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element name="num" type="artUndZaehlbezeichnung" minOccurs="0" />
+        <xs:element name="heading" type="ueberschrift" minOccurs="0" />
+        <xs:element name="content" type="inhalt" minOccurs="0" />
+        <xs:element
+          name="paragraph"
+          type="juristischerAbsatz"
+          minOccurs="0"
+          maxOccurs="unbounded"
+        />
+      </xs:sequence>
+      <xs:attribute
+        name="eId"
+        use="required"
+        type="eIdLiterals.begruendungsteilAbschnitt"
+      />
+      <xs:attribute name="GUID" use="required" type="GUIDLiterals" />
+      <xs:attribute
+        name="name"
+        use="optional"
+        type="nameLiterals.begruendungsteilAbschnitt"
+      />
+      <xs:attribute
+        name="refersTo"
+        use="optional"
+        type="refersToLiterals.begruendungsteilAbschnitt"
+      />
+      <xs:attribute ref="xml:id" use="optional" />
+    </xs:complexType>
+  </xsl:template>
+
+  <!-- Allow an optional akn:hcontainer containing akn:paragraph as a direct child of Gliederungsebenen -->
   <xsl:template match="xs:group[@name='regelungstextGliederung']/xs:sequence">
     <xsl:copy>
       <xs:element
-        name="paragraph"
-        type="juristischerAbsatz"
+        name="hcontainer"
+        type="gliederungHcontainer"
         minOccurs="0"
-        maxOccurs="unbounded"
+        maxOccurs="1"
       />
       <xsl:apply-templates
         select="xs:element[@name='article'] | xs:group[@ref='regelungstextUntergliederung']"
