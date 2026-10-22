@@ -502,17 +502,6 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       />
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="eIdLiterals.begruendungsteilAbschnitt">
-    <xs:annotation>
-      <xs:documentation
-      >Die ELI-Kurzbezeichnung für den fachlichen Typ "begruendungsteilAbschnitt" (AKN-Typ "hcontainer") lautet in LegalDocML.de "container".</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:pattern
-        value="([a-z0-9]+-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)_)*(container)-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)"
-      />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:simpleType name="eIdLiterals.block">
     <xs:annotation>
       <xs:documentation
@@ -2061,15 +2050,6 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     </xs:annotation>
     <xs:restriction base="xs:string" />
   </xs:simpleType>
-  <xs:simpleType name="nameLiterals.begruendungsteilAbschnitt">
-    <xs:annotation>
-      <xs:documentation
-      >Dieses Attribut ist gemäß AkomaNtoso hier mandatorisch; derzeit gibt es in LegalDocML.de hierfür jedoch keine fachliche Verwendung. Es ist daher mit dem definierten tentativen "Platzhaltertext" zu befüllen.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="nameLiterals">
-      <xs:enumeration value="attributsemantik-noch-undefiniert" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:simpleType name="nameLiterals.block">
     <xs:annotation>
       <xs:documentation
@@ -2365,21 +2345,6 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     </xs:annotation>
     <xs:restriction base="refersToLiterals">
       <xs:enumeration value="ordinale-zaehlung-eid" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="refersToLiterals.begruendungsteilAbschnitt">
-    <xs:restriction base="refersToLiterals">
-      <xs:enumeration
-        value="begruendungsabschnitt-zielsetzung-und-notwendigkeit"
-      />
-      <xs:enumeration value="begruendungsabschnitt-wesentlicher-inhalt" />
-      <xs:enumeration value="begruendungsabschnitt-alternativen" />
-      <xs:enumeration value="begruendungsabschnitt-regelungskompetenz" />
-      <xs:enumeration value="begruendungsabschnitt-vereinbarkeit" />
-      <xs:enumeration value="begruendungsabschnitt-befristung-evaluierung" />
-      <xs:enumeration value="begruendungsabschnitt-regelungsfolgen" />
-      <xs:enumeration value="begruendungsabschnitt-regelungstext" />
-      <xs:enumeration value="gliederungstext" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="refersToLiterals.datum">
@@ -4592,15 +4557,23 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     />
     <xs:attribute ref="xml:id" use="optional" />
   </xs:complexType>
-  <xs:complexType name="gliederungHcontainer" mixed="false">
+  <xs:simpleType name="eIdLiterals.gliederungContainer">
     <xs:annotation>
       <xs:documentation
-      >Die Klasse "gliederungHcontainer" (AKN-Element akn:hcontainer) fasst innerhalb einer Gliederungsebene freie Absätze (juristischerAbsatz) zusammen, die vor Einzelvorschriften oder weiteren Untergliederungen stehen.</xs:documentation>
+      >Die ELI-Kurzbezeichnung für den fachlichen Typ "gliederungContainer" (AKN-Typ "hcontainer") lautet "container".</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern
+        value="([a-z0-9]+-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)_)*(container)-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)"
+      />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="gliederungContainer" mixed="false">
+    <xs:annotation>
+      <xs:documentation
+      >Die Klasse "gliederungContainer" (AKN-Element akn:hcontainer) fasst innerhalb einer Gliederungsebene freie Absätze (juristischerAbsatz) zusammen, die vor Einzelvorschriften oder weiteren Untergliederungen stehen.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="num" type="artUndZaehlbezeichnung" minOccurs="0" />
-      <xs:element name="heading" type="ueberschrift" minOccurs="0" />
-      <xs:element name="content" type="inhalt" minOccurs="0" />
       <xs:element
         name="paragraph"
         type="juristischerAbsatz"
@@ -4611,19 +4584,9 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:attribute
       name="eId"
       use="required"
-      type="eIdLiterals.begruendungsteilAbschnitt"
+      type="eIdLiterals.gliederungContainer"
     />
     <xs:attribute name="GUID" use="required" type="GUIDLiterals" />
-    <xs:attribute
-      name="name"
-      use="optional"
-      type="nameLiterals.begruendungsteilAbschnitt"
-    />
-    <xs:attribute
-      name="refersTo"
-      use="optional"
-      type="refersToLiterals.begruendungsteilAbschnitt"
-    />
     <xs:attribute ref="xml:id" use="optional" />
   </xs:complexType>
   <xs:group name="juristischerAbsatzAuswahl">
@@ -4936,7 +4899,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:sequence>
       <xs:element
         name="hcontainer"
-        type="gliederungHcontainer"
+        type="gliederungContainer"
         minOccurs="0"
         maxOccurs="1"
       />

@@ -115,7 +115,9 @@
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.begruendungsteil']"
   />
-  <!-- eIdLiterals.begruendungsteilAbschnitt (AKN-Typ "hcontainer", eId-Kurzbezeichnung "container") is kept and reused by gliederungHcontainer -->
+  <xsl:template
+    match="/xs:schema/xs:simpleType[@name='eIdLiterals.begruendungsteilAbschnitt']"
+  />
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.begruendungVertRASchlussbemerkung']"
   />
@@ -295,7 +297,9 @@
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='nameLiterals.begruendungsteil']"
   />
-  <!-- nameLiterals.begruendungsteilAbschnitt (AKN-Typ "hcontainer") is kept and reused by gliederungHcontainer -->
+  <xsl:template
+    match="/xs:schema/xs:simpleType[@name='nameLiterals.begruendungsteilAbschnitt']"
+  />
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='nameLiterals.bericht']"
   />
@@ -353,15 +357,9 @@
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='refersToLiterals.begruendungsteil']"
   />
-  <!-- refersToLiterals.begruendungsteilAbschnitt (AKN-Typ "hcontainer") is kept for gliederungHcontainer and extended by "gliederungstext" -->
   <xsl:template
-    match="/xs:schema/xs:simpleType[@name='refersToLiterals.begruendungsteilAbschnitt']/xs:restriction"
-  >
-    <xsl:copy>
-      <xsl:apply-templates select="@*|node()" />
-      <xs:enumeration value="gliederungstext" />
-    </xsl:copy>
-  </xsl:template>
+    match="/xs:schema/xs:simpleType[@name='refersToLiterals.begruendungsteilAbschnitt']"
+  />
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='refersToLiterals.berichtAbschnitt']"
   />
@@ -707,15 +705,23 @@
     <xsl:copy>
       <xsl:apply-templates select="@*|node()" />
     </xsl:copy>
-    <xs:complexType name="gliederungHcontainer" mixed="false">
+    <xs:simpleType name="eIdLiterals.gliederungContainer">
       <xs:annotation>
         <xs:documentation
-        >Die Klasse "gliederungHcontainer" (AKN-Element akn:hcontainer) fasst innerhalb einer Gliederungsebene freie Absätze (juristischerAbsatz) zusammen, die vor Einzelvorschriften oder weiteren Untergliederungen stehen.</xs:documentation>
+        >Die ELI-Kurzbezeichnung für den fachlichen Typ "gliederungContainer" (AKN-Typ "hcontainer") lautet "container".</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+        <xs:pattern
+          value="([a-z0-9]+-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)_)*(container)-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)"
+        />
+      </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="gliederungContainer" mixed="false">
+      <xs:annotation>
+        <xs:documentation
+        >Die Klasse "gliederungContainer" (AKN-Element akn:hcontainer) fasst innerhalb einer Gliederungsebene freie Absätze (juristischerAbsatz) zusammen, die vor Einzelvorschriften oder weiteren Untergliederungen stehen.</xs:documentation>
       </xs:annotation>
       <xs:sequence>
-        <xs:element name="num" type="artUndZaehlbezeichnung" minOccurs="0" />
-        <xs:element name="heading" type="ueberschrift" minOccurs="0" />
-        <xs:element name="content" type="inhalt" minOccurs="0" />
         <xs:element
           name="paragraph"
           type="juristischerAbsatz"
@@ -726,19 +732,9 @@
       <xs:attribute
         name="eId"
         use="required"
-        type="eIdLiterals.begruendungsteilAbschnitt"
+        type="eIdLiterals.gliederungContainer"
       />
       <xs:attribute name="GUID" use="required" type="GUIDLiterals" />
-      <xs:attribute
-        name="name"
-        use="optional"
-        type="nameLiterals.begruendungsteilAbschnitt"
-      />
-      <xs:attribute
-        name="refersTo"
-        use="optional"
-        type="refersToLiterals.begruendungsteilAbschnitt"
-      />
       <xs:attribute ref="xml:id" use="optional" />
     </xs:complexType>
   </xsl:template>
@@ -748,7 +744,7 @@
     <xsl:copy>
       <xs:element
         name="hcontainer"
-        type="gliederungHcontainer"
+        type="gliederungContainer"
         minOccurs="0"
         maxOccurs="1"
       />
