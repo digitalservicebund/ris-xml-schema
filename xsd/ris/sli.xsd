@@ -13,8 +13,6 @@
     </xs:documentation>
   </xs:annotation>
 
-  <xs:include schemaLocation="domain-term.xsd" />
-
   <xs:complexType name="gesamttitelangaben">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -158,61 +156,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="besitznachweise">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Besitznachweise
-      </xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element
-        name="besitznachweis"
-        type="ris:besitznachweis"
-        maxOccurs="unbounded"
-      />
-    </xs:sequence>
-    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="besitznachweis">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Besitznachweis
-      </xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="institution" type="ris:institution" />
-      <xs:element name="signatur" type="ris:signatur" minOccurs="0" />
-    </xs:sequence>
-    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-  </xs:complexType>
-
-  <xs:complexType name="institution">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Institution
-      </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
-  <xs:complexType name="signatur">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Signatur
-      </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
   <xs:complexType name="teilbaende">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -323,5 +266,37 @@
         <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="hochschulschriftenvermerke">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Liste der Hochschulschriftenvermerke</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="hochschulschriftenvermerk"
+        type="ris:organisationRoleItem"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="verlagsangaben">
+    <xs:annotation>
+      <xs:documentation
+        xml:lang="de"
+      >Liste der Verlagsangaben</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="verlagsangabe"
+        type="ris:organisationRoleItem"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 </xs:schema>

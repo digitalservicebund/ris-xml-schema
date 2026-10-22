@@ -116,21 +116,6 @@
       </akn:references>
       <akn:proprietary source="#ris">
         <ris:meta>
-          <ris:sachgebiete domainTerm="Sachgebiete">
-            <ris:sachgebiet
-              sachgebiet-id="AA-01-01-01"
-              domainTerm="Sachgebiet"
-            >AA-01-01-01</ris:sachgebiet>
-            <ris:sachgebiet
-              sachgebiet-id="AA-01-01-02"
-              domainTerm="Sachgebiet"
-            >AA-01-01-02</ris:sachgebiet>
-          </ris:sachgebiete>
-          <ris:veroeffentlichungsJahre domainTerm="Veröffentlichungsjahre">
-            <ris:veroeffentlichungsJahr
-              domainTerm="Veröffentlichungsjahr"
-            >2015</ris:veroeffentlichungsJahr>
-          </ris:veroeffentlichungsJahre>
           <ris:abweichendeDokumentnummern
             domainTerm="Abweichende Dokumentnummern"
           >
@@ -141,16 +126,27 @@
               domainTerm="Abweichende Dokumentnummer"
             >KSLU223344556</ris:abweichendeDokumentnummer>
           </ris:abweichendeDokumentnummern>
-          <ris:gesamttitelangaben domainTerm="Gesamttitel Liste">
-            <ris:gesamttitel domainTerm="Gesamttitel">
-              <ris:titel
-                domainTerm="Titel"
-              >Reclams Universal-Bibliothek</ris:titel>
-              <ris:bandbezeichnung
-                domainTerm="Bandbezeichnung"
-              >Nr 19297</ris:bandbezeichnung>
-            </ris:gesamttitel>
-          </ris:gesamttitelangaben>
+          <ris:bearbeiterListe domainTerm="Liste der Bearbeiter">
+            <ris:bearbeiter
+              domainTerm="Bearbeiter"
+              refersTo="#person-satzky-manfred-4"
+            >Satzky, Manfred</ris:bearbeiter>
+          </ris:bearbeiterListe>
+          <ris:definitionen domainTerm="Definitionen">
+            <ris:definition domainTerm="Definition">
+              <ris:definierterBegriff
+                domainTerm="Definierter Begriff"
+              >Krankheit</ris:definierterBegriff>
+            </ris:definition>
+          </ris:definitionen>
+          <ris:fuerPersonenInstitutionen
+            domainTerm="Für Personen/Institutionen"
+          >
+            <ris:fuerPersonInstitution
+              domainTerm="Für Person/Institution"
+              refersTo="#person-institution-boeckenfoerde-ernst-wolfgang"
+            >Böckenförde, Ernst-Wolfgang</ris:fuerPersonInstitution>
+          </ris:fuerPersonenInstitutionen>
           <ris:gesamtfussnoten domainTerm="Gesamtfussnoten">
             <ris:gesamtfussnote
               domainTerm="Gesamtfussnote"
@@ -162,74 +158,24 @@
               domainTerm="Gesamtfussnote"
             >3., neubearbeitete Auflage 1985</ris:gesamtfussnote>
           </ris:gesamtfussnoten>
-          <ris:besitznachweise domainTerm="Besitznachweise">
-            <ris:besitznachweis domainTerm="Besitznachweis">
-              <ris:institution domainTerm="Institution">BSG</ris:institution>
-              <ris:signatur domainTerm="Signatur">VwiK 1032</ris:signatur>
-            </ris:besitznachweis>
-          </ris:besitznachweise>
-          <ris:kollation domainTerm="Kollation">359 S</ris:kollation>
-          <ris:definitionen domainTerm="Definitionen">
-            <ris:definition domainTerm="Definition">
-              <ris:definierterBegriff
-                domainTerm="Definierter Begriff"
-              >Krankheit</ris:definierterBegriff>
-            </ris:definition>
-          </ris:definitionen>
-          <ris:tarifvertraege domainTerm="Tarifverträge">
-            <ris:tarifvertrag
-              domainTerm="Tarifvertrag"
-            >Mantel</ris:tarifvertrag>
-          </ris:tarifvertraege>
-          <ris:titelAspekte domainTerm="Titelaspekte">
-            <ris:titelAspekt
-              domainTerm="Titelaspekt"
-            >gesetzliche Krankenversicherung</ris:titelAspekt>
-          </ris:titelAspekte>
-          <ris:kuendigungsgruende domainTerm="Kündigungsgründe">
-            <ris:kuendigungsgrund
-              domainTerm="Kündigungsgrund"
-            >Straftat</ris:kuendigungsgrund>
-          </ris:kuendigungsgruende>
-          <ris:personen domainTerm="Personen">
-            <ris:person domainTerm="Person" eId="person-xx-1" showAs="XX">
-              <ris:name domainTerm="Name">XX</ris:name>
-            </ris:person>
-            <ris:person
-              domainTerm="Person"
-              eId="person-farzin-sina-2"
-              showAs="Farzin, Sina, M A, PhD-Fellow an der Bremen International Graduate School of Social Sciences der Universität Bremen"
-            >
-              <ris:name domainTerm="Name">Farzin, Sina</ris:name>
+          <ris:gesamttitelangaben domainTerm="Gesamttitel Liste">
+            <ris:gesamttitel domainTerm="Gesamttitel">
               <ris:titel
                 domainTerm="Titel"
-              >M A, PhD-Fellow an der Bremen International Graduate School of Social Sciences der Universität Bremen</ris:titel>
-            </ris:person>
-            <ris:person
-              domainTerm="Person"
-              eId="person-jordan-stefan-3"
-              showAs="Jordan, Stefan, Dr phil, wiss Angestellter der Historischen Kommission bei der Bayerischen Akademie der Wissenschaften"
-            >
-              <ris:name domainTerm="Name">Jordan, Stefan</ris:name>
-              <ris:titel
-                domainTerm="Titel"
-              >Dr phil, wiss Angestellter der Historischen Kommission bei der Bayerischen Akademie der Wissenschaften</ris:titel>
-            </ris:person>
-            <ris:person
-              domainTerm="Person"
-              eId="person-satzky-manfred-4"
-              showAs="Satzky, Manfred, Amtsrat"
-            >
-              <ris:name domainTerm="Name">Satzky, Manfred</ris:name>
-              <ris:titel domainTerm="Titel">Amtsrat</ris:titel>
-            </ris:person>
-          </ris:personen>
-          <ris:verfasserListe domainTerm="Liste der Verfasser">
-            <ris:verfasser
-              domainTerm="Verfasser"
-              refersTo="#person-xx-1"
-            >XX</ris:verfasser>
-          </ris:verfasserListe>
+              >Reclams Universal-Bibliothek</ris:titel>
+              <ris:bandbezeichnung
+                domainTerm="Bandbezeichnung"
+              >Nr 19297</ris:bandbezeichnung>
+            </ris:gesamttitel>
+          </ris:gesamttitelangaben>
+          <ris:herausgeberInstitutionen
+            domainTerm="Herausgebende Institutionen"
+          >
+            <ris:herausgeberInstitution
+              domainTerm="Herausgebende Institution"
+              refersTo="#organisation-iab-institut-fuer-arbeitsmark-und-berufsforschung-der-bundesantstalt-fuer-arbeit-3"
+            >IAB, Institut für Arbeitsmarkt- und Berufsforschung der Bundesanstalt für Arbeit</ris:herausgeberInstitution>
+          </ris:herausgeberInstitutionen>
           <ris:herausgeberPersonen domainTerm="Herausgebende Personen">
             <ris:herausgeberPerson
               domainTerm="Herausgebende Person"
@@ -240,12 +186,52 @@
               refersTo="#person-jordan-stefan-3"
             >Jordan, Stefan</ris:herausgeberPerson>
           </ris:herausgeberPersonen>
-          <ris:bearbeiterListe domainTerm="Liste der Bearbeiter">
-            <ris:bearbeiter
-              domainTerm="Bearbeiter"
-              refersTo="#person-satzky-manfred-4"
-            >Satzky, Manfred</ris:bearbeiter>
-          </ris:bearbeiterListe>
+          <ris:hochschulschriftenvermerke
+            domainTerm="Hochschulschriftenvermerke"
+          >
+            <ris:hochschulschriftenvermerk
+              domainTerm="Hochschulschriftenvermerk"
+              refersTo="#organisation-universitaet-erlangen-jurfak-1"
+            >Universität Erlangen, JurFak</ris:hochschulschriftenvermerk>
+          </ris:hochschulschriftenvermerke>
+          <ris:kollation domainTerm="Kollation">359 S</ris:kollation>
+          <ris:kongresse domainTerm="Kongresse">
+            <ris:kongress
+              domainTerm="Kongress"
+              eId="kongress-internationaler-kongress-fuer-das-recht-der-arbeit-und-der-sozialen-sicherheit-international-congress-for-labour-and-social-legislation-13-kongress-1"
+              showAs="Internationaler Kongreß für das Recht der Arbeit und der Sozialen Sicherheit (International Congress for Labour and Social Legislation) (13)"
+            >
+              <ris:name
+                domainTerm="Name"
+              >Internationaler Kongreß für das Recht der Arbeit und der Sozialen Sicherheit (International Congress for Labour and Social Legislation) (13)</ris:name>
+              <ris:jahr domainTerm="Jahr">1991</ris:jahr>
+              <ris:ort domainTerm="Ort">Athen</ris:ort>
+              <ris:land domainTerm="Land">GRC</ris:land>
+            </ris:kongress>
+            <ris:kongress
+              domainTerm="Kongress"
+              eId="kongress-associazione-italiana-di-diritto-de-lavoro-e-della-sicurezza-sociale-2"
+              showAs="Associazione Italiana di diritto de lavoro e della sicurezza sociale"
+            >
+              <ris:name
+                domainTerm="Name"
+              >Associazione Italiana di diritto de lavoro e della sicurezza sociale</ris:name>
+              <ris:jahr domainTerm="Jahr">1969</ris:jahr>
+              <ris:ort domainTerm="Ort">Florenz</ris:ort>
+              <ris:land domainTerm="Land">ITA</ris:land>
+            </ris:kongress>
+          </ris:kongresse>
+          <ris:kongressvermerke domainTerm="Kongressvermerke">
+            <ris:kongressvermerk
+              domainTerm="Kongressvermerk"
+              refersTo="#kongress-internationaler-kongress-fuer-das-recht-der-arbeit-und-der-sozialen-sicherheit-international-congress-for-labour-and-social-legislation-13-kongress-1"
+            >Internationaler Kongreß für das Recht der Arbeit und der Sozialen Sicherheit (International Congress for Labour and Social Legislation) (13)</ris:kongressvermerk>
+          </ris:kongressvermerke>
+          <ris:kuendigungsgruende domainTerm="Kündigungsgründe">
+            <ris:kuendigungsgrund
+              domainTerm="Kündigungsgrund"
+            >Straftat</ris:kuendigungsgrund>
+          </ris:kuendigungsgruende>
           <ris:organisationen domainTerm="Organisationen">
             <ris:organisation
               domainTerm="Organisation"
@@ -294,6 +280,39 @@
               <ris:ort domainTerm="Ort">Hamburg</ris:ort>
             </ris:organisation>
           </ris:organisationen>
+          <ris:personen domainTerm="Personen">
+            <ris:person domainTerm="Person" eId="person-xx-1" showAs="XX">
+              <ris:name domainTerm="Name">XX</ris:name>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-farzin-sina-2"
+              showAs="Farzin, Sina, M A, PhD-Fellow an der Bremen International Graduate School of Social Sciences der Universität Bremen"
+            >
+              <ris:name domainTerm="Name">Farzin, Sina</ris:name>
+              <ris:titel
+                domainTerm="Titel"
+              >M A, PhD-Fellow an der Bremen International Graduate School of Social Sciences der Universität Bremen</ris:titel>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-jordan-stefan-3"
+              showAs="Jordan, Stefan, Dr phil, wiss Angestellter der Historischen Kommission bei der Bayerischen Akademie der Wissenschaften"
+            >
+              <ris:name domainTerm="Name">Jordan, Stefan</ris:name>
+              <ris:titel
+                domainTerm="Titel"
+              >Dr phil, wiss Angestellter der Historischen Kommission bei der Bayerischen Akademie der Wissenschaften</ris:titel>
+            </ris:person>
+            <ris:person
+              domainTerm="Person"
+              eId="person-satzky-manfred-4"
+              showAs="Satzky, Manfred, Amtsrat"
+            >
+              <ris:name domainTerm="Name">Satzky, Manfred</ris:name>
+              <ris:titel domainTerm="Titel">Amtsrat</ris:titel>
+            </ris:person>
+          </ris:personen>
           <ris:personenInstitutionen domainTerm="Personen/Institutionen">
             <ris:personInstitution
               domainTerm="Person/Institution"
@@ -306,6 +325,32 @@
               >Prof Dr, Bundesverfassungsrichter a D</ris:zusatz>
             </ris:personInstitution>
           </ris:personenInstitutionen>
+          <ris:sachgebiete domainTerm="Sachgebiete">
+            <ris:sachgebiet
+              sachgebiet-id="AA-01-01-01"
+              domainTerm="Sachgebiet"
+            >AA-01-01-01</ris:sachgebiet>
+            <ris:sachgebiet
+              sachgebiet-id="AA-01-01-02"
+              domainTerm="Sachgebiet"
+            >AA-01-01-02</ris:sachgebiet>
+          </ris:sachgebiete>
+          <ris:tarifvertraege domainTerm="Tarifverträge">
+            <ris:tarifvertrag
+              domainTerm="Tarifvertrag"
+            >Mantel</ris:tarifvertrag>
+          </ris:tarifvertraege>
+          <ris:titelAspekte domainTerm="Titelaspekte">
+            <ris:titelAspekt
+              domainTerm="Titelaspekt"
+            >gesetzliche Krankenversicherung</ris:titelAspekt>
+          </ris:titelAspekte>
+          <ris:ueberkongresse domainTerm="Über Kongresse">
+            <ris:ueberkongress
+              domainTerm="Über Kongress"
+              refersTo="#kongress-associazione-italiana-di-diritto-de-lavoro-e-della-sicurezza-sociale-2"
+            >Associazione Italiana di diritto de lavoro e della sicurezza sociale</ris:ueberkongress>
+          </ris:ueberkongresse>
           <ris:ueberPersonenInstitutionen
             domainTerm="Über Personen/Institutionen"
           >
@@ -314,80 +359,29 @@
               refersTo="#person-institution-boeckenfoerde-ernst-wolfgang"
             >Böckenförde, Ernst-Wolfgang</ris:ueberPersonInstitution>
           </ris:ueberPersonenInstitutionen>
-          <ris:fuerPersonenInstitutionen
-            domainTerm="Für Personen/Institutionen"
-          >
-            <ris:fuerPersonInstitution
-              domainTerm="Für Person/Institution"
-              refersTo="#person-institution-boeckenfoerde-ernst-wolfgang"
-            >Böckenförde, Ernst-Wolfgang</ris:fuerPersonInstitution>
-          </ris:fuerPersonenInstitutionen>
-          <ris:kongresse domainTerm="Kongresse">
-            <ris:kongress
-              domainTerm="Kongress"
-              eId="kongress-internationaler-kongress-fuer-das-recht-der-arbeit-und-der-sozialen-sicherheit-international-congress-for-labour-and-social-legislation-13-kongress-1"
-              showAs="Internationaler Kongreß für das Recht der Arbeit und der Sozialen Sicherheit (International Congress for Labour and Social Legislation) (13)"
-            >
-              <ris:name
-                domainTerm="Name"
-              >Internationaler Kongreß für das Recht der Arbeit und der Sozialen Sicherheit (International Congress for Labour and Social Legislation) (13)</ris:name>
-              <ris:jahr domainTerm="Jahr">1991</ris:jahr>
-              <ris:ort domainTerm="Ort">Athen</ris:ort>
-              <ris:land domainTerm="Land">GRC</ris:land>
-            </ris:kongress>
-            <ris:kongress
-              domainTerm="Kongress"
-              eId="kongress-associazione-italiana-di-diritto-de-lavoro-e-della-sicurezza-sociale-2"
-              showAs="Associazione Italiana di diritto de lavoro e della sicurezza sociale"
-            >
-              <ris:name
-                domainTerm="Name"
-              >Associazione Italiana di diritto de lavoro e della sicurezza sociale</ris:name>
-              <ris:jahr domainTerm="Jahr">1969</ris:jahr>
-              <ris:ort domainTerm="Ort">Florenz</ris:ort>
-              <ris:land domainTerm="Land">ITA</ris:land>
-            </ris:kongress>
-          </ris:kongresse>
-          <ris:herausgeberInstitutionen
-            domainTerm="Herausgebende Institutionen"
-          >
-            <ris:herausgeberInstitution
-              domainTerm="Herausgebende Institution"
-              refersTo="#organisation-iab-institut-fuer-arbeitsmark-und-berufsforschung-der-bundesantstalt-fuer-arbeit-3"
-            >IAB, Institut für Arbeitsmarkt- und Berufsforschung der Bundesanstalt für Arbeit</ris:herausgeberInstitution>
-          </ris:herausgeberInstitutionen>
-          <ris:hochschulschriftenvermerke
-            domainTerm="Hochschulschriftenvermerke"
-          >
-            <ris:hochschulschriftenvermerk
-              domainTerm="Hochschulschriftenvermerk"
-              refersTo="#organisation-universitaet-erlangen-jurfak-1"
-            >Universität Erlangen, JurFak</ris:hochschulschriftenvermerk>
-          </ris:hochschulschriftenvermerke>
-          <ris:kongressvermerke domainTerm="Kongressvermerke">
-            <ris:kongressvermerk
-              domainTerm="Kongressvermerk"
-              refersTo="#kongress-internationaler-kongress-fuer-das-recht-der-arbeit-und-der-sozialen-sicherheit-international-congress-for-labour-and-social-legislation-13-kongress-1"
-            >Internationaler Kongreß für das Recht der Arbeit und der Sozialen Sicherheit (International Congress for Labour and Social Legislation) (13)</ris:kongressvermerk>
-          </ris:kongressvermerke>
-          <ris:ueberkongresse domainTerm="Über Kongresse">
-            <ris:ueberkongress
-              domainTerm="Über Kongress"
-              refersTo="#kongress-associazione-italiana-di-diritto-de-lavoro-e-della-sicurezza-sociale-2"
-            >Associazione Italiana di diritto de lavoro e della sicurezza sociale</ris:ueberkongress>
-          </ris:ueberkongresse>
           <ris:urheberListe domainTerm="Liste der Urheber">
             <ris:urheber
               domainTerm="Urheber"
               refersTo="#organisation-dgb-4"
             >DGB</ris:urheber>
           </ris:urheberListe>
+          <ris:verfasserListe domainTerm="Liste der Verfasser">
+            <ris:verfasser
+              domainTerm="Verfasser"
+              refersTo="#person-xx-1"
+            >XX</ris:verfasser>
+          </ris:verfasserListe>
           <ris:verlagsangaben domainTerm="Verlagsangaben">
             <ris:verlagsangabe
               domainTerm="Verlagsangabe"
               refersTo="#organisation-vsa-5"
             >VSA</ris:verlagsangabe>
           </ris:verlagsangaben>
+          <ris:veroeffentlichungsJahre domainTerm="Veröffentlichungsjahre">
+            <ris:veroeffentlichungsJahr
+              domainTerm="Veröffentlichungsjahr"
+            >2015</ris:veroeffentlichungsJahr>
+          </ris:veroeffentlichungsJahre>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
