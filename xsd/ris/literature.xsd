@@ -20,8 +20,6 @@
     schemaLocation="../akn/akomantoso30.xsd"
   />
 
-  <xs:include schemaLocation="domain-term.xsd" />
-
   <xs:complexType name="personenInstitutionen">
     <xs:annotation>
       <xs:documentation xml:lang="de">
