@@ -41,7 +41,7 @@ Als Konvention werden die folgenden URIs für Namespaces verwendet:
 
 ### Erlauben von `akn:hcontainer` mit `akn:paragraph` in Gliederungsebenen
 
-Innerhalb der Gruppe `regelungstextGliederung` wurde ein optionales `hcontainer`-Element (neuer Typ `gliederungContainer`, maximal einmal) hinzugefügt, das beliebig viele (auch keine) `paragraph`-Elemente (Typ `juristischerAbsatz`) enthält. Dadurch dürfen Gliederungsebenen wie `book`, `part`, `chapter`, `subchapter`, `section`, `subsection`, etc. freien Text in Form von Absätzen enthalten, bevor Artikel oder weitere Untergliederungen folgen. Der `hcontainer` ist unabhängig vom `hcontainer` der Begründung (`begruendungsteilAbschnitt`) und besitzt außer den Pflichtattributen `eId` und `GUID` (sowie optional `xml:id`) keine weiteren Attribute und keine weiteren Kindelemente. Für `eId` gilt das neue Literal `eIdLiterals.gliederungContainer` (AKN-Typ `hcontainer`, eId-Kurzbezeichnung `container`).
+Innerhalb der Gruppe `regelungstextGliederung` wurde ein optionales `hcontainer`-Element (neuer Typ `gliederungContainer`, maximal einmal) hinzugefügt, das `paragraph`-Elemente (Typ `juristischerAbsatz`) enthält. Dadurch dürfen Gliederungsebenen wie `book`, `part`, `chapter`, `subchapter`, `section`, `subsection`, etc. freien Text in Form von Absätzen enthalten, bevor Artikel oder weitere Untergliederungen folgen.
 
 ```xml
 <chapter>
