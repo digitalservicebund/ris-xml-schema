@@ -93,6 +93,11 @@
               type="ris:erlassdatum"
               minOccurs="0"
             />
+            <xs:element
+              name="fassungsdatum"
+              type="ris:fassungsdatum"
+              minOccurs="0"
+            />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>

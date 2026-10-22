@@ -907,9 +907,7 @@
 
   <xs:complexType name="fassungsdatum">
     <xs:annotation>
-      <xs:documentation
-        xml:lang="de"
-      >Datum der referenzierten Fassung der Norm</xs:documentation>
+      <xs:documentation xml:lang="de">Datum der Fassung</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:date">
