@@ -102,6 +102,9 @@
             refersTo="#erlassdatum"
             domainTerm="Erlassdatum"
           >2026-01-01</ris:erlassdatum>
+          <ris:fassungsdatum
+            domainTerm="Fassungsdatum"
+          >2025-12-25</ris:fassungsdatum>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
