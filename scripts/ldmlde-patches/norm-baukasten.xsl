@@ -700,14 +700,53 @@
     </xs:choice>
   </xsl:template>
 
-  <!-- Allow akn:paragraph as a direct child of Gliederungsebenen -->
+  <!-- Add types for akn:hcontainer wrapping akn:paragraph in Gliederungsebenen -->
+  <xsl:template match="/xs:schema/xs:complexType[@name='juristischerAbsatz']">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()" />
+    </xsl:copy>
+    <xs:simpleType name="eIdLiterals.gliederungContainer">
+      <xs:annotation>
+        <xs:documentation
+        >Die ELI-Kurzbezeichnung für den fachlichen Typ "gliederungContainer" (AKN-Typ "hcontainer") lautet "container".</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+        <xs:pattern
+          value="([a-z0-9]+-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)_)*(container)-(n([1-9]+[0-9]*)|z[0-9a-z~%]*)"
+        />
+      </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="gliederungContainer" mixed="false">
+      <xs:annotation>
+        <xs:documentation
+        >Die Klasse "gliederungContainer" (AKN-Element akn:hcontainer) fasst innerhalb einer Gliederungsebene freie Absätze (juristischerAbsatz) zusammen, die vor Einzelvorschriften oder weiteren Untergliederungen stehen.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element
+          name="paragraph"
+          type="juristischerAbsatz"
+          minOccurs="0"
+          maxOccurs="unbounded"
+        />
+      </xs:sequence>
+      <xs:attribute
+        name="eId"
+        use="required"
+        type="eIdLiterals.gliederungContainer"
+      />
+      <xs:attribute name="GUID" use="required" type="GUIDLiterals" />
+      <xs:attribute ref="xml:id" use="optional" />
+    </xs:complexType>
+  </xsl:template>
+
+  <!-- Allow an optional akn:hcontainer containing akn:paragraph as a direct child of Gliederungsebenen -->
   <xsl:template match="xs:group[@name='regelungstextGliederung']/xs:sequence">
     <xsl:copy>
       <xs:element
-        name="paragraph"
-        type="juristischerAbsatz"
+        name="hcontainer"
+        type="gliederungContainer"
         minOccurs="0"
-        maxOccurs="unbounded"
+        maxOccurs="1"
       />
       <xsl:apply-templates
         select="xs:element[@name='article'] | xs:group[@ref='regelungstextUntergliederung']"
