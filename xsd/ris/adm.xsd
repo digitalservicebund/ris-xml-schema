@@ -218,18 +218,4 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-
-  <xs:complexType name="erlassdatum">
-    <xs:annotation>
-      <xs:documentation xml:lang="de">
-        Erlassdatum
-      </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:date">
-        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
-        <xs:attribute name="refersTo" type="akn:conceptRef" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
 </xs:schema>
