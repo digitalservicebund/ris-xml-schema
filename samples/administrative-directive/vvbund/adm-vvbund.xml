@@ -34,8 +34,9 @@
           />
           <akn:FRBRdate
             date="2026-01-01"
-            name="erlassdatum"
-            showAs="Erlassdatum"
+            eId="zitierdatum"
+            name="zitierdatum"
+            showAs="Zitierdatum"
           />
           <akn:FRBRauthor
             href="#organisation-normgeber-ministerium-fuer-digitales-und-verkehr"
@@ -47,8 +48,8 @@
           <akn:FRBRuri value="VVBU123456789" />
           <akn:FRBRdate
             date="2026-01-01"
-            name="erlassdatum"
-            showAs="Erlassdatum"
+            name="zitierdatum"
+            showAs="Zitierdatum"
           />
           <akn:FRBRauthor
             href="#organisation-normgeber-ministerium-fuer-digitales-und-verkehr"
@@ -86,6 +87,12 @@
               </ris:langbezeichnung>
             </ris:normgeber>
           </ris:normgeberListe>
+          <ris:zitierdaten domainTerm="Zitierdaten">
+            <ris:zitierdatum
+              refersTo="#zitierdatum"
+              domainTerm="Zitierdatum"
+            >2026-01-01</ris:zitierdatum>
+          </ris:zitierdaten>
           <ris:aktenzeichenListe domainTerm="Liste der Aktenzeichen">
             <ris:aktenzeichen
               domainTerm="Aktenzeichen"
@@ -98,10 +105,6 @@
           <ris:langueberschrift
             domainTerm="Amtliche Langüberschrift"
           >Richtlinien über den Erlass von Planrechtsentscheidungen</ris:langueberschrift>
-          <ris:erlassdatum
-            refersTo="#erlassdatum"
-            domainTerm="Erlassdatum"
-          >2026-01-01</ris:erlassdatum>
           <ris:fassungsdatum
             domainTerm="Fassungsdatum"
           >2025-12-25</ris:fassungsdatum>
