@@ -725,7 +725,6 @@
         <xs:element
           name="paragraph"
           type="juristischerAbsatz"
-          minOccurs="0"
           maxOccurs="unbounded"
         />
       </xs:sequence>

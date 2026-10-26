@@ -4577,7 +4577,6 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       <xs:element
         name="paragraph"
         type="juristischerAbsatz"
-        minOccurs="0"
         maxOccurs="unbounded"
       />
     </xs:sequence>
