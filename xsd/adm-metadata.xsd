@@ -89,6 +89,11 @@
               minOccurs="0"
             />
             <xs:element
+                name="kurzueberschrift"
+                type="ris:kurzueberschrift"
+                minOccurs="0"
+            />
+            <xs:element
               name="fassungsdatum"
               type="ris:fassungsdatum"
               minOccurs="0"
