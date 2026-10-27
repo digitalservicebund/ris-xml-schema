@@ -127,6 +127,11 @@
               type="ris:mitwirkendeRichter"
               minOccurs="0"
             />
+            <xs:element
+              name="referenzenNorm"
+              type="ris:referenzenNorm"
+              minOccurs="0"
+            />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>

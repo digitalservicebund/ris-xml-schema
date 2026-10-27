@@ -84,6 +84,11 @@
               minOccurs="0"
             />
             <xs:element
+              name="referenzenNorm"
+              type="ris:referenzenNorm"
+              minOccurs="0"
+            />
+            <xs:element
               name="organisationen"
               type="ris:organisationen"
               minOccurs="0"
