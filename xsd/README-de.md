@@ -39,9 +39,22 @@ Als Konvention werden die folgenden URIs für Namespaces verwendet:
 
 - Schematron Regel SCH-00660-015 wurde entfernt
 
-### Erlauben von `akn:paragraph` in Gliederungsebenen
+### Erlauben von `akn:hcontainer` mit `akn:paragraph` in Gliederungsebenen
 
-Innerhalb der Gruppe `regelungstextGliederung` wurde ein optionales, wiederholbares `paragraph`-Element (Typ `juristischerAbsatz`) hinzugefügt. Dadurch dürfen Gliederungsebenen wie `book`, `part`, `chapter`, `subchapter`, `section`, `subsection`, etc. freien Text in Form von Absätzen enthalten, bevor Artikel oder weitere Untergliederungen folgen. Hintergrund: In den Bestandsdaten enthalten Gliederungselemente teils freien Text (z. B. einleitende Absätze, Tabellen oder Formulartexte), der ansonsten nicht abgebildet werden könnte.
+Innerhalb der Gruppe `regelungstextGliederung` wurde ein optionales `hcontainer`-Element (neuer Typ `gliederungText`, maximal einmal) hinzugefügt, das `paragraph`-Elemente (Typ `juristischerAbsatz`) enthält. Dadurch dürfen Gliederungsebenen wie `book`, `part`, `chapter`, `subchapter`, `section`, `subsection`, etc. freien Text in Form von Absätzen enthalten, bevor Artikel oder weitere Untergliederungen folgen.
+
+```xml
+<chapter>
+  <hcontainer>
+    <paragraph />
+  </hcontainer>
+  <article>
+    <paragraph />
+  </article>
+</chapter>
+```
+
+Hintergrund: In den Bestandsdaten enthalten Gliederungselemente teils freien Text (z. B. einleitende Absätze, Tabellen oder Formulartexte), der ansonsten nicht abgebildet werden könnte.
 
 ### Erlauben von `akn:blockList` in `akn:note`
 
