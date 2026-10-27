@@ -217,45 +217,6 @@
             shortForm="BAnz"
             showAs="BAnz AT 27.08.2024 B4"
           />
-          <akn:implicitReference
-            shortForm="SGB 5"
-            showAs="SGB 5 § 92 Abs 1 S 2 Nr 13"
-          >
-            <ris:referenzNorm domainTerm="Norm">
-              <ris:abkuerzung domainTerm="Abkürzung">SGB 5</ris:abkuerzung>
-              <ris:einzelnorm domainTerm="Einzelnorm">
-                <ris:bezeichnung
-                  domainTerm="Bezeichnung"
-                >§ 92 Abs 1 S 2 Nr 13</ris:bezeichnung>
-              </ris:einzelnorm>
-            </ris:referenzNorm>
-          </akn:implicitReference>
-          <akn:implicitReference
-            shortForm="SGB 5"
-            showAs="SGB 5 § 136 Abs 1 S 1 Nr 1"
-          >
-            <ris:referenzNorm domainTerm="Norm">
-              <ris:abkuerzung domainTerm="Abkürzung">SGB 5</ris:abkuerzung>
-              <ris:einzelnorm domainTerm="Einzelnorm">
-                <ris:bezeichnung
-                  domainTerm="Bezeichnung"
-                >§ 136 Abs 1 S 1 Nr 1</ris:bezeichnung>
-              </ris:einzelnorm>
-            </ris:referenzNorm>
-          </akn:implicitReference>
-          <akn:implicitReference shortForm="DeQSRL" showAs="DeQSRL Teil 1">
-            <ris:referenzNorm domainTerm="Norm">
-              <ris:abkuerzung domainTerm="Abkürzung">DeQSRL</ris:abkuerzung>
-              <ris:einzelnorm domainTerm="Einzelnorm">
-                <ris:bezeichnung
-                  domainTerm="Bezeichnung"
-                >Teil 1</ris:bezeichnung>
-                <ris:fassungsdatum
-                  domainTerm="Fassungsdatum"
-                >2024-07-18</ris:fassungsdatum>
-              </ris:einzelnorm>
-            </ris:referenzNorm>
-          </akn:implicitReference>
         </akn:otherReferences>
       </akn:analysis>
       <akn:references source="#ris">
@@ -340,6 +301,35 @@
           <ris:risAbkuerzung
             domainTerm="RIS-Abkürzung"
           >VR Gemeinsamer Bundesausschuss 2024-07-18 25756</ris:risAbkuerzung>
+          <ris:referenzenNorm domainTerm="Normen">
+            <ris:referenzNorm domainTerm="Norm">
+              <ris:abkuerzung domainTerm="Abkürzung">SGB 5</ris:abkuerzung>
+              <ris:einzelnorm domainTerm="Einzelnorm">
+                <ris:bezeichnung
+                  domainTerm="Bezeichnung"
+                >§ 92 Abs 1 S 2 Nr 13</ris:bezeichnung>
+              </ris:einzelnorm>
+            </ris:referenzNorm>
+            <ris:referenzNorm domainTerm="Norm">
+              <ris:abkuerzung domainTerm="Abkürzung">SGB 5</ris:abkuerzung>
+              <ris:einzelnorm domainTerm="Einzelnorm">
+                <ris:bezeichnung
+                  domainTerm="Bezeichnung"
+                >§ 136 Abs 1 S 1 Nr 1</ris:bezeichnung>
+              </ris:einzelnorm>
+            </ris:referenzNorm>
+            <ris:referenzNorm domainTerm="Norm">
+              <ris:abkuerzung domainTerm="Abkürzung">DeQSRL</ris:abkuerzung>
+              <ris:einzelnorm domainTerm="Einzelnorm">
+                <ris:bezeichnung
+                  domainTerm="Bezeichnung"
+                >Teil 1</ris:bezeichnung>
+                <ris:fassungsdatum
+                  domainTerm="Fassungsdatum"
+                >2024-07-18</ris:fassungsdatum>
+              </ris:einzelnorm>
+            </ris:referenzNorm>
+          </ris:referenzenNorm>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>

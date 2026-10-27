@@ -782,7 +782,22 @@
 
   <!-- Verweise -->
 
-  <xs:element name="referenzNorm" type="ris:referenzNorm" />
+  <xs:complexType name="referenzenNorm">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste von Verweisen auf Normen.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="referenzNorm"
+        type="ris:referenzNorm"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:complexType name="referenzNorm">
     <xs:annotation>
       <xs:documentation
