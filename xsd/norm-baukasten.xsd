@@ -4557,10 +4557,10 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     />
     <xs:attribute ref="xml:id" use="optional" />
   </xs:complexType>
-  <xs:simpleType name="eIdLiterals.gliederungContainer">
+  <xs:simpleType name="eIdLiterals.gliederungText">
     <xs:annotation>
       <xs:documentation
-      >Die ELI-Kurzbezeichnung für den fachlichen Typ "gliederungContainer" (AKN-Typ "hcontainer") lautet "container".</xs:documentation>
+      >Die ELI-Kurzbezeichnung für den fachlichen Typ "gliederungText" (AKN-Typ "hcontainer") lautet "container".</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern
@@ -4568,10 +4568,10 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       />
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="gliederungContainer" mixed="false">
+  <xs:complexType name="gliederungText" mixed="false">
     <xs:annotation>
       <xs:documentation
-      >Die Klasse "gliederungContainer" (AKN-Element akn:hcontainer) fasst innerhalb einer Gliederungsebene freie Absätze (juristischerAbsatz) zusammen, die vor Einzelvorschriften oder weiteren Untergliederungen stehen.</xs:documentation>
+      >Die Klasse "gliederungText" (AKN-Element akn:hcontainer) fasst innerhalb einer Gliederungsebene freie Absätze (juristischerAbsatz) zusammen, die vor Einzelvorschriften oder weiteren Untergliederungen stehen.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element
@@ -4580,11 +4580,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
         maxOccurs="unbounded"
       />
     </xs:sequence>
-    <xs:attribute
-      name="eId"
-      use="required"
-      type="eIdLiterals.gliederungContainer"
-    />
+    <xs:attribute name="eId" use="required" type="eIdLiterals.gliederungText" />
     <xs:attribute name="GUID" use="required" type="GUIDLiterals" />
     <xs:attribute ref="xml:id" use="optional" />
   </xs:complexType>
@@ -4898,7 +4894,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     <xs:sequence>
       <xs:element
         name="hcontainer"
-        type="gliederungContainer"
+        type="gliederungText"
         minOccurs="0"
         maxOccurs="1"
       />

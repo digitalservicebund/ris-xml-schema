@@ -705,10 +705,10 @@
     <xsl:copy>
       <xsl:apply-templates select="@*|node()" />
     </xsl:copy>
-    <xs:simpleType name="eIdLiterals.gliederungContainer">
+    <xs:simpleType name="eIdLiterals.gliederungText">
       <xs:annotation>
         <xs:documentation
-        >Die ELI-Kurzbezeichnung für den fachlichen Typ "gliederungContainer" (AKN-Typ "hcontainer") lautet "container".</xs:documentation>
+        >Die ELI-Kurzbezeichnung für den fachlichen Typ "gliederungText" (AKN-Typ "hcontainer") lautet "container".</xs:documentation>
       </xs:annotation>
       <xs:restriction base="xs:string">
         <xs:pattern
@@ -716,10 +716,10 @@
         />
       </xs:restriction>
     </xs:simpleType>
-    <xs:complexType name="gliederungContainer" mixed="false">
+    <xs:complexType name="gliederungText" mixed="false">
       <xs:annotation>
         <xs:documentation
-        >Die Klasse "gliederungContainer" (AKN-Element akn:hcontainer) fasst innerhalb einer Gliederungsebene freie Absätze (juristischerAbsatz) zusammen, die vor Einzelvorschriften oder weiteren Untergliederungen stehen.</xs:documentation>
+        >Die Klasse "gliederungText" (AKN-Element akn:hcontainer) fasst innerhalb einer Gliederungsebene freie Absätze (juristischerAbsatz) zusammen, die vor Einzelvorschriften oder weiteren Untergliederungen stehen.</xs:documentation>
       </xs:annotation>
       <xs:sequence>
         <xs:element
@@ -731,7 +731,7 @@
       <xs:attribute
         name="eId"
         use="required"
-        type="eIdLiterals.gliederungContainer"
+        type="eIdLiterals.gliederungText"
       />
       <xs:attribute name="GUID" use="required" type="GUIDLiterals" />
       <xs:attribute ref="xml:id" use="optional" />
@@ -743,7 +743,7 @@
     <xsl:copy>
       <xs:element
         name="hcontainer"
-        type="gliederungContainer"
+        type="gliederungText"
         minOccurs="0"
         maxOccurs="1"
       />
