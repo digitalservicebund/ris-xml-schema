@@ -30,7 +30,12 @@
           <akn:FRBRalias
             name="langueberschrift"
             showAs="Amtliche Langüberschrift"
-            value="Richtlinien über den Erlass von Planrechtsentscheidungen"
+            value="Buß- und Verwarnungsgeldkatalog Binnen- und Seeschifffahrtsstraßen"
+          />
+          <akn:FRBRalias
+            name="kurzueberschrift"
+            showAs="Amtliche Kurzüberschrift"
+            value="Unterschwellenvergabeordnung"
           />
           <akn:FRBRdate
             date="2026-01-01"
@@ -105,6 +110,10 @@
           <ris:langueberschrift
             domainTerm="Amtliche Langüberschrift"
           >Richtlinien über den Erlass von Planrechtsentscheidungen</ris:langueberschrift>
+          <ris:kurzueberschrift
+            domainTerm="Amtliche Kurzüberschrift"
+          >Unterschwellenvergabeordnung
+          </ris:kurzueberschrift>
           <ris:fassungsdatum
             domainTerm="Fassungsdatum"
           >2025-12-25</ris:fassungsdatum>
@@ -113,7 +122,13 @@
     </akn:meta>
     <akn:preface>
       <akn:longTitle>
-        <akn:block name="TODO">TODO</akn:block>
+        <akn:p>
+          <akn:docTitle
+          >Buß- und Verwarnungsgeldkatalog Binnen- und Seeschifffahrtsstraßen</akn:docTitle>
+          <akn:shortTitle
+          >Bundesministerium für Verkehr, Bau- und Wohnungswesen, 19.11.2001, LS 26/02.32.12-03/142 VA 01
+          </akn:shortTitle>
+        </akn:p>
       </akn:longTitle>
     </akn:preface>
     <akn:mainBody>
