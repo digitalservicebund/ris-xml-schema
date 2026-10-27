@@ -132,7 +132,22 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
-  <xs:element name="verweisNorm" type="ris:verweisNorm" />
+  <xs:complexType name="verweiseNorm">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste von Verweisen auf Normen
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="verweisNorm"
+        type="ris:verweisNorm"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:complexType name="verweisNorm">
     <xs:annotation>
       <xs:documentation xml:lang="de">
@@ -156,10 +171,22 @@
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
 
-  <xs:element
-    name="verweisVerwaltungsvorschrift"
-    type="ris:verweisVerwaltungsvorschrift"
-  />
+  <xs:complexType name="verweiseVerwaltungsvorschrift">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Liste von Verweisen auf Verwaltungsvorschriften
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element
+        name="verweisVerwaltungsvorschrift"
+        type="ris:verweisVerwaltungsvorschrift"
+        maxOccurs="unbounded"
+      />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
   <xs:complexType name="verweisVerwaltungsvorschrift">
     <xs:annotation>
       <xs:documentation xml:lang="de">

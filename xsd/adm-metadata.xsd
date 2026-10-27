@@ -103,6 +103,16 @@
               type="ris:referenzenNorm"
               minOccurs="0"
             />
+            <xs:element
+              name="verweiseNorm"
+              type="ris:verweiseNorm"
+              minOccurs="0"
+            />
+            <xs:element
+              name="verweiseVerwaltungsvorschrift"
+              type="ris:verweiseVerwaltungsvorschrift"
+              minOccurs="0"
+            />
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
