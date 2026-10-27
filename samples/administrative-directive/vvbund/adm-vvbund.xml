@@ -33,9 +33,9 @@
             value="Buß- und Verwarnungsgeldkatalog Binnen- und Seeschifffahrtsstraßen"
           />
           <akn:FRBRalias
-              name="kurzueberschrift"
-              showAs="Amtliche Kurzüberschrift"
-              value="Unterschwellenvergabeordnung"
+            name="kurzueberschrift"
+            showAs="Amtliche Kurzüberschrift"
+            value="Unterschwellenvergabeordnung"
           />
           <akn:FRBRdate
             date="2026-01-01"
@@ -123,8 +123,10 @@
     <akn:preface>
       <akn:longTitle>
         <akn:p>
-          <akn:docTitle>Buß- und Verwarnungsgeldkatalog Binnen- und Seeschifffahrtsstraßen</akn:docTitle>
-          <akn:shortTitle>Bundesministerium für Verkehr, Bau- und Wohnungswesen, 19.11.2001, LS 26/02.32.12-03/142 VA 01
+          <akn:docTitle
+          >Buß- und Verwarnungsgeldkatalog Binnen- und Seeschifffahrtsstraßen</akn:docTitle>
+          <akn:shortTitle
+          >Bundesministerium für Verkehr, Bau- und Wohnungswesen, 19.11.2001, LS 26/02.32.12-03/142 VA 01
           </akn:shortTitle>
         </akn:p>
       </akn:longTitle>
