@@ -64,7 +64,11 @@
         <akn:FRBRManifestation>
           <akn:FRBRthis value="VVBU123456789.xml" />
           <akn:FRBRuri value="VVBU123456789.xml" />
-          <akn:FRBRdate date="1900-01-01" name="TODO" showAs="TODO" />
+          <akn:FRBRdate
+            date="2026-03-20"
+            name="letzteVeroeffentlichung"
+            showAs="Letzte Veröffentlichung"
+          />
           <akn:FRBRauthor
             href="#organisation-normgeber-ministerium-fuer-digitales-und-verkehr"
           />
