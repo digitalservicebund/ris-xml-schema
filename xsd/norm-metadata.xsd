@@ -93,6 +93,12 @@
           maxOccurs="1"
         />
         <xs:element
+          name="zuordnung"
+          type="ZuordnungType"
+          minOccurs="0"
+          maxOccurs="unbounded"
+        />
+        <xs:element
           name="gegenstandslos"
           type="EmptyType"
           minOccurs="0"
@@ -178,6 +184,18 @@
         <xs:attribute name="domainTerm" type="xs:string" use="required" />
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="ZuordnungType">
+    <xs:sequence>
+      <xs:element
+        name="dokumenttypen"
+        type="DokumenttypenType"
+        minOccurs="0"
+        maxOccurs="1"
+      />
+    </xs:sequence>
+    <xs:attribute name="href" type="xs:anyURI" use="required" />
   </xs:complexType>
 
   <xs:complexType name="Verweise">
