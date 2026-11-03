@@ -102,3 +102,18 @@ Enthält die Dokumenttypen einer Norm. Das Element wird bei der Migration aus de
 - `dokumenttyp`: nicht-leerer Text mit der Bezeichnung des Dokumenttyps mit `domainTerm` als erforderliches Attribut.
 - Die Bezeichnungen stammen aus der Wertetabelle „Dokumenttyp“ (`ris-lookup-tables.document_type`).
 - Das Attribut `manuell` der Eingangsdaten wird aktuell nicht berücksichtigt.
+
+#### `zuordnung`
+
+Ordnet Metadaten einzelnen Elementen innerhalb des Dokuments zu (z. B. Einzel- und Gliederungselementen eines Regelungstexts). Die Metadaten auf Rahmenebene stehen außerhalb von `zuordnung`. Für Anlagen ist keine Zuordnung notwendig, da diese eigene Dokumente sind (siehe `dokumenttypen` im jeweiligen Dokument).
+
+```xml
+<ris:zuordnung href="#hauptteil-1_art-1">
+  <ris:dokumenttypen domainTerm="Dokumenttypen">
+    <ris:dokumenttyp domainTerm="Dokumenttyp">Stammnorm</ris:dokumenttyp>
+  </ris:dokumenttypen>
+</ris:zuordnung>
+```
+
+- `zuordnung`: optional, beliebig oft; steht nach `dokumenttypen` und vor `gegenstandslos`. Das Attribut `href` verweist über die `eId` (`#{eId}`) auf das zugeordnete Element.
+- `dokumenttypen`: optional, höchstens einmal; Aufbau wie oben beschrieben und enthält die Dokumenttypen des zugeordneten Elements (`doktyp` des Einzel- bzw. Gliederungselements).
