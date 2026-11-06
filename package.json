@@ -5,12 +5,13 @@
     "format:fix": "prettier --write --ignore-unknown .",
     "style:check": "npm run format:check",
     "style:fix": "npm run format:fix",
-    "test": "npm run test:caselaw:decision && npm run test:caselaw:pending-proceeding && npm run test:literature:sli && npm run test:literature:uli && npm run test:adm",
+    "test": "npm run test:caselaw:decision && npm run test:caselaw:pending-proceeding && npm run test:literature:sli && npm run test:literature:uli && npm run test:adm && npm run test:norms:work-metadata",
     "test:caselaw:decision": "xmllint --noout --schema xsd/caselaw-decision.xsd samples/caselaw/decision/*.xml",
     "test:caselaw:pending-proceeding": "xmllint --noout --schema xsd/caselaw-pending-proceeding.xsd samples/caselaw/pending-proceeding/*.xml",
     "test:literature:sli": "xmllint --noout --schema xsd/literature-sli.xsd samples/literature/sli/*.xml",
     "test:literature:uli": "xmllint --noout --schema xsd/literature-uli.xsd samples/literature/uli/*.xml",
-    "test:adm": "xmllint --noout --schema xsd/adm.xsd samples/administrative-directive/**/*.xml"
+    "test:adm": "xmllint --noout --schema xsd/adm.xsd samples/administrative-directive/**/*.xml",
+    "test:norms:work-metadata": "xmllint --noout --schema xsd/norm-work-metadata.xsd samples/norms/work-metadata/*.xml"
   },
   "devDependencies": {
     "@prettier/plugin-xml": "^3.4.2",

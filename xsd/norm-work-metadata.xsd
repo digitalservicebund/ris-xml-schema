@@ -15,6 +15,12 @@
           minOccurs="0"
           maxOccurs="unbounded"
         />
+        <xs:element
+          name="standDerDokumentarischenBearbeitung"
+          type="StandDerDokumentarischenBearbeitungType"
+          minOccurs="0"
+          maxOccurs="1"
+        />
       </xs:sequence>
       <xs:attribute name="eli" type="xs:string" use="optional" />
     </xs:complexType>
@@ -24,6 +30,19 @@
     <xs:simpleContent>
       <xs:extension base="StringNotEmpty">
         <xs:attribute name="typ" type="standangabeTypLiterals" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="StandDerDokumentarischenBearbeitungType">
+    <xs:simpleContent>
+      <xs:extension base="StringNotEmpty">
+        <xs:attribute
+          name="domainTerm"
+          type="xs:string"
+          use="required"
+          fixed="Stand der dokumentarischen Bearbeitung"
+        />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
