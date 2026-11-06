@@ -10,4 +10,7 @@
   <standDerDokumentarischenBearbeitung
     domainTerm="Stand der dokumentarischen Bearbeitung"
   >Dokumentarisch bearbeitet bis BGBl. I 2020 Nr. 1</standDerDokumentarischenBearbeitung>
+  <standDerDokumentarischenBearbeitung
+    domainTerm="Stand der dokumentarischen Bearbeitung"
+  >Redaktionelle Nachbearbeitung ausstehend</standDerDokumentarischenBearbeitung>
 </metadaten>

@@ -19,7 +19,7 @@
           name="standDerDokumentarischenBearbeitung"
           type="StandDerDokumentarischenBearbeitungType"
           minOccurs="0"
-          maxOccurs="1"
+          maxOccurs="unbounded"
         />
       </xs:sequence>
       <xs:attribute name="eli" type="xs:string" use="optional" />
