@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<metadaten
+  xmlns="http://rechtsinformationen.bund.de/schema/norm-work-metadata/0.1"
+  eli="https://www.ris.bund.de/eli/bund/bgbl-1/1975/s1234"
+>
+  <vollzitat>Beispielgesetz vom 1. Januar 1975 (BGBl. I S. 1234)</vollzitat>
+  <standangabe
+    typ="stand"
+  >Zuletzt geändert durch Art. 1 G v. 1.1.2020 I 1</standangabe>
+  <standDerDokumentarischenBearbeitung
+    domainTerm="Stand der dokumentarischen Bearbeitung"
+  >Dokumentarisch bearbeitet bis BGBl. I 2020 Nr. 1</standDerDokumentarischenBearbeitung>
+  <standDerDokumentarischenBearbeitung
+    domainTerm="Stand der dokumentarischen Bearbeitung"
+  >Redaktionelle Nachbearbeitung ausstehend</standDerDokumentarischenBearbeitung>
+</metadaten>
