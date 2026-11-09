@@ -807,12 +807,7 @@
     <xs:sequence>
       <xs:element name="abkuerzung" type="ris:referenzNormAbkuerzung" />
       <xs:element name="titel" type="ris:referenzNormTitel" minOccurs="0" />
-      <xs:element
-        name="einzelnorm"
-        type="ris:einzelnorm"
-        minOccurs="0"
-        maxOccurs="unbounded"
-      />
+      <xs:element name="einzelnorm" type="ris:einzelnorm" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
   </xs:complexType>
