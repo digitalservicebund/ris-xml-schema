@@ -121,6 +121,19 @@
           <ris:fassungsdatum
             domainTerm="Fassungsdatum"
           >2025-12-25</ris:fassungsdatum>
+          <ris:referenzenNorm domainTerm="Normen">
+            <ris:referenzNorm domainTerm="Norm">
+              <ris:abkuerzung domainTerm="Abkürzung">GG</ris:abkuerzung>
+              <ris:einzelnorm domainTerm="Einzelnorm">
+                <ris:bezeichnung
+                  domainTerm="Bezeichnung"
+                >§ 1 Abs. 1</ris:bezeichnung>
+              </ris:einzelnorm>
+            </ris:referenzNorm>
+            <ris:referenzNorm domainTerm="Norm">
+              <ris:abkuerzung domainTerm="Abkürzung">AGG</ris:abkuerzung>
+            </ris:referenzNorm>
+          </ris:referenzenNorm>
         </ris:meta>
       </akn:proprietary>
     </akn:meta>
