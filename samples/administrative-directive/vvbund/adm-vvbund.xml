@@ -74,6 +74,29 @@
           />
         </akn:FRBRManifestation>
       </akn:identification>
+      <akn:analysis source="#ris">
+        <akn:otherReferences source="#ris">
+          <akn:implicitReference ris:domainTerm="Fundstelle">
+            <ris:fundstelle domainTerm="Fundstelle">
+              <ris:periodikum domainTerm="Periodikum">
+                <ris:abkuerzung domainTerm="Abkürzung">VkBl</ris:abkuerzung>
+                <ris:periodikumTyp domainTerm="Art des Periodikums">amtlich</ris:periodikumTyp>
+                <ris:titel domainTerm="Titel">Verkehrsblatt</ris:titel>
+                <ris:untertitel domainTerm="Untertitel">Amtsblatt des Bundesministeriums für Digitales und Verkehr der Bundesrepublik Deutschland</ris:untertitel>
+              </ris:periodikum>
+              <ris:zitatstelle domainTerm="Zitatstelle">2025, Nr. 13, S. 342</ris:zitatstelle>
+            </ris:fundstelle>
+          </akn:implicitReference>
+          <akn:implicitReference ris:domainTerm="Fundstelle">
+            <ris:fundstelle domainTerm="Fundstelle">
+              <ris:periodikum domainTerm="Periodikum">
+                <ris:abkuerzung domainTerm="Abkürzung">BAnz AT</ris:abkuerzung>
+              </ris:periodikum>
+              <ris:zitatstelle domainTerm="Zitatstelle">2016, 28.12.2016 B1</ris:zitatstelle>
+            </ris:fundstelle>
+          </akn:implicitReference>
+        </akn:otherReferences>
+      </akn:analysis>
       <akn:references source="#ris">
         <akn:TLCOrganization
           eId="ris"
