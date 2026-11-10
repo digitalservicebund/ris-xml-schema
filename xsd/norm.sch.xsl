@@ -538,7 +538,7 @@
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $form = $form-eingebundene-stammform]"
     mode="group.d7e183"
-    priority="122"
+    priority="123"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -755,7 +755,7 @@
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $typ = ($typ-gesetz, $typ-vertragsgesetz)]"
     mode="group.d7e183"
-    priority="121"
+    priority="122"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -920,7 +920,7 @@
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $typ = ($typ-verordnung, $typ-vertragsverordnung)]"
     mode="group.d7e183"
-    priority="120"
+    priority="121"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1085,7 +1085,7 @@
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri and $typ = $typ-verwaltungsvorschrift]"
     mode="group.d7e183"
-    priority="119"
+    priority="120"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1250,7 +1250,7 @@
   <template
     match="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $form = $form-eingebundene-stammform]"
     mode="group.d7e183"
-    priority="118"
+    priority="119"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1467,7 +1467,7 @@
   <template
     match="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $typ = ($typ-verordnung, $typ-vertragsverordnung)]"
     mode="group.d7e183"
-    priority="117"
+    priority="118"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1580,7 +1580,7 @@
   <template
     match="/akn:akomaNtoso/akn:act[$ist-verkündungsfassung and @name = $art-regelungstext-uri and $typ = $typ-verwaltungsvorschrift]"
     mode="group.d7e183"
-    priority="116"
+    priority="117"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1693,7 +1693,7 @@
   <template
     match="/akn:akomaNtoso/akn:act[@name = $art-regelungstext-uri and $ist-verkündungsfassung and not($form = $form-eingebundene-stammform)]"
     mode="group.d7e183"
-    priority="115"
+    priority="116"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1858,7 +1858,7 @@
   <template
     match="akn:act/akn:conclusions/akn:formula"
     mode="group.d7e183"
-    priority="114"
+    priority="115"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -1969,7 +1969,7 @@
   <template
     match="/akn:akomaNtoso/*[@name = $art-regelungstext-uri and $typ = ($typ-gesetz, $typ-vertragsgesetz)]/akn:preamble"
     mode="group.d7e183"
-    priority="113"
+    priority="114"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2082,7 +2082,7 @@
   <template
     match="/akn:akomaNtoso/* [ @name = $art-regelungstext-uri and $typ = ($typ-verordnung, $typ-vertragsverordnung) and $form = ($form-stammform, $form-mantelform) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]/akn:preamble"
     mode="group.d7e183"
-    priority="112"
+    priority="113"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2195,7 +2195,7 @@
   <template
     match="akn:quotedStructure//akn:article [ $form = $form-mantelform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) ]"
     mode="group.d7e183"
-    priority="111"
+    priority="112"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2308,7 +2308,7 @@
   <template
     match="akn:article[not(ancestor::akn:quotedStructure)]/@refersTo [ $form = $form-mantelform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]"
     mode="group.d7e183"
-    priority="110"
+    priority="111"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2421,7 +2421,7 @@
   <template
     match="akn:article/@refersTo [ $form = $form-stammform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]"
     mode="group.d7e183"
-    priority="109"
+    priority="110"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2534,7 +2534,7 @@
   <template
     match="akn:article[descendant::akn:mod and not(ancestor::akn:quotedStructure)] [ $form = $form-mantelform and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-verwaltungsvorschrift, $typ-vertragsgesetz, $typ-vertragsverordnung) ]"
     mode="group.d7e183"
-    priority="108"
+    priority="109"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2647,7 +2647,7 @@
   <template
     match="/akn:akomaNtoso/akn:bill/akn:meta/akn:identification/akn:FRBRWork"
     mode="group.d7e183"
-    priority="107"
+    priority="108"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2758,7 +2758,7 @@
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri]/akn:preamble"
     mode="group.d7e183"
-    priority="106"
+    priority="107"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -2933,7 +2933,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:body[$form = $form-mantelform and ($ist-entwurfsfassung or $ist-verkündungsfassung)]"
     mode="group.d7e183"
-    priority="105"
+    priority="106"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3051,7 +3051,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:body[ $form = ($form-mantelform, $form-stammform) and $typ = ($typ-gesetz, $typ-verordnung, $typ-satzung, $typ-vertragsgesetz, $typ-vertragsverordnung) and ($ist-entwurfsfassung or $ist-verkündungsfassung) ]"
     mode="group.d7e183"
-    priority="104"
+    priority="105"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3166,7 +3166,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:body[$form = $form-eingebundene-stammform]"
     mode="group.d7e183"
-    priority="103"
+    priority="104"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3279,7 +3279,7 @@
   <template
     match="akn:article[@refersTo = $refersto-literal-geltungszeitregel]"
     mode="group.d7e183"
-    priority="102"
+    priority="103"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3395,7 +3395,7 @@
   <template
     match="//akn:article/akn:paragraph//akn:list[$ist-entwurfsfassung]"
     mode="group.d7e183"
-    priority="101"
+    priority="102"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3511,7 +3511,7 @@
   <template
     match="//akn:article[$ist-entwurfsfassung]"
     mode="group.d7e183"
-    priority="100"
+    priority="101"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -3624,7 +3624,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:book" mode="group.d7e183" priority="99">
+  <template match="akn:book" mode="group.d7e183" priority="100">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -3732,7 +3732,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:part" mode="group.d7e183" priority="98">
+  <template match="akn:part" mode="group.d7e183" priority="99">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -3840,7 +3840,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:chapter" mode="group.d7e183" priority="97">
+  <template match="akn:chapter" mode="group.d7e183" priority="98">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -3948,7 +3948,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:subchapter" mode="group.d7e183" priority="96">
+  <template match="akn:subchapter" mode="group.d7e183" priority="97">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -4056,7 +4056,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:section" mode="group.d7e183" priority="95">
+  <template match="akn:section" mode="group.d7e183" priority="96">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -4164,7 +4164,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:subsection" mode="group.d7e183" priority="94">
+  <template match="akn:subsection" mode="group.d7e183" priority="95">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -4272,7 +4272,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:title" mode="group.d7e183" priority="93">
+  <template match="akn:title" mode="group.d7e183" priority="94">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -4380,7 +4380,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:subtitle" mode="group.d7e183" priority="92">
+  <template match="akn:subtitle" mode="group.d7e183" priority="93">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -4491,7 +4491,7 @@
   <template
     match="regtxt:vomHdrAbweichendeGliederung"
     mode="group.d7e183"
-    priority="91"
+    priority="92"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -4612,7 +4612,7 @@
   <template
     match="(akn:book | akn:part | akn:chapter | akn:subchapter | akn:section | akn:subsection | akn:title | akn:subtitle)[@refersTo = 'vom-hdr-abweichende-gliederungsebene']"
     mode="group.d7e183"
-    priority="90"
+    priority="91"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -4728,7 +4728,7 @@
   <template
     match="/akn:akomaNtoso/akn:bill[@name = $art-regelungstext-uri]/akn:conclusions"
     mode="group.d7e183"
-    priority="89"
+    priority="90"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -4903,7 +4903,7 @@
   <template
     match="akn:act/akn:conclusions/akn:blockContainer"
     mode="group.d7e183"
-    priority="88"
+    priority="89"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -5016,7 +5016,7 @@
   <template
     match="(akn:act | akn:bill)/akn:conclusions/akn:blockContainer/akn:p[1]"
     mode="group.d7e183"
-    priority="87"
+    priority="88"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -5181,7 +5181,7 @@
   <template
     match="(akn:act | akn:bill)/akn:conclusions/akn:blockContainer/akn:p[position() ge 2]"
     mode="group.d7e183"
-    priority="86"
+    priority="87"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -5294,7 +5294,7 @@
   <template
     match="//akn:doc[@name = $art-vorblatt-regelungstext-uri]/akn:mainBody"
     mode="group.d7e183"
-    priority="85"
+    priority="86"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -5895,7 +5895,7 @@
   <template
     match="//akn:doc[@name = $art-vorblatt-uri]/akn:mainBody/akn:hcontainer[@refersTo = $refersto-literal-vorblattabschnitt-erfüllungsaufwand]//akn:tblock"
     mode="group.d7e183"
-    priority="84"
+    priority="85"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -6032,7 +6032,7 @@
   <template
     match="//akn:doc[@name = $art-vorblatt-beschlussempfehlung-uri]/akn:mainBody"
     mode="group.d7e183"
-    priority="83"
+    priority="84"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -6309,7 +6309,7 @@
   <template
     match="/akn:akomaNtoso/akn:doc[@name = $art-begründung-uri and $typ = ($typ-gesetz, $typ-verordnung, $typ-verwaltungsvorschrift)]"
     mode="group.d7e183"
-    priority="82"
+    priority="83"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -6533,7 +6533,7 @@
   <template
     match="//akn:doc[@name = $art-begründung-uri]/akn:mainBody//akn:hcontainer[@refersTo = 'begruendungsabschnitt-regelungsfolgen']//akn:tblock"
     mode="group.d7e183"
-    priority="81"
+    priority="82"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -6670,7 +6670,7 @@
   <template
     match="//akn:doc[@name = $art-begründung-uri]/akn:mainBody/akn:hcontainer[@refersTo = 'begruendung-allgemeiner-teil']"
     mode="group.d7e183"
-    priority="80"
+    priority="81"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -7001,7 +7001,7 @@
   <template
     match="//akn:doc[@name = $art-begründung-uri]/akn:mainBody/akn:hcontainer[@refersTo = 'begruendung-allgemeiner-teil']/akn:hcontainer[@refersTo = 'begruendungsabschnitt-regelungsfolgen']/akn:content"
     mode="group.d7e183"
-    priority="79"
+    priority="80"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -7440,7 +7440,7 @@
   <template
     match="/akn:akomaNtoso/akn:doc[@name = $art-anschreiben-uri]"
     mode="group.d7e183"
-    priority="78"
+    priority="79"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -7558,7 +7558,7 @@
   <template
     match="/akn:akomaNtoso/akn:doc[@name = ($art-anschreiben-uri, $art-vorblatt-uri)]/akn:preface/akn:longTitle/akn:p"
     mode="group.d7e183"
-    priority="77"
+    priority="78"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -7733,7 +7733,7 @@
   <template
     match="/akn:akomaNtoso/akn:act[@name = $art-vereinbarung-uri]/akn:body"
     mode="group.d7e183"
-    priority="76"
+    priority="77"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -7902,7 +7902,7 @@
   <template
     match="//akn:textualMod[@type = 'insertion']"
     mode="group.d7e183"
-    priority="75"
+    priority="76"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -8015,7 +8015,7 @@
   <template
     match="//akn:mod[not(ancestor::akn:mod)]"
     mode="group.d7e183"
-    priority="74"
+    priority="75"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -8140,7 +8140,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:analysis/akn:activeModifications/akn:textualMod/akn:source | /akn:akomaNtoso/*/akn:meta/akn:analysis/akn:activeModifications/akn:forceMod/akn:source"
     mode="group.d7e183"
-    priority="73"
+    priority="74"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -8311,7 +8311,7 @@
   <template
     match="akn:mod[@refersTo = 'aenderungsbefehl-umnummerierung']"
     mode="group.d7e183"
-    priority="72"
+    priority="73"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -8424,7 +8424,7 @@
   <template
     match="akn:span[@refersTo = 'neue-verweisangabe']"
     mode="group.d7e183"
-    priority="71"
+    priority="72"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -8537,7 +8537,7 @@
   <template
     match="akn:mod[@refersTo and not(ancestor::akn:mod)]"
     mode="group.d7e183"
-    priority="70"
+    priority="71"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9042,7 +9042,7 @@
   <template
     match="/akn:akomaNtoso/(akn:act | akn:bill | akn:doc | akn:statement | akn:documentCollection)//* [(@eId and exists(parent::*[@eId])) and not(local-name() = 'article' and not(ancestor::akn:quotedStructure))]"
     mode="group.d7e183"
-    priority="69"
+    priority="70"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9178,7 +9178,7 @@
   <template
     match="@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-zitierbar) and parent::*/akn:num != '']"
     mode="group.d7e183"
-    priority="68"
+    priority="69"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9348,7 +9348,7 @@
   <template
     match="@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-zitierbar)]"
     mode="group.d7e183"
-    priority="67"
+    priority="68"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9467,7 +9467,7 @@
   <template
     match="akn:num[@refersTo = $literal-deklaration-ausnahme-eid-zählweise]"
     mode="group.d7e183"
-    priority="66"
+    priority="67"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9636,7 +9636,7 @@
   <template
     match="*[@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-nummerierbar)] and not(local-name() = 'article')]"
     mode="group.d7e183"
-    priority="65"
+    priority="66"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9772,7 +9772,7 @@
   <template
     match="*[local-name() = $zitierbare-elementtypen and @eId[starts-with(tokenize(., '-')[last()], $präfix-eid-nummerierbar)] and exists(akn:num)]"
     mode="group.d7e183"
-    priority="64"
+    priority="65"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -9883,7 +9883,7 @@
   <template
     match="akn:passiveModifications/akn:textualMod/akn:destination/@href"
     mode="group.d7e183"
-    priority="63"
+    priority="64"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -10058,7 +10058,7 @@
   <template
     match="akn:article[@eId[starts-with(tokenize(., '-')[last()], $präfix-eid-nummerierbar)]]"
     mode="group.d7e183"
-    priority="62"
+    priority="63"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -10192,7 +10192,7 @@
   <template
     match="/akn:akomaNtoso/(akn:act | akn:bill | akn:doc | akn:statement | akn:documentCollection)//akn:article[not(ancestor::akn:quotedStructure)]/@eId"
     mode="group.d7e183"
-    priority="61"
+    priority="62"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -10303,7 +10303,7 @@
   <template
     match="/akn:akomaNtoso/(akn:act | akn:bill | akn:doc | akn:statement | akn:documentCollection)//akn:article[ancestor::akn:quotedStructure]/@eId"
     mode="group.d7e183"
-    priority="60"
+    priority="61"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -10413,7 +10413,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="@eId" mode="group.d7e183" priority="59">
+  <template match="@eId" mode="group.d7e183" priority="60">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -10529,7 +10529,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="@GUID" mode="group.d7e183" priority="58">
+  <template match="@GUID" mode="group.d7e183" priority="59">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -10645,7 +10645,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRthis"
     mode="group.d7e183"
-    priority="57"
+    priority="58"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -10913,7 +10913,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRthis"
     mode="group.d7e183"
-    priority="56"
+    priority="57"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -11181,7 +11181,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRManifestation/akn:FRBRthis"
     mode="group.d7e183"
-    priority="55"
+    priority="56"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -11449,7 +11449,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRuri"
     mode="group.d7e183"
-    priority="54"
+    priority="55"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -11713,7 +11713,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRuri"
     mode="group.d7e183"
-    priority="53"
+    priority="54"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -11981,7 +11981,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification/akn:FRBRManifestation/akn:FRBRuri"
     mode="group.d7e183"
-    priority="52"
+    priority="53"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -12311,7 +12311,7 @@
   <template
     match="/akn:akomaNtoso/akn:act/@name"
     mode="group.d7e183"
-    priority="51"
+    priority="52"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -12426,7 +12426,7 @@
   <template
     match="akn:meta/akn:proprietary/redok:legalDocML.de_metadaten"
     mode="group.d7e183"
-    priority="50"
+    priority="51"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -12533,7 +12533,7 @@
   <template
     match="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/rechtsetzungsdokument']"
     mode="group.d7e183"
-    priority="49"
+    priority="50"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -12810,7 +12810,7 @@
   <template
     match="akn:meta[$teildokument-uri = ('/akn/ontology/de/concept/documenttype/bund/regelungstext-entwurf', '/akn/ontology/de/concept/documenttype/bund/regelungstext')]"
     mode="group.d7e183"
-    priority="48"
+    priority="49"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -12923,7 +12923,7 @@
   <template
     match="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/nkr-stellungnahme']"
     mode="group.d7e183"
-    priority="47"
+    priority="48"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -13036,7 +13036,7 @@
   <template
     match="akn:meta[$teildokument-uri = '/akn/ontology/de/concept/documenttype/bund/sonstiger-veroeffentlichungstext']"
     mode="group.d7e183"
-    priority="46"
+    priority="47"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -13146,7 +13146,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:meta" mode="group.d7e183" priority="45">
+  <template match="akn:meta" mode="group.d7e183" priority="46">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -13619,7 +13619,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:timeInterval" mode="group.d7e183" priority="44">
+  <template match="akn:timeInterval" mode="group.d7e183" priority="45">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -13903,7 +13903,7 @@
   <template
     match="(akn:activeModifications | akn:passiveModifications)/akn:textualMod/akn:force | akn:article[@period] | akn:paragraph[@period] | akn:list[@period]"
     mode="group.d7e183"
-    priority="43"
+    priority="44"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -14030,7 +14030,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:eventRef" mode="group.d7e183" priority="42">
+  <template match="akn:eventRef" mode="group.d7e183" priority="43">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -14207,7 +14207,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:FRBRExpression" mode="group.d7e183" priority="41">
+  <template match="akn:FRBRExpression" mode="group.d7e183" priority="42">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -14420,7 +14420,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:meta/akn:lifecycle" mode="group.d7e183" priority="40">
+  <template match="akn:meta/akn:lifecycle" mode="group.d7e183" priority="41">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -14599,7 +14599,7 @@
   <template
     match="akn:meta/akn:lifecycle[$ist-entwurfsfassung]"
     mode="group.d7e183"
-    priority="39"
+    priority="40"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -14948,7 +14948,7 @@
   <template
     match="akn:meta/akn:lifecycle[$ist-verkündungsfassung or $ist-konsolidierte-fassung]"
     mode="group.d7e183"
-    priority="38"
+    priority="39"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -15245,7 +15245,7 @@
   <template
     match="akn:meta/akn:lifecycle/akn:eventRef [($ist-verkündungsfassung or $ist-konsolidierte-fassung) and @type = $type-literal-ereignisreferenz-generation ]"
     mode="group.d7e183"
-    priority="37"
+    priority="38"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -15358,7 +15358,7 @@
   <template
     match="akn:meta/akn:lifecycle[$ist-verkündungsfassung and $teildokument-uri = $art-regelungstext-uri]"
     mode="group.d7e183"
-    priority="36"
+    priority="37"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -15479,7 +15479,7 @@
   <template
     match="akn:p[parent::akn:longTitle and $teildokument-uri = $art-regelungstext-uri]"
     mode="group.d7e183"
-    priority="35"
+    priority="36"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -15587,7 +15587,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:session" mode="group.d7e183" priority="34">
+  <template match="akn:session" mode="group.d7e183" priority="35">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -15684,7 +15684,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:person" mode="group.d7e183" priority="33">
+  <template match="akn:person" mode="group.d7e183" priority="34">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -15846,7 +15846,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:role" mode="group.d7e183" priority="32">
+  <template match="akn:role" mode="group.d7e183" priority="33">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -16008,7 +16008,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:organization" mode="group.d7e183" priority="31">
+  <template match="akn:organization" mode="group.d7e183" priority="32">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -16222,7 +16222,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:references" mode="group.d7e183" priority="30">
+  <template match="akn:references" mode="group.d7e183" priority="31">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -16336,7 +16336,7 @@
   <template
     match="akn:marker[@refersTo = 'satzende']"
     mode="group.d7e183"
-    priority="29"
+    priority="30"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -16444,7 +16444,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:inline/@name" mode="group.d7e183" priority="28">
+  <template match="akn:inline/@name" mode="group.d7e183" priority="29">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -16550,7 +16550,7 @@
   <template
     match="(akn:act | akn:bill)[akn:meta/akn:proprietary/regtxt:legalDocML.de_metadaten/regtxt:form = ($form-stammform, $form-eingebundene-stammform)]//akn:list"
     mode="group.d7e183"
-    priority="27"
+    priority="28"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -16661,7 +16661,7 @@
   <template
     match="/akn:akomaNtoso/akn:*/akn:meta/akn:identification/akn:FRBRWork/akn:FRBRsubtype"
     mode="group.d7e183"
-    priority="26"
+    priority="27"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -16782,7 +16782,7 @@
   <template
     match="akn:statement/akn:conclusions/akn:blockContainer"
     mode="group.d7e183"
-    priority="25"
+    priority="26"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -16895,7 +16895,7 @@
   <template
     match="akn:statement/akn:conclusions/akn:blockContainer/akn:p[1]"
     mode="group.d7e183"
-    priority="24"
+    priority="25"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17060,7 +17060,7 @@
   <template
     match="akn:statement/akn:conclusions/akn:blockContainer/akn:p[2]"
     mode="group.d7e183"
-    priority="23"
+    priority="24"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17173,7 +17173,7 @@
   <template
     match="akn:statement/akn:conclusions/akn:blockContainer/akn:p[position() ge 3]"
     mode="group.d7e183"
-    priority="22"
+    priority="23"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17286,7 +17286,7 @@
   <template
     match="akn:doc[$teildokument-uri = $art-anlage-regelungstext-uri]"
     mode="group.d7e183"
-    priority="21"
+    priority="22"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17398,7 +17398,7 @@
       </otherwise>
     </choose>
   </template>
-  <template match="akn:inline/@refersTo" mode="group.d7e183" priority="20">
+  <template match="akn:inline/@refersTo" mode="group.d7e183" priority="21">
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -17507,7 +17507,7 @@
   <template
     match="akn:doc[$teildokument-uri = $art-bericht-uri]/akn:conclusions/akn:blockContainer"
     mode="group.d7e183"
-    priority="19"
+    priority="20"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17620,7 +17620,7 @@
   <template
     match="akn:doc[$teildokument-uri = $art-bericht-uri]/akn:conclusions/akn:blockContainer/akn:p[position() ge 2 and empty(akn:organization)]"
     mode="group.d7e183"
-    priority="18"
+    priority="19"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17733,7 +17733,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:proprietary/sonst:legalDocML.de_metadaten"
     mode="group.d7e183"
-    priority="17"
+    priority="18"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -17893,7 +17893,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:proprietary/regtxt:legalDocML.de_metadaten"
     mode="group.d7e183"
-    priority="16"
+    priority="17"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18053,7 +18053,7 @@
   <template
     match="@href | @src | @from | @upTo"
     mode="group.d7e183"
-    priority="15"
+    priority="16"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18167,7 +18167,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification[$ist-entwurfsfassung or $ist-konsolidierte-fassung]"
     mode="group.d7e183"
-    priority="14"
+    priority="15"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18281,7 +18281,7 @@
   <template
     match="/akn:akomaNtoso/*/akn:meta/akn:identification[$ist-verkündungsfassung]"
     mode="group.d7e183"
-    priority="13"
+    priority="14"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18395,7 +18395,7 @@
   <template
     match="akn:identification/akn:FRBRExpression/akn:FRBRauthor/@href"
     mode="group.d7e183"
-    priority="12"
+    priority="13"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18511,7 +18511,7 @@
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRauthor/@href"
     mode="group.d7e183"
-    priority="11"
+    priority="12"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18627,7 +18627,7 @@
   <template
     match="akn:identification/akn:FRBRExpression/akn:FRBRdate/@name"
     mode="group.d7e183"
-    priority="10"
+    priority="11"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18743,7 +18743,7 @@
   <template
     match="akn:identification/akn:FRBRExpression/akn:FRBRthis/@value"
     mode="group.d7e183"
-    priority="9"
+    priority="10"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18859,7 +18859,7 @@
   <template
     match="akn:identification/akn:FRBRExpression/akn:FRBRuri/@value"
     mode="group.d7e183"
-    priority="8"
+    priority="9"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -18975,7 +18975,7 @@
   <template
     match="akn:identification/akn:FRBRManifestation/akn:FRBRthis/@value"
     mode="group.d7e183"
-    priority="7"
+    priority="8"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19091,7 +19091,7 @@
   <template
     match="akn:identification/akn:FRBRManifestation/akn:FRBRuri/@value"
     mode="group.d7e183"
-    priority="6"
+    priority="7"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19207,7 +19207,7 @@
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRname/@value"
     mode="group.d7e183"
-    priority="5"
+    priority="6"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19323,7 +19323,7 @@
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRnumber/@value"
     mode="group.d7e183"
-    priority="4"
+    priority="5"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19439,7 +19439,7 @@
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRsubtype/@value"
     mode="group.d7e183"
-    priority="3"
+    priority="4"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19555,7 +19555,7 @@
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRthis/@value"
     mode="group.d7e183"
-    priority="2"
+    priority="3"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19671,7 +19671,7 @@
   <template
     match="akn:identification/akn:FRBRWork/akn:FRBRuri/@value"
     mode="group.d7e183"
-    priority="1"
+    priority="2"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19787,7 +19787,7 @@
   <template
     match="ris:legalDocML.de_metadaten"
     mode="group.d7e183"
-    priority="0"
+    priority="1"
   >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
@@ -19894,6 +19894,111 @@
             name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
             as="Q{http://www.w3.org/2001/XMLSchema}string*"
             select="('d7e2118', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
+          />
+        </next-match>
+      </otherwise>
+    </choose>
+  </template>
+  <template match="ris:abkuerzung" mode="group.d7e183" priority="0">
+    <param
+      name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
+      as="Q{http://www.w3.org/2001/XMLSchema}string*"
+      select="()"
+    />
+    <variable
+      name="Q{http://dmaus.name/ns/2023/schxslt}rule-context"
+      as="node()"
+      select="."
+    />
+    <choose>
+      <when test="'d7e2130' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
+        <svrl:suppressed-rule id="SCH-RIS-0002" context="ris:abkuerzung">
+          <if test="(document-uri(.), base-uri(root()))[1]">
+            <attribute
+              name="document"
+              select="(document-uri(.), base-uri(root()))[1]"
+            />
+          </if>
+        </svrl:suppressed-rule>
+        <next-match />
+      </when>
+      <otherwise>
+        <svrl:fired-rule id="SCH-RIS-0002" context="ris:abkuerzung">
+          <if test="(document-uri(.), base-uri(root()))[1]">
+            <attribute
+              name="document"
+              select="(document-uri(.), base-uri(root()))[1]"
+            />
+          </if>
+        </svrl:fired-rule>
+        <variable
+          name="Q{http://dmaus.name/ns/2023/schxslt}severity"
+          as="map(Q{http://www.w3.org/2001/XMLSchema}string, Q{http://www.w3.org/2001/XMLSchema}integer)"
+        >
+          <map>
+            <map-entry key="'d7e2137'">
+              <variable
+                name="severity"
+                as="Q{http://www.w3.org/2001/XMLSchema}string"
+                select="'fatal'"
+              />
+              <sequence
+                select="Q{http://dmaus.name/ns/2023/schxslt}numeric-severity($severity)"
+              />
+            </map-entry>
+          </map>
+        </variable>
+        <for-each select=".">
+          <choose>
+            <when
+              test="Q{http://www.w3.org/2005/xpath-functions/map}get($Q{http://dmaus.name/ns/2023/schxslt}severity, 'd7e2137') ge Q{http://dmaus.name/ns/2023/schxslt}numeric-severity('info')"
+            >
+              <if
+                test="not((@refersTo = 'interne-abkuerzung' and @domainTerm = 'Interne Abkürzung') or (@refersTo = 'nicht-amtliche-abkuerzung' and @domainTerm = 'Nichtamtliche Abkürzung'))"
+              >
+                <variable name="failed-assert" as="element(svrl:failed-assert)">
+                  <svrl:failed-assert
+                    id="SCH-RIS-0002-000"
+                    role="error"
+                    test="(@refersTo = 'interne-abkuerzung' and @domainTerm = 'Interne Abkürzung') or (@refersTo = 'nicht-amtliche-abkuerzung' and @domainTerm = 'Nichtamtliche Abkürzung')"
+                    ruleId="SCH-RIS-0002"
+                  >
+                    <where-populated>
+                      <attribute
+                        name="location"
+                        select="path($Q{http://dmaus.name/ns/2023/schxslt}rule-context)"
+                      />
+                    </where-populated>
+                    <svrl:text
+                    >Das Attribut domainTerm muss zum Wert des Attributs refersTo passen.</svrl:text>
+                  </svrl:failed-assert>
+                </variable>
+                <sequence select="$failed-assert" />
+              </if>
+            </when>
+            <otherwise>
+              <svrl:skipped-assert
+                severityThreshold="info"
+                id="SCH-RIS-0002-000"
+                role="error"
+                test="(@refersTo = 'interne-abkuerzung' and @domainTerm = 'Interne Abkürzung') or (@refersTo = 'nicht-amtliche-abkuerzung' and @domainTerm = 'Nichtamtliche Abkürzung')"
+                ruleId="SCH-RIS-0002"
+              >
+                <where-populated>
+                  <attribute
+                    name="location"
+                    select="path($Q{http://dmaus.name/ns/2023/schxslt}rule-context)"
+                  />
+                </where-populated>
+              </svrl:skipped-assert>
+            </otherwise>
+          </choose>
+        </for-each>
+        <next-match>
+          <with-param
+            name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
+            as="Q{http://www.w3.org/2001/XMLSchema}string*"
+            select="('d7e2130', $Q{http://dmaus.name/ns/2023/schxslt}pattern)"
           />
         </next-match>
       </otherwise>
@@ -20092,6 +20197,9 @@
     <svrl:active-pattern />
     <svrl:active-pattern>
       <attribute name="name">Interne Abkürzung der Norm</attribute>
+    </svrl:active-pattern>
+    <svrl:active-pattern>
+      <attribute name="name">Domain-Term der Abkürzung der Norm</attribute>
     </svrl:active-pattern>
     <apply-templates select="root()" mode="group.d7e183" />
   </template>

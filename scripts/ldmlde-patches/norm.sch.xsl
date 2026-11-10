@@ -72,7 +72,6 @@
     />
   </xsl:template>
 
-  <!-- SCH-RIS-0001-000: allow at most one internal abbreviation per metadata block. -->
   <xsl:template match="/sch:schema">
     <xsl:copy>
       <xsl:apply-templates select="@*" />
@@ -82,6 +81,7 @@
           <xsl:call-template name="ris-metadata-namespace" />
         </xsl:if>
       </xsl:for-each>
+      <!-- SCH-RIS-0001-000: allow at most one internal abbreviation per metadata block. -->
       <sch:pattern>
         <sch:title>Interne Abkürzung der Norm</sch:title>
         <sch:rule id="SCH-RIS-0001" context="ris:legalDocML.de_metadaten">
@@ -90,6 +90,17 @@
             role="error"
             test="count(ris:abkuerzung[@refersTo = 'interne-abkuerzung']) le 1"
           >Ein RIS-Metadatenblock darf höchstens eine interne Abkürzung enthalten.</sch:assert>
+        </sch:rule>
+      </sch:pattern>
+      <!-- SCH-RIS-0002-000: require @domainTerm to match @refersTo on ris:abkuerzung. -->
+      <sch:pattern>
+        <sch:title>Domain-Term der Abkürzung der Norm</sch:title>
+        <sch:rule id="SCH-RIS-0002" context="ris:abkuerzung">
+          <sch:assert
+            id="SCH-RIS-0002-000"
+            role="error"
+            test="(@refersTo = 'interne-abkuerzung' and @domainTerm = 'Interne Abkürzung') or (@refersTo = 'nicht-amtliche-abkuerzung' and @domainTerm = 'Nichtamtliche Abkürzung')"
+          >Das Attribut domainTerm muss zum Wert des Attributs refersTo passen.</sch:assert>
         </sch:rule>
       </sch:pattern>
     </xsl:copy>

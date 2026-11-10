@@ -2911,4 +2911,14 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       >Ein RIS-Metadatenblock darf höchstens eine interne Abkürzung enthalten.</sch:assert>
     </sch:rule>
   </sch:pattern>
+  <sch:pattern>
+    <sch:title>Domain-Term der Abkürzung der Norm</sch:title>
+    <sch:rule id="SCH-RIS-0002" context="ris:abkuerzung">
+      <sch:assert
+        id="SCH-RIS-0002-000"
+        role="error"
+        test="(@refersTo = 'interne-abkuerzung' and @domainTerm = 'Interne Abkürzung') or (@refersTo = 'nicht-amtliche-abkuerzung' and @domainTerm = 'Nichtamtliche Abkürzung')"
+      >Das Attribut domainTerm muss zum Wert des Attributs refersTo passen.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 </sch:schema>

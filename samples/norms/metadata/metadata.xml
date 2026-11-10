@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ris:legalDocML.de_metadaten
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/norm-metadata/0.1"
+>
+  <ris:abkuerzung
+    refersTo="interne-abkuerzung"
+    domainTerm="Interne Abkürzung"
+  >BspG</ris:abkuerzung>
+  <ris:abkuerzung
+    refersTo="nicht-amtliche-abkuerzung"
+    domainTerm="Nichtamtliche Abkürzung"
+  >BeispG</ris:abkuerzung>
+  <ris:titel
+    domainTerm="Nichtamtliche Kurzüberschrift"
+  >Beispielgesetz</ris:titel>
+</ris:legalDocML.de_metadaten>
