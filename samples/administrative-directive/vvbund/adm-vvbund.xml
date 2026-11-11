@@ -129,7 +129,7 @@
           </ris:normgeberListe>
           <ris:ausserkrafttretedatum
             domainTerm="Datum des Außerkrafttretens"
-          >2020-01-01</ris:ausserkrafttretedatum>
+          >2030-12-31</ris:ausserkrafttretedatum>
           <ris:zitierdaten domainTerm="Zitierdaten">
             <ris:zitierdatum
               refersTo="#zitierdatum"
