@@ -134,7 +134,7 @@
             >2026-01-01</ris:zitierdatum>
           </ris:zitierdaten>
           <ris:ausserkrafttretedatum
-              domainTerm="Datum des Außerkrafttretens"
+            domainTerm="Datum des Außerkrafttretens"
           >2020-01-01</ris:ausserkrafttretedatum>
           <ris:aktenzeichenListe domainTerm="Liste der Aktenzeichen">
             <ris:aktenzeichen
