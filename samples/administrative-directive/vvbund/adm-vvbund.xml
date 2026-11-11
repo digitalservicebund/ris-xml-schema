@@ -127,15 +127,15 @@
               </ris:langbezeichnung>
             </ris:normgeber>
           </ris:normgeberListe>
+          <ris:ausserkrafttretedatum
+              domainTerm="Datum des Außerkrafttretens"
+          >2020-01-01</ris:ausserkrafttretedatum>
           <ris:zitierdaten domainTerm="Zitierdaten">
             <ris:zitierdatum
               refersTo="#zitierdatum"
               domainTerm="Zitierdatum"
             >2026-01-01</ris:zitierdatum>
           </ris:zitierdaten>
-          <ris:ausserkrafttretedatum
-            domainTerm="Datum des Außerkrafttretens"
-          >2020-01-01</ris:ausserkrafttretedatum>
           <ris:aktenzeichenListe domainTerm="Liste der Aktenzeichen">
             <ris:aktenzeichen
               domainTerm="Aktenzeichen"
