@@ -127,6 +127,9 @@
               </ris:langbezeichnung>
             </ris:normgeber>
           </ris:normgeberListe>
+          <ris:inkrafttretedatum
+            domainTerm="Datum des Inkrafttretens"
+          >2025-01-01</ris:inkrafttretedatum>
           <ris:ausserkrafttretedatum
             domainTerm="Datum des Außerkrafttretens"
           >2030-12-31</ris:ausserkrafttretedatum>
