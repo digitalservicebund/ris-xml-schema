@@ -19,6 +19,9 @@ fileignoreconfig:
   - filename: .github/workflows/pipeline.yml
     allowed_patterns:
       - "key: "
+  - filename: samples/administrative-directive/bsg-bag/adm-bsg-bag.xml
+    allowed_patterns:
+      - "akn:keyword"
   - filename: xsd/norm.sch
     checksum: 3b3271138801b881f9e7ea06d7739d29da3d37717f1a8e03744c9fd5da883e78
   - filename: xsd/norm.sch.xsl
