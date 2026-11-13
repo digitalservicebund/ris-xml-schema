@@ -7,7 +7,7 @@
     name="/akn/ontology/de/concept/documenttype/bund/verwaltungsvorschrift"
   >
     <akn:meta>
-      <akn:identification source="#ris">
+      <akn:identification source="#rechtsinformationen-des-bundes">
         <akn:FRBRWork>
           <akn:FRBRthis
             value="/eli/bund/verwaltungsvorschriften/vr/gemeinsamer-bundesausschuss/2024/25756"
@@ -21,9 +21,7 @@
             name="Erfassungsdatum"
             ris:domainTerm="Erfassungsdatum"
           />
-          <akn:FRBRauthor
-            href="recht.bund.de/institution/bundessozialgericht"
-          />
+          <akn:FRBRauthor href="#rechtsinformationen-des-bundes" />
           <akn:FRBRcountry value="de" />
           <akn:FRBRsubtype value="VR" />
           <akn:FRBRnumber value="25756" />
@@ -41,9 +39,7 @@
             name="Zitierdatum"
             ris:domainTerm="Zitierdatum"
           />
-          <akn:FRBRauthor
-            href="recht.bund.de/institution/bundessozialgericht"
-          />
+          <akn:FRBRauthor href="#rechtsinformationen-des-bundes" />
           <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
         <akn:FRBRManifestation>
@@ -58,175 +54,125 @@
             name="Generierung"
             ris:domainTerm="Generierung"
           />
-          <akn:FRBRauthor
-            href="recht.bund.de/institution/bundessozialgericht"
-          />
+          <akn:FRBRauthor href="#rechtsinformationen-des-bundes" />
           <akn:FRBRformat value="xml" />
         </akn:FRBRManifestation>
       </akn:identification>
-      <akn:classification source="#ris">
+      <akn:classification source="#rechtsinformationen-des-bundes">
         <akn:keyword
           showAs="Datenerhebung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Datenerhebung"
         />
         <akn:keyword
           showAs="datengestützte einrichtungsübergreifende Qualitätssicherung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="datengestützte einrichtungsübergreifende Qualitätssicherung"
         />
         <akn:keyword
           showAs="datengestützte Qualitätssicherung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="datengestützte Qualitätssicherung"
         />
-        <akn:keyword
-          showAs="Datennutzung"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="Datennutzung"
-        />
+        <akn:keyword showAs="Datennutzung" dictionary="" value="Datennutzung" />
         <akn:keyword
           showAs="Datenverarbeitung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Datenverarbeitung"
         />
         <akn:keyword
           showAs="einrichtungsübergreifende Qualitätssicherung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="einrichtungsübergreifende Qualitätssicherung"
         />
         <akn:keyword
           showAs="Erfassungsjahr 2025"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Erfassungsjahr 2025"
         />
-        <akn:keyword
-          showAs="G-BA"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="G-BA"
-        />
-        <akn:keyword
-          showAs="GBA"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="GBA"
-        />
+        <akn:keyword showAs="G-BA" dictionary="" value="G-BA" />
+        <akn:keyword showAs="GBA" dictionary="" value="GBA" />
         <akn:keyword
           showAs="Gemeinsamer Bundesausschuss"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Gemeinsamer Bundesausschuss"
         />
         <akn:keyword
           showAs="gesetzliche Krankenversicherung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="gesetzliche Krankenversicherung"
         />
-        <akn:keyword
-          showAs="GKV"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="GKV"
-        />
-        <akn:keyword
-          showAs="Krankenhaus"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="Krankenhaus"
-        />
-        <akn:keyword
-          showAs="Krankenkasse"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="Krankenkasse"
-        />
+        <akn:keyword showAs="GKV" dictionary="" value="GKV" />
+        <akn:keyword showAs="Krankenhaus" dictionary="" value="Krankenhaus" />
+        <akn:keyword showAs="Krankenkasse" dictionary="" value="Krankenkasse" />
         <akn:keyword
           showAs="Krankenversicherung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Krankenversicherung"
         />
-        <akn:keyword
-          showAs="KV"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="KV"
-        />
+        <akn:keyword showAs="KV" dictionary="" value="KV" />
         <akn:keyword
           showAs="Leistungserbringer"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Leistungserbringer"
         />
-        <akn:keyword
-          showAs="Messung"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="Messung"
-        />
+        <akn:keyword showAs="Messung" dictionary="" value="Messung" />
         <akn:keyword
           showAs="Patientenbefragung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Patientenbefragung"
         />
         <akn:keyword
           showAs="Qualitätssicherung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Qualitätssicherung"
         />
         <akn:keyword
           showAs="Rahmenbedingung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Rahmenbedingung"
         />
         <akn:keyword
           showAs="Rahmenbestimmung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Rahmenbestimmung"
         />
-        <akn:keyword
-          showAs="Richtlinie"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="Richtlinie"
-        />
+        <akn:keyword showAs="Richtlinie" dictionary="" value="Richtlinie" />
         <akn:keyword
           showAs="themenspezifische Bestimmung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="themenspezifische Bestimmung"
         />
-        <akn:keyword
-          showAs="Verfahren"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="Verfahren"
-        />
+        <akn:keyword showAs="Verfahren" dictionary="" value="Verfahren" />
         <akn:keyword
           showAs="Versorgungsqualität"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="Versorgungsqualität"
         />
-        <akn:keyword
-          showAs="Vertragsarzt"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="Vertragsarzt"
-        />
+        <akn:keyword showAs="Vertragsarzt" dictionary="" value="Vertragsarzt" />
         <akn:keyword
           showAs="vertragsärztliche Versorgung"
-          dictionary="attributsemantik-noch-undefiniert"
+          dictionary=""
           value="vertragsärztliche Versorgung"
         />
-        <akn:keyword
-          showAs="Änderung"
-          dictionary="attributsemantik-noch-undefiniert"
-          value="Änderung"
-        />
+        <akn:keyword showAs="Änderung" dictionary="" value="Änderung" />
       </akn:classification>
-      <akn:analysis source="#ris">
-        <akn:otherReferences source="#ris">
+      <akn:analysis source="#rechtsinformationen-des-bundes">
+        <akn:otherReferences source="#rechtsinformationen-des-bundes">
           <akn:implicitReference
             shortForm="BAnz"
             showAs="BAnz AT 27.08.2024 B4"
           />
         </akn:otherReferences>
       </akn:analysis>
-      <akn:references source="#ris">
+      <akn:references source="#rechtsinformationen-des-bundes">
         <akn:TLCOrganization
-          eId="ris"
-          href=""
-          showAs="Rechtsinformationssystem des Bundes"
+          eId="rechtsinformationen-des-bundes"
+          href="/akn/ontology/organizations/de/bund/rechtsinformationen-des-bundes"
+          showAs="Rechtsinformationen des Bundes"
         />
       </akn:references>
-      <akn:proprietary source="#ris">
+      <akn:proprietary source="#rechtsinformationen-des-bundes">
         <ris:meta>
           <ris:normgeberListe domainTerm="Liste der Normgeber">
             <ris:normgeber domainTerm="Normgeber">

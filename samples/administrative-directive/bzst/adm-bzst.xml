@@ -7,7 +7,7 @@
     name="/akn/ontology/de/concept/documenttype/bund/verwaltungsvorschrift"
   >
     <akn:meta>
-      <akn:identification source="attributsemantik-noch-undefiniert">
+      <akn:identification source="#rechtsinformationen-des-bundes">
         <akn:FRBRWork>
           <akn:FRBRthis value="TODO" />
           <akn:FRBRuri value="TODO" />
@@ -22,7 +22,7 @@
             value="Sehr lange Überschrift gemäß Test"
           />
           <akn:FRBRdate date="2001-01-01" name="TODO" />
-          <akn:FRBRauthor href="TODO" />
+          <akn:FRBRauthor href="#rechtsinformationen-des-bundes" />
           <akn:FRBRcountry value="de" />
           <akn:FRBRnumber value="TODO" />
           <akn:FRBRname value="TODO" />
@@ -41,7 +41,7 @@
             name="zitierdatum"
             showAs="Zitierdatum"
           />
-          <akn:FRBRauthor href="TODO" />
+          <akn:FRBRauthor href="#rechtsinformationen-des-bundes" />
           <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
         <akn:FRBRManifestation>
@@ -62,11 +62,11 @@
             name="erstveroeffentlichung"
             showAs="Erstveröffentlichung"
           />
-          <akn:FRBRauthor href="TODO" />
+          <akn:FRBRauthor href="#rechtsinformationen-des-bundes" />
           <akn:FRBRformat value="xml" />
         </akn:FRBRManifestation>
       </akn:identification>
-      <akn:classification source="#ris">
+      <akn:classification source="#rechtsinformationen-des-bundes">
         <akn:keyword
           dictionary=""
           ris:domainTerm="Schlagwort"
@@ -116,7 +116,7 @@
           value="Vermögensminderung"
         />
       </akn:classification>
-      <akn:analysis source="attributsemantik-noch-undefiniert">
+      <akn:analysis source="#rechtsinformationen-des-bundes">
         <akn:otherReferences source="#">
           <akn:implicitReference ris:domainTerm="Referenz Rechtsprechung">
             <ris:referenzRechtsprechung domainTerm="Referenz Rechtsprechung">
@@ -158,7 +158,14 @@
           </akn:implicitReference>
         </akn:otherReferences>
       </akn:analysis>
-      <akn:proprietary source="attributsemantik-noch-undefiniert">
+      <akn:references source="#rechtsinformationen-des-bundes">
+        <akn:TLCOrganization
+          eId="rechtsinformationen-des-bundes"
+          href="/akn/ontology/organizations/de/bund/rechtsinformationen-des-bundes"
+          showAs="Rechtsinformationen des Bundes"
+        />
+      </akn:references>
+      <akn:proprietary source="#rechtsinformationen-des-bundes">
         <ris:meta>
           <ris:normgeberListe domainTerm="Liste der Normgeber">
             <ris:normgeber domainTerm="Normgeber">
