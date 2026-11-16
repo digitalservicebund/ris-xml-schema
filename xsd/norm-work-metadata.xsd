@@ -53,7 +53,6 @@
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="aufhebung" />
-      <xs:enumeration value="hinweis" />
       <xs:enumeration value="neufassung" />
       <xs:enumeration value="sonstiger-hinweis" />
       <xs:enumeration value="stand" />
