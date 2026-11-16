@@ -117,7 +117,7 @@
         />
       </akn:classification>
       <akn:analysis source="#rechtsinformationen-des-bundes">
-        <akn:otherReferences source="#">
+        <akn:otherReferences source="#rechtsinformationen-des-bundes">
           <akn:implicitReference ris:domainTerm="Referenz Rechtsprechung">
             <ris:referenzRechtsprechung domainTerm="Referenz Rechtsprechung">
               <ris:richtung
