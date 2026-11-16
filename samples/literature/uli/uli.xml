@@ -322,9 +322,9 @@
       </akn:analysis>
       <akn:references source="#ris">
         <akn:TLCOrganization
-          eId="ris"
-          href="/akn/ontology/organizations/de/ris/rechtsinformationssystem-des-bundes"
-          showAs="Rechtsinformationssystem des Bundes"
+          eId="rechtsinformationen-des-bundes"
+          href="/akn/ontology/organizations/de/bund/rechtsinformationen-des-bundes"
+          showAs="Rechtsinformationen des Bundes"
         />
         <akn:TLCRole
           eId="verfasser"
