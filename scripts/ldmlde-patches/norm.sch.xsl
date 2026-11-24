@@ -95,7 +95,10 @@
       <!-- SCH-RIS-0002-000: require @domainTerm to match @refersTo on ris:abkuerzung. -->
       <sch:pattern>
         <sch:title>Domain-Term der Abkürzung der Norm</sch:title>
-        <sch:rule id="SCH-RIS-0002" context="ris:abkuerzung">
+        <sch:rule
+          id="SCH-RIS-0002"
+          context="ris:legalDocML.de_metadaten/ris:abkuerzung"
+        >
           <sch:assert
             id="SCH-RIS-0002-000"
             role="error"

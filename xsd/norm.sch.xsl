@@ -19899,7 +19899,11 @@
       </otherwise>
     </choose>
   </template>
-  <template match="ris:abkuerzung" mode="group.d7e183" priority="0">
+  <template
+    match="ris:legalDocML.de_metadaten/ris:abkuerzung"
+    mode="group.d7e183"
+    priority="0"
+  >
     <param
       name="Q{http://dmaus.name/ns/2023/schxslt}pattern"
       as="Q{http://www.w3.org/2001/XMLSchema}string*"
@@ -19912,7 +19916,10 @@
     />
     <choose>
       <when test="'d7e2130' = $Q{http://dmaus.name/ns/2023/schxslt}pattern">
-        <svrl:suppressed-rule id="SCH-RIS-0002" context="ris:abkuerzung">
+        <svrl:suppressed-rule
+          id="SCH-RIS-0002"
+          context="ris:legalDocML.de_metadaten/ris:abkuerzung"
+        >
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
               name="document"
@@ -19923,7 +19930,10 @@
         <next-match />
       </when>
       <otherwise>
-        <svrl:fired-rule id="SCH-RIS-0002" context="ris:abkuerzung">
+        <svrl:fired-rule
+          id="SCH-RIS-0002"
+          context="ris:legalDocML.de_metadaten/ris:abkuerzung"
+        >
           <if test="(document-uri(.), base-uri(root()))[1]">
             <attribute
               name="document"

@@ -185,99 +185,60 @@
   <xs:complexType name="Verweise">
     <xs:sequence>
       <xs:element
-        name="verweis"
-        type="Verweis"
+        name="verweisNorm"
+        type="VerweisNorm"
         minOccurs="1"
         maxOccurs="unbounded"
       />
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="Verweis">
+  <xs:complexType name="VerweisNorm">
     <xs:choice maxOccurs="unbounded">
-      <xs:element type="xs:string" name="typ" minOccurs="0" />
-      <xs:element type="xs:string" name="ausgangsnorm" minOccurs="0" />
-      <xs:element type="xs:string" name="bezugsnorm1Jurabk" minOccurs="0" />
-      <xs:element type="xs:string" name="bezugsnorm1Gliederung" minOccurs="0" />
+      <xs:element name="typ" type="xs:string" minOccurs="0" />
+      <xs:element name="ausgangsnorm" type="xs:string" minOccurs="0" />
+      <xs:element name="anfangsdatum" type="xs:string" minOccurs="0" />
+      <xs:element name="endedatum" type="xs:string" minOccurs="0" />
+      <xs:element name="bezugsnorm" type="VerweisBezugsnorm" minOccurs="0" />
       <xs:element
-        type="xs:string"
-        name="bezugsnorm1Einzelnormbezeichnung"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="bezugsnorm1VorangehendeEinzelnorm"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="bezugsnorm1NachfolgendeEinzelnorm"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="bezugsnorm1Untergliederung"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="bezugsnorm1ZitierdatumOrFassungsdatum"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="bezugsnorm1Geltungsdatum"
-        minOccurs="0"
-      />
-      <xs:element type="xs:string" name="anfangsdatum" minOccurs="0" />
-      <xs:element type="xs:string" name="endedatum" minOccurs="0" />
-      <xs:element type="xs:string" name="bezugsnorm2Jurabk" minOccurs="0" />
-      <xs:element type="xs:string" name="bezugsnorm2Gliederung" minOccurs="0" />
-      <xs:element
-        type="xs:string"
-        name="bezugsnorm2Einzelnormbezeichnung"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="bezugsnorm2VorangehendeEinzelnorm"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="bezugsnorm2NachfolgendeEinzelnorm"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="bezugsnorm2Untergliederung"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="bezugsnorm2ZitierdatumOrFassungsdatum"
-        minOccurs="0"
-      />
-      <xs:element type="xs:string" name="ermaechtigungAdressat" minOccurs="0" />
-      <xs:element
-        type="xs:string"
-        name="ermaechtigungMitwirkungArt"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="ermaechtigungMitwirkendesOrgan"
-        minOccurs="0"
-      />
-      <xs:element
-        type="xs:string"
-        name="ermaechtigungGegenstand"
+        name="ermaechtigung"
+        type="VerweisErmaechtigung"
         minOccurs="0"
       />
     </xs:choice>
-    <xs:attribute name="sourceEId" type="xs:string" />
-    <xs:attribute name="targetWorkEli1" type="xs:string" />
-    <xs:attribute name="targetWorkEli2" type="xs:string" />
+    <xs:attribute name="source" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="VerweisBezugsnorm">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="uri" type="xs:string" minOccurs="0" />
+      <xs:element name="abkuerzung" type="xs:string" minOccurs="0" />
+      <xs:element name="gliederung" type="xs:string" minOccurs="0" />
+      <xs:element name="bezeichnung" type="xs:string" minOccurs="0" />
+      <xs:element
+        type="xs:string"
+        name="vorangehendeEinzelnorm"
+        minOccurs="0"
+      />
+      <xs:element
+        type="xs:string"
+        name="nachfolgendeEinzelnorm"
+        minOccurs="0"
+      />
+      <xs:element name="untergliederung" type="xs:string" minOccurs="0" />
+      <xs:element name="datum" type="xs:string" minOccurs="0" />
+      <xs:element name="geltungsdatum" type="xs:string" minOccurs="0" />
+    </xs:choice>
+    <xs:attribute name="reihenfolge" type="xs:int" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="VerweisErmaechtigung">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="adressat" type="xs:string" minOccurs="0" />
+      <xs:element name="mitwirkungArt" type="xs:string" minOccurs="0" />
+      <xs:element name="mitwirkendesOrgan" type="xs:string" minOccurs="0" />
+      <xs:element name="gegenstand" type="xs:string" minOccurs="0" />
+    </xs:choice>
   </xs:complexType>
 
   <xs:complexType name="DoknrRef">
