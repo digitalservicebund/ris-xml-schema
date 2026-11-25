@@ -22,6 +22,19 @@
       />
     </xs:appinfo>
   </xs:annotation>
+
+  <xs:attributeGroup name="DomainTermAttr">
+    <xs:attribute name="domainTerm" type="xs:string" use="required" />
+  </xs:attributeGroup>
+
+  <xs:complexType name="DomainTermValue">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attributeGroup ref="DomainTermAttr" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:element name="legalDocML.de_metadaten">
     <xs:complexType>
       <xs:sequence>
@@ -159,13 +172,13 @@
         maxOccurs="unbounded"
       />
     </xs:sequence>
-    <xs:attribute name="domainTerm" type="xs:string" use="required" />
+    <xs:attributeGroup ref="DomainTermAttr" />
   </xs:complexType>
 
   <xs:complexType name="DokumenttypType">
     <xs:simpleContent>
       <xs:extension base="StringNotEmpty">
-        <xs:attribute name="domainTerm" type="xs:string" use="required" />
+        <xs:attributeGroup ref="DomainTermAttr" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -182,14 +195,6 @@
     <xs:attribute name="href" type="xs:anyURI" use="required" />
   </xs:complexType>
 
-  <xs:complexType name="stringWithDomainTerm">
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute name="domainTerm" type="xs:string" use="required" />
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
   <xs:complexType name="Verweise">
     <xs:sequence>
       <xs:element
@@ -199,23 +204,15 @@
         maxOccurs="unbounded"
       />
     </xs:sequence>
-    <xs:attribute name="domainTerm" use="required" />
+    <xs:attributeGroup ref="DomainTermAttr" />
   </xs:complexType>
 
   <xs:complexType name="VerweisNorm">
     <xs:choice maxOccurs="unbounded">
-      <xs:element name="typ" type="stringWithDomainTerm" minOccurs="0" />
-      <xs:element
-        name="ausgangsnorm"
-        type="stringWithDomainTerm"
-        minOccurs="0"
-      />
-      <xs:element
-        name="anfangsdatum"
-        type="stringWithDomainTerm"
-        minOccurs="0"
-      />
-      <xs:element name="endedatum" type="stringWithDomainTerm" minOccurs="0" />
+      <xs:element name="typ" type="DomainTermValue" minOccurs="0" />
+      <xs:element name="ausgangsnorm" type="DomainTermValue" minOccurs="0" />
+      <xs:element name="anfangsdatum" type="DomainTermValue" minOccurs="0" />
+      <xs:element name="endedatum" type="DomainTermValue" minOccurs="0" />
       <xs:element name="bezugsnorm" type="VerweisBezugsnorm" minOccurs="0" />
       <xs:element
         name="ermaechtigung"
@@ -223,62 +220,46 @@
         minOccurs="0"
       />
     </xs:choice>
-    <xs:attribute name="domainTerm" use="required" />
+    <xs:attributeGroup ref="DomainTermAttr" />
     <xs:attribute name="source" type="xs:string" use="required" />
   </xs:complexType>
 
   <xs:complexType name="VerweisBezugsnorm">
     <xs:choice maxOccurs="unbounded">
-      <xs:element name="uri" type="stringWithDomainTerm" minOccurs="0" />
-      <xs:element name="abkuerzung" type="stringWithDomainTerm" minOccurs="0" />
-      <xs:element name="gliederung" type="stringWithDomainTerm" minOccurs="0" />
+      <xs:element name="uri" type="DomainTermValue" minOccurs="0" />
+      <xs:element name="abkuerzung" type="DomainTermValue" minOccurs="0" />
+      <xs:element name="gliederung" type="DomainTermValue" minOccurs="0" />
+      <xs:element name="bezeichnung" type="DomainTermValue" minOccurs="0" />
       <xs:element
-        name="bezeichnung"
-        type="stringWithDomainTerm"
-        minOccurs="0"
-      />
-      <xs:element
-        type="stringWithDomainTerm"
         name="vorangehendeEinzelnorm"
+        type="DomainTermValue"
         minOccurs="0"
       />
       <xs:element
-        type="stringWithDomainTerm"
         name="nachfolgendeEinzelnorm"
+        type="DomainTermValue"
         minOccurs="0"
       />
-      <xs:element
-        name="untergliederung"
-        type="stringWithDomainTerm"
-        minOccurs="0"
-      />
-      <xs:element name="datum" type="stringWithDomainTerm" minOccurs="0" />
-      <xs:element
-        name="geltungsdatum"
-        type="stringWithDomainTerm"
-        minOccurs="0"
-      />
+      <xs:element name="untergliederung" type="DomainTermValue" minOccurs="0" />
+      <xs:element name="datum" type="DomainTermValue" minOccurs="0" />
+      <xs:element name="geltungsdatum" type="DomainTermValue" minOccurs="0" />
     </xs:choice>
     <xs:attribute name="reihenfolge" type="xs:int" use="required" />
-    <xs:attribute name="domainTerm" type="xs:string" use="required" />
+    <xs:attributeGroup ref="DomainTermAttr" />
   </xs:complexType>
 
   <xs:complexType name="VerweisErmaechtigung">
     <xs:choice maxOccurs="unbounded">
-      <xs:element name="adressat" type="stringWithDomainTerm" minOccurs="0" />
-      <xs:element
-        name="mitwirkungArt"
-        type="stringWithDomainTerm"
-        minOccurs="0"
-      />
+      <xs:element name="adressat" type="DomainTermValue" minOccurs="0" />
+      <xs:element name="mitwirkungArt" type="DomainTermValue" minOccurs="0" />
       <xs:element
         name="mitwirkendesOrgan"
-        type="stringWithDomainTerm"
+        type="DomainTermValue"
         minOccurs="0"
       />
-      <xs:element name="gegenstand" type="stringWithDomainTerm" minOccurs="0" />
+      <xs:element name="gegenstand" type="DomainTermValue" minOccurs="0" />
     </xs:choice>
-    <xs:attribute name="domainTerm" type="xs:string" use="required" />
+    <xs:attributeGroup ref="DomainTermAttr" />
   </xs:complexType>
 
   <xs:complexType name="DoknrRef">
