@@ -318,6 +318,20 @@
               >2023, 911-917</ris:zitatstelle>
             </ris:fundstelle>
           </akn:implicitReference>
+          <akn:implicitReference
+            showAs="Demontage des Sozialstaats, 1986, 175-177"
+          >
+            <ris:fundstelleSelbststaendig
+              domainTerm="Fundstelle in selbstständiger Literatur"
+            >
+              <ris:titel
+                domainTerm="Titel"
+              >Beispiel Titel der Fundstelle</ris:titel>
+              <ris:zitatstelle
+                domainTerm="Zitatstelle"
+              >Beispiel zitat, 0000</ris:zitatstelle>
+            </ris:fundstelleSelbststaendig>
+          </akn:implicitReference>
         </akn:otherReferences>
       </akn:analysis>
       <akn:references source="#ris">

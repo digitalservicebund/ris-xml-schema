@@ -32,6 +32,7 @@
   <xs:include schemaLocation="caselaw-pending-proceeding.xsd" />
   <xs:include schemaLocation="literature.xsd" />
   <xs:include schemaLocation="sli.xsd" />
+  <xs:include schemaLocation="uli.xsd" />
 
   <!-- Typen und Elemente die von verschiedenen Dokumentarten verwendet werden -->
 

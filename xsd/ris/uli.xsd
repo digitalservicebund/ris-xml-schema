@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ris="http://rechtsinformationen.bund.de/schema/ris/0.1"
+  elementFormDefault="qualified"
+  targetNamespace="http://rechtsinformationen.bund.de/schema/ris/0.1"
+>
+  <xs:annotation>
+    <xs:documentation xml:lang="de">
+      Typen, die nur im Bereich unselbstständige Literatur vorhanden sind.
+
+      Diese sind nur in einer extra Datei um die Schema-Datein übersichtlicher zu haben.
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element
+    name="fundstelleSelbststaendig"
+    type="ris:fundstelleSelbststaendig"
+  />
+  <xs:complexType name="fundstelleSelbststaendig">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Fundstelle in selbstständiger Literatur
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="titel" type="ris:titel" minOccurs="0" />
+      <xs:element name="zitatstelle" type="ris:zitatstelle" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+</xs:schema>
