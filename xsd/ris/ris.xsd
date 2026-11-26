@@ -1507,4 +1507,29 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+  <xs:complexType name="formen">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Formen des Dokuments
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="form" type="ris:form" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="form">
+    <xs:annotation>
+      <xs:documentation xml:lang="de">
+        Form in der das Dokument vorliegt (z.B. Stammnorm/Stammvorschrift, Änderungsnorm/Änderungsvorschrift).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="domainTerm" type="ris:domainTerm" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 </xs:schema>
