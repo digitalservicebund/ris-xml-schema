@@ -21,6 +21,7 @@
       <xs:complexContent>
         <xs:restriction base="ris:meta">
           <xs:sequence>
+            <xs:element name="formen" type="ris:formen" minOccurs="0" />
             <xs:element
               name="normgeberListe"
               type="ris:normgeberListe"

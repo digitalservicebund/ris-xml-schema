@@ -7,7 +7,7 @@
     name="/akn/ontology/de/concept/documenttype/bund/verwaltungsvorschrift"
   >
     <akn:meta>
-      <akn:identification source="#ris">
+      <akn:identification source="#rechtsinformationen-des-bundes">
         <akn:FRBRWork>
           <akn:FRBRthis value="VVBU123456789" />
           <akn:FRBRuri value="VVBU123456789" />
@@ -46,7 +46,7 @@
           <akn:FRBRauthor
             href="#organisation-normgeber-ministerium-fuer-digitales-und-verkehr"
           />
-          <akn:FRBRcountry value="TODO" />
+          <akn:FRBRcountry value="de" />
         </akn:FRBRWork>
         <akn:FRBRExpression>
           <akn:FRBRthis value="VVBU123456789" />
@@ -59,11 +59,16 @@
           <akn:FRBRauthor
             href="#organisation-normgeber-ministerium-fuer-digitales-und-verkehr"
           />
-          <akn:FRBRlanguage language="TODO" />
+          <akn:FRBRlanguage language="deu" />
         </akn:FRBRExpression>
         <akn:FRBRManifestation>
           <akn:FRBRthis value="VVBU123456789.xml" />
           <akn:FRBRuri value="VVBU123456789.xml" />
+          <akn:FRBRdate
+            date="2026-01-01"
+            name="erstveroeffentlichung"
+            showAs="Erstveröffentlichung"
+          />
           <akn:FRBRdate
             date="2026-03-20"
             name="letzteVeroeffentlichung"
@@ -74,8 +79,8 @@
           />
         </akn:FRBRManifestation>
       </akn:identification>
-      <akn:analysis source="#ris">
-        <akn:otherReferences source="#ris">
+      <akn:analysis source="#rechtsinformationen-des-bundes">
+        <akn:otherReferences source="#rechtsinformationen-des-bundes">
           <akn:implicitReference ris:domainTerm="Fundstelle">
             <ris:fundstelle domainTerm="Fundstelle">
               <ris:periodikum domainTerm="Periodikum">
@@ -105,11 +110,11 @@
           </akn:implicitReference>
         </akn:otherReferences>
       </akn:analysis>
-      <akn:references source="#ris">
+      <akn:references source="#rechtsinformationen-des-bundes">
         <akn:TLCOrganization
-          eId="ris"
-          href="/akn/ontology/organizations/de/ris/rechtsinformationssystem-des-bundes"
-          showAs="Rechtsinformationssystem des Bundes"
+          eId="rechtsinformationen-des-bundes"
+          href="/akn/ontology/organizations/de/bund/rechtsinformationen-des-bundes"
+          showAs="Rechtsinformationen des Bundes"
         />
         <akn:TLCOrganization
           eId="organisation-normgeber-ministerium-fuer-digitales-und-verkehr"
@@ -117,8 +122,11 @@
           showAs="Ministerium für Digitales und Verkehr"
         />
       </akn:references>
-      <akn:proprietary source="#ris">
+      <akn:proprietary source="#rechtsinformationen-des-bundes">
         <ris:meta>
+          <ris:formen domainTerm="Formen des Dokuments">
+            <ris:form domainTerm="Form des Dokuments">Stammvorschrift</ris:form>
+          </ris:formen>
           <ris:normgeberListe domainTerm="Liste der Normgeber">
             <ris:normgeber domainTerm="Normgeber">
               <ris:langbezeichnung
@@ -150,7 +158,7 @@
           </ris:aktenzeichenListe>
           <ris:langueberschrift
             domainTerm="Amtliche Langüberschrift"
-          >Richtlinien über den Erlass von Planrechtsentscheidungen</ris:langueberschrift>
+          >Buß- und Verwarnungsgeldkatalog Binnen- und Seeschifffahrtsstraßen</ris:langueberschrift>
           <ris:kurzueberschrift
             domainTerm="Amtliche Kurzüberschrift"
           >Unterschwellenvergabeordnung
@@ -161,6 +169,9 @@
           <ris:referenzenNorm domainTerm="Normen">
             <ris:referenzNorm domainTerm="Norm">
               <ris:abkuerzung domainTerm="Abkürzung">GG</ris:abkuerzung>
+              <ris:titel
+                domainTerm="Amtliche Langüberschrift"
+              >Grundgesetz für die Bundesrepublik Deutschland</ris:titel>
               <ris:einzelnorm domainTerm="Einzelnorm">
                 <ris:bezeichnung
                   domainTerm="Bezeichnung"
