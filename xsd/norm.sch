@@ -2865,8 +2865,8 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
       />
       <sch:assert
         id="SCH-01010-005"
-        test="parent::akn:FRBRauthor or $teil-ohne-fragment = '' or matches($teil-ohne-fragment, '^([a-zöäüßA-ZÄÖÜẞ]+-)+\d+\.[a-zA-Z]+$') or starts-with($teil-ohne-fragment, 'http://') or starts-with($teil-ohne-fragment, 'https://') or starts-with($teil-ohne-fragment, '/eli')"
-      >URI-Verweise müssen eine der drei folgenden Formen haben: 1) vollständige http/https-URI, 2) nur absoluter Pfad-Teil (beginnend mit '/eli', d. h. innerhalb derselben Authority wie das aktuelle Dokument) oder 3) nur Dateiname und ggf. Fragment (d. h. innerhalb der selben Expression).</sch:assert>
+        test="parent::akn:FRBRauthor or $teil-ohne-fragment = '' or matches($teil-ohne-fragment, '^([a-zöäüßA-ZÄÖÜẞ]+-)+\d+\.[a-zA-Z]+$') or starts-with($teil-ohne-fragment, 'http://') or starts-with($teil-ohne-fragment, 'https://') or starts-with($teil-ohne-fragment, '/eli') or starts-with($teil-ohne-fragment, '/akn/ontology/')"
+      >URI-Verweise müssen eine der folgenden Formen haben: 1) vollständige http/https-URI, 2) nur absoluter Pfad-Teil (beginnend mit '/eli', d. h. innerhalb derselben Authority wie das aktuelle Dokument, oder mit '/akn/ontology/'), oder 3) nur Dateiname und ggf. Fragment (d. h. innerhalb der selben Expression).</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -2922,6 +2922,24 @@ Dieses Dokument ist eine Bearbeitung (Fork) des Originalwerks und die Änderunge
         role="error"
         test="(@refersTo = 'interne-abkuerzung' and @domainTerm = 'Interne Abkürzung') or (@refersTo = 'nicht-amtliche-abkuerzung' and @domainTerm = 'Nichtamtliche Abkürzung')"
       >Das Attribut domainTerm muss zum Wert des Attributs refersTo passen.</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>Autor der Manifestation</sch:title>
+    <sch:rule
+      id="SCH-RIS-0003"
+      context="akn:identification/akn:FRBRManifestation/akn:FRBRauthor[starts-with(@href, '#')]"
+    >
+      <sch:let name="referenzierte-eId" value="substring-after(@href, '#')" />
+      <sch:assert
+        id="SCH-RIS-0003-000"
+        role="error"
+        test="count(ancestor::akn:meta/akn:references[@source = concat('#', $referenzierte-eId)]/akn:TLCOrganization[@eId = $referenzierte-eId]) = 1"
+      >Zum Autor der Manifestation muss in den Metadaten ein akn:references mit @source="<sch:value-of
+        select="@href"
+      />" existieren, das genau eine akn:TLCOrganization mit der @eId="<sch:value-of
+        select="$referenzierte-eId"
+      />" enthält.</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

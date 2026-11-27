@@ -1606,6 +1606,13 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       />
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="eIdLiterals.verweisOrganisation">
+    <xs:annotation>
+      <xs:documentation
+      >Die ELI-Kurzbezeichnung für den fachlichen Typ "verweisOrganisation" (AKN-Typ "TLCOrganization") lautet in LegalDocML.de "verworg".</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
   <xs:simpleType name="eIdLiterals.verzeichniscontainer">
     <xs:annotation>
       <xs:documentation
@@ -1797,7 +1804,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       >Dient der Angabe des Autors auf der Manifestation-Ebene.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="hrefLiterals">
-      <xs:enumeration value="recht.bund.de" />
+      <xs:pattern value="recht\.bund\.de|#.+" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="hrefLiterals.verweisFunktionsbezeichnung">
@@ -2610,6 +2617,16 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
     </xs:annotation>
     <xs:restriction base="xs:integer" />
   </xs:simpleType>
+  <xs:simpleType name="shortFormLiterals">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="shortFormLiterals.verweisOrganisation">
+    <xs:annotation>
+      <xs:documentation
+      >Das Attribut shortForm wird verwendet, um die abgekürzte Form des Anzeigenamens der Organisation anzugeben.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="shortFormLiterals" />
+  </xs:simpleType>
   <xs:simpleType name="showAsLiterals">
     <xs:annotation>
       <xs:documentation
@@ -2653,6 +2670,13 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
         value="/akn/ontology/de/concept/documenttype/bund/sonstiger-veroeffentlichungstext"
       />
     </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="showAsLiterals.verweisOrganisation">
+    <xs:annotation>
+      <xs:documentation
+      >Das Attribut showAs wird verwendet, um den Anzeigenamens einer Organisation anzugeben.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="showAsLiterals" />
   </xs:simpleType>
   <xs:simpleType name="sourceLiterals">
     <xs:annotation>
@@ -2711,11 +2735,7 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       <xs:documentation
       >Das Attribut @source verweist auf die @eId des Akteurs (Person, Organisation), der die spezifische Annotation oder Markierung bereitstellt.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="sourceLiterals">
-      <xs:pattern
-        value="#meta-n([1-9]+[0-9]*)_(verworg|verwpers)-n([1-9]+[0-9]*)"
-      />
-    </xs:restriction>
+    <xs:restriction base="sourceLiterals" />
   </xs:simpleType>
   <xs:simpleType name="sourceLiterals.weitereMetadaten">
     <xs:annotation>
@@ -4374,6 +4394,58 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       type="eIdLiterals.nichtamtlicheFussnote"
     />
   </xs:complexType>
+  <xs:complexType name="referenzen" mixed="false">
+    <xs:annotation>
+      <xs:documentation
+      >Die Klasse "referenzen" dient als Metadaten-Container für alle Verweise im Dokument auf externe Entitäten. Dazu gehören Verweise auf Personen, Organisationen und Rollen.</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:group ref="verweiseAufExterneEntitaeten" maxOccurs="unbounded" />
+    </xs:choice>
+    <xs:attribute
+      name="source"
+      use="required"
+      type="sourceLiterals.referenzen"
+    />
+  </xs:complexType>
+  <xs:group name="verweiseAufExterneEntitaeten">
+    <xs:choice>
+      <xs:element
+        name="TLCOrganization"
+        type="verweisOrganisation"
+        minOccurs="0"
+        maxOccurs="unbounded"
+      />
+    </xs:choice>
+  </xs:group>
+  <xs:complexType name="verweisOrganisation" mixed="false">
+    <xs:annotation>
+      <xs:documentation
+      >Die Klasse "verweisOrganisation" dient dem Metadatenverweis auf eine in einer externen Ressource deklarierten Organisation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+    <xs:attribute
+      name="eId"
+      use="required"
+      type="eIdLiterals.verweisOrganisation"
+    />
+    <xs:attribute
+      name="href"
+      use="required"
+      type="hrefLiterals.verweisOrganisation"
+    />
+    <xs:attribute name="GUID" use="required" type="GUIDLiterals" />
+    <xs:attribute
+      name="showAs"
+      use="required"
+      type="showAsLiterals.verweisOrganisation"
+    />
+    <xs:attribute
+      name="shortForm"
+      use="optional"
+      type="shortFormLiterals.verweisOrganisation"
+    />
+  </xs:complexType>
   <xs:complexType name="metadatenMinimal" mixed="false">
     <xs:annotation>
       <xs:documentation
@@ -4392,6 +4464,12 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
         type="geltungszeiten"
         minOccurs="0"
         maxOccurs="0"
+      />
+      <xs:element
+        name="references"
+        type="referenzen"
+        minOccurs="0"
+        maxOccurs="unbounded"
       />
       <xs:element
         name="notes"
@@ -4423,6 +4501,12 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       <xs:element name="lifecycle" type="lebenszyklus" minOccurs="0" />
       <xs:element name="temporalData" type="geltungszeiten" minOccurs="0" />
       <xs:element
+        name="references"
+        type="referenzen"
+        minOccurs="0"
+        maxOccurs="unbounded"
+      />
+      <xs:element
         name="notes"
         type="nichtamtlicheFussnoten"
         minOccurs="0"
@@ -4451,6 +4535,12 @@ Referat DG II 6, Maßnahmen Enterprise Resource Management und Elektronische Ver
       <xs:element name="identification" type="identifikation" />
       <xs:element name="lifecycle" type="lebenszyklus" />
       <xs:element name="temporalData" type="geltungszeiten" />
+      <xs:element
+        name="references"
+        type="referenzen"
+        minOccurs="0"
+        maxOccurs="unbounded"
+      />
       <xs:element
         name="notes"
         type="nichtamtlicheFussnoten"

@@ -106,8 +106,42 @@
           >Das Attribut domainTerm muss zum Wert des Attributs refersTo passen.</sch:assert>
         </sch:rule>
       </sch:pattern>
+      <!-- SCH-RIS-0003-000: require a manifestation author given as reference (#...) to reference a TLCOrganization. -->
+      <sch:pattern>
+        <sch:title>Autor der Manifestation</sch:title>
+        <sch:rule
+          id="SCH-RIS-0003"
+          context="akn:identification/akn:FRBRManifestation/akn:FRBRauthor[starts-with(@href, '#')]"
+        >
+          <sch:let
+            name="referenzierte-eId"
+            value="substring-after(@href, '#')"
+          />
+          <sch:assert
+            id="SCH-RIS-0003-000"
+            role="error"
+            test="count(ancestor::akn:meta/akn:references[@source = concat('#', $referenzierte-eId)]/akn:TLCOrganization[@eId = $referenzierte-eId]) = 1"
+          >Zum Autor der Manifestation muss in den Metadaten ein akn:references mit @source="<sch:value-of
+            select="@href"
+          />" existieren, das genau eine akn:TLCOrganization mit der @eId="<sch:value-of
+            select="$referenzierte-eId"
+          />" enthält.</sch:assert>
+        </sch:rule>
+      </sch:pattern>
     </xsl:copy>
   </xsl:template>
+
+  <!-- Additionally allow ontology paths in URI references, e.g. the href of a TLCOrganization -->
+  <xsl:template match="sch:assert[@id='SCH-01010-005']/@test">
+    <xsl:attribute name="test">
+      <xsl:value-of select="." />
+      <xsl:text
+      > or starts-with($teil-ohne-fragment, '/akn/ontology/')</xsl:text>
+    </xsl:attribute>
+  </xsl:template>
+  <xsl:template
+    match="sch:assert[@id='SCH-01010-005']/text()"
+  >URI-Verweise müssen eine der folgenden Formen haben: 1) vollständige http/https-URI, 2) nur absoluter Pfad-Teil (beginnend mit '/eli', d. h. innerhalb derselben Authority wie das aktuelle Dokument, oder mit '/akn/ontology/'), oder 3) nur Dateiname und ggf. Fragment (d. h. innerhalb der selben Expression).</xsl:template>
 
   <!-- Remove Schematron rules -->
   <xsl:template match="sch:assert[@id='SCH-00660-015']" />

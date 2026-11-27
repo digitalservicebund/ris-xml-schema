@@ -11,6 +11,7 @@ RUN apk add --no-cache \
         npm \
         openjdk25-jre-headless \
         unzip \
+        libxml2-utils \
         libxslt
 
 # Saxon and SchXslt

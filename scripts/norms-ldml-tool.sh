@@ -86,27 +86,45 @@ patch_schemas() {
     success "Patch completed successfully"
 }
 
+# Validates samples/norms/<name>/*.xml against xsd/norm-<name>.xsd and norm.sch.xsl
+verify_samples() {
+    local file xsd ids imports wrapper="$TEMP_DIR/wrapper.xsd" report="$TEMP_DIR/report.svrl"
+    log "Verify samples in $ROOT_DIR/samples/norms"
+    for file in "$ROOT_DIR"/samples/norms/*/*.xml; do
+        # akn:proprietary is a strict wildcard, so the metadata schemas have to be imported as well
+        imports=
+        for xsd in "$ROOT_DIR/xsd/norm-$(basename "$(dirname "$file")").xsd" "$ROOT_DIR"/xsd/legalDocML.de/*-metadaten-*.xsd; do
+            imports+="<xs:import namespace=\"$(xmllint --xpath 'string(/*/@targetNamespace)' "$xsd")\" schemaLocation=\"$xsd\"/>"
+        done
+        echo "<xs:schema xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">$imports</xs:schema>" > "$wrapper"
+        xmllint --noout --schema "$wrapper" "$file"
+        java -jar /opt/saxon/saxon-he-13.0.jar -s:"$file" -xsl:"$ROOT_DIR/xsd/norm.sch.xsl" -o:"$report"
+        ids=$(xmllint --xpath "//*[local-name()='failed-assert'][@role='error' or @role='fatal']/@id" "$report" 2>/dev/null || true)
+        [[ -z $ids ]] || { echo "$ids" >&2; error "Schematron validation failed for $file"; return 1; }
+    done
+    success "Sample verification completed successfully"
+}
+
 verify_schemas() (
     log "Verify schemas in $ROOT_DIR/xsd"
     cd "$OUTPUT_DIR"
     # Verifies that the generated schemas are equivalent to the ones in the output directory
     find . -type f -exec sha256sum {} + > "$TEMP_DIR/checksums"
-    if (cd "$ROOT_DIR/xsd" && sha256sum --check "$TEMP_DIR/checksums"); then
-        success "Verification completed successfully"
-        exit 0
+    if ! (cd "$ROOT_DIR/xsd" && sha256sum --check "$TEMP_DIR/checksums"); then
+        {
+            echo
+            error "VERIFICATION FAILED: Generated schemas are out of date."
+            error "Regenerate them with \"make -C scripts patch-ldml\""
+        } >&2
+        exit 1
     fi
-
-    {
-        echo
-        error "VERIFICATION FAILED: Generated schemas are out of date."
-        error "Regenerate them with \"make -C scripts patch-ldml\""
-    } >&2
-    exit 1
+    success "Schema verification completed successfully"
+    verify_samples
 )
 
 MODE=${1:-}
-if [[ $# -ne 1 ]] || [[ "$MODE" != patch && "$MODE" != verify ]]; then
-    error "Usage: $0 <patch|verify>"
+if [[ $# -ne 1 ]] || [[ "$MODE" != patch-ldml && "$MODE" != verify-ldml ]]; then
+    error "Usage: $0 <patch-ldml|verify-ldml>"
     exit 2
 fi
 
@@ -127,6 +145,6 @@ copy_metadata_schemas
 format_generated_files
 
 case "$MODE" in
-    patch) patch_schemas ;;
-    verify) verify_schemas ;;
+    patch-ldml) patch_schemas ;;
+    verify-ldml) verify_schemas ;;
 esac

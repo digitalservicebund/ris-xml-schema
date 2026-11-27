@@ -9,11 +9,13 @@ on:
     paths:
       - "scripts/**"
       - "xsd/norm*"
+      - "samples/norms/**"
   pull_request:
     branches: [main]
     paths:
       - "scripts/**"
       - "xsd/norm*"
+      - "samples/norms/**"
 
 jobs:
   verify-norms-schemas:
@@ -35,4 +37,5 @@ jobs:
         run: |
           docker run --rm \
             -v "$GITHUB_WORKSPACE/xsd:/workspace/xsd:ro" \
-            verify-norms-schemas verify
+            -v "$GITHUB_WORKSPACE/samples:/workspace/samples:ro" \
+            verify-norms-schemas verify-ldml
