@@ -71,10 +71,20 @@ make -C scripts patch-ldml
 make -C scripts verify-ldml
 ```
 
-`patch` erzeugt die Schemata neu. `verify` prüft sie ohne Änderungen und liefert
+`patch-ldml` erzeugt die Schemata neu. `verify-ldml` prüft sie ohne Änderungen und liefert
 bei fehlenden oder abweichenden Dateien Exit-Code 1. Anschließend den Diff prüfen
 und die Patch- und Schemaänderungen gemeinsam committen.
-Der Pre-Commit-Hook führt `verify` bei Änderungen an betroffenen Dateien automatisch aus.
+Der Pre-Commit-Hook führt `verify-ldml` bei Änderungen an betroffenen Dateien automatisch aus.
+
+### Beispieldateien prüfen
+
+`verify-ldml` validiert zusätzlich alle Beispieldateien in [`samples/norms`](../samples/norms) (`samples/norms/<name>/*.xml`):
+
+- gegen das XSD `xsd/norm-<name>.xsd` (die Metadaten-Schemata aus `xsd/legalDocML.de` werden dafür zusätzlich importiert, da `akn:proprietary` einen strikten Wildcard enthält) und
+- gegen die Schematron-Regeln `xsd/norm.sch.xsl`.
+
+Schematron-Verstöße mit der Rolle `error` oder `fatal` führen zu Exit-Code 1, Warnungen (`warn`) werden nicht berücksichtigt.
+Die Prüfung läuft nur über `make -C scripts verify-ldml` bzw. die GitHub Action `verify-norms-schemas`.
 
 ## Von LDML.de unabhängige Schemata
 

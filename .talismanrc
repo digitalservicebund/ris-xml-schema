@@ -22,10 +22,6 @@ fileignoreconfig:
   - filename: samples/administrative-directive/bsg-bag/adm-bsg-bag.xml
     allowed_patterns:
       - "akn:keyword"
-  - filename: xsd/norm.sch
-    checksum: f8fdfb27aed0040e722b294800046cc2210daf145c12b879ff88a493ac7d2470
-  - filename: xsd/norm.sch.xsl
-    checksum: 2161940c4a6c43a9ce393b793964ac3c1cc9e1d44b19ff08e5f078fe135f750d
   - filename: gradlew
     checksum: df5f105ae542d08dedb564dae33c4f97a47ef1549229a69eff6de10c4de11a00
   - filename: build.gradle.kts
@@ -40,6 +36,10 @@ allowed_patterns:
   - passiv
   - passive
   - Passivzitierung
+  - 'map-entry key='
+  - "key\\('nodes-by-"
+  - aenderungenPassiv
+  - "Einzelvorschriften.*"
   - secrets.REPORTS_BUCKET_ACCESS_KEY_ID
   - REPORTS_BUCKET_ACCESS_KEY_ID
   - secrets.REPORTS_BUCKET_SECRET_ACCESS_KEY

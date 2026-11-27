@@ -3,13 +3,14 @@ services:
     build:
       context: ..
       dockerfile: scripts/Dockerfile
-    command: ["patch"]
+    command: ["patch-ldml"]
     volumes:
       - ../xsd:/workspace/xsd:z
   verify-ldml:
     build:
       context: ..
       dockerfile: scripts/Dockerfile
-    command: ["verify"]
+    command: ["verify-ldml"]
     volumes:
       - ../xsd:/workspace/xsd:ro,z
+      - ../samples:/workspace/samples:ro,z

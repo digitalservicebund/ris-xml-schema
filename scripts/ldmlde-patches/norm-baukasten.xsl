@@ -250,9 +250,6 @@
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.verweisFunktionsbezeichnung']"
   />
   <xsl:template
-    match="/xs:schema/xs:simpleType[@name='eIdLiterals.verweisOrganisation']"
-  />
-  <xsl:template
     match="/xs:schema/xs:simpleType[@name='eIdLiterals.verweisPerson']"
   />
   <xsl:template
@@ -403,17 +400,10 @@
     match="/xs:schema/xs:simpleType[@name='shortFormLiterals.verweisFunktionsbezeichnung']"
   />
   <xsl:template
-    match="/xs:schema/xs:simpleType[@name='shortFormLiterals.verweisOrganisation']"
-  />
-  <xsl:template
     match="/xs:schema/xs:simpleType[@name='shortFormLiterals.verweisPerson']"
   />
-  <xsl:template match="/xs:schema/xs:simpleType[@name='shortFormLiterals']" />
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='showAsLiterals.verweisFunktionsbezeichnung']"
-  />
-  <xsl:template
-    match="/xs:schema/xs:simpleType[@name='showAsLiterals.verweisOrganisation']"
   />
   <xsl:template
     match="/xs:schema/xs:simpleType[@name='showAsLiterals.verweisPerson']"
@@ -480,14 +470,10 @@
   <xsl:template match="/xs:schema/xs:complexType[@name='organisation']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='ort']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='personenname']" />
-  <xsl:template match="/xs:schema/xs:complexType[@name='referenzen']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='sitzung']" />
   <xsl:template match="/xs:schema/xs:complexType[@name='textaenderung']" />
   <xsl:template
     match="/xs:schema/xs:complexType[@name='verweisFunktionsbezeichnung']"
-  />
-  <xsl:template
-    match="/xs:schema/xs:complexType[@name='verweisOrganisation']"
   />
   <xsl:template match="/xs:schema/xs:complexType[@name='verweisPerson']" />
   <xsl:template match="/xs:schema/xs:group[@name='aenderungsbefehle']" />
@@ -498,9 +484,6 @@
   <xsl:template match="/xs:schema/xs:group[@name='mehrfachreferenzinhalt']" />
   <xsl:template
     match="/xs:schema/xs:group[@name='regelungssprachlicherTeil']"
-  />
-  <xsl:template
-    match="/xs:schema/xs:group[@name='verweiseAufExterneEntitaeten']"
   />
 
   <!-- Modify xs:simpleType elements to account for exclude types -->
@@ -560,6 +543,27 @@
     </xsl:element>
   </xsl:template>
 
+  <!-- Additionally allow references (#...) to the akn:references as manifestation frbrauthor -->
+  <xsl:template
+    match="/xs:schema/xs:simpleType[@name='hrefLiterals.manifestation.FRBRauthor']/xs:restriction/xs:enumeration"
+  >
+    <xs:pattern value="recht\.bund\.de|#.+" />
+  </xsl:template>
+
+  <!-- Only allow the TLCOrganization reference (the types of the other elements are removed) -->
+  <xsl:template
+    match="/xs:schema/xs:group[@name='verweiseAufExterneEntitaeten']/xs:choice"
+  >
+    <xsl:copy>
+      <xsl:apply-templates select="xs:element[@name='TLCOrganization']" />
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- Do not restrict the eId of the TLCOrganization and the reference source -->
+  <xsl:template
+    match="/xs:schema/xs:simpleType[@name='eIdLiterals.verweisOrganisation' or @name='sourceLiterals.referenzen']/xs:restriction/xs:pattern"
+  />
+
   <!-- Update namespace of xs:any elements referencing weitereMetadaten -->
   <xsl:template
     match="xs:complexType[@name='weitereMetadaten']//xs:any[@namespace='http://www.ris.bund.de/grammatiken/metadaten/']"
@@ -589,7 +593,7 @@
   >
     <xsl:copy>
       <xsl:apply-templates
-        select="*[not((self::xs:element and @name='analysis') or (self::xs:element and @name='references'))]"
+        select="*[not(self::xs:element and @name='analysis')]"
       />
     </xsl:copy>
   </xsl:template>
@@ -599,7 +603,7 @@
   >
     <xsl:copy>
       <xsl:apply-templates
-        select="*[not((self::xs:element and @name='analysis') or (self::xs:element and @name='references'))]"
+        select="*[not(self::xs:element and @name='analysis')]"
       />
     </xsl:copy>
   </xsl:template>
@@ -609,7 +613,7 @@
   >
     <xsl:copy>
       <xsl:apply-templates
-        select="*[not((self::xs:element and @name='analysis') or (self::xs:element and @name='references'))]"
+        select="*[not(self::xs:element and @name='analysis')]"
       />
     </xsl:copy>
   </xsl:template>
